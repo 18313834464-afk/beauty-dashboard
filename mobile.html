@@ -356,7 +356,9 @@
         <div class="card" style="margin-bottom:10px">
             <div class="sec">
                 <div class="sec-title">⚔️ 客服月度战力</div>
-                <table class="tbl"><thead><tr><th>排名</th><th>客服</th><th style="text-align:right">加微</th><th style="text-align:right">变现</th></tr></thead><tbody id="mm-cs-body"></tbody></table>
+                <div style="overflow-x:auto">
+                <table class="tbl"><thead><tr><th>排名</th><th>客服</th><th style="text-align:right">变现</th><th style="text-align:right">转化率</th><th style="text-align:right">履约率</th></tr></thead><tbody id="mm-cs-body"></tbody></table>
+                </div>
             </div>
         </div>
 
@@ -377,6 +379,30 @@
         <div class="card ai-card" style="margin-bottom:10px">
             <div class="ai-title">⚡ AI 月度诊断</div>
             <div class="ai-body" id="mm-ai">加载中...</div>
+        </div>
+
+        <!-- 💰 财务预测 -->
+        <div class="card" id="mm-forecast-wrap" style="margin-bottom:10px;display:none">
+            <div class="sec">
+                <div class="sec-title">💰 月底利润预测</div>
+                <div id="mm-forecast-summary" style="margin-bottom:12px"></div>
+                <div id="mm-forecast-pnl-chart" style="width:100%;height:200px"></div>
+            </div>
+        </div>
+
+        <!-- 👤 客服薪资预测 -->
+        <div class="card" id="mm-salary-wrap" style="margin-bottom:10px;display:none">
+            <div class="sec">
+                <div class="sec-title">👤 客服薪资预测</div>
+                <div style="overflow-x:auto">
+                <table class="tbl">
+                    <thead><tr><th>客服</th><th style="text-align:right">当前业绩</th><th style="text-align:right">预测业绩</th><th style="text-align:right">预测薪资</th></tr></thead>
+                    <tbody id="mm-salary-body"></tbody>
+                </table>
+                </div>
+                <div id="mm-salary-detail" style="margin-top:10px;font-size:10px;color:#64748B"></div>
+                <div id="mm-kpi-detail" style="margin-top:8px"></div>
+            </div>
         </div>
 
         <!-- 退款 -->
@@ -826,11 +852,15 @@ async function loadMMData(city) {
             ).join('');
         } else { matWrap.style.display = 'none'; }
 
-        // 客服排行
+        // 客服排行（含绩效指标）
         const medals = ['🥇','🥈','🥉'];
-        document.getElementById('mm-cs-body').innerHTML = (d.cs_table||[]).map((cs,i) =>
-            `<tr><td>${i<3?medals[i]:(i+1)}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#38BDF8">${cs.wechat||0}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue||0).toLocaleString()}</td></tr>`
-        ).join('');
+        document.getElementById('mm-cs-body').innerHTML = (d.cs_table||[]).map((cs,i) => {
+            const dr = cs.deposit_rate;
+            const fr = cs.fulfill_rate;
+            const drColor = dr !== undefined ? (dr >= 20 ? '#34D399' : dr >= 15 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+            const frColor = fr !== undefined ? (fr >= 80 ? '#34D399' : fr >= 75 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+            return `<tr><td>${i<3?medals[i]:(i+1)}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue||0).toLocaleString()}</td><td style="text-align:right;color:${drColor};font-weight:600">${dr !== undefined ? dr+'%' : '-'}</td><td style="text-align:right;color:${frColor};font-weight:600">${fr !== undefined ? fr+'%' : '-'}</td></tr>`;
+        }).join('');
 
         // ROI 监控预警
         const roiAlertWrap = document.getElementById('mm-roi-alert-wrap');
@@ -879,7 +909,144 @@ async function loadMMData(city) {
             ).join('');
         } else { rfWrap.style.display = 'none'; }
 
+        // 加载财务预测
+        if (!isNat) {
+            loadForecastData(city);
+        } else {
+            document.getElementById('mm-forecast-wrap').style.display = 'none';
+            document.getElementById('mm-salary-wrap').style.display = 'none';
+        }
+
     } catch(e) { console.error('月度加载失败:',e); }
+}
+
+let mmPnlChart;
+const FORECAST_MAP = {'成都':'data_forecast_chengdu.json','哈尔滨':'data_forecast_harbin.json'};
+async function loadForecastData(city) {
+    const file = FORECAST_MAP[city];
+    if (!file) {
+        document.getElementById('mm-forecast-wrap').style.display = 'none';
+        document.getElementById('mm-salary-wrap').style.display = 'none';
+        return;
+    }
+    try {
+        const res = await fetch('./' + file + '?t=' + Date.now());
+        if (!res.ok) { document.getElementById('mm-forecast-wrap').style.display='none'; document.getElementById('mm-salary-wrap').style.display='none'; return; }
+        const fc = await res.json();
+
+        // 利润预测摘要
+        const pnl = fc.pnl_forecast || {};
+        const ta = fc.target_analysis || {};
+        const fwrap = document.getElementById('mm-forecast-wrap');
+        const swrap = document.getElementById('mm-salary-wrap');
+        fwrap.style.display = '';
+        swrap.style.display = '';
+
+        const trackColor = ta.on_track ? '#34D399' : '#FCA5A5';
+        const trackLabel = ta.on_track ? '✅ 预计达标' : '⚠️ 预计未达标';
+        const dailyHint = ta.daily_needed > 0 ? `<div style="margin-top:4px;font-size:10px;color:#FBBF24">剩余每天需 ¥${Number(ta.daily_needed).toLocaleString()}</div>` : '';
+
+        document.getElementById('mm-forecast-summary').innerHTML = `
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+                <div style="padding:10px;background:rgba(52,211,153,0.08);border-radius:8px;border:1px solid rgba(52,211,153,0.15)">
+                    <div style="font-size:9px;color:#64748B">预测月底销售</div>
+                    <div style="font-size:18px;font-weight:900;color:#34D399">¥${Number(pnl.predicted_sales||0).toLocaleString()}</div>
+                </div>
+                <div style="padding:10px;background:rgba(34,211,238,0.08);border-radius:8px;border:1px solid rgba(34,211,238,0.15)">
+                    <div style="font-size:9px;color:#64748B">预测你的到手</div>
+                    <div style="font-size:18px;font-weight:900;color:#22D3EE">¥${Number(pnl.predicted_your_income||0).toLocaleString()}</div>
+                    <div style="font-size:9px;color:#64748B">利润率 ${pnl.predicted_your_margin||0}%</div>
+                </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:10px">
+                <div style="text-align:center;padding:6px;background:rgba(30,41,59,.5);border-radius:6px">
+                    <div style="color:#64748B">客服薪资</div>
+                    <div style="color:#FCA5A5;font-weight:700;margin-top:2px">¥${Number(pnl.predicted_cs_salary||0).toLocaleString()}</div>
+                </div>
+                <div style="text-align:center;padding:6px;background:rgba(30,41,59,.5);border-radius:6px">
+                    <div style="color:#64748B">广告实际</div>
+                    <div style="color:#FB923C;font-weight:700;margin-top:2px">¥${Number(pnl.predicted_ad_actual||0).toLocaleString()}</div>
+                </div>
+                <div style="text-align:center;padding:6px;background:rgba(30,41,59,.5);border-radius:6px">
+                    <div style="color:#64748B">夏老师到手</div>
+                    <div style="color:#A78BFA;font-weight:700;margin-top:2px">¥${Number(pnl.predicted_partner_income||0).toLocaleString()}</div>
+                </div>
+            </div>
+            <div style="margin-top:8px;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:600;color:${trackColor};background:rgba(30,41,59,.5)">
+                ${trackLabel}（目标¥${Number(ta.target||0).toLocaleString()}）${dailyHint}
+            </div>`;
+
+        // P&L 成本构成饼图
+        if (!mmPnlChart) mmPnlChart = echarts.init(document.getElementById('mm-forecast-pnl-chart'));
+        const pieData = [
+            {value: pnl.predicted_your_income||0, name:'你的到手', itemStyle:{color:'#22D3EE'}},
+            {value: pnl.predicted_cs_salary||0, name:'客服薪资', itemStyle:{color:'#FCA5A5'}},
+            {value: pnl.predicted_ad_actual||0, name:'广告费', itemStyle:{color:'#FB923C'}},
+            {value: pnl.predicted_manager_fee||0, name:'主理人提成', itemStyle:{color:'#A78BFA'}},
+            {value: pnl.predicted_artist_fee||0, name:'纹绣师费', itemStyle:{color:'#34D399'}},
+            {value: pnl.predicted_shared_costs||0, name:'门店费用', itemStyle:{color:'#64748B'}},
+            {value: pnl.predicted_partner_income||0, name:'夏老师到手', itemStyle:{color:'#FBBF24'}},
+        ].filter(i=>i.value>0);
+        mmPnlChart.setOption({
+            tooltip:{trigger:'item',formatter:'{b}: ¥{c} ({d}%)'},
+            series:[{type:'pie',radius:['40%','70%'],center:['50%','50%'],label:{formatter:'{b}\n{d}%',fontSize:9,color:'#94A3B8'},labelLine:{lineStyle:{color:'#475569'}},emphasis:{label:{fontSize:11,fontWeight:'bold'}},data:pieData}]
+        },true);
+        setTimeout(()=>mmPnlChart.resize(),100);
+
+        // 客服薪资预测表
+        const csForecasts = fc.cs_forecasts || [];
+        document.getElementById('mm-salary-body').innerHTML = csForecasts.map(cs => {
+            const c = cs.current;
+            const p = cs.predicted;
+            return `<tr>
+                <td style="font-weight:600;color:#E2E8F0">${cs.name}</td>
+                <td style="text-align:right;color:#94A3B8">¥${Number(c.revenue).toLocaleString()}</td>
+                <td style="text-align:right;color:#34D399;font-weight:700">¥${Number(p.revenue).toLocaleString()}</td>
+                <td style="text-align:right;color:#22D3EE;font-weight:700">¥${Number(p.salary).toLocaleString()}</td>
+            </tr>`;
+        }).join('');
+
+        document.getElementById('mm-salary-detail').innerHTML = csForecasts.map(cs => {
+            const p = cs.predicted;
+            return `<div style="margin-bottom:4px"><span style="color:#CBD5E1">${cs.name}</span>: 底薪${p.salary_base} + 提成${p.salary_commission} + 绩效${p.salary_bonus}</div>`;
+        }).join('') + `<div style="margin-top:6px;color:#FBBF24;font-weight:600">客服薪资合计预测: ¥${Number(fc.cs_salary_total_predicted||0).toLocaleString()}</div>`;
+
+        // 绩效考核明细（三维度真实数据）
+        document.getElementById('mm-kpi-detail').innerHTML = csForecasts.map(cs => {
+            const kpi = cs.kpi || {};
+            const bd = cs.bonus_detail || {};
+            const dr = kpi.deposit_rate;
+            const fr = kpi.fulfill_rate;
+            const ss = kpi.sop_score;
+            const drColor = dr !== null ? (dr >= 20 ? '#34D399' : dr >= 15 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+            const frColor = fr !== null ? (fr >= 80 ? '#34D399' : fr >= 75 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+            const ssColor = ss !== null ? (ss >= 90 ? '#34D399' : ss >= 80 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+            const drBonus = bd['定金转化率'] ? bd['定金转化率']['金额'] : '-';
+            const frBonus = bd['到店履约率'] ? bd['到店履约率']['金额'] : '-';
+            const ssBonus = bd['跟进SOP'] ? bd['跟进SOP']['金额'] : '-';
+            return `<div style="background:rgba(30,41,59,.5);border-radius:8px;padding:8px 10px;margin-bottom:6px">
+                <div style="font-size:11px;color:#CBD5E1;font-weight:600;margin-bottom:4px">${cs.name} 绩效考核</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10px">
+                    <div style="text-align:center">
+                        <div style="color:#64748B">定金转化率</div>
+                        <div style="color:${drColor};font-weight:700;font-size:13px">${dr !== null ? dr+'%' : '-'}</div>
+                        <div style="color:#64748B">→¥${drBonus}</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="color:#64748B">到店履约率</div>
+                        <div style="color:${frColor};font-weight:700;font-size:13px">${fr !== null ? fr+'%' : '-'}</div>
+                        <div style="color:#64748B">→¥${frBonus}</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="color:#64748B">SOP完成率</div>
+                        <div style="color:${ssColor};font-weight:700;font-size:13px">${ss !== null ? ss+'分' : '-'}</div>
+                        <div style="color:#64748B">漏${kpi.gap_total||0}次→¥${ssBonus}</div>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+
+    } catch(e) { console.error('预测数据加载失败:',e); document.getElementById('mm-forecast-wrap').style.display='none'; document.getElementById('mm-salary-wrap').style.display='none'; }
 }
 
 // ═══════════════════════════════════════════

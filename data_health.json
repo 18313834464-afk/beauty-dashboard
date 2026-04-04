@@ -31,7 +31,7 @@
           "team": {
             "score": 1,
             "status": "danger",
-            "detail": "人均产出¥1,260, 人均加微0",
+            "detail": "人均产出¥1,890, 人均加微0",
             "label": "团队"
           }
         },
@@ -54,10 +54,10 @@
           "noshow_rate": 0.5,
           "refund_rate": 0.0,
           "followup_rate": 0.938,
-          "revenue_per_cs": 1260.0,
+          "revenue_per_cs": 1890.0,
           "wechat_per_cs": 0.0,
-          "cs_count": 3,
-          "monthly_target": 300000
+          "cs_count": 2,
+          "monthly_target": 200000
         }
       },
       "alerts": [
@@ -103,14 +103,14 @@
             "noshow_rate": 0.2,
             "refund_rate": 0.0,
             "followup_rate": 1.0,
-            "revenue_per_cs": 3087.0,
-            "wechat_per_cs": 7.3,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "revenue_per_cs": 4630.0,
+            "wechat_per_cs": 11.0,
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         },
         {
-          "overall_score": 52,
+          "overall_score": 53,
           "kpis": {
             "spend": 1229.19,
             "open_count": 15.0,
@@ -128,10 +128,10 @@
             "noshow_rate": 0.167,
             "refund_rate": 0.0,
             "followup_rate": 1.0,
-            "revenue_per_cs": 4416.0,
-            "wechat_per_cs": 4.3,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "revenue_per_cs": 6624.0,
+            "wechat_per_cs": 6.5,
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         },
         {
@@ -153,10 +153,10 @@
             "noshow_rate": 0.0,
             "refund_rate": 0.0,
             "followup_rate": 0.667,
-            "revenue_per_cs": 1560.0,
-            "wechat_per_cs": 12.0,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "revenue_per_cs": 2340.0,
+            "wechat_per_cs": 18.0,
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         },
         {
@@ -178,14 +178,14 @@
             "noshow_rate": 0.0,
             "refund_rate": 10.333,
             "followup_rate": 0.714,
-            "revenue_per_cs": 3615.0,
-            "wechat_per_cs": 12.0,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "revenue_per_cs": 5422.0,
+            "wechat_per_cs": 18.0,
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         },
         {
-          "overall_score": 27,
+          "overall_score": 28,
           "kpis": {
             "spend": 0.0,
             "open_count": 0.0,
@@ -203,14 +203,14 @@
             "noshow_rate": 0.0,
             "refund_rate": 1.0,
             "followup_rate": 0.667,
-            "revenue_per_cs": 727.0,
-            "wechat_per_cs": 11.3,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "revenue_per_cs": 1090.0,
+            "wechat_per_cs": 17.0,
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         },
         {
-          "overall_score": 52,
+          "overall_score": 53,
           "kpis": {
             "spend": 0.0,
             "open_count": 0.0,
@@ -228,10 +228,10 @@
             "noshow_rate": 0.0,
             "refund_rate": 0.0,
             "followup_rate": 0.833,
-            "revenue_per_cs": 3747.0,
-            "wechat_per_cs": 10.0,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "revenue_per_cs": 5620.0,
+            "wechat_per_cs": 15.0,
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         },
         {
@@ -253,10 +253,10 @@
             "noshow_rate": 0.5,
             "refund_rate": 0.0,
             "followup_rate": 0.938,
-            "revenue_per_cs": 1260.0,
+            "revenue_per_cs": 1890.0,
             "wechat_per_cs": 0.0,
-            "cs_count": 3,
-            "monthly_target": 300000
+            "cs_count": 2,
+            "monthly_target": 200000
           }
         }
       ]
@@ -544,9 +544,9 @@
             "label": "售后"
           },
           "team": {
-            "score": 3,
+            "score": 1,
             "status": "danger",
-            "detail": "人均产出¥0, 人均加微9",
+            "detail": "人均产出¥0, 人均加微4",
             "label": "团队"
           }
         },
@@ -570,9 +570,9 @@
           "refund_rate": 0.0,
           "followup_rate": 1.0,
           "revenue_per_cs": 0.0,
-          "wechat_per_cs": 9.0,
-          "cs_count": 1,
-          "monthly_target": 100000
+          "wechat_per_cs": 4.5,
+          "cs_count": 2,
+          "monthly_target": 150000
         }
       },
       "alerts": [
@@ -605,9 +605,9 @@
             "refund_rate": 0.0,
             "followup_rate": 1.0,
             "revenue_per_cs": 0.0,
-            "wechat_per_cs": 6.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "wechat_per_cs": 3.0,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         },
         {
@@ -630,9 +630,9 @@
             "refund_rate": 0.0,
             "followup_rate": 1.0,
             "revenue_per_cs": 0.0,
-            "wechat_per_cs": 6.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "wechat_per_cs": 3.0,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         },
         {
@@ -655,13 +655,13 @@
             "refund_rate": 0.0,
             "followup_rate": 1.0,
             "revenue_per_cs": 0.0,
-            "wechat_per_cs": 6.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "wechat_per_cs": 3.0,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         },
         {
-          "overall_score": 52,
+          "overall_score": 51,
           "kpis": {
             "spend": 209.99,
             "open_count": 6.0,
@@ -679,10 +679,10 @@
             "noshow_rate": 0.0,
             "refund_rate": 0.0,
             "followup_rate": 1.0,
-            "revenue_per_cs": 5560.0,
-            "wechat_per_cs": 10.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "revenue_per_cs": 2780.0,
+            "wechat_per_cs": 5.0,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         },
         {
@@ -705,13 +705,13 @@
             "refund_rate": 0.0,
             "followup_rate": 1.0,
             "revenue_per_cs": 0.0,
-            "wechat_per_cs": 17.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "wechat_per_cs": 8.5,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         },
         {
-          "overall_score": 31,
+          "overall_score": 30,
           "kpis": {
             "spend": 0.0,
             "open_count": 0.0,
@@ -730,9 +730,9 @@
             "refund_rate": 0.0,
             "followup_rate": 1.0,
             "revenue_per_cs": 0.0,
-            "wechat_per_cs": 12.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "wechat_per_cs": 6.0,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         },
         {
@@ -755,9 +755,9 @@
             "refund_rate": 0.0,
             "followup_rate": 1.0,
             "revenue_per_cs": 0.0,
-            "wechat_per_cs": 9.0,
-            "cs_count": 1,
-            "monthly_target": 100000
+            "wechat_per_cs": 4.5,
+            "cs_count": 2,
+            "monthly_target": 150000
           }
         }
       ]
@@ -815,7 +815,7 @@
         "overall_status": "danger",
         "revenue": 0.0,
         "revenue_per_cs": 0.0,
-        "wechat_per_cs": 9.0,
+        "wechat_per_cs": 4.5,
         "ad_roi": 0,
         "open_cost": 0,
         "wechat_to_dep": 0.333,
@@ -827,7 +827,7 @@
         "overall_score": 37,
         "overall_status": "danger",
         "revenue": 3780.0,
-        "revenue_per_cs": 1260.0,
+        "revenue_per_cs": 1890.0,
         "wechat_per_cs": 0.0,
         "ad_roi": 0,
         "open_cost": 0,
@@ -855,7 +855,7 @@
         "wechat_per_yuan": 0,
         "revenue_per_yuan": 0,
         "deposit_per_wechat": 0,
-        "revenue_per_cs": 1260.0,
+        "revenue_per_cs": 1890.0,
         "wechat_per_cs": 0.0
       },
       {
@@ -872,7 +872,7 @@
         "revenue_per_yuan": 0,
         "deposit_per_wechat": 0.333,
         "revenue_per_cs": 0.0,
-        "wechat_per_cs": 9.0
+        "wechat_per_cs": 4.5
       }
     ],
     "per_dimension": {
@@ -970,17 +970,17 @@
       ],
       "team": [
         {
-          "city": "哈尔滨",
-          "score": 3,
-          "status": "danger",
-          "detail": "人均产出¥0, 人均加微9",
-          "label": "团队"
-        },
-        {
           "city": "成都",
           "score": 1,
           "status": "danger",
-          "detail": "人均产出¥1,260, 人均加微0",
+          "detail": "人均产出¥1,890, 人均加微0",
+          "label": "团队"
+        },
+        {
+          "city": "哈尔滨",
+          "score": 1,
+          "status": "danger",
+          "detail": "人均产出¥0, 人均加微4",
           "label": "团队"
         },
         {
@@ -993,5 +993,5 @@
       ]
     }
   },
-  "generated_at": "2026-04-04 14:04:43"
+  "generated_at": "2026-04-04 15:39:09"
 }

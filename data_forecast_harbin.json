@@ -1,0 +1,80 @@
+{
+  "city": "哈尔滨",
+  "city_key": "harbin",
+  "month": "2026-04",
+  "generated_at": "2026-04-04 15:39:31",
+  "days_elapsed": 3,
+  "total_days": 30,
+  "progress_pct": 10.0,
+  "revenue_target": 100000,
+  "cs_forecasts": [
+    {
+      "name": "汤娅",
+      "days_elapsed": 3,
+      "total_days": 30,
+      "current": {
+        "revenue": 0,
+        "wechat": 38,
+        "deposit": 6,
+        "arrived": 0,
+        "salary": 6200,
+        "salary_base": 5000,
+        "salary_commission": 0,
+        "salary_bonus": 1200
+      },
+      "predicted": {
+        "revenue": 0,
+        "wechat": 380,
+        "deposit": 60,
+        "arrived": 0,
+        "salary": 6200,
+        "salary_base": 5000,
+        "salary_commission": 0,
+        "salary_bonus": 1200
+      },
+      "daily_avg_revenue": 0,
+      "kpi": {
+        "deposit_rate": 15.8,
+        "fulfill_rate": 0.0,
+        "sop_score": 100,
+        "sop_predicted": 100,
+        "gap_total": 0
+      },
+      "bonus_detail": {
+        "定金转化率": {
+          "金额": 600,
+          "说明": "15-20%→600"
+        },
+        "到店履约率": {
+          "金额": 100,
+          "说明": "<75%→100"
+        },
+        "跟进SOP": {
+          "金额": 500,
+          "说明": "≥90分→500"
+        }
+      }
+    }
+  ],
+  "cs_salary_total_predicted": 6200,
+  "pnl_forecast": {
+    "current_sales": 0,
+    "predicted_sales": 0,
+    "predicted_your_income": -12284,
+    "predicted_your_margin": 0,
+    "predicted_partner_income": -6084,
+    "predicted_cs_salary": 6200,
+    "predicted_ad_actual": 0,
+    "predicted_manager_fee": 0,
+    "predicted_artist_fee": 0,
+    "predicted_shared_costs": 6084
+  },
+  "target_analysis": {
+    "current_revenue": 0.0,
+    "predicted_revenue": 0,
+    "target": 100000,
+    "gap": 100000,
+    "daily_needed": 3704,
+    "on_track": false
+  }
+}
