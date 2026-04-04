@@ -310,8 +310,10 @@
         <div class="card" style="margin-top:10px">
             <div class="sec">
                 <div class="sec-title" id="mw-cs-title">👤 客服排行</div>
-                <table class="tbl"><thead><tr><th>排名</th><th>客服</th><th style="text-align:right">加微</th><th style="text-align:right">变现</th></tr></thead>
+                <div style="overflow-x:auto">
+                <table class="tbl"><thead><tr><th>排名</th><th>客服</th><th style="text-align:right">加微</th><th style="text-align:right">转化率</th><th style="text-align:right">变现</th></tr></thead>
                 <tbody id="mw-cs-body"></tbody></table>
+                </div>
             </div>
         </div>
 
@@ -738,7 +740,9 @@ async function loadMWeeklyData(city) {
         document.getElementById('mw-wow-title').textContent = isCurrentWeek ? '🔄 上周 vs 本周' : '🔄 第' + (d.week_num-1) + '周 vs 第' + d.week_num + '周';
         document.getElementById('mw-cs-body').innerHTML = (d.cs_table||[]).map((cs,i) => {
             const r = i<3?medals[i]:(i+1);
-            return `<tr><td>${r}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#38BDF8">${cs.wechat}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue).toLocaleString()}</td></tr>`;
+            const rate = cs.w2d_rate || 0;
+            const rateColor = rate < 12 ? '#EF4444' : (rate >= 18 ? '#34D399' : '#F59E0B');
+            return `<tr><td>${r}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#38BDF8">${cs.wechat}</td><td style="text-align:right;color:${rateColor};font-weight:700">${rate}%</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue).toLocaleString()}</td></tr>`;
         }).join('');
 
         // Alerts
