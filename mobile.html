@@ -88,6 +88,63 @@
     <!-- ============ DAILY BOARD ============ -->
     <div id="m-daily-board">
 
+    <!-- 城市切换 -->
+    <div class="city-tabs-m" id="m-daily-city-tabs">
+        <div class="city-tab-m active" onclick="switchDailyCity('全国总盘',this)">全国总盘</div>
+        <div class="city-tab-m" onclick="switchDailyCity('成都',this)">成都</div>
+        <div class="city-tab-m" onclick="switchDailyCity('重庆',this)">重庆</div>
+        <div class="city-tab-m" onclick="switchDailyCity('哈尔滨',this)">哈尔滨</div>
+    </div>
+
+    <!-- === 全国总盘视图 === -->
+    <div id="m-national-view">
+        <!-- KPI -->
+        <div class="kpi-row">
+            <div class="card kpi-item k-rev"><div class="kpi-label">全国变现</div><div class="kpi-val c-green" id="n-rev">¥0</div><div class="kpi-sub" id="n-rev-sub"></div></div>
+            <div class="card kpi-item k-wx"><div class="kpi-label">全国加微</div><div class="kpi-val c-cyan" id="n-wx">0</div><div class="kpi-sub" id="n-wx-sub"></div></div>
+            <div class="card kpi-item k-dep"><div class="kpi-label">全国ROI</div><div class="kpi-val c-purple" id="n-roi">0</div><div class="kpi-sub" id="n-roi-sub"></div></div>
+        </div>
+
+        <!-- 城市赛马矩阵 -->
+        <div class="card" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">🐎 城市赛马对比</div>
+                <div style="overflow-x:auto">
+                <table class="tbl"><thead><tr><th>城市</th><th style="text-align:right">变现</th><th style="text-align:right">加微</th><th style="text-align:right">定金</th><th style="text-align:right">开口成本</th></tr></thead><tbody id="n-matrix-body"></tbody></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 获客链路 -->
+        <div class="card" style="margin-bottom:10px;padding:14px">
+            <div class="sec-title">🔗 获客链路</div>
+            <div id="n-acquire" style="display:flex;justify-content:space-around;align-items:center;gap:4px;font-size:11px;text-align:center"></div>
+        </div>
+
+        <!-- 交付链路 -->
+        <div class="card" style="margin-bottom:10px;padding:14px">
+            <div class="sec-title">🔗 交付链路</div>
+            <div id="n-deliver" style="display:flex;justify-content:space-around;align-items:center;gap:4px;font-size:11px;text-align:center"></div>
+        </div>
+
+        <!-- 全国预警 -->
+        <div class="card" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">🚨 全国高危预警</div>
+                <table class="tbl"><thead><tr><th>客户</th><th>问题</th><th>客服</th><th>城市</th></tr></thead><tbody id="n-blacklist-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- AI 全国诊断 -->
+        <div class="card ai-card" style="margin-bottom:10px">
+            <div class="ai-title">⚡ AI 全国诊断</div>
+            <div class="ai-body" id="n-ai-body">加载中...</div>
+        </div>
+    </div>
+
+    <!-- === 单城市视图 === -->
+    <div id="m-city-view" style="display:none">
+
     <!-- ① KPI 3列 -->
     <div class="kpi-row">
         <div class="card kpi-item k-rev a d1">
@@ -105,6 +162,18 @@
             <div class="kpi-val c-purple" id="k-dep">0<span style="font-size:12px;color:#7C3AED"> 单</span></div>
             <div class="kpi-sub">定金笔数</div>
         </div>
+    </div>
+
+    <!-- 健康度 -->
+    <div class="card" style="margin-bottom:10px;padding:14px">
+        <div style="display:flex;align-items:center;gap:10px">
+            <div style="font-size:36px;font-weight:900" id="d-health-score">—</div>
+            <div>
+                <div class="sec-title" style="margin-bottom:2px">🏥 健康度</div>
+                <div style="font-size:10px;color:#64748B" id="d-health-label"></div>
+            </div>
+        </div>
+        <div id="d-alerts" style="margin-top:8px"></div>
     </div>
 
     <!-- ② 加微定金对比 -->
@@ -163,6 +232,15 @@
         </div>
     </div>
 
+    <!-- ⑧ 意向分布 -->
+    <div class="card" style="margin-bottom:10px">
+        <div class="sec">
+            <div class="sec-title">📋 客服新增客户意向分布</div>
+            <div id="c5" class="chart"></div>
+        </div>
+    </div>
+
+    </div><!-- end city view -->
     </div><!-- end daily board -->
 
     <!-- ============ WEEKLY BOARD ============ -->
@@ -366,10 +444,7 @@ const da={axisLine:{lineStyle:{color:'#334155'}},axisTick:{show:false},splitLine
 const dg={left:'3%',right:'4%',bottom:'18%',top:'10%',containLabel:true};
 const ts={backgroundColor:'#1E293B',borderColor:'#334155',textStyle:{color:'#E2E8F0',fontSize:11}};
 
-const c1=echarts.init(document.getElementById('c1'));
-const c2=echarts.init(document.getElementById('c2'));
-const c3=echarts.init(document.getElementById('c3'));
-const c4=echarts.init(document.getElementById('c4'));
+let c1,c2,c3,c4,c5;
 
 // ── Board Switcher ──
 function switchMobileBoard(board, el) {
@@ -384,9 +459,72 @@ function switchMobileBoard(board, el) {
     if (board === 'yearly') loadMYData();
 }
 
-async function load(){
+// ── Daily City Switcher ──
+const DAILY_CITY_MAP = {'成都':'data.json','重庆':'data_chongqing.json','哈尔滨':'data_harbin.json'};
+let currentDailyCity = '全国总盘';
+
+function switchDailyCity(city, el) {
+    document.querySelectorAll('#m-daily-city-tabs .city-tab-m').forEach(t=>t.classList.remove('active'));
+    if(el)el.classList.add('active');
+    currentDailyCity = city;
+    if (city === '全国总盘') {
+        document.getElementById('m-national-view').style.display = '';
+        document.getElementById('m-city-view').style.display = 'none';
+        loadNationalView();
+    } else {
+        document.getElementById('m-national-view').style.display = 'none';
+        document.getElementById('m-city-view').style.display = '';
+        load(DAILY_CITY_MAP[city] || 'data.json');
+    }
+}
+
+async function loadNationalView() {
+    try {
+        const res = await fetch('./data_national.json?t='+Date.now());
+        if (!res.ok) return;
+        const d = await res.json();
+        document.getElementById('rpt-date').textContent = (d.date||'') + ' 全国总盘';
+        document.getElementById('n-rev').textContent = '¥' + Number(d.total_revenue||0).toLocaleString();
+        document.getElementById('n-rev-sub').textContent = '消耗 ¥' + Number(d.total_spend||0).toLocaleString();
+        document.getElementById('n-wx').textContent = d.total_wechat || 0;
+        document.getElementById('n-wx-sub').textContent = '定金 ' + (d.total_deposit||0) + '单';
+        document.getElementById('n-roi').textContent = d.roi || 0;
+        const rl = d.roi_level||'';
+        document.getElementById('n-roi-sub').textContent = rl==='excellent'?'优秀':rl==='good'?'良好':rl==='warning'?'预警':'—';
+
+        // 城市赛马矩阵
+        const matrix = d.city_matrix || {};
+        document.getElementById('n-matrix-body').innerHTML = Object.entries(matrix).map(([city,c]) => {
+            const ocColor = (c.open_cost||0)>80?'#FCA5A5':(c.open_cost||0)>60?'#FBBF24':'#34D399';
+            return `<tr><td style="font-weight:700;color:#E2E8F0">${city}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(c.revenue||0).toLocaleString()}</td><td style="text-align:right;color:#38BDF8">${c.wechat||0}</td><td style="text-align:right;color:#A78BFA">${c.deposit||0}</td><td style="text-align:right;color:${ocColor}">¥${c.open_cost||0}</td></tr>`;
+        }).join('');
+
+        // 获客链路
+        const ac = d.acquire_chain || {};
+        const acEl = document.getElementById('n-acquire');
+        acEl.innerHTML = `<div><div style="font-size:20px;font-weight:900;color:#38BDF8">${ac.open||0}</div><div style="color:#64748B">开口</div></div><div style="color:#475569;font-size:16px">→</div><div><div style="font-size:20px;font-weight:900;color:#22D3EE">${ac.wechat||0}</div><div style="color:#64748B">加微</div><div style="color:#94A3B8;font-size:9px">${ac.open_to_wechat||0}%</div></div><div style="color:#475569;font-size:16px">→</div><div><div style="font-size:20px;font-weight:900;color:#A78BFA">${ac.deposit||0}</div><div style="color:#64748B">定金</div><div style="color:#94A3B8;font-size:9px">${ac.wechat_to_deposit||0}%</div></div>`;
+
+        // 交付链路
+        const dc = d.deliver_chain || {};
+        const dcEl = document.getElementById('n-deliver');
+        dcEl.innerHTML = `<div><div style="font-size:20px;font-weight:900;color:#FB923C">${dc.expected||0}</div><div style="color:#64748B">预约</div></div><div style="color:#475569;font-size:16px">→</div><div><div style="font-size:20px;font-weight:900;color:#34D399">${dc.arrived||0}</div><div style="color:#64748B">到店</div><div style="color:#94A3B8;font-size:9px">${dc.arrival_rate||0}%</div></div><div style="color:#475569;font-size:16px">→</div><div><div style="font-size:20px;font-weight:900;color:#FBBF24">¥${Number(dc.revenue||0).toLocaleString()}</div><div style="color:#64748B">变现</div></div>`;
+
+        // 全国预警
+        const bl = d.national_blacklist || [];
+        const ic = {danger:'🔴',warning:'🟡',normal:'⚪'};
+        document.getElementById('n-blacklist-body').innerHTML = bl.length ? bl.map(b =>
+            `<tr><td style="color:#E2E8F0">${ic[b.level]||'⚪'} ${b.client||''}</td><td style="color:#FCA5A5">${b.problem||''}</td><td>${b.cs||''}</td><td style="color:#64748B">${b.city||''}</td></tr>`
+        ).join('') : '<tr><td colspan="4" style="text-align:center;color:#34D399">✅ 无预警</td></tr>';
+
+        // AI
+        document.getElementById('n-ai-body').innerHTML = (d.ai_national_summary||'暂无').replace(/\n/g,'<br>');
+    } catch(e) { console.error('全国数据加载失败:',e); }
+}
+
+async function load(jsonFile){
+    jsonFile = jsonFile || './data.json';
     try{
-        const r=await fetch('./data.json');if(!r.ok)return;const db=await r.json();
+        const r=await fetch(jsonFile+'?t='+Date.now());if(!r.ok)return;const db=await r.json();
 
         // KPI
         if(db.revenue!==undefined)document.getElementById('k-rev').innerText='¥'+Number(db.revenue).toLocaleString();
@@ -398,6 +536,31 @@ async function load(){
         if(db.ai_summary){
             document.getElementById('ai-body').innerHTML=db.ai_summary.replace(/\n+/g,'<br>');
         }
+
+        // 健康度
+        const hs = db.health_score;
+        if (hs !== undefined) {
+            const hEl = document.getElementById('d-health-score');
+            hEl.textContent = hs.overall_score || hs || 0;
+            const sv = typeof hs === 'object' ? (hs.overall_score||0) : hs;
+            hEl.style.color = sv>=75?'#34D399':sv>=50?'#FBBF24':'#FCA5A5';
+            const status = typeof hs === 'object' ? (hs.overall_status||'') : '';
+            document.getElementById('d-health-label').textContent = {healthy:'健康',warning:'预警',danger:'危险'}[status] || '';
+        }
+        // 预警
+        const alerts = db.alerts || [];
+        const alertEl = document.getElementById('d-alerts');
+        if (alerts.length) {
+            const aic = {danger:'🔴',warning:'🟡',healthy:'🟢'};
+            alertEl.innerHTML = alerts.slice(0,5).map(a=>`<div style="font-size:10px;padding:4px 0;color:${a.level==='danger'?'#FCA5A5':'#FBBF24'}">${aic[a.level]||'⚠️'} ${a.msg||a.message||''}</div>`).join('');
+        } else { alertEl.innerHTML = '<div style="font-size:10px;color:#34D399">✅ 无预警</div>'; }
+
+        // 延迟初始化 ECharts
+        if(!c1)c1=echarts.init(document.getElementById('c1'));
+        if(!c2)c2=echarts.init(document.getElementById('c2'));
+        if(!c3)c3=echarts.init(document.getElementById('c3'));
+        if(!c4)c4=echarts.init(document.getElementById('c4'));
+        if(!c5){const el=document.getElementById('c5');if(el)c5=echarts.init(el);}
 
         // Chart1: 加微定金
         c1.setOption({
@@ -447,6 +610,22 @@ async function load(){
 
         // Heatmap
         renderH(db.y_axis_days,db.bed_heatmap);
+
+        // Chart5: 意向分布
+        const intentions = db.staff_intentions || [];
+        if (c5 && intentions.length > 0) {
+            const csNames = [...new Set(intentions.map(i=>i.cs||i.name||''))];
+            const cats = [...new Set(intentions.flatMap(i=>Object.keys(i).filter(k=>k!=='cs'&&k!=='name'&&k!=='total')))];
+            const colors = ['#06B6D4','#3B82F6','#8B5CF6','#F472B6','#FBBF24','#34D399'];
+            c5.setOption({
+                tooltip:{trigger:'axis',axisPointer:{type:'shadow'},...ts},
+                legend:{data:cats,bottom:0,textStyle:{color:dt,fontSize:9}},
+                grid:dg,
+                xAxis:{type:'category',data:csNames,...da},
+                yAxis:{type:'value',...da},
+                series:cats.map((cat,i)=>({name:cat,type:'bar',stack:'t',barWidth:'45%',data:csNames.map(cs=>{const found=intentions.find(it=>(it.cs||it.name)===cs);return found?found[cat]||0:0}),itemStyle:{color:colors[i%colors.length]}}))
+            },true);
+        }
     }catch(e){console.error(e)}
 }
 
@@ -465,9 +644,11 @@ function renderH(days,mat){
         series:[{name:'床位',type:'heatmap',data:d,label:{show:true,formatter:p=>p.value[2]>0?p.value[2]:'',fontSize:8,fontWeight:'700',color:'#fff'},itemStyle:{borderColor:'#0B1120',borderWidth:1.5,borderRadius:2}}]
     });
 }
-renderH(null,null);
-load();
-window.addEventListener('resize',()=>{c1.resize();c2.resize();c3.resize();c4.resize();if(mwTrend)mwTrend.resize();});
+// 默认加载全国总盘
+loadNationalView();
+window.addEventListener('resize',()=>{
+    [c1,c2,c3,c4,c5,mwTrend,mmTrend,myTrend].forEach(ch=>{if(ch)ch.resize()});
+});
 
 // ═══════════════════════════════════════════
 // 周度报表 (mobile)
