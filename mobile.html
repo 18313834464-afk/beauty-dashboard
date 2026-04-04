@@ -81,6 +81,8 @@
     <div class="top-tabs">
         <div class="top-tab active" onclick="switchMobileBoard('daily', this)">📅 日报</div>
         <div class="top-tab" onclick="switchMobileBoard('weekly', this)">📆 周报</div>
+        <div class="top-tab" onclick="switchMobileBoard('monthly', this)">📊 月度</div>
+        <div class="top-tab" onclick="switchMobileBoard('yearly', this)">🎯 年度</div>
     </div>
 
     <!-- ============ DAILY BOARD ============ -->
@@ -239,6 +241,125 @@
         <div id="mw-alerts" style="margin-top:10px"></div>
     </div>
 
+    <!-- ============ MONTHLY BOARD ============ -->
+    <div id="m-monthly-board" class="board-m-hidden">
+        <div class="city-tabs-m" id="mm-city-tabs">
+            <div class="city-tab-m active" onclick="switchMMCity('全国总盘',this)">全国总盘</div>
+            <div class="city-tab-m" onclick="switchMMCity('成都',this)">成都</div>
+            <div class="city-tab-m" onclick="switchMMCity('重庆',this)">重庆</div>
+            <div class="city-tab-m" onclick="switchMMCity('哈尔滨',this)">哈尔滨</div>
+        </div>
+        <div style="text-align:center;font-size:11px;color:#64748B;margin-bottom:10px" id="mm-label">加载中...</div>
+
+        <!-- KPI -->
+        <div class="kpi-row">
+            <div class="card kpi-item k-rev"><div class="kpi-label">月累变现</div><div class="kpi-val c-green" id="mm-rev">—</div><div class="kpi-sub" id="mm-rev-sub"></div></div>
+            <div class="card kpi-item k-wx"><div class="kpi-label">月累加微</div><div class="kpi-val c-cyan" id="mm-wx">—</div><div class="kpi-sub" id="mm-wx-sub"></div></div>
+            <div class="card kpi-item k-dep"><div class="kpi-label">月度ROI</div><div class="kpi-val c-purple" id="mm-roi">—</div><div class="kpi-sub" id="mm-roi-sub"></div></div>
+        </div>
+
+        <!-- 月目标进度 -->
+        <div class="card" style="padding:14px;margin-bottom:10px">
+            <div class="sec-title">🏃 月目标步速</div>
+            <div id="mm-pace"></div>
+        </div>
+
+        <!-- 城市排行（仅全国） -->
+        <div class="card" id="mm-matrix-wrap" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title" id="mm-matrix-title">🐎 城市月度排行</div>
+                <table class="tbl"><thead><tr><th>城市</th><th style="text-align:right">变现</th><th style="text-align:right">ROI</th><th style="text-align:right">加微</th></tr></thead><tbody id="mm-matrix-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 客服排行 -->
+        <div class="card" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">⚔️ 客服月度战力</div>
+                <table class="tbl"><thead><tr><th>排名</th><th>客服</th><th style="text-align:right">加微</th><th style="text-align:right">变现</th></tr></thead><tbody id="mm-cs-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 趋势 -->
+        <div class="card" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">📈 月度变现趋势</div>
+                <div id="mm-trend" class="chart"></div>
+            </div>
+        </div>
+
+        <!-- AI -->
+        <div class="card ai-card" style="margin-bottom:10px">
+            <div class="ai-title">⚡ AI 月度诊断</div>
+            <div class="ai-body" id="mm-ai">加载中...</div>
+        </div>
+
+        <!-- 退款 -->
+        <div class="card" id="mm-refund-wrap" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">💸 退款明细</div>
+                <table class="tbl"><thead><tr><th>客户</th><th>金额</th><th>客服</th><th>原因</th></tr></thead><tbody id="mm-refund-body"></tbody></table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ YEARLY BOARD ============ -->
+    <div id="m-yearly-board" class="board-m-hidden">
+        <div class="city-tabs-m" id="my-city-tabs">
+            <div class="city-tab-m active" onclick="switchMYCity('全国总盘',this)">全国总盘</div>
+            <div class="city-tab-m" onclick="switchMYCity('成都',this)">成都</div>
+            <div class="city-tab-m" onclick="switchMYCity('重庆',this)">重庆</div>
+            <div class="city-tab-m" onclick="switchMYCity('哈尔滨',this)">哈尔滨</div>
+        </div>
+        <div style="text-align:center;font-size:11px;color:#64748B;margin-bottom:10px" id="my-label">加载中...</div>
+
+        <!-- KPI -->
+        <div class="kpi-row">
+            <div class="card kpi-item k-rev"><div class="kpi-label">年累变现</div><div class="kpi-val c-green" id="my-rev">—</div><div class="kpi-sub" id="my-rev-sub"></div></div>
+            <div class="card kpi-item k-wx"><div class="kpi-label">年度ROI</div><div class="kpi-val c-cyan" id="my-roi">—</div><div class="kpi-sub" id="my-roi-sub"></div></div>
+            <div class="card kpi-item k-dep"><div class="kpi-label">预测全年</div><div class="kpi-val c-purple" id="my-pred">—</div><div class="kpi-sub" id="my-pred-sub"></div></div>
+        </div>
+
+        <!-- 健康评分 -->
+        <div class="card" style="padding:14px;margin-bottom:10px;text-align:center">
+            <div class="sec-title">🏥 健康评分</div>
+            <div style="font-size:48px;font-weight:900;margin:8px 0" id="my-score">—</div>
+            <div style="font-size:11px;color:#64748B" id="my-score-label"></div>
+        </div>
+
+        <!-- 城市排行（仅全国） -->
+        <div class="card" id="my-matrix-wrap" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">🏆 城市年度排行</div>
+                <table class="tbl"><thead><tr><th>城市</th><th style="text-align:right">变现</th><th style="text-align:right">ROI</th><th style="text-align:right">评分</th></tr></thead><tbody id="my-matrix-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 月度经营明细 -->
+        <div class="card" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title" id="my-table-title">📋 月度经营明细</div>
+                <div style="overflow-x:auto">
+                <table class="tbl"><thead><tr><th>月份</th><th style="text-align:right">变现</th><th style="text-align:right">消耗</th><th style="text-align:right">ROI</th><th style="text-align:right">环比</th></tr></thead><tbody id="my-monthly-tbody"></tbody></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 趋势 -->
+        <div class="card" style="margin-bottom:10px">
+            <div class="sec">
+                <div class="sec-title">📈 年度变现趋势</div>
+                <div id="my-trend" class="chart"></div>
+            </div>
+        </div>
+
+        <!-- AI -->
+        <div class="card ai-card" style="margin-bottom:10px">
+            <div class="ai-title">⚡ AI 年度诊断</div>
+            <div class="ai-body" id="my-ai">加载中...</div>
+        </div>
+    </div>
+
 <script>
 const dt='#94A3B8';
 const da={axisLine:{lineStyle:{color:'#334155'}},axisTick:{show:false},splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}},axisLabel:{color:dt,fontSize:10}};
@@ -254,9 +375,13 @@ const c4=echarts.init(document.getElementById('c4'));
 function switchMobileBoard(board, el) {
     document.querySelectorAll('.top-tab').forEach(t => t.classList.remove('active'));
     if (el) el.classList.add('active');
-    document.getElementById('m-daily-board').classList.toggle('board-m-hidden', board !== 'daily');
-    document.getElementById('m-weekly-board').classList.toggle('board-m-hidden', board !== 'weekly');
+    ['daily','weekly','monthly','yearly'].forEach(b => {
+        const dom = document.getElementById('m-'+b+'-board');
+        if (dom) dom.classList.toggle('board-m-hidden', board !== b);
+    });
     if (board === 'weekly') loadMWeeklyData();
+    if (board === 'monthly') loadMMData();
+    if (board === 'yearly') loadMYData();
 }
 
 async function load(){
@@ -458,6 +583,176 @@ async function loadMWeeklyData(city) {
             }
         }
     } catch(e) { console.error('周报加载失败:',e); }
+}
+
+// ═══════════════════════════════════════════
+// 月度战役 (mobile)
+// ═══════════════════════════════════════════
+const MM_MAP = {'全国总盘':'data_monthly_national.json','成都':'data_monthly_chengdu.json','重庆':'data_monthly_chongqing.json','哈尔滨':'data_monthly_harbin.json'};
+let mmTrend;
+let mmCity = '全国总盘';
+
+function switchMMCity(city, el) {
+    document.querySelectorAll('#mm-city-tabs .city-tab-m').forEach(t=>t.classList.remove('active'));
+    if(el)el.classList.add('active');
+    mmCity = city;
+    loadMMData(city);
+}
+
+async function loadMMData(city) {
+    city = city || mmCity;
+    const isNat = city === '全国总盘';
+    try {
+        const res = await fetch('./' + (MM_MAP[city]||MM_MAP['全国总盘']) + '?t=' + Date.now());
+        if (!res.ok) return;
+        const d = await res.json();
+
+        document.getElementById('mm-label').textContent = (d.month||'') + ' ' + (isNat?'全国':'') + '月度战役';
+        document.getElementById('mm-rev').textContent = '¥' + Number(d.cum_revenue||0).toLocaleString();
+        document.getElementById('mm-rev-sub').textContent = '消耗 ¥' + Number(d.cum_spend||0).toLocaleString();
+        document.getElementById('mm-wx').textContent = d.cum_wechat || 0;
+        document.getElementById('mm-wx-sub').textContent = '定金 ' + (d.cum_deposit||0) + '单';
+        document.getElementById('mm-roi').textContent = d.roi || 0;
+        document.getElementById('mm-roi-sub').textContent = '开口成本 ¥' + (d.avg_open_cost||0);
+
+        // 月目标步速
+        const pb = document.getElementById('mm-pace');
+        if (d.month_target && d.month_target > 0) {
+            const pct = Math.min(100, Math.round((d.cum_revenue||0)/d.month_target*100));
+            const sc = {ahead:'#34D399',on_track:'#22D3EE',behind:'#FCA5A5'};
+            const sl = {ahead:'🚀 超前',on_track:'✅ 正常',behind:'⚠️ 滞后'};
+            const co = sc[d.pace_status]||'#94A3B8';
+            pb.innerHTML = `<div style="display:flex;gap:8px;align-items:center;font-size:10px;margin-bottom:6px"><span style="color:#94A3B8">目标¥${Number(d.month_target).toLocaleString()}</span><span style="color:${co};font-weight:700">${sl[d.pace_status]||'—'}</span></div><div style="position:relative;height:14px;background:rgba(51,65,85,.3);border-radius:8px;overflow:hidden"><div style="height:14px;border-radius:8px;width:${pct}%;background:${co}"></div></div><div style="display:flex;justify-content:space-between;font-size:9px;color:#475569;margin-top:3px"><span>¥${Number(d.cum_revenue||0).toLocaleString()} (${pct}%)</span><span>预测 ¥${Number(d.predicted_revenue||0).toLocaleString()}</span></div>`;
+        } else {
+            pb.innerHTML = '<div style="font-size:11px;color:#475569">未设目标</div>';
+        }
+
+        // 城市排行
+        const matWrap = document.getElementById('mm-matrix-wrap');
+        if (isNat && d.city_matrix) {
+            matWrap.style.display = '';
+            document.getElementById('mm-matrix-body').innerHTML = (d.city_matrix||[]).map(c =>
+                `<tr><td style="font-weight:700;color:#E2E8F0">${c.city}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(c.revenue||0).toLocaleString()}</td><td style="text-align:right;color:${(c.roi||0)>=2?'#34D399':'#FBBF24'}">${c.roi||0}</td><td style="text-align:right;color:#38BDF8">${c.wechat||0}</td></tr>`
+            ).join('');
+        } else { matWrap.style.display = 'none'; }
+
+        // 客服排行
+        const medals = ['🥇','🥈','🥉'];
+        document.getElementById('mm-cs-body').innerHTML = (d.cs_table||[]).map((cs,i) =>
+            `<tr><td>${i<3?medals[i]:(i+1)}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#38BDF8">${cs.wechat||0}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue||0).toLocaleString()}</td></tr>`
+        ).join('');
+
+        // 趋势图
+        if (!mmTrend) mmTrend = echarts.init(document.getElementById('mm-trend'));
+        const trend = d.daily_trend || [];
+        mmTrend.setOption({
+            tooltip:{trigger:'axis',...ts},
+            grid:{left:'3%',right:'4%',bottom:'15%',top:'10%',containLabel:true},
+            xAxis:{type:'category',data:trend.map(t=>t.date||''),...da,axisLabel:{fontSize:8,color:'#64748B',rotate:45}},
+            yAxis:{type:'value',...da,axisLabel:{fontSize:9,formatter:v=>v>=10000?'¥'+(v/10000).toFixed(1)+'万':'¥'+v}},
+            series:[{type:'bar',data:trend.map(t=>t.revenue||0),barWidth:'50%',itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]}}]
+        },true);
+        setTimeout(()=>mmTrend.resize(),100);
+
+        // AI
+        document.getElementById('mm-ai').innerHTML = (d.ai_diagnosis||'暂无诊断').replace(/\n/g,'<br>');
+
+        // 退款
+        const rfWrap = document.getElementById('mm-refund-wrap');
+        const refunds = d.refund_list || [];
+        if (refunds.length > 0) {
+            rfWrap.style.display = '';
+            document.getElementById('mm-refund-body').innerHTML = refunds.map(r =>
+                `<tr><td style="color:#E2E8F0">${r.client||''}</td><td style="color:#FCA5A5">¥${Number(r.amount||0).toLocaleString()}</td><td>${r.cs||''}</td><td style="font-size:10px;color:#64748B">${r.reason||''}</td></tr>`
+            ).join('');
+        } else { rfWrap.style.display = 'none'; }
+
+    } catch(e) { console.error('月度加载失败:',e); }
+}
+
+// ═══════════════════════════════════════════
+// 年度战略 (mobile)
+// ═══════════════════════════════════════════
+const MY_MAP = {'全国总盘':'data_yearly_national.json','成都':'data_yearly_chengdu.json','重庆':'data_yearly_chongqing.json','哈尔滨':'data_yearly_harbin.json'};
+let myTrend;
+let myCity = '全国总盘';
+let myNatCache = null;
+
+function switchMYCity(city, el) {
+    document.querySelectorAll('#my-city-tabs .city-tab-m').forEach(t=>t.classList.remove('active'));
+    if(el)el.classList.add('active');
+    myCity = city;
+    loadMYData(city);
+}
+
+async function loadMYData(city) {
+    city = city || myCity;
+    const isNat = city === '全国总盘';
+    try {
+        const res = await fetch('./' + (MY_MAP[city]||MY_MAP['全国总盘']) + '?t=' + Date.now());
+        if (!res.ok) return;
+        const d = await res.json();
+        if (isNat) myNatCache = d;
+
+        document.getElementById('my-label').textContent = (d.year||2026) + '年 ' + (isNat?'全国':'') + '年度战略舱';
+        document.getElementById('my-rev').textContent = '¥' + Number(d.cum_revenue||0).toLocaleString();
+        document.getElementById('my-rev-sub').textContent = '消耗 ¥' + Number(d.cum_spend||0).toLocaleString();
+        document.getElementById('my-roi').textContent = d.cum_roi || 0;
+        document.getElementById('my-roi-sub').textContent = '月均 ¥' + Number(d.monthly_avg_rev||0).toLocaleString();
+        document.getElementById('my-pred').textContent = '¥' + Number(d.predicted_annual||0).toLocaleString();
+        document.getElementById('my-pred-sub').textContent = '按当前趋势预测';
+
+        // 健康评分
+        const score = d.health_score || 0;
+        const scoreEl = document.getElementById('my-score');
+        scoreEl.textContent = score;
+        scoreEl.style.color = score >= 75 ? '#34D399' : score >= 50 ? '#FBBF24' : '#FCA5A5';
+        document.getElementById('my-score-label').textContent = d.health_label || '';
+
+        // 城市排行
+        const matWrap = document.getElementById('my-matrix-wrap');
+        if (isNat && d.city_ranking) {
+            matWrap.style.display = '';
+            document.getElementById('my-matrix-body').innerHTML = (d.city_ranking||[]).map(c => {
+                const sc = c.health_score||0;
+                const scColor = sc>=75?'#34D399':sc>=50?'#FBBF24':'#FCA5A5';
+                return `<tr><td style="font-weight:700;color:#E2E8F0">${c.city}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(c.revenue||0).toLocaleString()}</td><td style="text-align:right;color:${(c.roi||0)>=2?'#34D399':'#FBBF24'}">${c.roi||0}</td><td style="text-align:right;color:${scColor};font-weight:700">${sc}</td></tr>`;
+            }).join('');
+        } else { matWrap.style.display = 'none'; }
+
+        // 月度经营明细
+        document.getElementById('my-table-title').textContent = '📋 ' + (d.city||'全国') + ' 月度经营明细';
+        const kpis = (d.monthly_kpi||[]).filter(k=>k.days>0);
+        document.getElementById('my-monthly-tbody').innerHTML = kpis.map(k => {
+            const momHtml = k.mom_revenue!==null&&k.mom_revenue!==undefined
+                ? (k.mom_revenue>=0?`<span style="color:#34D399">↑${k.mom_revenue}%</span>`:`<span style="color:#FCA5A5">↓${Math.abs(k.mom_revenue)}%</span>`)
+                : '—';
+            return `<tr><td style="color:#E2E8F0;font-weight:700">${k.month_label}</td><td style="text-align:right;color:#34D399">¥${Number(k.revenue||0).toLocaleString()}</td><td style="text-align:right;color:#FB923C">¥${Number(k.spend||0).toLocaleString()}</td><td style="text-align:right;color:${(k.roi||0)>=2?'#34D399':'#FBBF24'}">${k.roi||0}</td><td style="text-align:right">${momHtml}</td></tr>`;
+        }).join('');
+
+        // 年度趋势
+        if (!myTrend) myTrend = echarts.init(document.getElementById('my-trend'));
+        const months = d.trend_months||[];
+        const tRev = d.trend_revenue||[];
+        const tRoi = d.trend_roi||[];
+        myTrend.setOption({
+            tooltip:{trigger:'axis',...ts},
+            legend:{data:['变现','ROI'],bottom:0,textStyle:{color:'#94A3B8',fontSize:9}},
+            grid:{left:'3%',right:'8%',bottom:'18%',top:'8%',containLabel:true},
+            xAxis:{type:'category',data:months,...da,axisLabel:{fontSize:9,color:'#64748B'}},
+            yAxis:[{type:'value',...da,axisLabel:{fontSize:9,formatter:v=>v>=10000?(v/10000).toFixed(0)+'万':''+v}},{type:'value',...da,axisLabel:{fontSize:9},splitLine:{show:false}}],
+            series:[
+                {name:'变现',type:'bar',data:tRev.map(v=>v||0),barWidth:'35%',itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]}},
+                {name:'ROI',type:'line',yAxisIndex:1,data:tRoi.map(v=>v||0),smooth:true,symbol:'circle',symbolSize:5,lineStyle:{color:'#22D3EE',width:2},itemStyle:{color:'#22D3EE'}}
+            ]
+        },true);
+        setTimeout(()=>myTrend.resize(),100);
+
+        // AI
+        const aiSrc = isNat ? d : (myNatCache || d);
+        document.getElementById('my-ai').innerHTML = (aiSrc.ai_diagnosis||'暂无诊断').replace(/\n/g,'<br>');
+
+    } catch(e) { console.error('年度加载失败:',e); }
 }
 </script>
 </body>
