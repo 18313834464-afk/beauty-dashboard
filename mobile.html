@@ -358,10 +358,15 @@
             </div>
         </div>
 
-        <!-- 趋势 -->
+        <!-- ROI 监控 -->
+        <div class="card" style="margin-bottom:10px;padding:14px" id="mm-roi-alert-wrap" hidden>
+            <div id="mm-roi-alert" style="font-size:11px"></div>
+        </div>
+
+        <!-- 趋势（变现+消耗+ROI） -->
         <div class="card" style="margin-bottom:10px">
             <div class="sec">
-                <div class="sec-title">📈 月度变现趋势</div>
+                <div class="sec-title">📈 变现 / 消耗 / ROI 趋势</div>
                 <div id="mm-trend" class="chart"></div>
             </div>
         </div>
@@ -823,15 +828,37 @@ async function loadMMData(city) {
             `<tr><td>${i<3?medals[i]:(i+1)}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#38BDF8">${cs.wechat||0}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue||0).toLocaleString()}</td></tr>`
         ).join('');
 
-        // 趋势图
+        // ROI 监控预警
+        const roiAlertWrap = document.getElementById('mm-roi-alert-wrap');
+        const cumSpend = d.cum_spend || 0;
+        const cumRev = d.cum_revenue || 0;
+        const mTarget = d.month_target || 0;
+        const roiAlerts = [];
+        if (cumSpend > 0 && cumRev / cumSpend < 1.5) {
+            roiAlerts.push(`🔴 ROI=${(cumRev/cumSpend).toFixed(2)} 低于1.5红线，投入产出比不健康`);
+        }
+        if (mTarget > 0 && cumSpend > mTarget * 0.5) {
+            roiAlerts.push(`🟡 消耗已达目标变现的${Math.round(cumSpend/mTarget*100)}%，注意控制投放节奏`);
+        }
+        if (roiAlerts.length) {
+            roiAlertWrap.hidden = false;
+            document.getElementById('mm-roi-alert').innerHTML = roiAlerts.map(a=>`<div style="padding:3px 0;color:#FCA5A5">${a}</div>`).join('');
+        } else { roiAlertWrap.hidden = true; }
+
+        // 趋势图（变现+消耗+ROI三合一）
         if (!mmTrend) mmTrend = echarts.init(document.getElementById('mm-trend'));
         const trend = d.daily_trend || [];
         mmTrend.setOption({
             tooltip:{trigger:'axis',...ts},
-            grid:{left:'3%',right:'4%',bottom:'15%',top:'10%',containLabel:true},
+            legend:{data:['变现','消耗','ROI'],bottom:0,textStyle:{color:'#94A3B8',fontSize:9}},
+            grid:{left:'3%',right:'8%',bottom:'18%',top:'8%',containLabel:true},
             xAxis:{type:'category',data:trend.map(t=>t.date||''),...da,axisLabel:{fontSize:8,color:'#64748B',rotate:45}},
-            yAxis:{type:'value',...da,axisLabel:{fontSize:9,formatter:v=>v>=10000?'¥'+(v/10000).toFixed(1)+'万':'¥'+v}},
-            series:[{type:'bar',data:trend.map(t=>t.revenue||0),barWidth:'50%',itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]}}]
+            yAxis:[{type:'value',...da,axisLabel:{fontSize:9,formatter:v=>v>=10000?(v/10000).toFixed(1)+'万':''+v}},{type:'value',...da,axisLabel:{fontSize:9},splitLine:{show:false}}],
+            series:[
+                {name:'变现',type:'bar',data:trend.map(t=>t.revenue||0),barWidth:'30%',itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]}},
+                {name:'消耗',type:'bar',data:trend.map(t=>t.spend||0),barWidth:'30%',itemStyle:{color:'#FB923C',borderRadius:[3,3,0,0]}},
+                {name:'ROI',type:'line',yAxisIndex:1,data:trend.map(t=>(t.spend&&t.spend>0)?Math.round(t.revenue/t.spend*100)/100:0),smooth:true,symbol:'circle',symbolSize:4,lineStyle:{color:'#22D3EE',width:2},itemStyle:{color:'#22D3EE'}}
+            ]
         },true);
         setTimeout(()=>mmTrend.resize(),100);
 
