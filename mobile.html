@@ -92,7 +92,6 @@
     <div class="city-tabs-m" id="m-daily-city-tabs">
         <div class="city-tab-m active" onclick="switchDailyCity('全国总盘',this)">全国总盘</div>
         <div class="city-tab-m" onclick="switchDailyCity('成都',this)">成都</div>
-        <div class="city-tab-m" onclick="switchDailyCity('重庆',this)">重庆</div>
         <div class="city-tab-m" onclick="switchDailyCity('哈尔滨',this)">哈尔滨</div>
     </div>
 
@@ -250,7 +249,6 @@
         <div class="city-tabs-m" id="m-weekly-city-tabs">
             <div class="city-tab-m active" onclick="switchMWeeklyCity('全国总盘',this)">全国总盘</div>
             <div class="city-tab-m" onclick="switchMWeeklyCity('成都',this)">成都</div>
-            <div class="city-tab-m" onclick="switchMWeeklyCity('重庆',this)">重庆</div>
             <div class="city-tab-m" onclick="switchMWeeklyCity('哈尔滨',this)">哈尔滨</div>
         </div>
 
@@ -326,7 +324,6 @@
         <div class="city-tabs-m" id="mm-city-tabs">
             <div class="city-tab-m active" onclick="switchMMCity('全国总盘',this)">全国总盘</div>
             <div class="city-tab-m" onclick="switchMMCity('成都',this)">成都</div>
-            <div class="city-tab-m" onclick="switchMMCity('重庆',this)">重庆</div>
             <div class="city-tab-m" onclick="switchMMCity('哈尔滨',this)">哈尔滨</div>
         </div>
         <div style="text-align:center;font-size:11px;color:#64748B;margin-bottom:10px" id="mm-label">加载中...</div>
@@ -349,6 +346,14 @@
             <div class="sec">
                 <div class="sec-title" id="mm-matrix-title">🐎 城市月度排行</div>
                 <table class="tbl"><thead><tr><th>城市</th><th style="text-align:right">变现</th><th style="text-align:right">ROI</th><th style="text-align:right">加微</th></tr></thead><tbody id="mm-matrix-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 💰 全国利润预测总览（仅全国视图） -->
+        <div class="card" id="mm-nat-forecast-wrap" style="margin-bottom:10px;display:none">
+            <div class="sec">
+                <div class="sec-title">💰 各城市月底利润预测</div>
+                <div id="mm-nat-forecast-body"></div>
             </div>
         </div>
 
@@ -419,7 +424,6 @@
         <div class="city-tabs-m" id="my-city-tabs">
             <div class="city-tab-m active" onclick="switchMYCity('全国总盘',this)">全国总盘</div>
             <div class="city-tab-m" onclick="switchMYCity('成都',this)">成都</div>
-            <div class="city-tab-m" onclick="switchMYCity('重庆',this)">重庆</div>
             <div class="city-tab-m" onclick="switchMYCity('哈尔滨',this)">哈尔滨</div>
         </div>
         <div style="text-align:center;font-size:11px;color:#64748B;margin-bottom:10px" id="my-label">加载中...</div>
@@ -493,7 +497,7 @@ function switchMobileBoard(board, el) {
 }
 
 // ── Daily City Switcher ──
-const DAILY_CITY_MAP = {'成都':'data.json','重庆':'data_chongqing.json','哈尔滨':'data_harbin.json'};
+const DAILY_CITY_MAP = {'成都':'data.json','哈尔滨':'data_harbin.json'};
 let currentDailyCity = '全国总盘';
 
 function switchDailyCity(city, el) {
@@ -686,7 +690,7 @@ window.addEventListener('resize',()=>{
 // ═══════════════════════════════════════════
 // 周度报表 (mobile)
 // ═══════════════════════════════════════════
-const MW_MAP = {'全国总盘':'data_weekly_national.json','成都':'data_weekly_chengdu.json','重庆':'data_weekly_chongqing.json','哈尔滨':'data_weekly_harbin.json'};
+const MW_MAP = {'全国总盘':'data_weekly_national.json','成都':'data_weekly_chengdu.json','哈尔滨':'data_weekly_harbin.json'};
 let mwTrend;
 let mwCity = '全国总盘';
 
@@ -804,7 +808,7 @@ async function loadMWeeklyData(city) {
 // ═══════════════════════════════════════════
 // 月度战役 (mobile)
 // ═══════════════════════════════════════════
-const MM_MAP = {'全国总盘':'data_monthly_national.json','成都':'data_monthly_chengdu.json','重庆':'data_monthly_chongqing.json','哈尔滨':'data_monthly_harbin.json'};
+const MM_MAP = {'全国总盘':'data_monthly_national.json','成都':'data_monthly_chengdu.json','哈尔滨':'data_monthly_harbin.json'};
 let mmTrend;
 let mmCity = '全国总盘';
 
@@ -912,12 +916,109 @@ async function loadMMData(city) {
         // 加载财务预测
         if (!isNat) {
             loadForecastData(city);
+            document.getElementById('mm-nat-forecast-wrap').style.display = 'none';
         } else {
             document.getElementById('mm-forecast-wrap').style.display = 'none';
             document.getElementById('mm-salary-wrap').style.display = 'none';
+            loadNatForecastSummary();
         }
 
     } catch(e) { console.error('月度加载失败:',e); }
+}
+
+async function loadNatForecastSummary() {
+    const wrap = document.getElementById('mm-nat-forecast-wrap');
+    const body = document.getElementById('mm-nat-forecast-body');
+    const cities = [
+        {name:'成都', file:'data_forecast_chengdu.json'},
+        {name:'哈尔滨', file:'data_forecast_harbin.json'},
+    ];
+    let html = '';
+    let totalIncome = 0;
+    let totalSales = 0;
+    for (const c of cities) {
+        try {
+            const res = await fetch('./' + c.file + '?t=' + Date.now());
+            if (!res.ok) continue;
+            const fc = await res.json();
+            const pnl = fc.pnl_forecast || {};
+            const ta = fc.target_analysis || {};
+            const income = pnl.predicted_your_income || 0;
+            const margin = pnl.predicted_your_margin || 0;
+            const sales = pnl.predicted_sales || 0;
+            const csSalary = pnl.predicted_cs_salary || 0;
+            const adActual = pnl.predicted_ad_actual || 0;
+            const partnerIncome = pnl.predicted_partner_income || 0;
+            const trackColor = ta.on_track ? '#34D399' : '#FCA5A5';
+            const trackLabel = ta.on_track ? '✅达标' : '⚠️差¥' + Number(ta.gap||0).toLocaleString();
+            totalIncome += income;
+            totalSales += sales;
+
+            const csForecasts = fc.cs_forecasts || [];
+            let csHtml = csForecasts.map(cs => {
+                const p = cs.predicted;
+                const kpi = cs.kpi || {};
+                const dr = kpi.deposit_rate;
+                const fr = kpi.fulfill_rate;
+                const ss = kpi.sop_score;
+                const drColor = dr !== null && dr !== undefined ? (dr >= 20 ? '#34D399' : dr >= 15 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+                const frColor = fr !== null && fr !== undefined ? (fr >= 80 ? '#34D399' : fr >= 75 ? '#FBBF24' : '#FCA5A5') : '#64748B';
+                return `<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:10px;border-bottom:1px solid rgba(51,65,85,.2)">
+                    <span style="color:#CBD5E1;font-weight:600">${cs.name}</span>
+                    <span style="color:#94A3B8">业绩¥${Number(p.revenue).toLocaleString()}</span>
+                    <span style="color:#22D3EE;font-weight:700">薪资¥${Number(p.salary).toLocaleString()}</span>
+                    <span style="color:${drColor};font-size:9px">转化${dr !== null && dr !== undefined ? dr+'%' : '-'}</span>
+                </div>`;
+            }).join('');
+
+            html += `<div style="background:rgba(30,41,59,.5);border-radius:10px;padding:12px;margin-bottom:10px">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                    <span style="font-size:13px;font-weight:700;color:#E2E8F0">${c.name}</span>
+                    <span style="font-size:10px;color:${trackColor};font-weight:600">${trackLabel}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
+                    <div style="text-align:center">
+                        <div style="font-size:9px;color:#64748B">预测销售</div>
+                        <div style="font-size:14px;font-weight:900;color:#34D399">¥${Number(sales).toLocaleString()}</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:9px;color:#64748B">你的到手</div>
+                        <div style="font-size:14px;font-weight:900;color:#22D3EE">¥${Number(income).toLocaleString()}</div>
+                        <div style="font-size:9px;color:#64748B">利润率${margin}%</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:9px;color:#64748B">合伙人到手</div>
+                        <div style="font-size:14px;font-weight:900;color:#A78BFA">¥${Number(partnerIncome).toLocaleString()}</div>
+                    </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;font-size:10px">
+                    <div style="text-align:center;padding:4px;background:rgba(252,165,165,.06);border-radius:4px">
+                        <span style="color:#64748B">客服薪资</span>
+                        <span style="color:#FCA5A5;font-weight:700;margin-left:4px">¥${Number(csSalary).toLocaleString()}</span>
+                    </div>
+                    <div style="text-align:center;padding:4px;background:rgba(251,146,60,.06);border-radius:4px">
+                        <span style="color:#64748B">广告实际</span>
+                        <span style="color:#FB923C;font-weight:700;margin-left:4px">¥${Number(adActual).toLocaleString()}</span>
+                    </div>
+                </div>
+                <div style="font-size:10px;color:#64748B;margin-bottom:4px;font-weight:600">客服薪资明细</div>
+                ${csHtml}
+            </div>`;
+        } catch(e) { console.error(c.name + '预测加载失败:', e); }
+    }
+    if (html) {
+        if (totalIncome > 0) {
+            html = `<div style="text-align:center;padding:10px;margin-bottom:10px;background:rgba(34,211,238,.06);border:1px solid rgba(34,211,238,.12);border-radius:8px">
+                <div style="font-size:10px;color:#64748B">全国预测到手合计</div>
+                <div style="font-size:24px;font-weight:900;color:#22D3EE">¥${Number(totalIncome).toLocaleString()}</div>
+                <div style="font-size:10px;color:#64748B">预测总销售 ¥${Number(totalSales).toLocaleString()}</div>
+            </div>` + html;
+        }
+        body.innerHTML = html;
+        wrap.style.display = '';
+    } else {
+        wrap.style.display = 'none';
+    }
 }
 
 let mmPnlChart;
@@ -1052,7 +1153,7 @@ async function loadForecastData(city) {
 // ═══════════════════════════════════════════
 // 年度战略 (mobile)
 // ═══════════════════════════════════════════
-const MY_MAP = {'全国总盘':'data_yearly_national.json','成都':'data_yearly_chengdu.json','重庆':'data_yearly_chongqing.json','哈尔滨':'data_yearly_harbin.json'};
+const MY_MAP = {'全国总盘':'data_yearly_national.json','成都':'data_yearly_chengdu.json','哈尔滨':'data_yearly_harbin.json'};
 let myTrend;
 let myCity = '全国总盘';
 let myNatCache = null;
