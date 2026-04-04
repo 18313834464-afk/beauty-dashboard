@@ -1,0 +1,155 @@
+{
+  "city": "哈尔滨",
+  "year": 2026,
+  "start_month": 3,
+  "cum_revenue": 10048.0,
+  "cum_spend": 5036.11,
+  "cum_wechat": 141,
+  "cum_deposit": 14,
+  "cum_open": 99.0,
+  "cum_roi": 2.0,
+  "monthly_avg_rev": 10048.0,
+  "predicted_annual": 120576.0,
+  "revenue_target": 0,
+  "progress": 0,
+  "monthly_kpi": [
+    {
+      "month": 1,
+      "month_label": "1月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
+    },
+    {
+      "month": 2,
+      "month_label": "2月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
+    },
+    {
+      "month": 3,
+      "month_label": "3月",
+      "revenue": 10048.0,
+      "spend": 5036.11,
+      "roi": 2.0,
+      "wechat": 103,
+      "deposit": 8,
+      "open": 99.0,
+      "open_cost": 50.87,
+      "refund": 0,
+      "days": 31,
+      "mom_revenue": null
+    },
+    {
+      "month": 4,
+      "month_label": "4月",
+      "revenue": 0.0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 38,
+      "deposit": 6,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 3,
+      "mom_revenue": -100.0
+    }
+  ],
+  "trend_months": [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  "trend_revenue": [
+    0,
+    0,
+    10048.0,
+    0.0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "trend_spend": [
+    0,
+    0,
+    5036.11,
+    0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "trend_roi": [
+    0,
+    0,
+    2.0,
+    0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "cs_monthly_detail": [
+    {
+      "name": "汤娅",
+      "months": {
+        "3": {
+          "wechat": 103,
+          "deposit": 8,
+          "revenue": 0.0
+        },
+        "4": {
+          "wechat": 38,
+          "deposit": 6,
+          "revenue": 0
+        }
+      },
+      "intent_a": 5,
+      "intent_b": 6,
+      "intent_c": 26
+    }
+  ],
+  "health_score": 55,
+  "health_breakdown": {
+    "revenue_efficiency": 1,
+    "cost_control": 3,
+    "team_stability": 1
+  }
+}

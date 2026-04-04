@@ -1,0 +1,665 @@
+{
+  "city": "成都",
+  "month": "2026-03",
+  "days_elapsed": 31,
+  "total_days": 31,
+  "cum_revenue": 249591.77,
+  "cum_spend": 95338.22,
+  "cum_wechat": 993,
+  "cum_deposit": 118,
+  "cum_open": 1522.0,
+  "cum_refund": 31,
+  "roi": 2.56,
+  "revenue_target": 300000,
+  "progress": 81.2,
+  "predicted_revenue": 249591.77,
+  "predicted_spend": 95338.22,
+  "predicted_roi": 2.62,
+  "daily_trend": [
+    {
+      "date": "2026-03-01",
+      "revenue": 12245.68,
+      "spend": 0.0,
+      "wechat": 1,
+      "deposit": 1,
+      "open": 0.0
+    },
+    {
+      "date": "2026-03-02",
+      "revenue": 4780.0,
+      "spend": 3246.97,
+      "wechat": 28,
+      "deposit": 2,
+      "open": 52.0
+    },
+    {
+      "date": "2026-03-03",
+      "revenue": 0.0,
+      "spend": 4562.47,
+      "wechat": 43,
+      "deposit": 6,
+      "open": 68.0
+    },
+    {
+      "date": "2026-03-04",
+      "revenue": 3766.02,
+      "spend": 4636.14,
+      "wechat": 50,
+      "deposit": 8,
+      "open": 74.0
+    },
+    {
+      "date": "2026-03-05",
+      "revenue": 3200.0,
+      "spend": 3790.93,
+      "wechat": 36,
+      "deposit": 4,
+      "open": 62.0
+    },
+    {
+      "date": "2026-03-06",
+      "revenue": 3880.0,
+      "spend": 4255.97,
+      "wechat": 42,
+      "deposit": 8,
+      "open": 70.0
+    },
+    {
+      "date": "2026-03-07",
+      "revenue": 8980.0,
+      "spend": 2087.94,
+      "wechat": 27,
+      "deposit": 5,
+      "open": 36.0
+    },
+    {
+      "date": "2026-03-08",
+      "revenue": 12329.82,
+      "spend": 1037.05,
+      "wechat": 13,
+      "deposit": 0,
+      "open": 19.0
+    },
+    {
+      "date": "2026-03-09",
+      "revenue": 6700.0,
+      "spend": 1883.36,
+      "wechat": 20,
+      "deposit": 2,
+      "open": 36.0
+    },
+    {
+      "date": "2026-03-10",
+      "revenue": 5180.0,
+      "spend": 3164.71,
+      "wechat": 31,
+      "deposit": 5,
+      "open": 47.0
+    },
+    {
+      "date": "2026-03-11",
+      "revenue": 0.0,
+      "spend": 4274.45,
+      "wechat": 42,
+      "deposit": 3,
+      "open": 65.0
+    },
+    {
+      "date": "2026-03-12",
+      "revenue": 10025.0,
+      "spend": 4984.92,
+      "wechat": 52,
+      "deposit": 6,
+      "open": 88.0
+    },
+    {
+      "date": "2026-03-13",
+      "revenue": 11440.0,
+      "spend": 4050.39,
+      "wechat": 53,
+      "deposit": 4,
+      "open": 65.0
+    },
+    {
+      "date": "2026-03-14",
+      "revenue": 15882.0,
+      "spend": 3077.02,
+      "wechat": 34,
+      "deposit": 3,
+      "open": 46.0
+    },
+    {
+      "date": "2026-03-15",
+      "revenue": 10140.0,
+      "spend": 0.0,
+      "wechat": 1,
+      "deposit": 2,
+      "open": 0.0
+    },
+    {
+      "date": "2026-03-16",
+      "revenue": 11840.0,
+      "spend": 3753.24,
+      "wechat": 41,
+      "deposit": 5,
+      "open": 67.0
+    },
+    {
+      "date": "2026-03-17",
+      "revenue": 5560.0,
+      "spend": 3842.41,
+      "wechat": 44,
+      "deposit": 6,
+      "open": 58.0
+    },
+    {
+      "date": "2026-03-18",
+      "revenue": 9324.8,
+      "spend": 3609.17,
+      "wechat": 35,
+      "deposit": 5,
+      "open": 60.0
+    },
+    {
+      "date": "2026-03-19",
+      "revenue": 3874.6800000000003,
+      "spend": 3148.73,
+      "wechat": 33,
+      "deposit": 4,
+      "open": 46.0
+    },
+    {
+      "date": "2026-03-20",
+      "revenue": 10440.0,
+      "spend": 2902.73,
+      "wechat": 30,
+      "deposit": 4,
+      "open": 48.0
+    },
+    {
+      "date": "2026-03-21",
+      "revenue": 19440.0,
+      "spend": 2707.81,
+      "wechat": 36,
+      "deposit": 3,
+      "open": 40.0
+    },
+    {
+      "date": "2026-03-22",
+      "revenue": 11662.0,
+      "spend": 908.16,
+      "wechat": 11,
+      "deposit": 2,
+      "open": 14.0
+    },
+    {
+      "date": "2026-03-23",
+      "revenue": 11830.0,
+      "spend": 3339.36,
+      "wechat": 30,
+      "deposit": 3,
+      "open": 53.0
+    },
+    {
+      "date": "2026-03-24",
+      "revenue": 0.0,
+      "spend": 3713.7,
+      "wechat": 47,
+      "deposit": 3,
+      "open": 57.0
+    },
+    {
+      "date": "2026-03-25",
+      "revenue": 2800.0,
+      "spend": 4287.1,
+      "wechat": 42,
+      "deposit": 9,
+      "open": 68.0
+    },
+    {
+      "date": "2026-03-26",
+      "revenue": 8760.0,
+      "spend": 3829.7,
+      "wechat": 37,
+      "deposit": 4,
+      "open": 60.0
+    },
+    {
+      "date": "2026-03-27",
+      "revenue": 1580.0,
+      "spend": 3637.22,
+      "wechat": 27,
+      "deposit": 1,
+      "open": 55.0
+    },
+    {
+      "date": "2026-03-28",
+      "revenue": 9260.0,
+      "spend": 2791.98,
+      "wechat": 22,
+      "deposit": 5,
+      "open": 47.0
+    },
+    {
+      "date": "2026-03-29",
+      "revenue": 13247.0,
+      "spend": 1229.19,
+      "wechat": 13,
+      "deposit": 0,
+      "open": 15.0
+    },
+    {
+      "date": "2026-03-30",
+      "revenue": 4680.0,
+      "spend": 3837.95,
+      "wechat": 36,
+      "deposit": 0,
+      "open": 63.0
+    },
+    {
+      "date": "2026-03-31",
+      "revenue": 10844.26,
+      "spend": 2747.45,
+      "wechat": 36,
+      "deposit": 5,
+      "open": 43.0
+    }
+  ],
+  "rate_trend": [
+    {
+      "date": "2026-03-01",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 100.0
+    },
+    {
+      "date": "2026-03-02",
+      "open_to_wechat": 53.8,
+      "wechat_to_deposit": 7.1
+    },
+    {
+      "date": "2026-03-03",
+      "open_to_wechat": 63.2,
+      "wechat_to_deposit": 14.0
+    },
+    {
+      "date": "2026-03-04",
+      "open_to_wechat": 67.6,
+      "wechat_to_deposit": 16.0
+    },
+    {
+      "date": "2026-03-05",
+      "open_to_wechat": 58.1,
+      "wechat_to_deposit": 11.1
+    },
+    {
+      "date": "2026-03-06",
+      "open_to_wechat": 60.0,
+      "wechat_to_deposit": 19.0
+    },
+    {
+      "date": "2026-03-07",
+      "open_to_wechat": 75.0,
+      "wechat_to_deposit": 18.5
+    },
+    {
+      "date": "2026-03-08",
+      "open_to_wechat": 68.4,
+      "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-03-09",
+      "open_to_wechat": 55.6,
+      "wechat_to_deposit": 10.0
+    },
+    {
+      "date": "2026-03-10",
+      "open_to_wechat": 66.0,
+      "wechat_to_deposit": 16.1
+    },
+    {
+      "date": "2026-03-11",
+      "open_to_wechat": 64.6,
+      "wechat_to_deposit": 7.1
+    },
+    {
+      "date": "2026-03-12",
+      "open_to_wechat": 59.1,
+      "wechat_to_deposit": 11.5
+    },
+    {
+      "date": "2026-03-13",
+      "open_to_wechat": 81.5,
+      "wechat_to_deposit": 7.5
+    },
+    {
+      "date": "2026-03-14",
+      "open_to_wechat": 73.9,
+      "wechat_to_deposit": 8.8
+    },
+    {
+      "date": "2026-03-15",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 200.0
+    },
+    {
+      "date": "2026-03-16",
+      "open_to_wechat": 61.2,
+      "wechat_to_deposit": 12.2
+    },
+    {
+      "date": "2026-03-17",
+      "open_to_wechat": 75.9,
+      "wechat_to_deposit": 13.6
+    },
+    {
+      "date": "2026-03-18",
+      "open_to_wechat": 58.3,
+      "wechat_to_deposit": 14.3
+    },
+    {
+      "date": "2026-03-19",
+      "open_to_wechat": 71.7,
+      "wechat_to_deposit": 12.1
+    },
+    {
+      "date": "2026-03-20",
+      "open_to_wechat": 62.5,
+      "wechat_to_deposit": 13.3
+    },
+    {
+      "date": "2026-03-21",
+      "open_to_wechat": 90.0,
+      "wechat_to_deposit": 8.3
+    },
+    {
+      "date": "2026-03-22",
+      "open_to_wechat": 78.6,
+      "wechat_to_deposit": 18.2
+    },
+    {
+      "date": "2026-03-23",
+      "open_to_wechat": 56.6,
+      "wechat_to_deposit": 10.0
+    },
+    {
+      "date": "2026-03-24",
+      "open_to_wechat": 82.5,
+      "wechat_to_deposit": 6.4
+    },
+    {
+      "date": "2026-03-25",
+      "open_to_wechat": 61.8,
+      "wechat_to_deposit": 21.4
+    },
+    {
+      "date": "2026-03-26",
+      "open_to_wechat": 61.7,
+      "wechat_to_deposit": 10.8
+    },
+    {
+      "date": "2026-03-27",
+      "open_to_wechat": 49.1,
+      "wechat_to_deposit": 3.7
+    },
+    {
+      "date": "2026-03-28",
+      "open_to_wechat": 46.8,
+      "wechat_to_deposit": 22.7
+    },
+    {
+      "date": "2026-03-29",
+      "open_to_wechat": 86.7,
+      "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-03-30",
+      "open_to_wechat": 57.1,
+      "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-03-31",
+      "open_to_wechat": 83.7,
+      "wechat_to_deposit": 13.9
+    }
+  ],
+  "cs_table": [
+    {
+      "name": "李小叶",
+      "wechat": 24,
+      "deposit": 4,
+      "revenue": 8940.0,
+      "intent_a": 2,
+      "intent_b": 77,
+      "intent_c": 82,
+      "intent_total": 161
+    },
+    {
+      "name": "阳珂欣",
+      "wechat": 30,
+      "deposit": 4,
+      "revenue": 7260.0,
+      "intent_a": 6,
+      "intent_b": 60,
+      "intent_c": 80,
+      "intent_total": 146
+    },
+    {
+      "name": "会媛",
+      "wechat": 10,
+      "deposit": 0,
+      "revenue": 3780.0,
+      "intent_a": 25,
+      "intent_b": 42,
+      "intent_c": 45,
+      "intent_total": 112
+    }
+  ],
+  "refund_details": [
+    {
+      "customer": "宋亚萍",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "杨女士",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "敢敢",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "申敏儿",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "倪燕",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "代代",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "雷倩",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "泡泡",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "罗海娉",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "王鹌鹑",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "杨雯",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "梁亚萍",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "乔乔",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "到店退款"
+    },
+    {
+      "customer": "黄娇",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "金汇鑫",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "吴女士",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "拉拉",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "章婷",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "到店退款"
+    },
+    {
+      "customer": "张小六",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "邬田",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "莉莉",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "到店退款"
+    },
+    {
+      "customer": "昭川",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "胡旭",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "邵文瑄",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "到店退款"
+    },
+    {
+      "customer": "张顾曦",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "到店退款"
+    },
+    {
+      "customer": "邹邹",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "到店退款"
+    },
+    {
+      "customer": "瑞雪",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "到店退款"
+    },
+    {
+      "customer": "沈雅倩",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "西西",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "到店退款"
+    },
+    {
+      "customer": "唐微丽",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "未到店退款"
+    },
+    {
+      "customer": "颜女士",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "到店退款"
+    }
+  ],
+  "refund_summary": [
+    {
+      "cs": "会媛",
+      "city": "成都",
+      "arrived": 5,
+      "not_arrived": 8
+    },
+    {
+      "cs": "李小叶",
+      "city": "成都",
+      "arrived": 4,
+      "not_arrived": 5
+    },
+    {
+      "cs": "阳珂欣",
+      "city": "成都",
+      "arrived": 0,
+      "not_arrived": 9
+    }
+  ]
+}

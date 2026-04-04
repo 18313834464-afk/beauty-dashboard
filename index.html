@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美管家管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background: #0B1120;
+            color: #E2E8F0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+        }
+
+        /* ── glass card ── */
+        .glass {
+            background: rgba(30, 41, 59, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: 16px;
+        }
+
+        /* ── KPI card ── */
+        .kpi {
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .kpi::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            border-radius: 16px 0 0 16px;
+        }
+        .kpi-revenue::before { background: linear-gradient(180deg, #34D399, #10B981); }
+        .kpi-wechat::before  { background: linear-gradient(180deg, #22D3EE, #06B6D4); }
+        .kpi-deposit::before { background: linear-gradient(180deg, #A78BFA, #8B5CF6); }
+        .kpi-spend::before   { background: linear-gradient(180deg, #FB923C, #EA580C); }
+        .kpi-open::before    { background: linear-gradient(180deg, #60A5FA, #2563EB); }
+        .kpi-cost::before    { background: linear-gradient(180deg, #F87171, #DC2626); }
+
+        /* ── AI card ── */
+        .ai-card {
+            padding: 24px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        /* ── chart card ── */
+        .chart-card {
+            padding: 20px;
+        }
+        .chart-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #94A3B8;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        /* ── table ── */
+        .dark-table th {
+            background: rgba(51, 65, 85, 0.6);
+            color: #94A3B8;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px 16px;
+        }
+        .dark-table td {
+            padding: 12px 16px;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .dark-table tr:hover td { background: rgba(51, 65, 85, 0.3); }
+
+        /* ── badge ── */
+        .badge-danger {
+            background: rgba(239, 68, 68, 0.4);
+            color: #FEE2E2;
+            border: 1px solid rgba(239, 68, 68, 0.6);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .badge-warn {
+            background: rgba(251, 191, 36, 0.15);
+            color: #FCD34D;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        /* ── chain flow ── */
+        .chain-flow { display:flex; align-items:center; gap:0; justify-content:center; padding:16px 8px; }
+        .chain-node {
+            background: rgba(30,41,59,0.9); border:1px solid rgba(148,163,184,0.15);
+            border-radius:12px; padding:12px 16px; text-align:center; min-width:80px;
+            position:relative;
+        }
+        .chain-node .cn-label { font-size:11px; color:#64748B; font-weight:600; margin-bottom:4px; }
+        .chain-node .cn-value { font-size:22px; font-weight:900; color:#F1F5F9; }
+        .chain-node .cn-bar { height:3px; border-radius:2px; margin-top:8px; }
+        .chain-arrow {
+            display:flex; flex-direction:column; align-items:center; padding:0 6px;
+        }
+        .chain-arrow .ca-rate { font-size:12px; font-weight:700; margin-bottom:2px; }
+        .chain-arrow .ca-line { color:#475569; font-size:16px; }
+        .badge-normal {
+            background: rgba(239, 68, 68, 0.2);
+            color: #FCA5A5;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ── scrollbar ── */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+        /* ── subtle glow on top ── */
+        .top-glow {
+            position: fixed;
+            top: -200px; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(6,182,212,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── alert cards ── */
+        .alert-card { padding:14px 16px; border-radius:12px; margin-bottom:8px; }
+        .alert-p0 { background:rgba(239,68,68,0.12); border-left:4px solid #EF4444; }
+        .alert-p1 { background:rgba(251,191,36,0.10); border-left:4px solid #F59E0B; }
+        .alert-p2 { background:rgba(59,130,246,0.10); border-left:4px solid #3B82F6; }
+        .alert-card .alert-level { font-size:11px; font-weight:800; margin-right:6px; }
+        .alert-card .alert-msg { font-size:13px; color:#E2E8F0; }
+        .alert-card .alert-action { font-size:11px; color:#94A3B8; margin-top:4px; }
+        .health-score-big { font-size:42px; font-weight:900; line-height:1; }
+        .dim-row { display:flex; align-items:center; gap:8px; padding:6px 0; font-size:13px; }
+        .dim-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+        .dim-bar { flex:1; height:6px; border-radius:3px; background:rgba(51,65,85,0.5); overflow:hidden; }
+        .dim-bar-fill { height:100%; border-radius:3px; transition:width 0.6s ease; }
+        .dq-strip { font-size:11px; color:#64748B; padding:4px 0; }
+        .dq-strip .dq-dot { display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:4px; }
+
+        /* ── animate numbers ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in { animation: fadeUp 0.6s ease-out both; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* ── sidebar nav ── */
+        .nav-item {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            width: 56px; padding: 12px 0; border-radius: 12px; cursor: pointer;
+            transition: all 0.25s ease; position: relative; color: #475569;
+        }
+        .nav-item:hover { background: rgba(51, 65, 85, 0.5); color: #94A3B8; }
+        .nav-item.active {
+            background: rgba(6, 182, 212, 0.12); color: #22D3EE;
+        }
+        .nav-item.active::before {
+            content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            width: 3px; height: 28px; border-radius: 0 4px 4px 0;
+            background: linear-gradient(180deg, #22D3EE, #06B6D4);
+        }
+        .nav-item .nav-icon { font-size: 20px; margin-bottom: 4px; }
+        .nav-item .nav-label { font-size: 9px; font-weight: 700; letter-spacing: 0.3px; white-space: nowrap; }
+
+        /* ── city tabs ── */
+        .city-tabs { display: flex; gap: 4px; background: rgba(15, 23, 42, 0.6); padding: 3px; border-radius: 10px; }
+        .city-tab {
+            padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600;
+            color: #64748B; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+        }
+        .city-tab:hover { color: #94A3B8; background: rgba(51, 65, 85, 0.3); }
+        .city-tab.active { background: linear-gradient(135deg, #0891B2, #06B6D4); color: #fff; box-shadow: 0 2px 8px rgba(6,182,212,0.3); }
+
+        /* ── board placeholder ── */
+        .board-placeholder {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 60vh; color: #334155;
+        }
+        .board-placeholder .placeholder-icon { font-size: 64px; margin-bottom: 20px; opacity: 0.6; }
+        .board-placeholder .placeholder-title { font-size: 22px; font-weight: 800; color: #475569; margin-bottom: 8px; }
+        .board-placeholder .placeholder-sub { font-size: 13px; color: #334155; }
+
+        /* ── mobile bottom tab bar ── */
+        .mobile-tab-bar {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(51, 65, 85, 0.5);
+            backdrop-filter: blur(12px); padding: 6px 0 env(safe-area-inset-bottom, 6px);
+        }
+        .mobile-tab-bar-inner { display: flex; justify-content: space-around; align-items: center; }
+        .mobile-tab {
+            display: flex; flex-direction: column; align-items: center; gap: 2px;
+            padding: 6px 12px; border-radius: 10px; cursor: pointer;
+            color: #475569; transition: all 0.2s; font-size: 10px; font-weight: 700;
+        }
+        .mobile-tab .mt-icon { font-size: 20px; }
+        .mobile-tab.active { color: #22D3EE; background: rgba(6, 182, 212, 0.12); }
+
+        /* ── mobile responsive ── */
+        @media (max-width: 768px) {
+            .sidebar-nav { display: none !important; }
+            .mobile-tab-bar { display: block !important; }
+            .main-content { margin-left: 0 !important; padding: 12px 12px 72px 12px !important; }
+            .kpi { padding: 14px 16px; }
+            .kpi .text-3xl { font-size: 22px; }
+            .chart-card { padding: 12px; }
+            .chart-card > div[id^="chart"], .chart-card > div[id^="n-"] { min-height: 250px !important; }
+            .chain-node { padding: 8px 10px; min-width: 60px; }
+            .chain-node .cn-value { font-size: 16px; }
+            .chain-arrow { padding: 0 3px; }
+            .chain-arrow .ca-rate { font-size: 10px; }
+            .city-tabs { overflow-x: auto; flex-wrap: nowrap; }
+            .dark-table th, .dark-table td { padding: 8px 6px; font-size: 11px; }
+            header { flex-direction: column !important; align-items: flex-start !important; gap: 8px; }
+        }
+
+        .board-hidden { display: none !important; }
+    </style>
+</head>
+
+<body class="flex h-screen overflow-hidden">
+
+    <div class="top-glow"></div>
+
+    <!-- ── Sidebar ── -->
+    <aside class="w-16 flex flex-col items-center py-6 z-10 hidden md:flex" style="background:rgba(15,23,42,0.9); border-right:1px solid rgba(51,65,85,0.5)">
+        <div class="w-9 h-9 rounded-lg mb-8 flex items-center justify-center text-white font-black text-base" style="background:linear-gradient(135deg,#06B6D4,#3B82F6)">M</div>
+        <div class="nav-item active" data-board="daily-board" onclick="switchBoard('daily-board', this)">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">昨日战术</span>
+        </div>
+        <div class="nav-item" data-board="weekly-board" onclick="switchBoard('weekly-board', this)" style="margin-top:8px">
+            <span class="nav-icon">📆</span>
+            <span class="nav-label">周度节点</span>
+        </div>
+        <div class="nav-item" data-board="monthly-board" onclick="switchBoard('monthly-board', this)" style="margin-top:8px">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">月度战役</span>
+        </div>
+        <div class="nav-item" data-board="yearly-board" onclick="switchBoard('yearly-board', this)" style="margin-top:8px">
+            <span class="nav-icon">🎯</span>
+            <span class="nav-label">年度战略</span>
+        </div>
+    </aside>
+
+    <!-- ── Main ── -->
+    <main class="flex-1 overflow-y-auto p-5 lg:p-7 relative z-1">
+
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-6">
+            <div>
+                <h1 class="text-xl font-black tracking-tight" style="color:#F1F5F9">
+                    美管家管理
+                    <span class="text-sm font-normal ml-3" id="report-date" style="color:#64748B">数据加载中...</span>
+                </h1>
+                <div class="city-tabs mt-3" id="daily-city-tabs">
+                    <div class="city-tab active" onclick="switchCity('全国总盘', this)">全国总盘</div>
+                    <div class="city-tab" onclick="switchCity('成都', this)">成都</div>
+                    <div class="city-tab" onclick="switchCity('重庆', this)">重庆</div>
+                    <div class="city-tab" onclick="switchCity('哈尔滨', this)">哈尔滨</div>
+                    <div class="city-tab" onclick="switchCity('昆明', this)">昆明(筹)</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-3" style="color:#64748B">
+                <span class="cursor-pointer hover:text-cyan-400 transition-colors text-sm">🔔</span>
+                <div class="w-7 h-7 rounded-full" style="background:#334155"></div>
+            </div>
+        </header>
+
+        <!-- === 昨日战术板 === -->
+        <div id="daily-board" class="board-hidden">
+
+        <!-- ★ 问题驾驶舱: 健康度 + 预警 ★ -->
+        <div id="health-cockpit" class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5" style="display:none">
+            <!-- 健康度雷达 -->
+            <div class="glass chart-card flex flex-col animate-in delay-1">
+                <div class="chart-title flex items-center gap-2">
+                    <span>🏥</span> 五维健康度
+                    <span id="health-overall-badge" class="ml-auto text-xs font-bold px-2 py-1 rounded-md" style="background:rgba(52,211,153,0.15);color:#34D399"></span>
+                </div>
+                <div id="health-radar" style="width:100%;height:220px"></div>
+                <div id="health-dims" class="mt-2"></div>
+            </div>
+
+            <!-- 预警卡片 -->
+            <div class="glass chart-card flex flex-col animate-in delay-2 lg:col-span-2">
+                <div class="chart-title flex items-center gap-2">
+                    <span style="color:#FCA5A5">●</span> 今日预警
+                    <span id="alert-count-badge" class="ml-auto text-xs font-bold px-2 py-1 rounded-md" style="background:rgba(239,68,68,0.15);color:#FCA5A5"></span>
+                </div>
+                <div id="alerts-container" class="overflow-y-auto flex-1" style="max-height:340px">
+                    <div class="text-center text-sm py-8" style="color:#475569">暂无预警</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据新鲜度条 -->
+        <div id="dq-strip" class="dq-strip mb-3" style="display:none"></div>
+
+        <!-- KPI Row -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5">
+            <div class="glass kpi kpi-revenue animate-in delay-1">
+                <div class="text-xs font-semibold mb-2" style="color:#64748B">昨日总变现</div>
+                <div class="text-3xl font-black" id="kpi-revenue" style="color:#34D399">¥0</div>
+                <div class="text-xs mt-2 font-medium" style="color:#475569">客服团队累计变现金额</div>
+            </div>
+            <div class="glass kpi kpi-wechat animate-in delay-2">
+                <div class="text-xs font-semibold mb-2" style="color:#64748B">新增加微</div>
+                <div class="text-3xl font-black" id="kpi-wechat" style="color:#22D3EE">0</div>
+                <div class="text-xs mt-2 font-medium" style="color:#475569">各客服加微人头合计</div>
+            </div>
+            <div class="glass kpi kpi-deposit animate-in delay-3">
+                <div class="text-xs font-semibold mb-2" style="color:#64748B">新增定金</div>
+                <div class="text-3xl font-black" id="kpi-deposit" style="color:#A78BFA">0<span class="text-lg ml-1 font-semibold" style="color:#7C3AED">单</span></div>
+                <div class="text-xs mt-2 font-medium" style="color:#475569">绝对考核定金笔数</div>
+            </div>
+            <div class="glass ai-card animate-in delay-4" style="border-radius:16px">
+                <div class="font-bold text-sm mb-3 flex items-center gap-2" style="color:#FBBF24">
+                    <span style="font-size:16px">⚡</span> AI 经营诊断
+                </div>
+                <div id="ai-body" class="text-xs leading-relaxed" style="color:#CBD5E1">
+                    <p>数据加载中...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traffic KPI Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+            <div class="glass kpi kpi-spend animate-in delay-1">
+                <div class="text-xs font-semibold mb-2" style="color:#64748B">投放总消耗</div>
+                <div class="text-3xl font-black" id="kpi-spend" style="color:#FB923C">¥0</div>
+                <div class="text-xs mt-2 font-medium" style="color:#475569">昨日广告投放总花费</div>
+            </div>
+            <div class="glass kpi kpi-open animate-in delay-2">
+                <div class="text-xs font-semibold mb-2" style="color:#64748B">开口数</div>
+                <div class="text-3xl font-black" id="kpi-open" style="color:#60A5FA">0</div>
+                <div class="text-xs mt-2 font-medium" style="color:#475569">有效开口咨询人数</div>
+            </div>
+            <div class="glass kpi kpi-cost animate-in delay-3">
+                <div class="text-xs font-semibold mb-2" style="color:#64748B">开口成本</div>
+                <div class="text-3xl font-black" id="kpi-cost" style="color:#F87171">¥0</div>
+                <div class="text-xs mt-2 font-medium" style="color:#475569">每个开口的获客成本</div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5" style="min-height:280px">
+            <div class="glass chart-card flex flex-col animate-in delay-1">
+                <div class="chart-title">客服加微与定金对比</div>
+                <div id="chart1" class="flex-1 w-full"></div>
+            </div>
+            <div class="glass chart-card flex flex-col animate-in delay-2">
+                <div class="chart-title">客服变现贡献占比</div>
+                <div id="chart2" class="flex-1 w-full"></div>
+            </div>
+            <div class="glass chart-card flex flex-col animate-in delay-3">
+                <div class="chart-title">客服日常回访监控</div>
+                <div id="chart3" class="flex-1 w-full"></div>
+            </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" style="min-height:340px">
+            <div class="glass chart-card flex flex-col animate-in delay-1">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="chart-title mb-0">门店床位占用 · 7日预览</div>
+                    <div class="flex items-center gap-2 text-xs" style="color:#64748B">
+                        <span class="inline-block w-3 h-3 rounded" style="background:#1E3A5F"></span>空闲
+                        <span class="inline-block w-3 h-3 rounded" style="background:#0EA5E9"></span>正常
+                        <span class="inline-block w-3 h-3 rounded" style="background:#F59E0B"></span>预警
+                        <span class="inline-block w-3 h-3 rounded" style="background:#EF4444"></span>满载
+                    </div>
+                </div>
+                <div id="chart4" class="flex-1 w-full"></div>
+                <div class="text-xs mt-2 px-3 py-2 rounded-lg font-medium" style="background:rgba(251,191,36,0.08); color:#FBBF24; border:1px solid rgba(251,191,36,0.15)">
+                    ⚠ 满载时段严禁加号 · 预警时段需主管审批
+                </div>
+            </div>
+
+            <div class="glass chart-card overflow-hidden flex flex-col animate-in delay-2">
+                <div class="chart-title flex items-center gap-2">
+                    <span style="color:#FCA5A5">●</span> 昨日问题榜单
+                </div>
+                <div class="overflow-y-auto flex-1">
+                    <table class="w-full dark-table">
+                        <thead>
+                            <tr>
+                                <th>客户</th>
+                                <th>问题</th>
+                                <th>类型</th>
+                                <th>客服</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blacklist-body">
+                            <tr><td colspan="5" class="text-center" style="color:#475569">加载中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5: 客服意向分布 -->
+        <div class="grid grid-cols-1 gap-4 mt-5" style="min-height:300px">
+            <div class="glass chart-card flex flex-col animate-in delay-3">
+                <div class="chart-title">客服新增客户意向分布</div>
+                <div id="chart5" class="flex-1 w-full"></div>
+            </div>
+        </div>
+        </div> <!-- end #daily-board -->
+
+        <!-- === 全国总盘 === -->
+        <div id="national-board">
+            <!-- KPI Row -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
+                <div class="glass kpi kpi-revenue animate-in delay-1">
+                    <div class="text-xs font-semibold mb-2" style="color:#64748B">全国总变现</div>
+                    <div class="text-2xl font-black" id="n-kpi-revenue" style="color:#34D399">¥0</div>
+                    <div class="text-xs mt-1" style="color:#475569">3城合计</div>
+                </div>
+                <div class="glass kpi kpi-spend animate-in delay-1">
+                    <div class="text-xs font-semibold mb-2" style="color:#64748B">全国总消耗</div>
+                    <div class="text-2xl font-black" id="n-kpi-spend" style="color:#FB923C">¥0</div>
+                    <div class="text-xs mt-1" style="color:#475569">广告投放总计</div>
+                </div>
+                <div class="glass kpi kpi-wechat animate-in delay-2">
+                    <div class="text-xs font-semibold mb-2" style="color:#64748B">全国加微</div>
+                    <div class="text-2xl font-black" id="n-kpi-wechat" style="color:#22D3EE">0<span class="text-sm ml-1" style="color:#0891B2">人</span></div>
+                </div>
+                <div class="glass kpi kpi-deposit animate-in delay-3">
+                    <div class="text-xs font-semibold mb-2" style="color:#64748B">全国定金</div>
+                    <div class="text-2xl font-black" id="n-kpi-deposit" style="color:#A78BFA">0<span class="text-sm ml-1" style="color:#7C3AED">单</span></div>
+                </div>
+                <div class="glass kpi kpi-open animate-in delay-4">
+                    <div class="text-xs font-semibold mb-2" style="color:#64748B">集团 ROI</div>
+                    <div class="text-2xl font-black" id="n-kpi-roi" style="color:#60A5FA">0</div>
+                    <div id="n-roi-badge" class="text-xs mt-1 font-bold" style="color:#475569">—</div>
+                </div>
+            </div>
+
+            <!-- 城市赛马矩阵 -->
+            <div class="glass chart-card mb-5 animate-in delay-1">
+                <div class="chart-title flex items-center gap-2"><span>🐎</span> 城市赛马对比矩阵</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full dark-table" id="n-matrix-table">
+                        <thead><tr><th>指标</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 双链路 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
+                <div class="glass chart-card animate-in delay-1">
+                    <div class="chart-title">昨日获客链路</div>
+                    <div class="chain-flow" id="n-acquire-chain"></div>
+                </div>
+                <div class="glass chart-card animate-in delay-2">
+                    <div class="chart-title">昨日交付链路</div>
+                    <div class="chain-flow" id="n-deliver-chain"></div>
+                </div>
+            </div>
+
+            <!-- AI 诊断 + 开口成本PK -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
+                <div class="glass ai-card animate-in delay-1" style="border-radius:16px; overflow-y:auto">
+                    <div class="font-bold text-sm mb-3 flex items-center gap-2" style="color:#FBBF24">
+                        <span style="font-size:16px">🧠</span> AI 全国诊断
+                    </div>
+                    <div id="n-ai-body" class="text-xs leading-relaxed" style="color:#CBD5E1; line-height:1.8">
+                        <p>数据加载中...</p>
+                    </div>
+                </div>
+                <div class="glass chart-card flex flex-col animate-in delay-2">
+                    <div class="chart-title">开口成本 PK</div>
+                    <div id="n-cpa-chart" class="flex-1 w-full" style="min-height:200px"></div>
+                </div>
+            </div>
+
+            <!-- 全国高危报警（全宽） -->
+            <div class="glass chart-card overflow-hidden flex flex-col animate-in delay-1" style="min-height:200px">
+                <div class="chart-title flex items-center gap-2">
+                    <span style="color:#FCA5A5">🚨</span> 全国高危报警
+                </div>
+                <div class="overflow-y-auto flex-1">
+                    <table class="w-full dark-table">
+                        <thead><tr><th>城市</th><th>客户</th><th>问题</th><th>类型</th><th>责任人</th><th>状态</th></tr></thead>
+                        <tbody id="n-blacklist-body">
+                            <tr><td colspan="6" class="text-center" style="color:#475569">加载中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> <!-- end #national-board -->
+
+        <!-- === 月度战役板 === -->
+        <div id="monthly-board" class="board-hidden">
+
+            <!-- 城市 tab（月度用） -->
+            <div class="city-tabs mb-5" id="monthly-city-tabs">
+                <div class="city-tab active" onclick="switchMonthlyCity('全国总盘', this)">全国总盘</div>
+                <div class="city-tab" onclick="switchMonthlyCity('成都', this)">成都</div>
+                <div class="city-tab" onclick="switchMonthlyCity('重庆', this)">重庆</div>
+                <div class="city-tab" onclick="switchMonthlyCity('哈尔滨', this)">哈尔滨</div>
+            </div>
+
+            <!-- 模块1: KPI进度 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
+                <div class="glass kpi kpi-revenue animate-in delay-1">
+                    <div class="text-xs font-semibold mb-1" style="color:#64748B">本月累计变现</div>
+                    <div class="text-2xl font-black" id="m-kpi-revenue" style="color:#34D399">¥0</div>
+                    <div style="background:rgba(51,65,85,0.5);border-radius:4px;height:6px;margin-top:8px">
+                        <div id="m-progress-bar" style="height:100%;border-radius:4px;background:linear-gradient(90deg,#34D399,#10B981);width:0%;transition:width 0.8s"></div>
+                    </div>
+                    <div class="text-xs mt-1" style="color:#475569"><span id="m-progress-text">0%</span> · 目标 <span id="m-target-text">¥0</span></div>
+                </div>
+                <div class="glass kpi kpi-spend animate-in delay-2">
+                    <div class="text-xs font-semibold mb-1" style="color:#64748B">本月累计消耗</div>
+                    <div class="text-2xl font-black" id="m-kpi-spend" style="color:#FB923C">¥0</div>
+                    <div class="text-xs mt-2" style="color:#475569">广告投放总额</div>
+                </div>
+                <div class="glass kpi kpi-wechat animate-in delay-3">
+                    <div class="text-xs font-semibold mb-1" style="color:#64748B">本月累计加微</div>
+                    <div class="text-2xl font-black" id="m-kpi-wechat" style="color:#22D3EE">0</div>
+                </div>
+                <div class="glass kpi animate-in delay-4" style="position:relative">
+                    <div class="text-xs font-semibold mb-1" style="color:#64748B">月度 ROI</div>
+                    <div class="text-2xl font-black" id="m-kpi-roi" style="color:#F1F5F9">0</div>
+                    <div class="text-xs mt-2" id="m-predict-text" style="color:#475569">预测加载中...</div>
+                    <div style="position:absolute;top:0;left:0;width:4px;height:100%;border-radius:16px 0 0 16px;background:linear-gradient(180deg,#60A5FA,#2563EB)"></div>
+                </div>
+            </div>
+
+            <!-- 模块2: 城市排行 (紧接KPI) -->
+            <div class="glass chart-card mb-5 animate-in delay-1" id="m-city-matrix-wrap">
+                <div class="chart-title">🐎 城市月度排行</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full dark-table" id="m-city-matrix" style="table-layout:fixed">
+                        <thead><tr><th style="width:18%;text-align:left">指标</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 模块3: 每日营收趋势 (分组柱状) -->
+            <div class="glass chart-card mb-5 animate-in delay-1" style="min-height:340px">
+                <div class="chart-title">📊 每日营收趋势</div>
+                <div id="m-trend-chart" style="width:100%;min-height:300px"></div>
+            </div>
+
+            <!-- 模块4a: 开口→加微率 -->
+            <div class="glass chart-card mb-5 animate-in delay-2" style="min-height:260px">
+                <div class="chart-title">📥 开口→加微转化率</div>
+                <div id="m-rate-open-chart" style="width:100%;min-height:220px"></div>
+            </div>
+
+            <!-- 模块4b: 加微→定金率 -->
+            <div class="glass chart-card mb-5 animate-in delay-2" style="min-height:260px">
+                <div class="chart-title">💰 加微→定金转化率</div>
+                <div id="m-rate-deposit-chart" style="width:100%;min-height:220px"></div>
+            </div>
+
+            <!-- 模块5: 客服战力表 + 退款 -->
+            <div class="glass chart-card mb-5 animate-in delay-1">
+                <div class="chart-title">⚔️ 客服月度战力表</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full dark-table" id="m-cs-table" style="table-layout:fixed">
+                        <thead><tr>
+                            <th style="width:8%;text-align:center">排名</th>
+                            <th style="width:16%;text-align:center">客服</th>
+                            <th style="width:10%;text-align:center">月加微</th>
+                            <th style="width:10%;text-align:center">月定金</th>
+                            <th style="width:14%;text-align:center">月变现</th>
+                            <th style="width:10%;text-align:center">在手A级</th>
+                            <th style="width:10%;text-align:center">在手B级</th>
+                            <th style="width:10%;text-align:center">在手C级</th>
+                            <th style="width:12%;text-align:center">意向池</th>
+                        </tr></thead>
+                        <tbody id="m-cs-body"><tr><td colspan="9" class="text-center" style="color:#475569">加载中...</td></tr></tbody>
+                    </table>
+                </div>
+                <div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(51,65,85,0.5)">
+                    <span style="color:#FCA5A5;margin-right:6px">📋</span>
+                    <span class="text-sm font-bold" id="m-refund-text" style="color:#94A3B8">本月累计退款: 0 笔</span>
+                    <div id="m-refund-detail" style="margin-top:10px;display:none;max-height:300px;overflow-y:auto">
+                        <table style="width:100%;border-collapse:collapse;font-size:12px">
+                            <thead><tr style="color:#94A3B8;border-bottom:1px solid #334155">
+                                <th style="text-align:left;padding:6px">客服</th>
+                                <th style="text-align:center;padding:6px">城市</th>
+                                <th style="text-align:center;padding:6px">到店退款</th>
+                                <th style="text-align:center;padding:6px">未到店退款</th>
+                                <th style="text-align:center;padding:6px">合计</th>
+                            </tr></thead>
+                            <tbody id="m-refund-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- === 年度战略舱 === -->
+        <div id="yearly-board" class="board-hidden">
+
+            <!-- 城市 tab（年度用） -->
+            <div class="city-tabs mb-5" id="yearly-city-tabs">
+                <div class="city-tab active" onclick="switchYearlyCity('全国总盘', this)">全国总盘</div>
+                <div class="city-tab" onclick="switchYearlyCity('成都', this)">成都</div>
+                <div class="city-tab" onclick="switchYearlyCity('重庆', this)">重庆</div>
+                <div class="city-tab" onclick="switchYearlyCity('哈尔滨', this)">哈尔滨</div>
+            </div>
+
+            <!-- ① KPI 卡片 -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4" id="y-kpi-row">
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B" id="y-rev-label">💰 年度总变现</div>
+                    <div class="text-2xl font-black mt-1" style="color:#34D399" id="y-cum-rev">¥0</div>
+                    <div class="mt-2 w-full rounded-full" style="height:6px;background:rgba(52,211,153,0.15)">
+                        <div class="rounded-full" style="height:6px;background:linear-gradient(90deg,#34D399,#10B981);width:0%" id="y-prog-bar"></div>
+                    </div>
+                    <div class="text-xs mt-1" style="color:#475569" id="y-prog-text">目标 —</div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B">📊 年度ROI</div>
+                    <div class="text-2xl font-black mt-1" id="y-roi" style="color:#22D3EE">0</div>
+                    <div class="mt-1" id="y-roi-badge"></div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B" id="y-card3-label">🏬 运营门店</div>
+                    <div class="text-2xl font-black mt-1" style="color:#38BDF8" id="y-card3-val">0城</div>
+                    <div class="text-xs mt-1" style="color:#475569" id="y-card3-sub"></div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B">🎯 月均变现</div>
+                    <div class="text-2xl font-black mt-1" style="color:#A78BFA" id="y-avg-rev">¥0</div>
+                    <div class="text-xs mt-1" style="color:#475569" id="y-pred-text">预测全年 —</div>
+                </div>
+            </div>
+
+            <!-- ② 月度营收趋势 -->
+            <div class="glass-card mb-4 p-4">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="y-trend-title">📈 月度营收趋势</div>
+                <div id="y-trend-chart" style="width:100%;height:280px"></div>
+            </div>
+
+            <!-- ③ 月度KPI明细表（城市视图） -->
+            <div class="glass-card mb-4 p-4" id="y-monthly-table-card" style="display:none">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="y-table-title">📋 月度经营明细</div>
+                <div style="overflow-x:auto">
+                    <table class="w-full" style="font-size:11px;min-width:700px">
+                        <thead><tr style="border-bottom:1px solid rgba(51,65,85,.5)">
+                            <th style="color:#64748B;padding:6px;text-align:left">月份</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">变现</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">消耗</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">ROI</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">加微</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">定金</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">退款</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">开口成本</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">环比</th>
+                        </tr></thead>
+                        <tbody id="y-monthly-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ④ 客服月度变动（城市视图） -->
+            <div class="glass-card mb-4 p-4" id="y-cs-monthly-card" style="display:none">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px">👤 客服月度变动</div>
+                <div style="overflow-x:auto">
+                    <table class="w-full" style="font-size:11px;min-width:400px">
+                        <thead id="y-cs-monthly-head"><tr></tr></thead>
+                        <tbody id="y-cs-monthly-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ⑤ 城市健康评分（城市视图） -->
+            <div class="glass-card mb-4 p-4" id="y-health-card" style="display:none">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px">🏥 城市健康评分</div>
+                <div id="y-health-body"></div>
+            </div>
+
+            <!-- ⑥ 城市横向对比矩阵（全国视图） -->
+            <div class="glass-card mb-4 p-4" id="y-matrix-card">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px">🏆 城市横向对比矩阵</div>
+                <div style="overflow-x:auto">
+                    <table class="w-full text-xs" style="min-width:600px">
+                        <thead><tr style="border-bottom:1px solid rgba(51,65,85,.5)">
+                            <th class="text-left p-2" style="color:#64748B">城市</th>
+                            <th class="text-right p-2" style="color:#64748B">启动</th>
+                            <th class="text-right p-2" style="color:#64748B">累计变现</th>
+                            <th class="text-right p-2" style="color:#64748B">累计消耗</th>
+                            <th class="text-right p-2" style="color:#64748B">ROI</th>
+                            <th class="text-right p-2" style="color:#64748B">月均加微</th>
+                            <th class="text-right p-2" style="color:#64748B">加微→定金</th>
+                            <th class="text-right p-2" style="color:#64748B">评分</th>
+                        </tr></thead>
+                        <tbody id="y-matrix-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ⑦⑧ 客服排行 + 成本结构 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-4" id="y-cs-cost-row">
+                <div class="glass-card p-4">
+                    <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="y-cs-title">👤 客服年度排行</div>
+                    <div style="overflow-x:auto">
+                        <table class="w-full text-xs" style="min-width:400px">
+                            <thead><tr style="border-bottom:1px solid rgba(51,65,85,.5)">
+                                <th class="text-left p-2" style="color:#64748B">排名</th>
+                                <th class="text-left p-2" style="color:#64748B">客服</th>
+                                <th class="text-right p-2" style="color:#64748B">加微</th>
+                                <th class="text-right p-2" style="color:#64748B">定金</th>
+                                <th class="text-right p-2" style="color:#64748B">变现</th>
+                                <th class="text-right p-2" style="color:#64748B">加→定</th>
+                            </tr></thead>
+                            <tbody id="y-cs-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="glass-card p-4" id="y-cost-card">
+                    <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px">🥧 年度成本结构</div>
+                    <div id="y-cost-chart" style="width:100%;height:240px"></div>
+                </div>
+            </div>
+
+            <!-- ⑨ AI 诊断 -->
+            <div class="glass-card mb-4 p-4" style="border:1px solid rgba(251,191,36,0.25)">
+                <div class="text-sm font-bold mb-2" style="color:#FBBF24">⚡ AI 年度战略诊断</div>
+                <div class="text-xs leading-relaxed" style="color:#CBD5E1" id="y-ai-body">加载中...</div>
+            </div>
+
+            <!-- ⑩ 战略预警 -->
+            <div id="y-alerts" class="mb-4"></div>
+        </div>
+
+        <!-- === 周度节点报表 === -->
+        <div id="weekly-board" class="board-hidden">
+
+            <!-- 城市 tab -->
+            <div class="city-tabs mb-5" id="weekly-city-tabs">
+                <div class="city-tab active" onclick="switchWeeklyCity('全国总盘', this)">全国总盘</div>
+                <div class="city-tab" onclick="switchWeeklyCity('成都', this)">成都</div>
+                <div class="city-tab" onclick="switchWeeklyCity('重庆', this)">重庆</div>
+                <div class="city-tab" onclick="switchWeeklyCity('哈尔滨', this)">哈尔滨</div>
+            </div>
+
+            <!-- 周标题 -->
+            <div class="text-xs font-semibold mb-3" style="color:#64748B" id="w-week-label">加载中...</div>
+
+            <!-- ① KPI 卡片 -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B" id="w-rev-label">💰 变现</div>
+                    <div class="text-2xl font-black mt-1" style="color:#34D399" id="w-revenue">¥0</div>
+                    <div class="text-xs mt-1" id="w-wow-rev" style="color:#475569"></div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B" id="w-roi-label">📊 ROI</div>
+                    <div class="text-2xl font-black mt-1" id="w-roi" style="color:#22D3EE">0</div>
+                    <div class="text-xs mt-1" id="w-wow-roi" style="color:#475569"></div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B" id="w-spend-label">💵 消耗</div>
+                    <div class="text-2xl font-black mt-1" style="color:#FB923C" id="w-spend">¥0</div>
+                    <div class="text-xs mt-1" id="w-wow-spend" style="color:#475569"></div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="text-xs font-semibold" style="color:#64748B" id="w-wechat-label">👥 加微</div>
+                    <div class="text-2xl font-black mt-1" style="color:#38BDF8" id="w-wechat">0</div>
+                    <div class="text-xs mt-1" style="color:#475569" id="w-deposit-text">定金 0</div>
+                </div>
+            </div>
+
+            <!-- ② 步速仪表 -->
+            <div class="glass-card mb-4 p-4" id="w-pace-card">
+                <div class="text-xs font-bold mb-2" style="color:#94A3B8;letter-spacing:.5px">🏃 月目标步速</div>
+                <div id="w-pace-body"></div>
+            </div>
+
+            <!-- ③ 近4周趋势 -->
+            <div class="glass-card mb-4 p-4">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="w-trend-title">📈 近4周趋势</div>
+                <div id="w-trend-chart" style="width:100%;height:240px"></div>
+            </div>
+
+            <!-- ④ 日度明细（城市视图） -->
+            <div class="glass-card mb-4 p-4" id="w-daily-card" style="display:none">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="w-daily-title">📋 逐日明细</div>
+                <div style="overflow-x:auto">
+                    <table class="w-full" style="font-size:11px">
+                        <thead><tr style="border-bottom:1px solid rgba(51,65,85,.5)">
+                            <th style="color:#64748B;padding:6px;text-align:left">日期</th>
+                            <th style="color:#64748B;padding:6px;text-align:left">星期</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">变现</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">消耗</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">加微</th>
+                            <th style="color:#64748B;padding:6px;text-align:right">定金</th>
+                        </tr></thead>
+                        <tbody id="w-daily-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ⑤ 城市矩阵（全国视图） -->
+            <div class="glass-card mb-4 p-4" id="w-matrix-card">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="w-matrix-title">🏆 城市对比</div>
+                <div style="overflow-x:auto">
+                    <table class="w-full text-xs" style="min-width:500px">
+                        <thead><tr style="border-bottom:1px solid rgba(51,65,85,.5)">
+                            <th class="text-left p-2" style="color:#64748B">城市</th>
+                            <th class="text-right p-2" style="color:#64748B">变现</th>
+                            <th class="text-right p-2" style="color:#64748B">消耗</th>
+                            <th class="text-right p-2" style="color:#64748B">ROI</th>
+                            <th class="text-right p-2" style="color:#64748B">加微</th>
+                            <th class="text-right p-2" style="color:#64748B">环比</th>
+                            <th class="text-right p-2" style="color:#64748B">步速</th>
+                        </tr></thead>
+                        <tbody id="w-matrix-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ⑥ 上周对比（城市视图） -->
+            <div class="glass-card mb-4 p-4" id="w-wow-card" style="display:none">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="w-wow-title">🔄 周对比</div>
+                <div id="w-wow-body"></div>
+            </div>
+
+            <!-- ⑦ 客服排行 -->
+            <div class="glass-card mb-4 p-4">
+                <div class="text-xs font-bold mb-3" style="color:#94A3B8;letter-spacing:.5px" id="w-cs-title">👤 客服本周排行</div>
+                <div style="overflow-x:auto">
+                    <table class="w-full text-xs" style="min-width:400px">
+                        <thead><tr style="border-bottom:1px solid rgba(51,65,85,.5)">
+                            <th class="text-left p-2" style="color:#64748B">排名</th>
+                            <th class="text-left p-2" style="color:#64748B">客服</th>
+                            <th class="text-right p-2" style="color:#64748B">加微</th>
+                            <th class="text-right p-2" style="color:#64748B">定金</th>
+                            <th class="text-right p-2" style="color:#64748B">变现</th>
+                            <th class="text-right p-2" style="color:#64748B">加→定</th>
+                        </tr></thead>
+                        <tbody id="w-cs-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ⑧ 预警 -->
+            <div id="w-alerts" class="mb-4"></div>
+        </div>
+
+    </main>
+
+    <!-- ── Mobile Bottom Tab Bar ── -->
+    <div class="mobile-tab-bar">
+        <div class="mobile-tab-bar-inner">
+            <div class="mobile-tab active" data-board="daily-board" onclick="switchBoard('daily-board', this); syncMobileTab(this)">
+                <span class="mt-icon">📅</span>
+                <span>昨日战术</span>
+            </div>
+            <div class="mobile-tab" data-board="weekly-board" onclick="switchBoard('weekly-board', this); syncMobileTab(this)">
+                <span class="mt-icon">📆</span>
+                <span>周度节点</span>
+            </div>
+            <div class="mobile-tab" data-board="monthly-board" onclick="switchBoard('monthly-board', this); syncMobileTab(this)">
+                <span class="mt-icon">📊</span>
+                <span>月度战役</span>
+            </div>
+            <div class="mobile-tab" data-board="yearly-board" onclick="switchBoard('yearly-board', this); syncMobileTab(this)">
+                <span class="mt-icon">🚀</span>
+                <span>年度战略</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 城市占位遮罩 -->
+    <div id="city-placeholder" style="display:none; position:absolute; top:0; left:0; right:0; bottom:0; z-index:50; background:rgba(11,17,32,0.95); display:none;">
+        <div class="board-placeholder" style="min-height:80vh">
+            <div class="placeholder-icon">🏙️</div>
+            <div class="placeholder-title" id="city-placeholder-title">重庆站数据接入中</div>
+            <div class="placeholder-sub">该城市数据源尚未配置，后续接入后自动展示</div>
+        </div>
+    </div>
+
+    <script>
+        // ── Board 切换逻辑 ──
+        function switchBoard(boardId, el) {
+            ['daily-board', 'national-board', 'monthly-board', 'yearly-board', 'weekly-board'].forEach(id => {
+                const dom = document.getElementById(id);
+                if (!dom) return;
+                if (boardId === 'daily-board' || boardId === 'national-board') {
+                    dom.classList.toggle('board-hidden', id === 'monthly-board' || id === 'yearly-board' || id === 'weekly-board');
+                } else {
+                    dom.classList.toggle('board-hidden', id !== boardId);
+                }
+            });
+            // sync sidebar
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            if (el && el.classList.contains('nav-item')) el.classList.add('active');
+            else document.querySelectorAll('.nav-item').forEach(n => { if(n.dataset.board===boardId) n.classList.add('active'); });
+            // sync mobile tabs
+            document.querySelectorAll('.mobile-tab').forEach(t => {
+                t.classList.toggle('active', t.dataset.board === boardId);
+            });
+            // toggle daily city tabs
+            const dTabs = document.getElementById('daily-city-tabs');
+            if (dTabs) dTabs.style.display = (boardId === 'monthly-board' || boardId === 'yearly-board' || boardId === 'weekly-board') ? 'none' : '';
+            if (boardId === 'daily-board') {
+                setTimeout(() => {
+                    c1.resize(); c2.resize(); c3.resize(); c4.resize(); c5.resize();
+                    const hr = echarts.getInstanceByDom(document.getElementById('health-radar'));
+                    if (hr) hr.resize();
+                }, 100);
+            }
+            if (boardId === 'monthly-board') {
+                loadMonthlyData(MONTHLY_DATA_MAP[currentMonthlyCity], currentMonthlyCity === '全国总盘');
+            }
+            if (boardId === 'yearly-board') {
+                loadYearlyData();
+            }
+            if (boardId === 'weekly-board') {
+                loadWeeklyData();
+            }
+        }
+        function syncMobileTab(el) { /* already handled in switchBoard */ }
+
+        // ── 城市切换逻辑 ──
+        const CITY_DATA_MAP = {
+            '成都':   'data.json',
+            '重庆':   'data_chongqing.json',
+            '哈尔滨': 'data_harbin.json',
+        };
+        let nCpa; // national chart
+        function switchCity(city, el) {
+            document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+            if (el) el.classList.add('active');
+            const placeholder = document.getElementById('city-placeholder');
+            const dailyBoard = document.getElementById('daily-board');
+            const nationalBoard = document.getElementById('national-board');
+            if (city === '全国总盘') {
+                placeholder.style.display = 'none';
+                dailyBoard.classList.add('board-hidden');
+                nationalBoard.classList.remove('board-hidden');
+                loadNationalData();
+                setTimeout(() => { if (nFunnel) nFunnel.resize(); if (nCpa) nCpa.resize(); }, 200);
+            } else {
+                nationalBoard.classList.add('board-hidden');
+                const jsonFile = CITY_DATA_MAP[city];
+                if (jsonFile) {
+                    placeholder.style.display = 'none';
+                    dailyBoard.classList.remove('board-hidden');
+                    loadRealData(jsonFile);
+                    setTimeout(() => {
+                        c1.resize(); c2.resize(); c3.resize(); c4.resize(); c5.resize();
+                        const hr = echarts.getInstanceByDom(document.getElementById('health-radar'));
+                        if (hr) hr.resize();
+                    }, 100);
+                } else {
+                    dailyBoard.classList.remove('board-hidden');
+                    document.getElementById('city-placeholder-title').innerText = city + '站数据接入中';
+                    placeholder.style.display = 'block';
+                }
+            }
+        }
+
+        // ── dark theme for ECharts ──
+        const darkText = '#94A3B8';
+        const darkAxis = { axisLine: { lineStyle: { color: '#334155' } }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(51,65,85,0.4)' } }, axisLabel: { color: darkText, fontSize: 11 } };
+        const darkGrid = { left: '3%', right: '4%', bottom: '18%', top: '12%', containLabel: true };
+
+        const c1 = echarts.init(document.getElementById('chart1'));
+        const c2 = echarts.init(document.getElementById('chart2'));
+        const c3 = echarts.init(document.getElementById('chart3'));
+        const c4 = echarts.init(document.getElementById('chart4'));
+        const c5 = echarts.init(document.getElementById('chart5'));
+
+        async function loadRealData(jsonFile = './data.json') {
+            try {
+                const res = await fetch(jsonFile + '?t=' + Date.now());
+                if (!res.ok) throw new Error(jsonFile + " not found");
+                const db = await res.json();
+
+                // ── KPI ──
+                if (db.revenue !== undefined) document.getElementById('kpi-revenue').innerText = '¥' + Number(db.revenue).toLocaleString();
+                if (db.wechat_total !== undefined) document.getElementById('kpi-wechat').innerText = db.wechat_total;
+                if (db.deposit_total !== undefined) document.getElementById('kpi-deposit').innerHTML = `${db.deposit_total}<span class="text-lg ml-1 font-semibold" style="color:#7C3AED">单</span>`;
+                if (db.date) document.getElementById('report-date').innerText = `数据快照 · ${db.date}`;
+
+                // ── Traffic KPI ──
+                if (db.ad_spend !== undefined) document.getElementById('kpi-spend').innerText = '¥' + Number(db.ad_spend).toLocaleString();
+                if (db.open_count !== undefined) document.getElementById('kpi-open').innerText = db.open_count;
+                if (db.open_cost !== undefined) document.getElementById('kpi-cost').innerText = '¥' + Number(db.open_cost).toLocaleString();
+
+                // ── AI Summary ──
+                if (db.ai_summary) {
+                    const formatted = db.ai_summary.replace(/\n+/g, '<br>');
+                    document.getElementById('ai-body').innerHTML = `<p style="line-height:1.8">${formatted}</p>`;
+                }
+
+                // ── Chart 1: 加微 & 定金 ──
+                c1.setOption({
+                    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, backgroundColor: '#1E293B', borderColor: '#334155', textStyle: { color: '#E2E8F0', fontSize: 12 } },
+                    legend: { data: ['加微', '定金'], bottom: 0, textStyle: { color: darkText, fontSize: 11 } },
+                    grid: darkGrid,
+                    xAxis: { type: 'category', data: db.cs_names || [], ...darkAxis },
+                    yAxis: { type: 'value', ...darkAxis },
+                    series: [
+                        { name: '加微', type: 'bar', barWidth: '28%', data: db.wechat_list || [], itemStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#22D3EE' }, { offset: 1, color: '#0891B2' }] }, borderRadius: [4, 4, 0, 0] }, label: { show: true, position: 'top', fontWeight: '700', color: '#22D3EE', fontSize: 12 } },
+                        { name: '定金', type: 'bar', barWidth: '28%', data: db.deposit_list || [], itemStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#FBBF24' }, { offset: 1, color: '#D97706' }] }, borderRadius: [4, 4, 0, 0] }, label: { show: true, position: 'top', fontWeight: '700', color: '#FBBF24', fontSize: 12 } }
+                    ]
+                });
+
+                // ── Chart 2: 变现饼图 ──
+                const pieColors = ['#06B6D4', '#3B82F6', '#8B5CF6', '#A78BFA', '#22D3EE', '#F472B6'];
+                const pieData = (db.revenue_pie || []).map((d, i) => ({ ...d, itemStyle: { color: pieColors[i % pieColors.length] } }));
+                c2.setOption({
+                    title: {
+                        text: '总变现\n¥' + Number(db.revenue || 0).toLocaleString(),
+                        left: 'center', top: 'center',
+                        textStyle: { fontSize: 14, fontWeight: '900', color: '#E2E8F0', lineHeight: 22 }
+                    },
+                    tooltip: { trigger: 'item', backgroundColor: '#1E293B', borderColor: '#334155', textStyle: { color: '#E2E8F0', fontSize: 12 } },
+                    series: [{
+                        name: '变现', type: 'pie', radius: ['50%', '75%'], center: ['50%', '50%'],
+                        itemStyle: { borderRadius: 6, borderColor: '#0B1120', borderWidth: 3 },
+                        label: { show: true, formatter: '{b}\n¥{c}', color: '#94A3B8', fontSize: 11, fontWeight: '600', lineHeight: 16 },
+                        data: pieData
+                    }]
+                });
+
+                // ── Chart 3: 回访监控 ──
+                c3.setOption({
+                    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, backgroundColor: '#1E293B', borderColor: '#334155', textStyle: { color: '#E2E8F0', fontSize: 12 } },
+                    legend: { data: ['已回访', '超期未回访'], bottom: 0, textStyle: { color: darkText, fontSize: 11 } },
+                    grid: darkGrid,
+                    xAxis: { type: 'category', data: db.cs_names || [], ...darkAxis },
+                    yAxis: { type: 'value', ...darkAxis },
+                    series: [
+                        { name: '已回访', type: 'bar', stack: 'total', barWidth: '40%', data: db.fulfill_list || [], itemStyle: { color: 'rgba(52,211,153,0.7)', borderRadius: [0, 0, 0, 0] }, label: { show: true, position: 'inside', color: '#fff', fontWeight: '700', fontSize: 12 } },
+                        { name: '超期未回访', type: 'bar', stack: 'total', barWidth: '40%', data: db.gap_list || [], itemStyle: { color: 'rgba(248,113,113,0.7)', borderRadius: [4, 4, 0, 0] }, label: { show: true, position: 'inside', color: '#fff', fontWeight: '700', fontSize: 12 } }
+                    ]
+                });
+
+                // ── Blacklist Table ──
+                const tbody = document.getElementById('blacklist-body');
+                if (db.blacklist && db.blacklist.length > 0) {
+                    tbody.innerHTML = '';
+                    const levelConfig = {
+                        danger:  { badge: 'badge-danger',  label: '🚨 严厉追责', nameColor: '#FEE2E2' },
+                        warning: { badge: 'badge-warn',    label: '🟡 强制补打', nameColor: '#FCD34D' },
+                        normal:  { badge: 'badge-normal',  label: '🔴 重点挽回', nameColor: '#FCA5A5' },
+                    };
+                    db.blacklist.forEach(item => {
+                        const config = levelConfig[item.level] || levelConfig.normal;
+                        tbody.innerHTML += `<tr>
+                            <td style="color:${config.nameColor}; font-weight:600">${item.client}</td>
+                            <td style="color:#94A3B8">${item.problem || '-'}</td>
+                            <td style="color:#94A3B8">${item.type || '-'}</td>
+                            <td style="color:#E2E8F0; font-weight:600">${item.cs || '-'}</td>
+                            <td><span class="${config.badge}">${config.label}</span></td>
+                        </tr>`;
+                    });
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#475569; padding:24px">昨日运营全绿，无问题记录</td></tr>';
+                }
+
+                // ── Heatmap ──
+                renderHeatmap(db.y_axis_days, db.bed_heatmap);
+
+                // ── Chart 5: 客服意向分布 ──
+                if (db.staff_intentions && Object.keys(db.staff_intentions).length > 0) {
+                    const intentNames = Object.keys(db.staff_intentions);
+                    const gradeConfig = [
+                        { key: 'A级(高意向)', color: '#34D399', label: 'A级 高意向' },
+                        { key: 'B级(中意向)', color: '#3B82F6', label: 'B级 中意向' },
+                        { key: 'C级(低意向)', color: '#FBBF24', label: 'C级 低意向' },
+                        { key: 'D级(无效)',   color: '#EF4444', label: 'D级 无效' },
+                    ];
+                    const intentSeries = gradeConfig.map(g => ({
+                        name: g.label, type: 'bar', stack: 'total', barWidth: '40%',
+                        data: intentNames.map(n => (db.staff_intentions[n] || {})[g.key] || 0),
+                        itemStyle: { color: g.color, borderRadius: 0 },
+                        label: { show: true, position: 'inside', color: '#fff', fontWeight: '700', fontSize: 12,
+                            formatter: p => p.value > 0 ? p.value : '' }
+                    }));
+                    // 最后一个系列加圆角
+                    if (intentSeries.length > 0) intentSeries[intentSeries.length-1].itemStyle.borderRadius = [4,4,0,0];
+                    c5.setOption({
+                        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, backgroundColor: '#1E293B', borderColor: '#334155', textStyle: { color: '#E2E8F0', fontSize: 12 } },
+                        legend: { data: gradeConfig.map(g => g.label), bottom: 0, textStyle: { color: darkText, fontSize: 11 } },
+                        grid: darkGrid,
+                        xAxis: { type: 'category', data: intentNames, ...darkAxis },
+                        yAxis: { type: 'value', ...darkAxis },
+                        series: intentSeries
+                    });
+                }
+
+                // ── Health Cockpit ──
+                renderHealthCockpit(db);
+
+            } catch (err) {
+                console.error("加载数据源失败:", err);
+            }
+        }
+
+        function renderHealthCockpit(db) {
+            const cockpit = document.getElementById('health-cockpit');
+            const dqStrip = document.getElementById('dq-strip');
+            const hs = db.health_score;
+            const alerts = db.alerts || [];
+            const dq = db.data_quality;
+
+            // Data quality strip
+            if (dq && dqStrip) {
+                const pct = Math.round((dq.completeness || 1) * 100);
+                const dotColor = pct >= 80 ? '#34D399' : '#F59E0B';
+                let missing = '';
+                if (dq.missing && dq.missing.length > 0) missing = ' · 缺: ' + dq.missing.join(', ');
+                const genAt = db.generated_at ? ' · 更新: ' + db.generated_at : '';
+                dqStrip.innerHTML = `<span class="dq-dot" style="background:${dotColor}"></span>数据完整度 ${pct}%${missing}${genAt}`;
+                dqStrip.style.display = '';
+            }
+
+            if (!hs || !hs.dimensions) { cockpit.style.display = 'none'; return; }
+            cockpit.style.display = '';
+
+            // Overall badge
+            const badge = document.getElementById('health-overall-badge');
+            const statusMap = { healthy: ['🟢 健康','rgba(52,211,153,0.15)','#34D399'],
+                                warning: ['🟡 注意','rgba(251,191,36,0.15)','#FBBF24'],
+                                danger:  ['🔴 危险','rgba(239,68,68,0.15)','#FCA5A5'] };
+            const st = statusMap[hs.overall_status] || statusMap.warning;
+            badge.textContent = st[0] + ' ' + hs.overall_score + '分';
+            badge.style.background = st[1]; badge.style.color = st[2];
+
+            // Radar chart
+            const radarDom = document.getElementById('health-radar');
+            let radarChart = echarts.getInstanceByDom(radarDom);
+            if (!radarChart) radarChart = echarts.init(radarDom);
+            const dimKeys = ['acquire','convert','deliver','aftersales','team'];
+            const labels = dimKeys.map(k => (hs.dimensions[k]||{}).label || k);
+            const scores = dimKeys.map(k => (hs.dimensions[k]||{}).score || 0);
+            radarChart.setOption({
+                radar: { indicator: labels.map(l=>({name:l, max:100})), radius:'65%',
+                    axisName:{ color:'#94A3B8', fontSize:11 },
+                    splitArea:{ areaStyle:{ color:['rgba(30,41,59,0.3)','rgba(30,41,59,0.5)'] }},
+                    splitLine:{ lineStyle:{ color:'rgba(51,65,85,0.5)' }},
+                    axisLine:{ lineStyle:{ color:'rgba(51,65,85,0.5)' }} },
+                series:[{ type:'radar', symbol:'circle', symbolSize:6,
+                    areaStyle:{ color:'rgba(6,182,212,0.15)' },
+                    lineStyle:{ color:'#06B6D4', width:2 },
+                    itemStyle:{ color:'#06B6D4' },
+                    data:[{ value:scores }] }]
+            });
+
+            // Dimension bars
+            const dimsEl = document.getElementById('health-dims');
+            const barColors = { healthy:'#34D399', warning:'#FBBF24', danger:'#EF4444' };
+            dimsEl.innerHTML = dimKeys.map(k => {
+                const d = hs.dimensions[k] || {};
+                const bc = barColors[d.status] || '#94A3B8';
+                return `<div class="dim-row">
+                    <span class="dim-dot" style="background:${bc}"></span>
+                    <span style="color:#E2E8F0;min-width:32px;font-weight:600">${d.label||k}</span>
+                    <div class="dim-bar"><div class="dim-bar-fill" style="width:${d.score||0}%;background:${bc}"></div></div>
+                    <span style="color:${bc};font-weight:700;min-width:30px;text-align:right">${d.score||0}</span>
+                </div>`;
+            }).join('');
+
+            // Alert cards
+            const alertContainer = document.getElementById('alerts-container');
+            const alertBadge = document.getElementById('alert-count-badge');
+            if (alerts.length > 0) {
+                alertBadge.textContent = alerts.length + ' 条预警';
+                const p0Count = alerts.filter(a=>a.level==='P0').length;
+                if (p0Count > 0) { alertBadge.style.background = 'rgba(239,68,68,0.15)'; alertBadge.style.color = '#FCA5A5'; }
+                else { alertBadge.style.background = 'rgba(251,191,36,0.15)'; alertBadge.style.color = '#FBBF24'; }
+
+                alertContainer.innerHTML = alerts.map(a => {
+                    const cls = {P0:'alert-p0',P1:'alert-p1',P2:'alert-p2'}[a.level]||'alert-p2';
+                    const lc = {P0:'#EF4444',P1:'#F59E0B',P2:'#3B82F6'}[a.level]||'#3B82F6';
+                    return `<div class="alert-card ${cls}">
+                        <span class="alert-level" style="color:${lc}">[${a.level}]</span>
+                        <span class="alert-msg">${a.message}</span>
+                        <div class="alert-action">💡 ${a.action||''}</div>
+                    </div>`;
+                }).join('');
+            } else {
+                alertBadge.textContent = '全绿';
+                alertBadge.style.background = 'rgba(52,211,153,0.15)'; alertBadge.style.color = '#34D399';
+                alertContainer.innerHTML = '<div class="text-center py-8" style="color:#34D399;font-size:14px">✅ 今日运营全绿，无预警</div>';
+            }
+        }
+
+        // ── Heatmap ──
+        const hours = ['9:00','9:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30'];
+
+        function renderHeatmap(days, bedMatrix) {
+            const yDays = days && days.length > 0 ? days : ['今日', '明日', '第3天', '第4天', '第5天', '第6天', '第7天'];
+            const matrix = bedMatrix || yDays.map(() => hours.map(() => 0));
+            const heatData = [];
+            for (let dayIdx = 0; dayIdx < yDays.length; dayIdx++) {
+                const dayRow = matrix[dayIdx] || hours.map(() => 0);
+                for (let hourIdx = 0; hourIdx < 20; hourIdx++) {
+                    heatData.push([hourIdx, dayIdx, dayRow[hourIdx] || 0]);
+                }
+            }
+            c4.setOption({
+                tooltip: { position: 'top', backgroundColor: '#1E293B', borderColor: '#334155', textStyle: { color: '#E2E8F0', fontSize: 12 }, formatter: p => `${yDays[p.value[1]]} ${hours[p.value[0]]}<br/>占用: <b>${p.value[2]} / 4 床</b>` },
+                grid: { left: '10%', right: '2%', bottom: '8%', top: '5%', containLabel: true },
+                xAxis: { type: 'category', data: hours, splitArea: { show: false }, ...darkAxis },
+                yAxis: { type: 'category', data: yDays, splitArea: { show: false }, ...darkAxis },
+                visualMap: { show: false, min: 0, max: 4, inRange: { color: ['#1E3A5F', '#0EA5E9', '#0EA5E9', '#F59E0B', '#EF4444'] } },
+                series: [{
+                    name: '床位', type: 'heatmap', data: heatData,
+                    label: { show: true, formatter: p => p.value[2] > 0 ? p.value[2] : '', fontSize: 11, fontWeight: '700', color: '#fff' },
+                    itemStyle: { borderColor: '#0B1120', borderWidth: 2, borderRadius: 3 }
+                }]
+            });
+        }
+        renderHeatmap(null, null);
+
+        // 默认加载全国总盘
+        loadNationalData();
+        window.addEventListener('resize', () => {
+            c1.resize(); c2.resize(); c3.resize(); c4.resize(); c5.resize();
+            if (nCpa) nCpa.resize();
+            if (mTrend) mTrend.resize();
+            if (mRate) mRate.resize();
+        });
+
+        // ══════════════════════════════════════════
+        // 全国总盘渲染
+        // ══════════════════════════════════════════
+        async function loadNationalData() {
+            try {
+                const res = await fetch('data_national.json?t=' + Date.now());
+                if (!res.ok) throw new Error('data_national.json not found');
+                const d = await res.json();
+
+                // KPI
+                document.getElementById('n-kpi-revenue').innerText = '¥' + Number(d.total_revenue||0).toLocaleString(undefined,{maximumFractionDigits:0});
+                document.getElementById('n-kpi-spend').innerText = '¥' + Number(d.total_spend||0).toLocaleString(undefined,{maximumFractionDigits:0});
+                document.getElementById('n-kpi-wechat').innerHTML = (d.total_wechat||0) + '<span class="text-sm ml-1" style="color:#0891B2">人</span>';
+                document.getElementById('n-kpi-deposit').innerHTML = (d.total_deposit||0) + '<span class="text-sm ml-1" style="color:#7C3AED">单</span>';
+                document.getElementById('n-kpi-roi').innerText = d.roi || 0;
+                const roiBadge = document.getElementById('n-roi-badge');
+                if (d.roi_level === 'healthy') { roiBadge.innerText = '🟢 健康'; roiBadge.style.color = '#34D399'; }
+                else if (d.roi_level === 'warning') { roiBadge.innerText = '🟡 盈亏线'; roiBadge.style.color = '#FBBF24'; }
+                else { roiBadge.innerText = '🔴 亏损'; roiBadge.style.color = '#EF4444'; }
+                if (d.date) document.getElementById('report-date').innerText = '全国总盘 · ' + d.date;
+
+                // 赛马矩阵
+                const matrix = d.city_matrix || {};
+                const cities = Object.keys(matrix);
+                const rows = [
+                    {label:'消耗', key:'spend', fmt:v=>'¥'+Number(v).toLocaleString()},
+                    {label:'开口数', key:'open', fmt:v=>v},
+                    {label:'加微数', key:'wechat', fmt:v=>v, bad:v=>v===0},
+                    {label:'开口→加微率', key:'open_to_wechat', fmt:v=>v+'%', bad:v=>v<50&&v>0},
+                    {label:'定金', key:'deposit', fmt:v=>v, bad:v=>v===0},
+                    {label:'加微→定金率', key:'wechat_to_deposit', fmt:v=>v+'%', bad:v=>v<10&&v>0},
+                    {label:'变现', key:'revenue', fmt:v=>'¥'+Number(v).toLocaleString()},
+                    {label:'退款', key:'refund_count', fmt:v=>v, bad:v=>v>0},
+                ];
+                const colW = Math.floor(85 / (cities.length + 1));
+                let th = '<tr><th style="width:15%;text-align:left">指标</th>' + cities.map(c=>'<th style="width:'+colW+'%;text-align:center">'+c+'</th>').join('') + '<th style="width:'+colW+'%;text-align:center;color:#22D3EE">全国</th></tr>';
+                let tb = '';
+                rows.forEach(r => {
+                    let total = 0;
+                    let cells = cities.map(c => {
+                        const v = matrix[c][r.key] || 0;
+                        total += Number(v);
+                        const isRed = r.bad && r.bad(v);
+                        return '<td style="text-align:center;'+(isRed?'color:#FCA5A5;font-weight:700':'color:#E2E8F0')+'">' + r.fmt(v) + '</td>';
+                    }).join('');
+                    if (r.key.includes('rate') || r.key.includes('to_')) {
+                        const ac = d.acquire_chain || {};
+                        if (r.key === 'open_to_wechat') total = ac.open_to_wechat || 0;
+                        if (r.key === 'wechat_to_deposit') total = ac.wechat_to_deposit || 0;
+                    }
+                    tb += '<tr><td style="color:#94A3B8;font-weight:600;text-align:left">' + r.label + '</td>' + cells + '<td style="text-align:center;color:#22D3EE;font-weight:700">' + r.fmt(total) + '</td></tr>';
+                });
+                const tbl = document.getElementById('n-matrix-table');
+                tbl.style.tableLayout = 'fixed';
+                tbl.querySelector('thead').innerHTML = th;
+                tbl.querySelector('tbody').innerHTML = tb;
+
+                // 双链路渲染
+                function buildChain(containerId, nodes) {
+                    const el = document.getElementById(containerId);
+                    el.innerHTML = '';
+                    nodes.forEach((n, i) => {
+                        // node
+                        const node = document.createElement('div');
+                        node.className = 'chain-node';
+                        node.innerHTML = `<div class="cn-label">${n.label}</div><div class="cn-value" style="color:${n.color||'#F1F5F9'}">${n.value}</div><div class="cn-bar" style="background:${n.bar||'#334155'}"></div>`;
+                        el.appendChild(node);
+                        // arrow
+                        if (n.arrowRate !== undefined) {
+                            const arrow = document.createElement('div');
+                            arrow.className = 'chain-arrow';
+                            const rateColor = n.arrowRate >= 50 ? '#34D399' : n.arrowRate >= 15 ? '#FBBF24' : '#EF4444';
+                            arrow.innerHTML = `<div class="ca-rate" style="color:${rateColor}">${n.arrowRate}%</div><div class="ca-line">→</div>`;
+                            el.appendChild(arrow);
+                        }
+                    });
+                }
+                const ac = d.acquire_chain || {};
+                buildChain('n-acquire-chain', [
+                    {label:'开口', value:ac.open||0, bar:'#06B6D4', arrowRate:ac.open_to_wechat},
+                    {label:'加微', value:ac.wechat||0, bar:'#3B82F6', arrowRate:ac.wechat_to_deposit},
+                    {label:'新增定金', value:ac.deposit||0, bar:'#8B5CF6'},
+                ]);
+                const dc = d.deliver_chain || {};
+                buildChain('n-deliver-chain', [
+                    {label:'应到', value:(dc.expected||0)+'人', bar:'#F59E0B', arrowRate:dc.arrival_rate},
+                    {label:'实到', value:(dc.arrived||0)+'人', bar:'#34D399', arrowRate: dc.arrived && dc.arrived > 0 ? 100 : undefined},
+                    {label:'变现', value:'¥'+Number(dc.revenue||0).toLocaleString(undefined,{maximumFractionDigits:0}), color:'#34D399', bar:'#34D399'},
+                ]);
+
+                // AI 诊断
+                const aiText = d.ai_national_summary || '暂无诊断';
+                document.getElementById('n-ai-body').innerHTML = '<p style="line-height:2">' + aiText.replace(/\n/g,'<br>') + '</p>';
+
+                // 黑名单
+                const bl = d.national_blacklist || [];
+                const blBody = document.getElementById('n-blacklist-body');
+                if (bl.length > 0) {
+                    const levelCfg = {
+                        danger:  {badge:'badge-danger', label:'🚨 严厉追责'},
+                        warning: {badge:'badge-warn',   label:'🟡 强制补打'},
+                        normal:  {badge:'badge-normal', label:'🔴 重点挽回'},
+                    };
+                    blBody.innerHTML = bl.map(item => {
+                        const cfg = levelCfg[item.level] || levelCfg.normal;
+                        return `<tr>
+                            <td style="color:#22D3EE;font-weight:600">${item.city||''}</td>
+                            <td style="color:#FEE2E2;font-weight:600">${item.client||''}</td>
+                            <td style="color:#94A3B8">${item.problem||''}</td>
+                            <td style="color:#94A3B8">${item.type||''}</td>
+                            <td style="color:#E2E8F0;font-weight:600">${item.cs||''}</td>
+                            <td><span class="${cfg.badge}">${cfg.label}</span></td>
+                        </tr>`;
+                    }).join('');
+                } else {
+                    blBody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#34D399;padding:24px;font-weight:700">✅ 昨日全国运营无异常</td></tr>';
+                }
+
+                // 开口成本 PK
+                if (!nCpa) nCpa = echarts.init(document.getElementById('n-cpa-chart'));
+                const cpaData = d.city_open_cost || {};
+                const cpaCities = Object.keys(cpaData).sort((a,b) => cpaData[a]-cpaData[b]);
+                const redline = d.open_cost_redline || 80;
+                nCpa.setOption({
+                    tooltip: { trigger:'axis', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0'} },
+                    grid: { left:'15%', right:'10%', top:'8%', bottom:'12%' },
+                    xAxis: { type:'value', ...darkAxis },
+                    yAxis: { type:'category', data: cpaCities, ...darkAxis },
+                    series: [
+                        {
+                            type:'bar', barWidth:'40%',
+                            data: cpaCities.map(c => ({
+                                value: Math.round(cpaData[c]*10)/10,
+                                itemStyle: { color: cpaData[c] > redline ? '#EF4444' : '#34D399', borderRadius:[0,6,6,0] }
+                            })),
+                            label: { show:true, position:'right', color:'#E2E8F0', fontWeight:'700', fontSize:13, formatter:p=>'¥'+p.value }
+                        }
+                    ],
+                    markLine: { silent:true, data:[{xAxis:redline, lineStyle:{color:'#EF4444',type:'dashed',width:2}, label:{formatter:'红线¥'+redline, color:'#EF4444', fontSize:11}}] }
+                });
+                // markLine needs to be on the series
+                nCpa.setOption({ series:[{ markLine:{ silent:true, data:[{xAxis:redline}], lineStyle:{color:'#EF4444',type:'dashed',width:2}, label:{show:true,formatter:'¥'+redline,color:'#EF4444'} } }] });
+
+            } catch(err) {
+                console.error('全国数据加载失败:', err);
+            }
+        }
+
+        // ══════════════════════════════════════════
+        // 月度战役渲染
+        // ══════════════════════════════════════════
+        let mTrend, mRate; // ECharts instances for monthly
+        const MONTHLY_DATA_MAP = {
+            '全国总盘': 'data_monthly_national.json',
+            '成都': 'data_monthly_chengdu.json',
+            '重庆': 'data_monthly_chongqing.json',
+            '哈尔滨': 'data_monthly_harbin.json',
+        };
+        let currentMonthlyCity = '全国总盘';
+
+        function switchMonthlyCity(city, el) {
+            document.querySelectorAll('#monthly-city-tabs .city-tab').forEach(t => t.classList.remove('active'));
+            if (el) el.classList.add('active');
+            currentMonthlyCity = city;
+            loadMonthlyData(MONTHLY_DATA_MAP[city] || 'data_monthly_national.json', city === '全国总盘');
+        }
+
+        async function loadMonthlyData(jsonFile, isNational) {
+            jsonFile = jsonFile || 'data_monthly_national.json';
+            if (isNational === undefined) isNational = true;
+            try {
+                const res = await fetch(jsonFile + '?t=' + Date.now());
+                if (!res.ok) throw new Error(jsonFile + ' not found');
+                const d = await res.json();
+
+                // KPI
+                document.getElementById('m-kpi-revenue').innerText = '¥' + Number(d.cum_revenue||0).toLocaleString(undefined,{maximumFractionDigits:0});
+                document.getElementById('m-kpi-spend').innerText = '¥' + Number(d.cum_spend||0).toLocaleString(undefined,{maximumFractionDigits:0});
+                document.getElementById('m-kpi-wechat').innerText = (d.cum_wechat||0) + '人';
+                document.getElementById('m-kpi-roi').innerText = d.roi || 0;
+
+                // 进度条
+                const prog = d.progress || 0;
+                const target = d.revenue_target || 0;
+                document.getElementById('m-progress-bar').style.width = Math.min(prog, 100) + '%';
+                document.getElementById('m-progress-text').innerText = target > 0 ? prog + '%' : '—';
+                document.getElementById('m-target-text').innerText = target > 0 ? '¥' + (target/10000).toFixed(0) + '万' : '未设目标';
+
+                // 预测
+                const pRev = d.predicted_revenue || 0;
+                const pSpend = d.predicted_spend || 0;
+                const pRoi = d.predicted_roi || 0;
+                document.getElementById('m-predict-text').innerText = '预测月底: 变现¥' + (pRev/10000).toFixed(1) + '万 / 消耗¥' + (pSpend/10000).toFixed(1) + '万 → ROI ' + pRoi;
+
+                // 标题
+                document.getElementById('report-date').innerText = '月度战役 · ' + (d.month || '') + ' · ' + (d.days_elapsed||0) + '/' + (d.total_days||31) + '天';
+
+                // 模块2: 每日趋势折线图
+                if (!mTrend) mTrend = echarts.init(document.getElementById('m-trend-chart'));
+                const trend = d.daily_trend || [];
+                const tDates = trend.map(t => t.date.slice(5));
+                const dailyTarget = target > 0 ? Math.round(target / (d.total_days || 31)) : 0;
+                mTrend.setOption({
+                    tooltip: { trigger:'axis', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0'} },
+                    legend: { data: ['每日变现','每日消耗'], bottom:0, textStyle:{color:'#94A3B8',fontSize:11} },
+                    grid: { left:'8%', right:'5%', top:'10%', bottom:'18%' },
+                    xAxis: { type:'category', data:tDates, axisLabel:{color:'#64748B',fontSize:10}, axisLine:{lineStyle:{color:'#334155'}} },
+                    yAxis: { type:'value', axisLabel:{color:'#64748B',fontSize:10}, splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}} },
+                    series: [
+                        { name:'每日变现', type:'bar', data:trend.map(t=>t.revenue), barGap:'20%', barMaxWidth:20, itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]} },
+                        { name:'每日消耗', type:'bar', data:trend.map(t=>t.spend), barMaxWidth:20, itemStyle:{color:'#FB923C',borderRadius:[3,3,0,0]} }
+                    ]
+                });
+
+                // 模块3: 城市月度排行（仅全国）
+                const matrixWrap = document.getElementById('m-city-matrix-wrap');
+                if (isNational && d.city_matrix) {
+                    matrixWrap.style.display = '';
+                    const cm = d.city_matrix;
+                    const cities = Object.keys(cm);
+                    const colW = Math.floor(85 / (cities.length + 1));
+                    const rows = [
+                        {label:'累计变现', key:'cum_revenue', fmt:v=>'¥'+Number(v).toLocaleString()},
+                        {label:'累计消耗', key:'cum_spend', fmt:v=>'¥'+Number(v).toLocaleString()},
+                        {label:'累计加微', key:'cum_wechat', fmt:v=>v},
+                        {label:'累计定金', key:'cum_deposit', fmt:v=>v},
+                        {label:'月度ROI', key:'roi', fmt:v=>v},
+                        {label:'累计退款', key:'cum_refund', fmt:v=>v+'笔'},
+                    ];
+                    let th = '<tr><th style="width:18%;text-align:left">指标</th>' + cities.map(c=>'<th style="width:'+colW+'%;text-align:center">'+c+'</th>').join('') + '<th style="width:'+colW+'%;text-align:center;color:#22D3EE">全国</th></tr>';
+                    let tb = '';
+                    rows.forEach(r => {
+                        let total = 0;
+                        let cells = cities.map(c => {
+                            const v = cm[c][r.key] || 0;
+                            total += Number(v);
+                            return '<td style="text-align:center;color:#E2E8F0">' + r.fmt(v) + '</td>';
+                        }).join('');
+                        if (r.key === 'roi') total = d.roi || 0;
+                        tb += '<tr><td style="color:#94A3B8;font-weight:600;text-align:left">' + r.label + '</td>' + cells + '<td style="text-align:center;color:#22D3EE;font-weight:700">' + r.fmt(total) + '</td></tr>';
+                    });
+                    const tbl = document.getElementById('m-city-matrix');
+                    tbl.querySelector('thead').innerHTML = th;
+                    tbl.querySelector('tbody').innerHTML = tb;
+                } else {
+                    matrixWrap.style.display = 'none';
+                }
+
+                // 模块4a: 开口→加微率
+                const rt = d.rate_trend || [];
+                if (!window._mRateOpen) window._mRateOpen = echarts.init(document.getElementById('m-rate-open-chart'));
+                window._mRateOpen.setOption({
+                    tooltip: { trigger:'axis', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0'}, formatter: ps => ps.map(p=>p.seriesName+': '+p.value+'%').join('<br>') },
+                    grid: { left:'8%', right:'5%', top:'10%', bottom:'12%' },
+                    xAxis: { type:'category', data:rt.map(r=>r.date.slice(5)), axisLabel:{color:'#64748B',fontSize:10}, axisLine:{lineStyle:{color:'#334155'}} },
+                    yAxis: { type:'value', max:100, axisLabel:{color:'#64748B',fontSize:10,formatter:v=>v+'%'}, splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}} },
+                    series: [{ name:'开口→加微率', type:'bar', data:rt.map(r=>r.open_to_wechat), barMaxWidth:24, itemStyle:{color:'#3B82F6',borderRadius:[3,3,0,0]}, label:{show:true,position:'top',fontSize:9,color:'#94A3B8',formatter:p=>p.value+'%'} }]
+                });
+
+                // 模块4b: 加微→定金率
+                if (!window._mRateDeposit) window._mRateDeposit = echarts.init(document.getElementById('m-rate-deposit-chart'));
+                window._mRateDeposit.setOption({
+                    tooltip: { trigger:'axis', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0'}, formatter: ps => ps.map(p=>p.seriesName+': '+p.value+'%').join('<br>') },
+                    grid: { left:'8%', right:'5%', top:'10%', bottom:'12%' },
+                    xAxis: { type:'category', data:rt.map(r=>r.date.slice(5)), axisLabel:{color:'#64748B',fontSize:10}, axisLine:{lineStyle:{color:'#334155'}} },
+                    yAxis: { type:'value', max:30, axisLabel:{color:'#64748B',fontSize:10,formatter:v=>v+'%'}, splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}} },
+                    series: [{ name:'加微→定金率', type:'bar', data:rt.map(r=>r.wechat_to_deposit), barMaxWidth:24, itemStyle:{color:'#8B5CF6',borderRadius:[3,3,0,0]}, label:{show:true,position:'top',fontSize:9,color:'#94A3B8',formatter:p=>p.value+'%'} }]
+                });
+
+                // 模块6: 客服战力表
+                const csBody = document.getElementById('m-cs-body');
+                const csData = d.cs_table || [];
+                if (csData.length > 0) {
+                    const medals = ['🥇','🥈','🥉'];
+                    csBody.innerHTML = csData.map((c, i) => `<tr>
+                        <td style="text-align:center;font-size:16px">${medals[i]||i+1}</td>
+                        <td style="color:#F1F5F9;font-weight:700">${c.name}</td>
+                        <td style="text-align:center;color:#22D3EE;font-weight:700">${c.wechat}</td>
+                        <td style="text-align:center;color:#A78BFA;font-weight:700">${c.deposit}</td>
+                        <td style="text-align:center;color:#34D399;font-weight:700">¥${Number(c.revenue).toLocaleString()}</td>
+                        <td style="text-align:center;color:#FBBF24">${c.intent_a}</td>
+                        <td style="text-align:center;color:#60A5FA">${c.intent_b}</td>
+                        <td style="text-align:center;color:#94A3B8">${c.intent_c}</td>
+                        <td style="text-align:center;color:#F1F5F9;font-weight:700">${c.intent_total}</td>
+                    </tr>`).join('');
+                } else {
+                    csBody.innerHTML = '<tr><td colspan="9" class="text-center" style="color:#475569;padding:20px">暂无数据</td></tr>';
+                }
+
+                // 模块5: 退款
+                document.getElementById('m-refund-text').innerText = '本月累计退款: ' + (d.cum_refund||0) + ' 笔';
+                const refundSummary = d.refund_summary || [];
+                const refundDiv = document.getElementById('m-refund-detail');
+                const refundBody = document.getElementById('m-refund-body');
+                if (refundSummary.length > 0) {
+                    refundDiv.style.display = '';
+                    refundBody.innerHTML = refundSummary.map(r => {
+                        const total = (r.arrived||0) + (r.not_arrived||0);
+                        return `<tr style="border-bottom:1px solid rgba(51,65,85,0.3)">
+                        <td style="padding:6px;color:#E2E8F0;font-weight:bold">${r.cs||''}</td>
+                        <td style="padding:6px;text-align:center;color:#94A3B8">${r.city||'-'}</td>
+                        <td style="padding:6px;text-align:center;color:${r.arrived>0?'#FB923C':'#475569'}">${r.arrived||0}</td>
+                        <td style="padding:6px;text-align:center;color:${r.not_arrived>0?'#FCA5A5':'#475569'}">${r.not_arrived||0}</td>
+                        <td style="padding:6px;text-align:center;color:#E2E8F0;font-weight:bold">${total}</td>
+                    </tr>`}).join('');
+                } else {
+                    refundDiv.style.display = 'none';
+                }
+
+                setTimeout(() => { if(mTrend) mTrend.resize(); if(window._mRateOpen) window._mRateOpen.resize(); if(window._mRateDeposit) window._mRateDeposit.resize(); }, 200);
+            } catch(err) {
+                console.error('月度数据加载失败:', err);
+            }
+        }
+
+        // ═══════════════════════════════════════════
+        // 周度节点报表
+        // ═══════════════════════════════════════════
+        const WEEKLY_DATA_MAP = {
+            '全国总盘': 'data_weekly_national.json',
+            '成都': 'data_weekly_chengdu.json',
+            '重庆': 'data_weekly_chongqing.json',
+            '哈尔滨': 'data_weekly_harbin.json',
+        };
+        let wTrend;
+        let currentWeeklyCity = '全国总盘';
+
+        function switchWeeklyCity(city, el) {
+            document.querySelectorAll('#weekly-city-tabs .city-tab').forEach(t => t.classList.remove('active'));
+            if (el) el.classList.add('active');
+            currentWeeklyCity = city;
+            loadWeeklyData(city);
+        }
+
+        async function loadWeeklyData(city) {
+            city = city || currentWeeklyCity;
+            const isNational = (city === '全国总盘');
+            const file = WEEKLY_DATA_MAP[city] || WEEKLY_DATA_MAP['全国总盘'];
+            try {
+                const res = await fetch('./' + file + '?t=' + Date.now());
+                if (!res.ok) return;
+                const d = await res.json();
+
+                // 判断数据是否属于当前周
+                const weekEnd = new Date(d.week_end + 'T23:59:59');
+                const now = new Date();
+                const isCurrentWeek = weekEnd >= now;
+                const weekPrefix = isCurrentWeek ? '本周' : '第' + d.week_num + '周';
+
+                // Toggle visibility
+                document.getElementById('w-daily-card').style.display = isNational ? 'none' : '';
+                document.getElementById('w-wow-card').style.display = isNational ? 'none' : '';
+                document.getElementById('w-matrix-card').style.display = isNational ? '' : 'none';
+
+                // Header
+                document.getElementById('w-week-label').textContent = d.week_label || '';
+                document.getElementById('w-rev-label').textContent = isNational ? '💰 全国' + weekPrefix + '变现' : '💰 ' + city + weekPrefix + '变现';
+                document.getElementById('w-roi-label').textContent = '📊 ' + weekPrefix + 'ROI';
+                document.getElementById('w-spend-label').textContent = '💵 ' + weekPrefix + '消耗';
+                document.getElementById('w-wechat-label').textContent = '👥 ' + weekPrefix + '加微';
+                document.getElementById('w-cs-title').textContent = isNational ? '👤 客服' + weekPrefix + '排行（全国）' : '👤 ' + city + ' 客服排行';
+                document.getElementById('w-trend-title').textContent = isNational ? '📈 近4周趋势（全国）' : '📈 ' + city + ' 近4周趋势';
+                document.getElementById('w-daily-title').textContent = '📋 ' + weekPrefix + '逐日明细';
+                document.getElementById('w-matrix-title').textContent = '🏆 城市' + weekPrefix + '对比';
+                document.getElementById('w-wow-title').textContent = isCurrentWeek ? '🔄 上周 vs 本周' : '🔄 第' + (d.week_num - 1) + '周 vs 第' + d.week_num + '周';
+
+                // KPI
+                document.getElementById('w-revenue').textContent = '¥' + Number(d.week_revenue||0).toLocaleString();
+                document.getElementById('w-roi').textContent = d.week_roi === '—' ? '—' : (d.week_roi || 0);
+                document.getElementById('w-spend').textContent = '¥' + Number(d.week_spend||0).toLocaleString();
+                document.getElementById('w-wechat').textContent = d.week_wechat || 0;
+                document.getElementById('w-deposit-text').textContent = '定金 ' + (d.week_deposit||0);
+
+                // WoW badges on KPI cards
+                const wow = d.wow_change || {};
+                const wowBadge = (val, suffix) => {
+                    if (!val && val !== 0) return '';
+                    if (suffix === '%') return val >= 0
+                        ? `<span style="color:#34D399">↑${val}%</span>`
+                        : `<span style="color:#FCA5A5">↓${Math.abs(val)}%</span>`;
+                    return val >= 0
+                        ? `<span style="color:#34D399">+${val}</span>`
+                        : `<span style="color:#FCA5A5">${val}</span>`;
+                };
+                document.getElementById('w-wow-rev').innerHTML = d.wow_change ? '环比 ' + wowBadge(wow.revenue_pct, '%') + (wow.note ? ' <span style="color:#64748B;font-size:9px">(日均)</span>' : '') : '';
+                document.getElementById('w-wow-roi').innerHTML = d.wow_change && !wow.note ? '环比 ' + wowBadge(wow.roi_change, '') : '';
+                document.getElementById('w-wow-spend').innerHTML = d.wow_change && !wow.note ? '环比 ' + wowBadge(wow.spend_pct, '%') : '';
+
+                // Pace meter
+                renderPaceMeter(d);
+
+                // Trend
+                renderWeeklyTrend(d);
+
+                // CS
+                renderWeeklyCS(d.cs_table || []);
+
+                // Alerts
+                renderWeeklyAlerts(d.alerts || []);
+
+                if (isNational) {
+                    renderWeeklyCityMatrix(d.city_matrix || []);
+                } else {
+                    renderDailyBreakdown(d.daily_breakdown || []);
+                    renderWoWComparison(d);
+                }
+            } catch(err) {
+                console.error('周度数据加载失败:', err);
+            }
+        }
+
+        function renderPaceMeter(d) {
+            const body = document.getElementById('w-pace-body');
+            if (d.pace_status === 'no_target' || !d.month_target) {
+                body.innerHTML = '<span style="font-size:11px;color:#475569">暂无月度目标</span>';
+                return;
+            }
+            const pct = Math.min(Math.round(d.month_cum_revenue / d.month_target * 100), 100);
+            const weekPct = Math.round(d.month_elapsed_weeks / d.month_total_weeks * 100);
+            const statusColors = {ahead:'#34D399', on_track:'#22D3EE', behind:'#FCA5A5'};
+            const statusLabels = {ahead:'🚀 超前', on_track:'✅ 正常', behind:'⚠️ 滞后'};
+            const color = statusColors[d.pace_status] || '#94A3B8';
+            body.innerHTML = `
+                <div class="flex items-center gap-3 mb-2" style="font-size:11px">
+                    <span style="color:#94A3B8">月目标 ¥${Number(d.month_target).toLocaleString()}</span>
+                    <span style="color:${color};font-weight:700">${statusLabels[d.pace_status]||'—'}</span>
+                    <span style="color:#475569">第${d.month_elapsed_weeks}/${d.month_total_weeks}周</span>
+                </div>
+                <div style="position:relative;height:18px;background:rgba(51,65,85,.3);border-radius:10px;overflow:hidden">
+                    <div style="height:18px;border-radius:10px;width:${pct}%;background:${color};transition:width 0.5s"></div>
+                    <div style="position:absolute;left:${weekPct}%;top:0;bottom:0;width:2px;background:#FBBF24;opacity:0.8" title="理想进度线"></div>
+                </div>
+                <div class="flex justify-between mt-1" style="font-size:10px;color:#475569">
+                    <span>已完成 ¥${Number(d.month_cum_revenue).toLocaleString()} (${pct}%)</span>
+                    <span>理想步速 ¥${Number(d.ideal_pace).toLocaleString()}/周 | 实际 ¥${Number(d.actual_pace).toLocaleString()}/周</span>
+                </div>`;
+        }
+
+        function renderWeeklyTrend(d) {
+            if (!wTrend) wTrend = echarts.init(document.getElementById('w-trend-chart'));
+            const weeks = (d.trend_weeks||[]).filter(w=>w);
+            const rev = d.trend_revenue || [];
+            const spend = d.trend_spend || [];
+            const roi = d.trend_roi || [];
+            wTrend.setOption({
+                tooltip: {trigger:'axis', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0',fontSize:11}},
+                legend: {data:['变现','消耗','ROI'], bottom:0, textStyle:{color:'#94A3B8',fontSize:10}},
+                grid: {left:'8%',right:'8%',bottom:'15%',top:'8%',containLabel:true},
+                xAxis: {type:'category', data:weeks, axisLabel:{color:'#64748B',fontSize:10}, axisLine:{lineStyle:{color:'#334155'}}},
+                yAxis: [
+                    {type:'value', axisLabel:{color:'#64748B',fontSize:10,formatter:v=>v>=10000?'¥'+(v/10000).toFixed(1)+'万':'¥'+v}, splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}}},
+                    {type:'value', axisLabel:{color:'#64748B',fontSize:10}, splitLine:{show:false}}
+                ],
+                series: [
+                    {name:'变现',type:'bar',data:rev,barWidth:'25%',
+                     itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]}},
+                    {name:'消耗',type:'bar',data:spend,barWidth:'25%',
+                     itemStyle:{color:'#FB923C',borderRadius:[3,3,0,0]}},
+                    {name:'ROI',type:'line',yAxisIndex:1,data:roi,smooth:true,symbol:'circle',symbolSize:8,
+                     lineStyle:{color:'#22D3EE',width:2.5},itemStyle:{color:'#22D3EE'}}
+                ]
+            }, true);
+            setTimeout(() => wTrend.resize(), 100);
+        }
+
+        function renderDailyBreakdown(days) {
+            const tbody = document.getElementById('w-daily-tbody');
+            tbody.innerHTML = days.map(d => `<tr style="border-bottom:1px solid rgba(51,65,85,.3)">
+                <td style="padding:8px 6px;color:#E2E8F0;font-weight:600">${d.date}</td>
+                <td style="padding:8px 6px;color:#94A3B8">${d.weekday}</td>
+                <td style="padding:8px 6px;text-align:right;color:#34D399;font-weight:700">¥${Number(d.revenue).toLocaleString()}</td>
+                <td style="padding:8px 6px;text-align:right;color:#FB923C">¥${Number(d.spend).toLocaleString()}</td>
+                <td style="padding:8px 6px;text-align:right;color:#38BDF8">${d.wechat}</td>
+                <td style="padding:8px 6px;text-align:right;color:#A78BFA">${d.deposit}</td>
+            </tr>`).join('');
+        }
+
+        function renderWeeklyCityMatrix(matrix) {
+            const body = document.getElementById('w-matrix-body');
+            const paceIcons = {ahead:'🚀',on_track:'✅',behind:'⚠️',no_target:'—'};
+            body.innerHTML = matrix.map(c => {
+                const wowHtml = c.wow_revenue_pct >= 0
+                    ? `<span style="color:#34D399">↑${c.wow_revenue_pct}%</span>`
+                    : `<span style="color:#FCA5A5">↓${Math.abs(c.wow_revenue_pct)}%</span>`;
+                const rc = c.roi >= 2 ? '#34D399' : c.roi >= 1 ? '#FBBF24' : '#FCA5A5';
+                return `<tr style="border-bottom:1px solid rgba(51,65,85,.3)">
+                    <td style="padding:8px 6px;color:#E2E8F0;font-weight:700">${c.city}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#34D399;font-weight:700">¥${Number(c.revenue).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#FB923C">¥${Number(c.spend).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:${rc};font-weight:700">${c.roi}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#38BDF8">${c.wechat}</td>
+                    <td style="padding:8px 6px;text-align:right">${wowHtml}</td>
+                    <td style="padding:8px 6px;text-align:right">${paceIcons[c.pace_status]||'—'}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderWoWComparison(d) {
+            const body = document.getElementById('w-wow-body');
+            const lw = d.last_week;
+            if (!lw) { body.innerHTML = '<span style="font-size:11px;color:#475569">暂无上周数据</span>'; return; }
+            const wow = d.wow_change || {};
+            const arrow = (v, suf) => v >= 0
+                ? `<span style="color:#34D399;font-weight:700">↑${v}${suf}</span>`
+                : `<span style="color:#FCA5A5;font-weight:700">↓${Math.abs(v)}${suf}</span>`;
+            body.innerHTML = `<div class="grid grid-cols-3 gap-3" style="font-size:11px">
+                <div class="text-center">
+                    <div style="color:#94A3B8">变现</div>
+                    <div style="color:#475569;margin:4px 0">上周 ¥${Number(lw.revenue).toLocaleString()}</div>
+                    <div style="color:#E2E8F0;font-weight:700">该周 ¥${Number(d.week_revenue).toLocaleString()}</div>
+                    <div class="mt-1">${arrow(wow.revenue_pct, '%')}</div>
+                </div>
+                <div class="text-center">
+                    <div style="color:#94A3B8">消耗</div>
+                    <div style="color:#475569;margin:4px 0">上周 ¥${Number(lw.spend).toLocaleString()}</div>
+                    <div style="color:#E2E8F0;font-weight:700">该周 ¥${Number(d.week_spend).toLocaleString()}</div>
+                    <div class="mt-1">${arrow(wow.spend_pct, '%')}</div>
+                </div>
+                <div class="text-center">
+                    <div style="color:#94A3B8">ROI</div>
+                    <div style="color:#475569;margin:4px 0">上周 ${lw.roi}</div>
+                    <div style="color:#E2E8F0;font-weight:700">该周 ${d.week_roi}</div>
+                    <div class="mt-1">${arrow(wow.roi_change, '')}</div>
+                </div>
+            </div>`;
+        }
+
+        function renderWeeklyCS(table) {
+            const body = document.getElementById('w-cs-body');
+            const medals = ['🥇','🥈','🥉'];
+            body.innerHTML = table.map((cs,i) => {
+                const rank = i < 3 ? medals[i] : (i+1);
+                return `<tr style="border-bottom:1px solid rgba(51,65,85,.3)">
+                    <td style="padding:8px 6px;font-size:13px">${rank}</td>
+                    <td style="padding:8px 6px;color:#E2E8F0;font-weight:600">${cs.name}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#38BDF8">${cs.wechat}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#A78BFA">${cs.deposit}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#94A3B8">${cs.w2d_rate||0}%</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderWeeklyAlerts(alerts) {
+            const div = document.getElementById('w-alerts');
+            if (!alerts || !alerts.length) { div.innerHTML = ''; return; }
+            div.innerHTML = alerts.map(a => {
+                const colors = {danger:'rgba(239,68,68,.15)',warning:'rgba(251,191,36,.12)',healthy:'rgba(52,211,153,.12)'};
+                const txtColors = {danger:'#FCA5A5',warning:'#FBBF24',healthy:'#34D399'};
+                const icons = {danger:'🔴',warning:'🟡',healthy:'🟢'};
+                return `<div class="glass-card mb-2" style="padding:10px 14px;border:1px solid ${txtColors[a.level]}22;background:${colors[a.level]||colors.warning}">
+                    <span style="font-size:12px">${icons[a.level]||'⚠️'}</span>
+                    <span style="font-size:11px;color:${txtColors[a.level]||'#FBBF24'};margin-left:6px">${a.msg}</span>
+                </div>`;
+            }).join('');
+        }
+
+        window.addEventListener('resize', () => { if (wTrend) wTrend.resize(); });
+
+        // ═══════════════════════════════════════════
+        // 年度战略舱
+        // ═══════════════════════════════════════════
+        const YEARLY_DATA_MAP = {
+            '全国总盘': 'data_yearly_national.json',
+            '成都': 'data_yearly_chengdu.json',
+            '重庆': 'data_yearly_chongqing.json',
+            '哈尔滨': 'data_yearly_harbin.json',
+        };
+        let yTrend, yCost;
+        let currentYearlyCity = '全国总盘';
+        let yearlyNatCache = null;
+
+        function switchYearlyCity(city, el) {
+            document.querySelectorAll('#yearly-city-tabs .city-tab').forEach(t => t.classList.remove('active'));
+            if (el) el.classList.add('active');
+            currentYearlyCity = city;
+            loadYearlyData(city);
+        }
+
+        async function loadYearlyData(city) {
+            city = city || currentYearlyCity;
+            const isNational = (city === '全国总盘');
+            const file = YEARLY_DATA_MAP[city] || YEARLY_DATA_MAP['全国总盘'];
+
+            try {
+                const res = await fetch('./' + file + '?t=' + Date.now());
+                if (!res.ok) return;
+                const d = await res.json();
+
+                // Cache national for cross-reference
+                if (isNational) yearlyNatCache = d;
+
+                // Toggle visibility: national-only vs city-only sections
+                document.getElementById('y-monthly-table-card').style.display = isNational ? 'none' : '';
+                document.getElementById('y-cs-monthly-card').style.display = isNational ? 'none' : '';
+                document.getElementById('y-health-card').style.display = isNational ? 'none' : '';
+                document.getElementById('y-matrix-card').style.display = isNational ? '' : 'none';
+                document.getElementById('y-cost-card').style.display = isNational ? '' : 'none';
+
+                // KPI cards (universal)
+                renderYearlyKPI(d, isNational, city);
+                renderYearlyTrend(d, isNational, city);
+
+                if (isNational) {
+                    renderCityMatrix(d.city_matrix || []);
+                    renderYearlyCS(d.cs_table || [], true);
+                    renderCostPie(d.cost_pie || []);
+                    renderYearlyAI(d.ai_diagnosis || '');
+                    renderYearlyAlerts(d.alerts || []);
+                } else {
+                    renderMonthlyKPITable(d);
+                    renderCSMonthlyDetail(d);
+                    renderHealthScore(d);
+                    // City CS table from monthly detail
+                    const cityCS = (d.cs_monthly_detail || []).map(cs => {
+                        let tw=0, td=0, tr=0;
+                        Object.values(cs.months||{}).forEach(m => { tw+=m.wechat||0; td+=m.deposit||0; tr+=m.revenue||0; });
+                        return {name:cs.name, wechat:tw, deposit:td, revenue:Math.round(tr*100)/100, w2d_rate: tw>0 ? Math.round(td/tw*1000)/10 : 0};
+                    });
+                    cityCS.sort((a,b) => b.revenue - a.revenue);
+                    renderYearlyCS(cityCS, false);
+                    // AI + alerts from national cache
+                    if (yearlyNatCache) {
+                        renderYearlyAI(yearlyNatCache.ai_diagnosis || '');
+                        renderYearlyAlerts(yearlyNatCache.alerts || []);
+                    }
+                }
+            } catch(err) {
+                console.error('年度数据加载失败:', err);
+            }
+        }
+
+        function renderYearlyKPI(d, isNational, city) {
+            document.getElementById('y-cum-rev').textContent = '¥' + Number(d.cum_revenue||0).toLocaleString();
+            document.getElementById('y-rev-label').textContent = isNational ? '💰 年度总变现' : '💰 ' + city + '年度变现';
+            document.getElementById('y-roi').textContent = d.cum_roi || 0;
+            const roiVal = d.cum_roi || 0;
+            const badge = document.getElementById('y-roi-badge');
+            if (roiVal >= 2) badge.innerHTML = '<span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:rgba(52,211,153,0.2);color:#34D399;border:1px solid rgba(52,211,153,0.3)">健康</span>';
+            else if (roiVal >= 1) badge.innerHTML = '<span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:rgba(251,191,36,0.2);color:#FBBF24;border:1px solid rgba(251,191,36,0.3)">预警</span>';
+            else badge.innerHTML = '<span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:rgba(239,68,68,0.2);color:#FCA5A5;border:1px solid rgba(239,68,68,0.3)">危险</span>';
+
+            if (isNational) {
+                document.getElementById('y-card3-label').textContent = '🏬 运营门店';
+                document.getElementById('y-card3-val').textContent = (d.city_count || 0) + '城';
+                document.getElementById('y-card3-sub').textContent = (d.city_matrix||[]).map(c=>c.city).join(' / ');
+            } else {
+                document.getElementById('y-card3-label').textContent = '📅 启动月份';
+                document.getElementById('y-card3-val').textContent = (d.start_month || '?') + '月';
+                document.getElementById('y-card3-sub').textContent = '健康评分 ' + (d.health_score||0) + '分';
+            }
+            document.getElementById('y-avg-rev').textContent = '¥' + Number(d.monthly_avg_rev||0).toLocaleString();
+            document.getElementById('y-pred-text').textContent = '预测全年 ¥' + Number(d.predicted_annual||0).toLocaleString();
+
+            if (d.revenue_target > 0) {
+                const pct = Math.min(d.progress || 0, 100);
+                document.getElementById('y-prog-bar').style.width = pct + '%';
+                document.getElementById('y-prog-text').textContent = '目标 ¥' + Number(d.revenue_target).toLocaleString() + ' (' + (d.progress||0) + '%)';
+            } else {
+                document.getElementById('y-prog-bar').style.width = '0%';
+                document.getElementById('y-prog-text').textContent = '年度目标待设定';
+            }
+        }
+
+        function renderYearlyTrend(d, isNational, city) {
+            if (!yTrend) yTrend = echarts.init(document.getElementById('y-trend-chart'));
+            document.getElementById('y-trend-title').textContent = isNational ? '📈 月度营收趋势（全国）' : '📈 ' + city + ' 月度营收趋势';
+            const months = d.trend_months || [];
+            const rev = d.trend_revenue || [];
+            const spend = d.trend_spend || [];
+            const roi = d.trend_roi || [];
+            yTrend.setOption({
+                tooltip: {trigger:'axis', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0',fontSize:11}},
+                legend: {data:['变现','消耗','ROI'], bottom:0, textStyle:{color:'#94A3B8',fontSize:10}},
+                grid: {left:'8%',right:'8%',bottom:'15%',top:'8%',containLabel:true},
+                xAxis: {type:'category', data:months, axisLabel:{color:'#64748B',fontSize:10}, axisLine:{lineStyle:{color:'#334155'}}},
+                yAxis: [
+                    {type:'value', axisLabel:{color:'#64748B',fontSize:10,formatter:v=>v>=10000?'¥'+(v/10000).toFixed(1)+'万':'¥'+v}, splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}}},
+                    {type:'value', axisLabel:{color:'#64748B',fontSize:10}, splitLine:{show:false}}
+                ],
+                series: [
+                    {name:'变现',type:'line',data:rev,smooth:true,symbol:'circle',symbolSize:6,
+                     areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'rgba(52,211,153,0.3)'},{offset:1,color:'rgba(52,211,153,0)'}]}},
+                     lineStyle:{color:'#34D399',width:2.5},itemStyle:{color:'#34D399'}},
+                    {name:'消耗',type:'line',data:spend,smooth:true,symbol:'diamond',symbolSize:5,
+                     lineStyle:{color:'#FB923C',width:1.5,type:'dashed'},itemStyle:{color:'#FB923C'}},
+                    {name:'ROI',type:'bar',yAxisIndex:1,data:roi,barWidth:'30%',
+                     itemStyle:{color:p=>{const v=p.data; if(v===null)return 'transparent'; return v>=2?'rgba(52,211,153,0.5)':v>=1?'rgba(251,191,36,0.5)':'rgba(239,68,68,0.5)';},borderRadius:[3,3,0,0]}}
+                ]
+            }, true);
+            setTimeout(() => yTrend.resize(), 100);
+        }
+
+        function renderMonthlyKPITable(d) {
+            document.getElementById('y-table-title').textContent = '📋 ' + (d.city||'') + ' 月度经营明细';
+            const tbody = document.getElementById('y-monthly-tbody');
+            const kpis = (d.monthly_kpi||[]).filter(k=>k.days>0);
+            tbody.innerHTML = kpis.map(k=>{
+                const momHtml = k.mom_revenue !== null && k.mom_revenue !== undefined
+                    ? (k.mom_revenue >= 0
+                        ? `<span style="color:#34D399">↑${k.mom_revenue}%</span>`
+                        : `<span style="color:#FCA5A5">↓${Math.abs(k.mom_revenue)}%</span>`)
+                    : '—';
+                const roiColor = k.roi < 1.5 ? '#FCA5A5' : k.roi >= 3 ? '#34D399' : '#E2E8F0';
+                return `<tr style="border-bottom:1px solid rgba(51,65,85,.3)">
+                    <td style="padding:8px 6px;color:#E2E8F0;font-weight:600">${k.month_label}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#34D399;font-weight:700">¥${Number(k.revenue).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#FB923C">¥${Number(k.spend).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:${roiColor};font-weight:700">${k.roi}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#38BDF8">${k.wechat}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#A78BFA">${k.deposit}</td>
+                    <td style="padding:8px 6px;text-align:right;color:${k.refund>0?'#FCA5A5':'#475569'}">${k.refund}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#94A3B8">¥${k.open_cost}</td>
+                    <td style="padding:8px 6px;text-align:right">${momHtml}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderCSMonthlyDetail(d) {
+            const months = (d.monthly_kpi||[]).filter(k=>k.days>0).map(k=>k.month);
+            const thead = document.getElementById('y-cs-monthly-head');
+            thead.innerHTML = '<tr style="border-bottom:1px solid rgba(51,65,85,.5)"><th style="color:#64748B;padding:6px;text-align:left">客服</th>'
+                + months.map(m=>`<th style="color:#64748B;padding:6px;text-align:right">${m}月加微</th><th style="color:#64748B;padding:6px;text-align:right">${m}月定金</th><th style="color:#64748B;padding:6px;text-align:right">${m}月变现</th>`).join('')
+                + '</tr>';
+            const tbody = document.getElementById('y-cs-monthly-body');
+            tbody.innerHTML = (d.cs_monthly_detail||[]).map(cs=>{
+                const cells = months.map(m=>{
+                    const md = cs.months[String(m)];
+                    if (!md) return '<td style="padding:6px;text-align:right;color:#475569">-</td>'.repeat(3);
+                    return `<td style="padding:6px;text-align:right;color:#38BDF8">${md.wechat}</td>
+                            <td style="padding:6px;text-align:right;color:#A78BFA">${md.deposit}</td>
+                            <td style="padding:6px;text-align:right;color:#34D399;font-weight:600">¥${Number(md.revenue).toLocaleString()}</td>`;
+                }).join('');
+                return `<tr style="border-bottom:1px solid rgba(51,65,85,.3)"><td style="padding:6px;color:#E2E8F0;font-weight:700">${cs.name}</td>${cells}</tr>`;
+            }).join('');
+        }
+
+        function renderHealthScore(d) {
+            const hb = d.health_breakdown || {};
+            const stars = n => '⭐'.repeat(n||0);
+            const score = d.health_score || 0;
+            const pct = Math.min(score, 100);
+            const color = pct >= 70 ? '#34D399' : pct >= 50 ? '#FBBF24' : '#FCA5A5';
+            document.getElementById('y-health-body').innerHTML = `
+                <div class="flex items-center gap-3" style="font-size:12px">
+                    <div style="flex:1"><div style="background:rgba(51,65,85,.3);border-radius:8px;height:14px;overflow:hidden">
+                        <div style="height:14px;border-radius:8px;width:${pct}%;background:${color};transition:width 0.5s"></div>
+                    </div></div>
+                    <span style="color:${color};font-weight:900;font-size:20px">${score}分</span>
+                </div>
+                <div class="mt-2 flex gap-4" style="font-size:11px;color:#94A3B8">
+                    <span>变现效率 ${stars(hb.revenue_efficiency)}</span>
+                    <span>成本控制 ${stars(hb.cost_control)}</span>
+                    <span>团队稳定 ${stars(hb.team_stability)}</span>
+                </div>`;
+        }
+
+        function renderCityMatrix(matrix) {
+            const body = document.getElementById('y-matrix-body');
+            body.innerHTML = matrix.map(c=>{
+                const st = c.health_score >= 70 ? '⭐⭐⭐' : c.health_score >= 50 ? '⭐⭐' : '⭐';
+                const rc = c.roi >= 2 ? '#34D399' : c.roi >= 1 ? '#FBBF24' : '#FCA5A5';
+                return `<tr style="border-bottom:1px solid rgba(51,65,85,.3)">
+                    <td style="padding:8px 6px;color:#E2E8F0;font-weight:700">${c.city}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#475569">${c.start_month||'-'}月</td>
+                    <td style="padding:8px 6px;text-align:right;color:#34D399;font-weight:700">¥${Number(c.cum_revenue).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#FB923C">¥${Number(c.cum_spend).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:${rc};font-weight:700">${c.roi}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#38BDF8">${c.monthly_avg_wechat||0}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#A78BFA">${c.wechat_to_deposit||0}%</td>
+                    <td style="padding:8px 6px;text-align:right">${st} <span style="color:#475569;font-size:10px">${c.health_score}分</span></td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderYearlyCS(table, isNational) {
+            document.getElementById('y-cs-title').textContent = isNational ? '👤 客服年度排行（全国）' : '👤 客服年度排行';
+            const body = document.getElementById('y-cs-body');
+            const medals = ['🥇','🥈','🥉'];
+            body.innerHTML = table.map((cs,i)=>{
+                const rank = i < 3 ? medals[i] : (i+1);
+                return `<tr style="border-bottom:1px solid rgba(51,65,85,.3)">
+                    <td style="padding:8px 6px;font-size:13px">${rank}</td>
+                    <td style="padding:8px 6px;color:#E2E8F0;font-weight:600">${cs.name}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#38BDF8">${cs.wechat}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#A78BFA">${cs.deposit}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue).toLocaleString()}</td>
+                    <td style="padding:8px 6px;text-align:right;color:#94A3B8">${cs.w2d_rate||0}%</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderCostPie(pie) {
+            if (!yCost) yCost = echarts.init(document.getElementById('y-cost-chart'));
+            const colors = ['#06B6D4','#8B5CF6','#FB923C','#34D399','#F472B6'];
+            const data = pie.map((d,i)=>({...d, itemStyle:{color:colors[i%colors.length]}}));
+            const total = pie.reduce((s,d)=>s+d.value,0);
+            yCost.setOption({
+                tooltip: {trigger:'item', backgroundColor:'#1E293B', borderColor:'#334155', textStyle:{color:'#E2E8F0',fontSize:11}},
+                title: {text:'总消耗\n¥'+Number(total).toLocaleString(), left:'center', top:'center', textStyle:{fontSize:12,fontWeight:900,color:'#E2E8F0',lineHeight:18}},
+                series: [{type:'pie', radius:['45%','72%'], center:['50%','50%'], data:data,
+                    itemStyle:{borderRadius:4,borderColor:'#0B1120',borderWidth:2},
+                    label:{show:true,formatter:'{b}\n¥{c}',color:'#94A3B8',fontSize:10,fontWeight:600,lineHeight:14}}]
+            }, true);
+            setTimeout(() => yCost.resize(), 100);
+        }
+
+        function renderYearlyAI(text) {
+            document.getElementById('y-ai-body').innerHTML = text.replace(/\n+/g,'<br>');
+        }
+
+        function renderYearlyAlerts(alerts) {
+            const div = document.getElementById('y-alerts');
+            if (!alerts || !alerts.length) { div.innerHTML = ''; return; }
+            div.innerHTML = alerts.map(a => {
+                const colors = {danger:'rgba(239,68,68,.15)',warning:'rgba(251,191,36,.12)',healthy:'rgba(52,211,153,.12)'};
+                const txtColors = {danger:'#FCA5A5',warning:'#FBBF24',healthy:'#34D399'};
+                const icons = {danger:'🔴',warning:'🟡',healthy:'🟢'};
+                return `<div class="glass-card mb-2" style="padding:10px 14px;border:1px solid ${txtColors[a.level]}22;background:${colors[a.level]||colors.warning}">
+                    <span style="font-size:12px">${icons[a.level]||'⚠️'}</span>
+                    <span style="font-size:11px;color:${txtColors[a.level]||'#FBBF24'};margin-left:6px">${a.msg}</span>
+                </div>`;
+            }).join('');
+        }
+
+        window.addEventListener('resize', () => {
+            if (yTrend) yTrend.resize();
+            if (yCost) yCost.resize();
+        });
+    </script>
+</body>
+
+</html>

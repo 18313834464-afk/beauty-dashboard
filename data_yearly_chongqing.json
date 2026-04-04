@@ -1,0 +1,155 @@
+{
+  "city": "重庆",
+  "year": 2026,
+  "start_month": 3,
+  "cum_revenue": 11140.0,
+  "cum_spend": 3998.57,
+  "cum_wechat": 122,
+  "cum_deposit": 10,
+  "cum_open": 61.0,
+  "cum_roi": 2.79,
+  "monthly_avg_rev": 11140.0,
+  "predicted_annual": 133680.0,
+  "revenue_target": 0,
+  "progress": 0,
+  "monthly_kpi": [
+    {
+      "month": 1,
+      "month_label": "1月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
+    },
+    {
+      "month": 2,
+      "month_label": "2月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
+    },
+    {
+      "month": 3,
+      "month_label": "3月",
+      "revenue": 11140.0,
+      "spend": 3998.57,
+      "roi": 2.79,
+      "wechat": 61,
+      "deposit": 5,
+      "open": 61.0,
+      "open_cost": 65.55,
+      "refund": 0,
+      "days": 31,
+      "mom_revenue": null
+    },
+    {
+      "month": 4,
+      "month_label": "4月",
+      "revenue": 0.0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 61,
+      "deposit": 5,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 1,
+      "days": 3,
+      "mom_revenue": -100.0
+    }
+  ],
+  "trend_months": [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  "trend_revenue": [
+    0,
+    0,
+    11140.0,
+    0.0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "trend_spend": [
+    0,
+    0,
+    3998.57,
+    0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "trend_roi": [
+    0,
+    0,
+    2.79,
+    0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "cs_monthly_detail": [
+    {
+      "name": "侯芳",
+      "months": {
+        "3": {
+          "wechat": 57,
+          "deposit": 5,
+          "revenue": 11240.0
+        },
+        "4": {
+          "wechat": 61,
+          "deposit": 5,
+          "revenue": 11240.0
+        }
+      },
+      "intent_a": 0,
+      "intent_b": 1,
+      "intent_c": 7
+    }
+  ],
+  "health_score": 60,
+  "health_breakdown": {
+    "revenue_efficiency": 2,
+    "cost_control": 2,
+    "team_stability": 1
+  }
+}

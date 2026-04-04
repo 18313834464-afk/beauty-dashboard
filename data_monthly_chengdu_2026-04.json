@@ -1,0 +1,325 @@
+{
+  "city": "成都",
+  "month": "2026-04",
+  "days_elapsed": 3,
+  "total_days": 30,
+  "cum_revenue": 17200.0,
+  "cum_spend": 0,
+  "cum_wechat": 64,
+  "cum_deposit": 8,
+  "cum_open": 0,
+  "cum_refund": 1,
+  "roi": 0,
+  "revenue_target": 300000,
+  "progress": 5.7,
+  "predicted_revenue": 172000.0,
+  "predicted_spend": 0.0,
+  "predicted_roi": 0,
+  "daily_trend": [
+    {
+      "date": "2026-04-01",
+      "revenue": 2180.0,
+      "spend": 0,
+      "wechat": 34,
+      "deposit": 3,
+      "open": 0
+    },
+    {
+      "date": "2026-04-02",
+      "revenue": 14020.0,
+      "spend": 0,
+      "wechat": 30,
+      "deposit": 5,
+      "open": 0
+    },
+    {
+      "date": "2026-04-03",
+      "revenue": 3780.0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-04",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-05",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-06",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-07",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-08",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-09",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-10",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-11",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-12",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-13",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-14",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-15",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-16",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-17",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-18",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-19",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-20",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-21",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-22",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-23",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-24",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-25",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-26",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-27",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-28",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-29",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-30",
+      "revenue": 0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    }
+  ],
+  "rate_trend": [
+    {
+      "date": "2026-04-01",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 8.8
+    },
+    {
+      "date": "2026-04-02",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 16.7
+    },
+    {
+      "date": "2026-04-03",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0
+    }
+  ],
+  "cs_table": [
+    {
+      "name": "李小叶",
+      "wechat": 24,
+      "deposit": 4,
+      "revenue": 8940.0,
+      "intent_a": 0,
+      "intent_b": 2,
+      "intent_c": 18,
+      "intent_total": 20
+    },
+    {
+      "name": "阳珂欣",
+      "wechat": 30,
+      "deposit": 4,
+      "revenue": 7260.0,
+      "intent_a": 4,
+      "intent_b": 6,
+      "intent_c": 16,
+      "intent_total": 26
+    },
+    {
+      "name": "会媛",
+      "wechat": 10,
+      "deposit": 0,
+      "revenue": 3780.0,
+      "intent_a": 2,
+      "intent_b": 3,
+      "intent_c": 9,
+      "intent_total": 14
+    }
+  ],
+  "refund_details": [
+    {
+      "customer": "齐女士",
+      "revenue": 0,
+      "cs": "李小叶",
+      "status": "到店退款"
+    }
+  ],
+  "refund_summary": [
+    {
+      "cs": "李小叶",
+      "city": "成都",
+      "arrived": 1,
+      "not_arrived": 0
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>美管家管理驾驶舱</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{background:#0B1120;color:#E2E8F0;font-family:'Inter',-apple-system,sans-serif;padding:14px;padding-bottom:40px;-webkit-font-smoothing:antialiased}
+
+        .header{text-align:center;padding:10px 0 16px}
+        .header h1{font-size:17px;font-weight:900;color:#F1F5F9}
+        .header .date{font-size:11px;color:#64748B;margin-top:3px}
+
+        .card{background:rgba(30,41,59,0.65);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(148,163,184,0.12);border-radius:14px;margin-bottom:10px;overflow:hidden}
+
+        /* ── KPI 3列 ── */
+        .kpi-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+        .kpi-item{padding:14px 10px;position:relative}
+        .kpi-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:14px 0 0 14px}
+        .k-rev::before{background:linear-gradient(180deg,#34D399,#10B981)}
+        .k-wx::before{background:linear-gradient(180deg,#22D3EE,#06B6D4)}
+        .k-dep::before{background:linear-gradient(180deg,#A78BFA,#8B5CF6)}
+        .kpi-label{font-size:10px;color:#64748B;font-weight:600;margin-bottom:4px}
+        .kpi-val{font-size:22px;font-weight:900}
+        .kpi-sub{font-size:9px;color:#475569;margin-top:3px}
+        .c-green{color:#34D399}.c-cyan{color:#22D3EE}.c-purple{color:#A78BFA}
+
+        /* ── chart ── */
+        .sec{padding:14px}
+        .sec-title{font-size:12px;font-weight:700;color:#94A3B8;letter-spacing:.5px;margin-bottom:10px}
+        .chart{width:100%;height:230px}
+        .chart-tall{width:100%;height:270px}
+
+        /* ── AI card ── */
+        .ai-card{padding:16px;border:1px solid rgba(251,191,36,0.25)}
+        .ai-title{font-size:13px;font-weight:700;color:#FBBF24;margin-bottom:8px}
+        .ai-body{font-size:12px;line-height:1.8;color:#CBD5E1}
+
+        /* ── table ── */
+        .tbl{width:100%;font-size:11px}
+        .tbl th{text-align:left;color:#64748B;font-weight:600;padding:8px 6px;border-bottom:1px solid rgba(51,65,85,.5);font-size:10px}
+        .tbl td{padding:10px 6px;border-bottom:1px solid rgba(51,65,85,.3);color:#CBD5E1}
+        .tbl tr:hover td{background:rgba(51,65,85,.2)}
+        .badge{display:inline-block;padding:3px 7px;border-radius:5px;font-size:10px;font-weight:700}
+        .b-red{background:rgba(239,68,68,.2);color:#FCA5A5;border:1px solid rgba(239,68,68,.3)}
+        .b-yel{background:rgba(251,191,36,.15);color:#FCD34D;border:1px solid rgba(251,191,36,.3)}
+
+        /* ── heatmap legend ── */
+        .hl{display:flex;gap:8px;font-size:10px;color:#64748B;margin-bottom:6px;flex-wrap:wrap}
+        .hl span{display:flex;align-items:center;gap:3px}
+        .dot{display:inline-block;width:9px;height:9px;border-radius:2px}
+
+        .warn{font-size:10px;padding:8px 12px;margin:10px 14px 14px;border-radius:8px;background:rgba(251,191,36,.08);color:#FBBF24;border:1px solid rgba(251,191,36,.15)}
+
+        @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+        .a{animation:fu .4s ease-out both}
+        .d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}.d4{animation-delay:.2s}.d5{animation-delay:.25s}.d6{animation-delay:.3s}.d7{animation-delay:.35s}
+
+        /* tab switcher */
+        .top-tabs{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+        .top-tab{padding:7px 18px;border-radius:20px;font-size:12px;font-weight:700;color:#94A3B8;background:rgba(30,41,59,.5);border:1px solid rgba(51,65,85,.5);cursor:pointer}
+        .top-tab.active{background:linear-gradient(135deg,#06B6D4,#3B82F6);color:#fff;border-color:transparent}
+        .city-tabs-m{display:flex;gap:6px;justify-content:center;margin-bottom:12px}
+        .city-tab-m{padding:5px 14px;border-radius:16px;font-size:11px;font-weight:600;color:#64748B;background:rgba(30,41,59,.4);border:1px solid rgba(51,65,85,.4);cursor:pointer}
+        .city-tab-m.active{color:#22D3EE;border-color:#22D3EE;background:rgba(34,211,238,.08)}
+        .board-m-hidden{display:none !important}
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header a d1">
+        <h1>美管家管理驾驶舱</h1>
+        <div class="date" id="rpt-date">数据加载中...</div>
+    </div>
+
+    <!-- Top Tabs -->
+    <div class="top-tabs">
+        <div class="top-tab active" onclick="switchMobileBoard('daily', this)">📅 日报</div>
+        <div class="top-tab" onclick="switchMobileBoard('weekly', this)">📆 周报</div>
+    </div>
+
+    <!-- ============ DAILY BOARD ============ -->
+    <div id="m-daily-board">
+
+    <!-- ① KPI 3列 -->
+    <div class="kpi-row">
+        <div class="card kpi-item k-rev a d1">
+            <div class="kpi-label">昨日变现</div>
+            <div class="kpi-val c-green" id="k-rev">¥0</div>
+            <div class="kpi-sub">团队累计</div>
+        </div>
+        <div class="card kpi-item k-wx a d1">
+            <div class="kpi-label">加微</div>
+            <div class="kpi-val c-cyan" id="k-wx">0</div>
+            <div class="kpi-sub">人头合计</div>
+        </div>
+        <div class="card kpi-item k-dep a d1">
+            <div class="kpi-label">定金</div>
+            <div class="kpi-val c-purple" id="k-dep">0<span style="font-size:12px;color:#7C3AED"> 单</span></div>
+            <div class="kpi-sub">定金笔数</div>
+        </div>
+    </div>
+
+    <!-- ② 加微定金对比 -->
+    <div class="card a d2">
+        <div class="sec">
+            <div class="sec-title">客服加微与定金对比</div>
+            <div id="c1" class="chart"></div>
+        </div>
+    </div>
+
+    <!-- ③ 变现饼图 -->
+    <div class="card a d3">
+        <div class="sec">
+            <div class="sec-title">客服变现贡献占比</div>
+            <div id="c2" class="chart"></div>
+        </div>
+    </div>
+
+    <!-- ④ 回访监控 -->
+    <div class="card a d4">
+        <div class="sec">
+            <div class="sec-title">客服日常回访监控</div>
+            <div id="c3" class="chart"></div>
+        </div>
+    </div>
+
+    <!-- ⑤ AI 诊断 -->
+    <div class="card ai-card a d5">
+        <div class="ai-title">⚡ AI 经营诊断</div>
+        <div class="ai-body" id="ai-body">数据加载中...</div>
+    </div>
+
+    <!-- ⑥ 热力图 -->
+    <div class="card a d6">
+        <div class="sec">
+            <div class="sec-title">门店床位占用 · 7日</div>
+            <div class="hl">
+                <span><i class="dot" style="background:#1E3A5F"></i>空闲</span>
+                <span><i class="dot" style="background:#0EA5E9"></i>正常</span>
+                <span><i class="dot" style="background:#F59E0B"></i>预警</span>
+                <span><i class="dot" style="background:#EF4444"></i>满载</span>
+            </div>
+            <div id="c4" class="chart-tall"></div>
+        </div>
+        <div class="warn">⚠ 满载严禁加号 · 预警需主管审批</div>
+    </div>
+
+    <!-- ⑦ 黑名单 -->
+    <div class="card a d7">
+        <div class="sec">
+            <div class="sec-title">● 容错对冲黑名单</div>
+            <table class="tbl">
+                <thead><tr><th>客户</th><th>类型</th><th>客服</th><th>状态</th></tr></thead>
+                <tbody id="bl-body"><tr><td colspan="4" style="text-align:center;color:#475569">加载中</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    </div><!-- end daily board -->
+
+    <!-- ============ WEEKLY BOARD ============ -->
+    <div id="m-weekly-board" class="board-m-hidden">
+
+        <!-- 城市 tabs -->
+        <div class="city-tabs-m" id="m-weekly-city-tabs">
+            <div class="city-tab-m active" onclick="switchMWeeklyCity('全国总盘',this)">全国总盘</div>
+            <div class="city-tab-m" onclick="switchMWeeklyCity('成都',this)">成都</div>
+            <div class="city-tab-m" onclick="switchMWeeklyCity('重庆',this)">重庆</div>
+            <div class="city-tab-m" onclick="switchMWeeklyCity('哈尔滨',this)">哈尔滨</div>
+        </div>
+
+        <div style="text-align:center;font-size:11px;color:#64748B;margin-bottom:10px" id="mw-label">加载中...</div>
+
+        <!-- KPI -->
+        <div class="kpi-row" style="grid-template-columns:1fr 1fr">
+            <div class="card kpi-item k-rev"><div class="kpi-label" id="mw-rev-label">💰 变现</div><div class="kpi-val c-green" id="mw-rev">¥0</div><div class="kpi-sub" id="mw-wow-rev"></div></div>
+            <div class="card kpi-item k-wx"><div class="kpi-label" id="mw-roi-label">📊 ROI</div><div class="kpi-val c-cyan" id="mw-roi">0</div><div class="kpi-sub" id="mw-wow-roi"></div></div>
+        </div>
+        <div class="kpi-row" style="grid-template-columns:1fr 1fr">
+            <div class="card kpi-item" style="border-left:3px solid #FB923C"><div class="kpi-label">💵 消耗</div><div class="kpi-val" style="color:#FB923C" id="mw-spend">¥0</div><div class="kpi-sub" id="mw-wow-spend"></div></div>
+            <div class="card kpi-item" style="border-left:3px solid #38BDF8"><div class="kpi-label">👥 加微 / 定金</div><div class="kpi-val" style="color:#38BDF8" id="mw-wx">0</div><div class="kpi-sub" id="mw-dep-text">定金 0</div></div>
+        </div>
+
+        <!-- 步速 -->
+        <div class="card" style="padding:14px">
+            <div class="sec-title">🏃 月目标步速</div>
+            <div id="mw-pace"></div>
+        </div>
+
+        <!-- 4周趋势 -->
+        <div class="card" style="margin-top:10px">
+            <div class="sec">
+                <div class="sec-title" id="mw-trend-title">📈 近4周趋势</div>
+                <div id="mw-trend" class="chart"></div>
+            </div>
+        </div>
+
+        <!-- 日度明细 (city only) -->
+        <div class="card" style="margin-top:10px;display:none" id="mw-daily-card">
+            <div class="sec">
+                <div class="sec-title" id="mw-daily-title">📋 逐日明细</div>
+                <table class="tbl"><thead><tr><th>日期</th><th>星期</th><th style="text-align:right">变现</th><th style="text-align:right">消耗</th><th style="text-align:right">加微</th></tr></thead>
+                <tbody id="mw-daily-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 城市矩阵 (national only) -->
+        <div class="card" style="margin-top:10px" id="mw-matrix-card">
+            <div class="sec">
+                <div class="sec-title" id="mw-matrix-title">🏆 城市对比</div>
+                <table class="tbl"><thead><tr><th>城市</th><th style="text-align:right">变现</th><th style="text-align:right">ROI</th><th style="text-align:right">环比</th><th style="text-align:right">步速</th></tr></thead>
+                <tbody id="mw-matrix-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 上周vs本周 (city only) -->
+        <div class="card" style="margin-top:10px;display:none" id="mw-wow-card">
+            <div class="sec">
+                <div class="sec-title" id="mw-wow-title">🔄 周对比</div>
+                <div id="mw-wow-body"></div>
+            </div>
+        </div>
+
+        <!-- CS 排行 -->
+        <div class="card" style="margin-top:10px">
+            <div class="sec">
+                <div class="sec-title" id="mw-cs-title">👤 客服排行</div>
+                <table class="tbl"><thead><tr><th>排名</th><th>客服</th><th style="text-align:right">加微</th><th style="text-align:right">变现</th></tr></thead>
+                <tbody id="mw-cs-body"></tbody></table>
+            </div>
+        </div>
+
+        <!-- 预警 -->
+        <div id="mw-alerts" style="margin-top:10px"></div>
+    </div>
+
+<script>
+const dt='#94A3B8';
+const da={axisLine:{lineStyle:{color:'#334155'}},axisTick:{show:false},splitLine:{lineStyle:{color:'rgba(51,65,85,0.4)'}},axisLabel:{color:dt,fontSize:10}};
+const dg={left:'3%',right:'4%',bottom:'18%',top:'10%',containLabel:true};
+const ts={backgroundColor:'#1E293B',borderColor:'#334155',textStyle:{color:'#E2E8F0',fontSize:11}};
+
+const c1=echarts.init(document.getElementById('c1'));
+const c2=echarts.init(document.getElementById('c2'));
+const c3=echarts.init(document.getElementById('c3'));
+const c4=echarts.init(document.getElementById('c4'));
+
+// ── Board Switcher ──
+function switchMobileBoard(board, el) {
+    document.querySelectorAll('.top-tab').forEach(t => t.classList.remove('active'));
+    if (el) el.classList.add('active');
+    document.getElementById('m-daily-board').classList.toggle('board-m-hidden', board !== 'daily');
+    document.getElementById('m-weekly-board').classList.toggle('board-m-hidden', board !== 'weekly');
+    if (board === 'weekly') loadMWeeklyData();
+}
+
+async function load(){
+    try{
+        const r=await fetch('./data.json');if(!r.ok)return;const db=await r.json();
+
+        // KPI
+        if(db.revenue!==undefined)document.getElementById('k-rev').innerText='¥'+Number(db.revenue).toLocaleString();
+        if(db.wechat_total!==undefined)document.getElementById('k-wx').innerText=db.wechat_total;
+        if(db.deposit_total!==undefined)document.getElementById('k-dep').innerHTML=`${db.deposit_total}<span style="font-size:12px;color:#7C3AED"> 单</span>`;
+        if(db.date)document.getElementById('rpt-date').innerText=`数据快照 · ${db.date}`;
+
+        // AI
+        if(db.ai_summary){
+            document.getElementById('ai-body').innerHTML=db.ai_summary.replace(/\n+/g,'<br>');
+        }
+
+        // Chart1: 加微定金
+        c1.setOption({
+            tooltip:{trigger:'axis',axisPointer:{type:'shadow'},...ts},
+            legend:{data:['加微','定金'],bottom:0,textStyle:{color:dt,fontSize:10}},
+            grid:dg,
+            xAxis:{type:'category',data:db.cs_names||[],...da},
+            yAxis:{type:'value',...da},
+            series:[
+                {name:'加微',type:'bar',barWidth:'28%',data:db.wechat_list||[],itemStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'#22D3EE'},{offset:1,color:'#0891B2'}]},borderRadius:[3,3,0,0]},label:{show:true,position:'top',fontWeight:'700',color:'#22D3EE',fontSize:11}},
+                {name:'定金',type:'bar',barWidth:'28%',data:db.deposit_list||[],itemStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'#FBBF24'},{offset:1,color:'#D97706'}]},borderRadius:[3,3,0,0]},label:{show:true,position:'top',fontWeight:'700',color:'#FBBF24',fontSize:11}}
+            ]
+        });
+
+        // Chart2: 饼图
+        const pc=['#06B6D4','#3B82F6','#8B5CF6','#A78BFA','#22D3EE','#F472B6'];
+        const pd=(db.revenue_pie||[]).map((d,i)=>({...d,itemStyle:{color:pc[i%pc.length]}}));
+        c2.setOption({
+            title:{text:'总变现\n¥'+Number(db.revenue||0).toLocaleString(),left:'center',top:'center',textStyle:{fontSize:13,fontWeight:'900',color:'#E2E8F0',lineHeight:20}},
+            tooltip:{trigger:'item',...ts},
+            series:[{name:'变现',type:'pie',radius:['45%','72%'],center:['50%','50%'],itemStyle:{borderRadius:5,borderColor:'#0B1120',borderWidth:2},label:{show:true,formatter:'{b}\n¥{c}',color:'#94A3B8',fontSize:10,fontWeight:'600',lineHeight:14},data:pd}]
+        });
+
+        // Chart3: 回访
+        c3.setOption({
+            tooltip:{trigger:'axis',axisPointer:{type:'shadow'},...ts},
+            legend:{data:['已回访','超期未回访'],bottom:0,textStyle:{color:dt,fontSize:10}},
+            grid:dg,
+            xAxis:{type:'category',data:db.cs_names||[],...da},
+            yAxis:{type:'value',...da},
+            series:[
+                {name:'已回访',type:'bar',stack:'t',barWidth:'40%',data:db.fulfill_list||[],itemStyle:{color:'rgba(52,211,153,0.7)'},label:{show:true,position:'inside',color:'#fff',fontWeight:'700',fontSize:11}},
+                {name:'超期未回访',type:'bar',stack:'t',barWidth:'40%',data:db.gap_list||[],itemStyle:{color:'rgba(248,113,113,0.7)',borderRadius:[3,3,0,0]},label:{show:true,position:'inside',color:'#fff',fontWeight:'700',fontSize:11}}
+            ]
+        });
+
+        // Blacklist
+        const tb=document.getElementById('bl-body');
+        if(db.blacklist&&db.blacklist.length>0){
+            tb.innerHTML='';
+            db.blacklist.forEach(it=>{
+                const d=it.level==='danger';
+                const b=d?'<span class="badge b-red">追责</span>':'<span class="badge b-yel">已提醒</span>';
+                tb.innerHTML+=`<tr><td style="font-weight:600;color:${d?'#FCA5A5':'#E2E8F0'}">${it.client}</td><td style="color:${d?'#FCA5A5':'#94A3B8'}">${it.type}</td><td style="font-weight:600">${it.cs||'-'}</td><td>${b}</td></tr>`;
+            });
+        }else{tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:#475569;padding:20px">暂无</td></tr>';}
+
+        // Heatmap
+        renderH(db.y_axis_days,db.bed_heatmap);
+    }catch(e){console.error(e)}
+}
+
+const hrs=['9:00','9:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30'];
+function renderH(days,mat){
+    const y=days&&days.length>0?days:['今日','明日','第3天','第4天','第5天','第6天','第7天'];
+    const m=mat||y.map(()=>hrs.map(()=>0));
+    const d=[];
+    for(let i=0;i<y.length;i++){const row=m[i]||hrs.map(()=>0);for(let h=0;h<20;h++)d.push([h,i,row[h]||0]);}
+    c4.setOption({
+        tooltip:{position:'top',...ts,formatter:p=>`${y[p.value[1]]} ${hrs[p.value[0]]}<br/>占用: <b>${p.value[2]} 床</b>`},
+        grid:{left:'12%',right:'2%',bottom:'6%',top:'3%',containLabel:true},
+        xAxis:{type:'category',data:hrs,splitArea:{show:false},...da,axisLabel:{color:dt,fontSize:7,rotate:45}},
+        yAxis:{type:'category',data:y,splitArea:{show:false},...da,axisLabel:{fontSize:9}},
+        visualMap:{show:false,min:0,max:4,inRange:{color:['#1E3A5F','#0EA5E9','#0EA5E9','#F59E0B','#EF4444']}},
+        series:[{name:'床位',type:'heatmap',data:d,label:{show:true,formatter:p=>p.value[2]>0?p.value[2]:'',fontSize:8,fontWeight:'700',color:'#fff'},itemStyle:{borderColor:'#0B1120',borderWidth:1.5,borderRadius:2}}]
+    });
+}
+renderH(null,null);
+load();
+window.addEventListener('resize',()=>{c1.resize();c2.resize();c3.resize();c4.resize();if(mwTrend)mwTrend.resize();});
+
+// ═══════════════════════════════════════════
+// 周度报表 (mobile)
+// ═══════════════════════════════════════════
+const MW_MAP = {'全国总盘':'data_weekly_national.json','成都':'data_weekly_chengdu.json','重庆':'data_weekly_chongqing.json','哈尔滨':'data_weekly_harbin.json'};
+let mwTrend;
+let mwCity = '全国总盘';
+
+function switchMWeeklyCity(city, el) {
+    document.querySelectorAll('#m-weekly-city-tabs .city-tab-m').forEach(t => t.classList.remove('active'));
+    if (el) el.classList.add('active');
+    mwCity = city;
+    loadMWeeklyData(city);
+}
+
+async function loadMWeeklyData(city) {
+    city = city || mwCity;
+    const isNat = city === '全国总盘';
+    try {
+        const res = await fetch('./' + (MW_MAP[city]||MW_MAP['全国总盘']) + '?t=' + Date.now());
+        if (!res.ok) return;
+        const d = await res.json();
+
+        // 判断数据是否属于当前周
+        const weekEnd = new Date(d.week_end + 'T23:59:59');
+        const now = new Date();
+        const isCurrentWeek = weekEnd >= now;
+        const weekPrefix = isCurrentWeek ? '本周' : '第' + d.week_num + '周';
+
+        document.getElementById('mw-daily-card').style.display = isNat ? 'none' : '';
+        document.getElementById('mw-wow-card').style.display = isNat ? 'none' : '';
+        document.getElementById('mw-matrix-card').style.display = isNat ? '' : 'none';
+
+        document.getElementById('mw-label').textContent = d.week_label || '';
+        document.getElementById('mw-rev-label').textContent = isNat ? '💰 全国' + weekPrefix + '变现' : '💰 ' + city + weekPrefix + '变现';
+        document.getElementById('mw-roi-label').textContent = '📊 ' + weekPrefix + 'ROI';
+        document.getElementById('mw-rev').textContent = '¥' + Number(d.week_revenue||0).toLocaleString();
+        document.getElementById('mw-roi').textContent = d.week_roi || 0;
+        document.getElementById('mw-spend').textContent = '¥' + Number(d.week_spend||0).toLocaleString();
+        document.getElementById('mw-wx').textContent = d.week_wechat || 0;
+        document.getElementById('mw-dep-text').textContent = '定金 ' + (d.week_deposit||0);
+
+        const wow = d.wow_change || {};
+        const wb = (v,s) => { if(!v&&v!==0) return ''; return v>=0 ? `<span style="color:#34D399">↑${Math.abs(v)}${s}</span>` : `<span style="color:#FCA5A5">↓${Math.abs(v)}${s}</span>`; };
+        document.getElementById('mw-wow-rev').innerHTML = d.wow_change ? '环比 '+wb(wow.revenue_pct,'%') : '';
+        document.getElementById('mw-wow-roi').innerHTML = d.wow_change ? '环比 '+wb(wow.roi_change,'') : '';
+        document.getElementById('mw-wow-spend').innerHTML = d.wow_change ? '环比 '+wb(wow.spend_pct,'%') : '';
+
+        // Pace
+        const pb = document.getElementById('mw-pace');
+        if (!d.month_target || d.pace_status==='no_target') {
+            pb.innerHTML = '<span style="font-size:11px;color:#475569">暂无月度目标</span>';
+        } else {
+            const pct = Math.min(Math.round(d.month_cum_revenue/d.month_target*100),100);
+            const wPct = Math.round(d.month_elapsed_weeks/d.month_total_weeks*100);
+            const sc = {ahead:'#34D399',on_track:'#22D3EE',behind:'#FCA5A5'};
+            const sl = {ahead:'🚀 超前',on_track:'✅ 正常',behind:'⚠️ 滞后'};
+            const co = sc[d.pace_status]||'#94A3B8';
+            pb.innerHTML = `<div style="display:flex;gap:8px;align-items:center;font-size:10px;margin-bottom:6px"><span style="color:#94A3B8">目标¥${Number(d.month_target).toLocaleString()}</span><span style="color:${co};font-weight:700">${sl[d.pace_status]||'—'}</span><span style="color:#475569">第${d.month_elapsed_weeks}/${d.month_total_weeks}周</span></div><div style="position:relative;height:14px;background:rgba(51,65,85,.3);border-radius:8px;overflow:hidden"><div style="height:14px;border-radius:8px;width:${pct}%;background:${co}"></div><div style="position:absolute;left:${wPct}%;top:0;bottom:0;width:2px;background:#FBBF24;opacity:.8"></div></div><div style="display:flex;justify-content:space-between;font-size:9px;color:#475569;margin-top:3px"><span>¥${Number(d.month_cum_revenue).toLocaleString()} (${pct}%)</span><span>步速 ¥${Number(d.actual_pace).toLocaleString()}/周</span></div>`;
+        }
+
+        // Trend
+        if (!mwTrend) mwTrend = echarts.init(document.getElementById('mw-trend'));
+        mwTrend.setOption({
+            tooltip:{trigger:'axis',...ts},
+            legend:{data:['变现','ROI'],bottom:0,textStyle:{color:'#94A3B8',fontSize:9}},
+            grid:{left:'8%',right:'8%',bottom:'18%',top:'8%',containLabel:true},
+            xAxis:{type:'category',data:(d.trend_weeks||[]).filter(w=>w),...da,axisLabel:{fontSize:9,color:'#64748B'}},
+            yAxis:[{type:'value',...da,axisLabel:{fontSize:9,formatter:v=>v>=10000?'¥'+(v/10000).toFixed(1)+'万':'¥'+v}},{type:'value',...da,axisLabel:{fontSize:9},splitLine:{show:false}}],
+            series:[
+                {name:'变现',type:'bar',data:d.trend_revenue||[],barWidth:'35%',itemStyle:{color:'#34D399',borderRadius:[3,3,0,0]}},
+                {name:'ROI',type:'line',yAxisIndex:1,data:d.trend_roi||[],smooth:true,symbol:'circle',symbolSize:6,lineStyle:{color:'#22D3EE',width:2},itemStyle:{color:'#22D3EE'}}
+            ]
+        },true);
+        setTimeout(()=>mwTrend.resize(),100);
+
+        // CS
+        const medals = ['🥇','🥈','🥉'];
+        document.getElementById('mw-cs-title').textContent = isNat ? '👤 客服' + weekPrefix + '排行（全国）' : '👤 '+city+' 客服排行';
+        document.getElementById('mw-daily-title').textContent = '📋 ' + weekPrefix + '逐日明细';
+        document.getElementById('mw-matrix-title').textContent = '🏆 城市' + weekPrefix + '对比';
+        document.getElementById('mw-wow-title').textContent = isCurrentWeek ? '🔄 上周 vs 本周' : '🔄 第' + (d.week_num-1) + '周 vs 第' + d.week_num + '周';
+        document.getElementById('mw-cs-body').innerHTML = (d.cs_table||[]).map((cs,i) => {
+            const r = i<3?medals[i]:(i+1);
+            return `<tr><td>${r}</td><td style="font-weight:600;color:#E2E8F0">${cs.name}</td><td style="text-align:right;color:#38BDF8">${cs.wechat}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(cs.revenue).toLocaleString()}</td></tr>`;
+        }).join('');
+
+        // Alerts
+        const ad = document.getElementById('mw-alerts');
+        const als = d.alerts||[];
+        if(!als.length){ad.innerHTML='';} else {
+            const ic={danger:'🔴',warning:'🟡',healthy:'🟢'};
+            const tc={danger:'#FCA5A5',warning:'#FBBF24',healthy:'#34D399'};
+            ad.innerHTML = als.map(a=>`<div class="card" style="padding:10px 12px;margin-bottom:6px;border:1px solid ${tc[a.level]}22"><span style="font-size:11px">${ic[a.level]||'⚠️'}</span><span style="font-size:10px;color:${tc[a.level]||'#FBBF24'};margin-left:6px">${a.msg}</span></div>`).join('');
+        }
+
+        if (isNat) {
+            const pi={ahead:'🚀',on_track:'✅',behind:'⚠️',no_target:'—'};
+            document.getElementById('mw-matrix-body').innerHTML = (d.city_matrix||[]).map(c=>{
+                const wh = c.wow_revenue_pct>=0?`<span style="color:#34D399">↑${c.wow_revenue_pct}%</span>`:`<span style="color:#FCA5A5">↓${Math.abs(c.wow_revenue_pct)}%</span>`;
+                return `<tr><td style="font-weight:700;color:#E2E8F0">${c.city}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(c.revenue).toLocaleString()}</td><td style="text-align:right;color:${c.roi>=2?'#34D399':c.roi>=1?'#FBBF24':'#FCA5A5'};font-weight:700">${c.roi}</td><td style="text-align:right">${wh}</td><td style="text-align:right">${pi[c.pace_status]||'—'}</td></tr>`;
+            }).join('');
+        } else {
+            document.getElementById('mw-daily-body').innerHTML = (d.daily_breakdown||[]).map(dy=>`<tr><td style="color:#E2E8F0;font-weight:600">${dy.date}</td><td style="color:#94A3B8">${dy.weekday}</td><td style="text-align:right;color:#34D399;font-weight:700">¥${Number(dy.revenue).toLocaleString()}</td><td style="text-align:right;color:#FB923C">¥${Number(dy.spend).toLocaleString()}</td><td style="text-align:right;color:#38BDF8">${dy.wechat}</td></tr>`).join('');
+            // WoW
+            const lw = d.last_week;
+            const wb2 = document.getElementById('mw-wow-body');
+            if (!lw) { wb2.innerHTML='<span style="font-size:11px;color:#475569">暂无上周数据</span>'; }
+            else {
+                const wc = d.wow_change||{};
+                const ar = (v,s)=>v>=0?`<span style="color:#34D399;font-weight:700">↑${v}${s}</span>`:`<span style="color:#FCA5A5;font-weight:700">↓${Math.abs(v)}${s}</span>`;
+                wb2.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:10px;text-align:center"><div><div style="color:#94A3B8">变现</div><div style="color:#475569;margin:3px 0">上周¥${Number(lw.revenue).toLocaleString()}</div><div style="color:#E2E8F0;font-weight:700">该周¥${Number(d.week_revenue).toLocaleString()}</div><div style="margin-top:3px">${ar(wc.revenue_pct,'%')}</div></div><div><div style="color:#94A3B8">消耗</div><div style="color:#475569;margin:3px 0">上周¥${Number(lw.spend).toLocaleString()}</div><div style="color:#E2E8F0;font-weight:700">该周¥${Number(d.week_spend).toLocaleString()}</div><div style="margin-top:3px">${ar(wc.spend_pct,'%')}</div></div><div><div style="color:#94A3B8">ROI</div><div style="color:#475569;margin:3px 0">上周 ${lw.roi}</div><div style="color:#E2E8F0;font-weight:700">该周 ${d.week_roi}</div><div style="margin-top:3px">${ar(wc.roi_change,'')}</div></div></div>`;
+            }
+        }
+    } catch(e) { console.error('周报加载失败:',e); }
+}
+</script>
+</body>
+</html>
+

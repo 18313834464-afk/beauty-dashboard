@@ -1,0 +1,89 @@
+{
+  "city": "重庆",
+  "month": "2026-04",
+  "days_elapsed": 3,
+  "total_days": 30,
+  "cum_revenue": 0.0,
+  "cum_spend": 0,
+  "cum_wechat": 61,
+  "cum_deposit": 5,
+  "cum_open": 0,
+  "cum_refund": 1,
+  "roi": 0,
+  "revenue_target": 100000,
+  "progress": 0.0,
+  "predicted_revenue": 0.0,
+  "predicted_spend": 0.0,
+  "predicted_roi": 0,
+  "daily_trend": [
+    {
+      "date": "2026-04-01",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-02",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    },
+    {
+      "date": "2026-04-03",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0
+    }
+  ],
+  "rate_trend": [
+    {
+      "date": "2026-04-01",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0
+    },
+    {
+      "date": "2026-04-02",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0
+    },
+    {
+      "date": "2026-04-03",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0
+    }
+  ],
+  "cs_table": [
+    {
+      "name": "侯芳",
+      "wechat": 61,
+      "deposit": 5,
+      "revenue": 11240.0,
+      "intent_a": 0,
+      "intent_b": 1,
+      "intent_c": 7,
+      "intent_total": 8
+    }
+  ],
+  "refund_details": [
+    {
+      "customer": "泡泡王",
+      "revenue": 0,
+      "cs": "侯芳",
+      "status": "到店退款"
+    }
+  ],
+  "refund_summary": [
+    {
+      "cs": "侯芳",
+      "city": "重庆",
+      "arrived": 1,
+      "not_arrived": 0
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "date": "2026-04-03",
+  "generated_at": "2026-04-04 05:25:11",
+  "revenue": 0.0,
+  "wechat_total": 9,
+  "deposit_total": 3,
+  "ai_summary": "⚠️ P1 转化率：开口→加微转化率为 0%，低于65%红线！必须点名报警",
+  "ad_spend": 0,
+  "open_count": 0,
+  "open_cost": 0,
+  "arrived_count": 0,
+  "noshow_count": 0,
+  "deal_count": 0,
+  "cs_names": [
+    "汤娅"
+  ],
+  "wechat_list": [
+    9
+  ],
+  "deposit_list": [
+    3
+  ],
+  "revenue_pie": [
+    {
+      "value": 0.0,
+      "name": "汤娅",
+      "itemStyle": {
+        "color": "#3B82F6"
+      }
+    }
+  ],
+  "fulfill_list": [
+    0
+  ],
+  "gap_list": [
+    0
+  ],
+  "blacklist": [],
+  "staff_intentions": {
+    "汤娅": {
+      "D级(无效)": 1,
+      "A级(高意向)": 2,
+      "C级(低意向)": 5,
+      "B级(中意向)": 1
+    }
+  },
+  "y_axis_days": [
+    "4月4日",
+    "4月5日",
+    "4月6日",
+    "4月7日",
+    "4月8日",
+    "4月9日",
+    "4月10日"
+  ],
+  "bed_heatmap": [
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "data_quality": {
+    "tables_ok": {
+      "前端投放": false,
+      "客服接待": true,
+      "成交台账": false,
+      "客户回访": false,
+      "门店排期": true
+    },
+    "missing": [
+      "前端投放",
+      "成交台账",
+      "客户回访"
+    ],
+    "completeness": 0.4
+  },
+  "health_score": {
+    "dimensions": {
+      "acquire": {
+        "score": 20,
+        "status": "danger",
+        "detail": "开口成本¥0, 开口→加微0%, ROI 0.0",
+        "label": "引流"
+      },
+      "convert": {
+        "score": 60,
+        "status": "warning",
+        "detail": "加微→定金33%, 到店率0%",
+        "label": "转化"
+      },
+      "deliver": {
+        "score": 50,
+        "status": "warning",
+        "detail": "退款率0%, 爽约率0%",
+        "label": "交付"
+      },
+      "aftersales": {
+        "score": 100,
+        "status": "healthy",
+        "detail": "回访完成率100% (0/0)",
+        "label": "售后"
+      },
+      "team": {
+        "score": 3,
+        "status": "danger",
+        "detail": "人均产出¥0, 人均加微9",
+        "label": "团队"
+      }
+    },
+    "overall_score": 45,
+    "overall_status": "danger",
+    "kpis": {
+      "spend": 0.0,
+      "open_count": 0.0,
+      "wechat": 9.0,
+      "deposit": 3.0,
+      "revenue": 0.0,
+      "arrived": 0.0,
+      "noshow": 0.0,
+      "refund_count": 0,
+      "open_cost": 0,
+      "open_to_wechat": 0,
+      "ad_roi": 0,
+      "wechat_to_dep": 0.333,
+      "dep_to_arrival": 0.0,
+      "noshow_rate": 0,
+      "refund_rate": 0.0,
+      "followup_rate": 1.0,
+      "revenue_per_cs": 0.0,
+      "wechat_per_cs": 9.0,
+      "cs_count": 1,
+      "monthly_target": 100000
+    }
+  },
+  "alerts": [
+    {
+      "level": "P1",
+      "category": "引流",
+      "message": "哈尔滨引流健康度仅20分: 开口成本¥0, 开口→加微0%, ROI 0.0",
+      "city": "哈尔滨",
+      "action": "检查投放素材和出价策略"
+    }
+  ]
+}

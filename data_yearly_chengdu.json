@@ -1,0 +1,191 @@
+{
+  "city": "成都",
+  "year": 2026,
+  "start_month": 3,
+  "cum_revenue": 266791.77,
+  "cum_spend": 95338.22,
+  "cum_wechat": 1057,
+  "cum_deposit": 126,
+  "cum_open": 1522.0,
+  "cum_roi": 2.8,
+  "monthly_avg_rev": 133395.89,
+  "predicted_annual": 1600750.68,
+  "revenue_target": 3000000,
+  "progress": 8.7,
+  "monthly_kpi": [
+    {
+      "month": 1,
+      "month_label": "1月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
+    },
+    {
+      "month": 2,
+      "month_label": "2月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
+    },
+    {
+      "month": 3,
+      "month_label": "3月",
+      "revenue": 249591.77,
+      "spend": 95338.22,
+      "roi": 2.62,
+      "wechat": 993,
+      "deposit": 118,
+      "open": 1522.0,
+      "open_cost": 62.64,
+      "refund": 0,
+      "days": 31,
+      "mom_revenue": null
+    },
+    {
+      "month": 4,
+      "month_label": "4月",
+      "revenue": 17200.0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 64,
+      "deposit": 8,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 1,
+      "days": 3,
+      "mom_revenue": -92.9
+    }
+  ],
+  "trend_months": [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  "trend_revenue": [
+    0,
+    0,
+    249591.77,
+    17200.0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "trend_spend": [
+    0,
+    0,
+    95338.22,
+    0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "trend_roi": [
+    0,
+    0,
+    2.62,
+    0,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "cs_monthly_detail": [
+    {
+      "name": "会媛",
+      "months": {
+        "3": {
+          "wechat": 296,
+          "deposit": 34,
+          "revenue": 55180.0
+        },
+        "4": {
+          "wechat": 10,
+          "deposit": 0,
+          "revenue": 3780.0
+        }
+      },
+      "intent_a": 2,
+      "intent_b": 3,
+      "intent_c": 9
+    },
+    {
+      "name": "李小叶",
+      "months": {
+        "3": {
+          "wechat": 363,
+          "deposit": 44,
+          "revenue": 107632.0
+        },
+        "4": {
+          "wechat": 24,
+          "deposit": 4,
+          "revenue": 8940.0
+        }
+      },
+      "intent_a": 0,
+      "intent_b": 2,
+      "intent_c": 18
+    },
+    {
+      "name": "阳珂欣",
+      "months": {
+        "3": {
+          "wechat": 334,
+          "deposit": 40,
+          "revenue": 80938.8
+        },
+        "4": {
+          "wechat": 30,
+          "deposit": 4,
+          "revenue": 7260.0
+        }
+      },
+      "intent_a": 4,
+      "intent_b": 6,
+      "intent_c": 16
+    }
+  ],
+  "health_score": 80,
+  "health_breakdown": {
+    "revenue_efficiency": 2,
+    "cost_control": 2,
+    "team_stability": 3
+  }
+}
