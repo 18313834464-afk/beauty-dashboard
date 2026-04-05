@@ -7,7 +7,7 @@
   "cum_wechat": 1157,
   "cum_deposit": 131,
   "cum_open": 1682.0,
-  "cum_refund": 32,
+  "cum_refund": 33,
   "roi": 2.59,
   "revenue_target": 500000,
   "progress": 54.2,
@@ -444,7 +444,7 @@
       "cum_deposit": 8,
       "cum_revenue": 10048.0,
       "roi": 1.1,
-      "cum_refund": 0
+      "cum_refund": 1
     }
   },
   "cs_table": [
@@ -548,6 +548,12 @@
       "city": "重庆",
       "arrived": 1,
       "not_arrived": 0
+    },
+    {
+      "cs": "汤娅",
+      "city": "哈尔滨",
+      "arrived": 0,
+      "not_arrived": 1
     }
   ]
 }
