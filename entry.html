@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>美管家 · 填报</title>
+<script src="https://lf1-cdn-tos.bytegoofy.com/goofy/ee/lark/html/js-sdk/h5-js-sdk-1.5.16.js" async></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1120;color:#E2E8F0;font-family:-apple-system,'Helvetica Neue',sans-serif;min-height:100vh;padding-bottom:80px}
+.loading{display:flex;align-items:center;justify-content:center;height:100vh;font-size:14px;color:#64748B}
+
+/* Header */
+.hdr{background:rgba(30,41,59,.8);backdrop-filter:blur(12px);padding:12px 16px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(148,163,184,.1)}
+.hdr-top{display:flex;justify-content:space-between;align-items:center}
+.hdr h1{font-size:15px;font-weight:700}
+.hdr .badge{font-size:10px;padding:3px 8px;border-radius:10px;background:rgba(34,211,238,.1);color:#22D3EE;border:1px solid rgba(34,211,238,.2)}
+
+/* Bottom Nav */
+.bnav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(148,163,184,.1);z-index:100}
+.bnav-item{flex:1;text-align:center;padding:8px 0 6px;cursor:pointer;color:#64748B;font-size:10px;transition:color .2s}
+.bnav-item.active{color:#22D3EE}
+.bnav-item .icon{font-size:20px;display:block;margin-bottom:2px}
+
+/* Pages */
+.page{display:none;padding:14px}
+.page.active{display:block}
+
+/* Cards */
+.card{background:rgba(30,41,59,.65);backdrop-filter:blur(16px);border:1px solid rgba(148,163,184,.12);border-radius:14px;padding:14px;margin-bottom:10px}
+.card-title{font-size:12px;font-weight:700;color:#94A3B8;letter-spacing:.5px;margin-bottom:10px}
+
+/* Form */
+.form-group{margin-bottom:14px}
+.form-label{font-size:11px;color:#94A3B8;font-weight:600;margin-bottom:5px;display:block}
+.form-label .opt{font-weight:400;color:#475569;font-size:10px}
+.form-input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.2);background:rgba(15,23,42,.6);color:#E2E8F0;font-size:14px;outline:none;transition:border .2s}
+.form-input:focus{border-color:#22D3EE}
+.form-input::placeholder{color:#475569}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-static{font-size:14px;padding:10px 12px;border-radius:10px;background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.15);color:#22D3EE}
+
+/* Button */
+.btn{width:100%;padding:12px;border-radius:12px;border:none;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.btn:active{opacity:.7}
+.btn-primary{background:linear-gradient(135deg,#06B6D4,#3B82F6);color:#fff}
+.btn-success{background:linear-gradient(135deg,#10B981,#34D399);color:#fff}
+.btn-danger{background:rgba(239,68,68,.15);color:#FCA5A5;border:1px solid rgba(239,68,68,.2)}
+.btn-sm{padding:8px 14px;font-size:12px;width:auto;border-radius:8px}
+.btn-outline{background:transparent;border:1px solid rgba(148,163,184,.3);color:#94A3B8}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* Appointment list */
+.appt-item{background:rgba(30,41,59,.5);border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid rgba(148,163,184,.08)}
+.appt-item.today{border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.03)}
+.appt-item.pending-status{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.03)}
+.appt-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.appt-name{font-size:14px;font-weight:700;color:#E2E8F0}
+.appt-date{font-size:11px;color:#22D3EE;font-weight:600}
+.appt-meta{font-size:11px;color:#64748B;margin-bottom:8px}
+.appt-actions{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Followup list */
+.fu-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(51,65,85,.3)}
+.fu-check{width:24px;height:24px;border-radius:50%;border:2px solid rgba(148,163,184,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:14px;transition:all .2s}
+.fu-check.done{background:#10B981;border-color:#10B981;color:#fff}
+.fu-info{flex:1}
+.fu-name{font-size:13px;font-weight:600;color:#E2E8F0}
+.fu-staff{font-size:10px;color:#64748B}
+.fu-overdue{color:#FCA5A5}
+
+/* Toast */
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.toast-ok{background:rgba(16,185,129,.9);color:#fff}
+.toast-err{background:rgba(239,68,68,.9);color:#fff}
+
+/* Modal */
+.modal-mask{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:none;align-items:flex-end;justify-content:center}
+.modal-mask.show{display:flex}
+.modal{background:#1E293B;border-radius:16px 16px 0 0;width:100%;max-width:480px;padding:20px;max-height:70vh;overflow-y:auto}
+.modal h3{font-size:15px;font-weight:700;margin-bottom:14px;color:#E2E8F0}
+.modal-close{position:absolute;top:16px;right:16px;font-size:20px;color:#64748B;cursor:pointer}
+
+/* Confirm dialog */
+.confirm-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;display:none;align-items:center;justify-content:center}
+.confirm-mask.show{display:flex}
+.confirm-box{background:#1E293B;border-radius:14px;padding:20px;width:85%;max-width:360px;text-align:center}
+.confirm-box h3{font-size:15px;margin-bottom:10px;color:#E2E8F0}
+.confirm-detail{font-size:12px;color:#94A3B8;margin-bottom:16px;line-height:1.6;text-align:left}
+.confirm-btns{display:flex;gap:10px}
+
+/* Stats */
+.stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.stat-item{text-align:center;padding:10px 6px;background:rgba(30,41,59,.5);border-radius:10px}
+.stat-val{font-size:20px;font-weight:900}
+.stat-label{font-size:9px;color:#64748B;margin-top:2px}
+
+/* Follow-up stage badge */
+.fu-stage{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700}
+.fu-stage-1{background:rgba(34,211,238,.12);color:#22D3EE}
+.fu-stage-3{background:rgba(52,211,153,.12);color:#34D399}
+.fu-stage-7{background:rgba(96,165,250,.12);color:#60A5FA}
+.fu-stage-30{background:rgba(251,191,36,.12);color:#FBBF24}
+.fu-stage-90{background:rgba(167,139,250,.12);color:#A78BFA}
+.fu-card{background:rgba(30,41,59,.5);border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid rgba(148,163,184,.08)}
+.fu-card.overdue{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.03)}
+.fu-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.fu-card-name{font-size:14px;font-weight:700;color:#E2E8F0}
+.fu-card-meta{font-size:11px;color:#64748B;margin-bottom:8px;line-height:1.5}
+.fu-card-actions{display:flex;gap:6px}
+
+/* No-deal tags */
+.nd-tag{display:inline-block;padding:5px 10px;border-radius:8px;font-size:11px;cursor:pointer;background:rgba(34,211,238,.08);color:#22D3EE;border:1px solid rgba(34,211,238,.2);transition:all .2s;user-select:none}
+.nd-tag:active{background:rgba(34,211,238,.2);transform:scale(.95)}
+
+.form-input[readonly]{background:#1E293B;color:#64748B;cursor:not-allowed;border-color:rgba(100,116,139,.15)}
+</style>
+</head>
+<body>
+
+<div class="loading" id="loading-screen">正在验证身份...</div>
+
+<div id="app" style="display:none">
+  <!-- Header -->
+  <div class="hdr">
+    <div class="hdr-top">
+      <h1 id="app-title">美管家 · 填报</h1>
+      <span class="badge" id="user-badge"></span>
+    </div>
+  </div>
+
+  <!-- admin 城市切换 -->
+  <div id="admin-city-bar" style="display:none;padding:8px 16px;background:rgba(30,41,59,.6);border-bottom:1px solid rgba(148,163,184,.1);text-align:center">
+    <label style="color:#94A3B8;font-size:12px;margin-right:6px">操作城市</label>
+    <select id="admin-city" class="form-input" style="width:auto;display:inline-block;padding:4px 10px;font-size:13px">
+      <option value="chengdu">成都</option>
+      <option value="harbin">哈尔滨</option>
+    </select>
+  </div>
+
+  <!-- ========== 客服页面 ========== -->
+
+  <!-- 定金录入 -->
+  <div class="page" id="page-deposit">
+    <div class="card">
+      <div class="card-title">收定金录入</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">客户姓名 *</label>
+          <input class="form-input" id="dep-customer" placeholder="输入客户姓名">
+        </div>
+        <div class="form-group">
+          <label class="form-label">客户手机号 *</label>
+          <input class="form-input" id="dep-phone" type="tel" placeholder="输入手机号">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">定金金额 *</label>
+          <input class="form-input" id="dep-amount" type="number" placeholder="¥">
+        </div>
+        <div class="form-group">
+          <label class="form-label">付款渠道 *</label>
+          <select class="form-input" id="dep-channel">
+            <option value="">选择渠道</option>
+            <option>客服微信</option>
+            <option>门店收款码</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">操作项目</label>
+          <select class="form-input" id="dep-project">
+            <option value="">选择项目</option>
+            <option>纹眉</option><option>野生眉</option>
+            <option>纹唇</option><option>眼线</option>
+            <option>发际线</option><option>仅设计</option>
+            <option>眉+唇</option><option>眉+眼线</option>
+            <option>补色</option><option>洗眉</option>
+            <option>复查</option><option>其他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">指定纹绣师</label>
+          <select class="form-input" id="dep-teacher"><option value="">不指定</option></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">预约日期 <span class="opt">(可选)</span></label>
+          <input class="form-input" id="dep-date" type="date">
+          <div id="dep-date-status" style="font-size:10px;margin-top:4px;min-height:14px"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">预约时段 <span class="opt">(可选)</span></label>
+          <select class="form-input" id="dep-time">
+            <option value="">未定</option>
+            <option value="09:00">9:00</option>
+            <option value="09:30">9:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">加V时间 <span class="opt">(客户加微信日期，可选)</span></label>
+        <input class="form-input" id="dep-wechat-date" type="date">
+      </div>
+      <button class="btn btn-primary" id="dep-submit">提交定金记录</button>
+    </div>
+  </div>
+
+  <!-- 预约管理 -->
+  <div class="page" id="page-appt">
+    <div class="stat-row" id="appt-stats"></div>
+    <div class="card">
+      <div class="card-title" id="appt-title">预约管理</div>
+      <div id="appt-list"><div style="text-align:center;color:#475569;padding:20px">加载中...</div></div>
+    </div>
+  </div>
+
+  <!-- 排期总览 -->
+  <div class="page" id="page-schedule">
+    <div class="stat-row" id="sch-stats"></div>
+    <div class="card" id="sch-quick-card" style="display:none">
+      <div class="card-title">客户排期 <span style="font-weight:400;color:#64748B;font-size:10px">（补色 / 洗眉 / 复查等）</span></div>
+      <div class="form-group">
+        <label class="form-label">选择客户 *</label>
+        <select class="form-input" id="qs-customer"><option value="">加载中...</option></select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">电话</label>
+          <input class="form-input" id="qs-phone" type="tel" readonly>
+        </div>
+        <div class="form-group">
+          <label class="form-label">纹绣师（自动锁定）</label>
+          <input class="form-input" id="qs-teacher" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">项目 *</label>
+        <select class="form-input" id="qs-project">
+          <option value="">选择</option>
+          <option>补色</option><option>洗眉</option><option>复查</option>
+          <option>纹眉</option><option>野生眉</option>
+          <option>纹唇</option><option>眼线</option>
+          <option>发际线</option><option>仅设计</option>
+          <option>眉+唇</option><option>眉+眼线</option>
+          <option>其他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">日期 *</label>
+          <input class="form-input" id="qs-date" type="date">
+          <div id="qs-date-status" style="font-size:10px;margin-top:4px;min-height:14px"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">时段</label>
+          <select class="form-input" id="qs-time">
+            <option value="">未定</option>
+            <option value="09:00">9:00</option>
+            <option value="09:30">9:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-success" id="qs-submit">写入排期</button>
+    </div>
+    <div style="padding:0 14px 8px;display:flex;justify-content:flex-end" id="sch-toggle-wrap">
+      <button class="btn btn-sm btn-outline" id="sch-toggle-btn" onclick="toggleQuickSchedule()">+ 客户排期</button>
+    </div>
+    <div class="card" id="heatmap-card" style="display:none">
+      <div class="card-title">床位热力图 · 今日起7天</div>
+      <div id="heatmap-container" style="overflow-x:auto;-webkit-overflow-scrolling:touch"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">排期总览</div>
+      <div id="schedule-list"><div style="text-align:center;color:#475569;padding:20px">加载中...</div></div>
+    </div>
+  </div>
+
+  <!-- 回访 -->
+  <div class="page" id="page-followup">
+    <div class="stat-row" id="fu-stats"></div>
+    <div class="card">
+      <div class="card-title">售后回访跟踪</div>
+      <div id="fu-list"><div style="text-align:center;color:#475569;padding:20px">加载中...</div></div>
+    </div>
+  </div>
+
+  <!-- 回访完成弹窗 -->
+  <div class="modal-mask" id="modal-followup">
+    <div class="modal">
+      <h3 id="fu-modal-title">完成回访</h3>
+      <div id="fu-modal-info" style="font-size:12px;color:#94A3B8;margin-bottom:12px;line-height:1.6"></div>
+      <div class="form-group">
+        <label class="form-label">留色评价</label>
+        <select class="form-input" id="fu-color">
+          <option value="">选择（可选）</option>
+          <option>满意-留色良好</option>
+          <option>一般-可接受</option>
+          <option>不满意-需要尽快补色</option>
+          <option>不满意-暂无时间补色</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">备注 <span class="opt">(选填)</span></label>
+        <textarea class="form-input" id="fu-note" rows="2" placeholder="简要记录回访情况" style="resize:vertical;line-height:1.5"></textarea>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button class="btn btn-success" style="flex:1" id="fu-confirm">确认已回访</button>
+        <button class="btn btn-outline" style="flex:1" onclick="closeModal('modal-followup')">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 纹绣师页面 ========== -->
+
+  <!-- 操作登记 -->
+  <div class="page" id="page-artist">
+    <div class="card">
+      <div class="card-title">操作完成登记</div>
+      <div class="form-group">
+        <label class="form-label">客户姓名 *</label>
+        <input class="form-input" id="art-customer" placeholder="输入客户姓名">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">操作项目 *</label>
+          <select class="form-input" id="art-project">
+            <option value="">选择项目</option>
+            <option>纹眉</option><option>野生眉</option>
+            <option>纹唇</option><option>眼线</option>
+            <option>发际线</option><option>仅设计</option>
+            <option>眉+唇</option><option>眉+眼线</option>
+            <option>补色</option><option>洗眉</option>
+            <option>复查</option><option>其他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">操作金额 *</label>
+          <input class="form-input" id="art-amount" type="number" placeholder="¥">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">是否补色</label>
+          <select class="form-input" id="art-touchup">
+            <option value="no">否 - 新客</option>
+            <option value="yes">是 - 补色</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">备注</label>
+          <input class="form-input" id="art-remark" placeholder="可选">
+        </div>
+      </div>
+      <button class="btn btn-success" id="art-submit">提交操作记录</button>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bnav" id="bottom-nav"></div>
+</div>
+
+<!-- 改期弹窗 -->
+<div class="modal-mask" id="modal-reschedule">
+  <div class="modal">
+    <h3>修改预约</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">新预约日期</label>
+        <input class="form-input" id="resc-date" type="date">
+        <div id="resc-date-status" style="font-size:10px;margin-top:4px;min-height:14px"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">预约时段</label>
+        <select class="form-input" id="resc-time">
+          <option value="">未定</option>
+          <option value="09:00">上午 9:00</option>
+          <option value="09:30">上午 9:30</option>
+          <option value="10:00">上午 10:00</option>
+          <option value="10:30">上午 10:30</option>
+          <option value="11:00">上午 11:00</option>
+          <option value="11:30">上午 11:30</option>
+          <option value="13:00">下午 1:00</option>
+          <option value="13:30">下午 1:30</option>
+          <option value="14:00">下午 2:00</option>
+          <option value="14:30">下午 2:30</option>
+          <option value="15:00">下午 3:00</option>
+          <option value="15:30">下午 3:30</option>
+          <option value="16:00">下午 4:00</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button class="btn btn-primary" style="flex:1" id="resc-confirm">确认改期</button>
+      <button class="btn btn-outline" style="flex:1" onclick="closeModal('modal-reschedule')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- 成交确认弹窗 -->
+<div class="modal-mask" id="modal-deal">
+  <div class="modal">
+    <h3>确认成交</h3>
+    <div class="form-group">
+      <label class="form-label">实收金额（含尾款）*</label>
+      <input class="form-input" id="deal-revenue" type="number" placeholder="¥ 总金额">
+    </div>
+    <div class="form-group">
+      <label class="form-label">操作项目</label>
+      <select class="form-input" id="deal-project">
+        <option value="">选择项目</option>
+        <option>纹眉</option><option>野生眉</option>
+        <option>纹唇</option><option>眼线</option>
+        <option>发际线</option><option>仅设计</option>
+        <option>眉+唇</option><option>眉+眼线</option>
+        <option>补色</option><option>洗眉</option>
+        <option>复查</option><option>其他</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button class="btn btn-success" style="flex:1" id="deal-confirm">确认成交</button>
+      <button class="btn btn-outline" style="flex:1" onclick="closeModal('modal-deal')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- 未成交弹窗 -->
+<div class="modal-mask" id="modal-nodeal">
+  <div class="modal">
+    <h3>未成交情况说明</h3>
+    <div class="form-group">
+      <label class="form-label">主要原因</label>
+      <select class="form-input" id="nodeal-reason">
+        <option>纠结价格</option>
+        <option>时间不够</option>
+        <option>对效果有顾虑</option>
+        <option>想再考虑</option>
+        <option>陪同人反对</option>
+        <option>其他</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">快捷填写 <span class="opt">(点击标签自动填入)</span></label>
+      <div style="display:flex;flex-wrap:wrap;gap:6px" id="nodeal-tags">
+        <span class="nd-tag" data-txt="客户对价格有顾虑，">纠结价格</span>
+        <span class="nd-tag" data-txt="客户预留时间不够，需要改期。">没预留时间</span>
+        <span class="nd-tag" data-txt="客户对眉形效果有疑虑，">担心效果</span>
+        <span class="nd-tag" data-txt="客户对纹眉感兴趣，">想做纹眉</span>
+        <span class="nd-tag" data-txt="客户对纹唇感兴趣，">想做纹唇</span>
+        <span class="nd-tag" data-txt="客户对眼线感兴趣，">想做眼线</span>
+        <span class="nd-tag" data-txt="本人预期价格约¥____元，">价格预期</span>
+        <span class="nd-tag" data-txt="我们报价¥____元，">我方报价</span>
+        <span class="nd-tag" data-txt="客户表示需要和家人商量。">和家人商量</span>
+        <span class="nd-tag" data-txt="客户表示近期会再来。">近期再来</span>
+        <span class="nd-tag" data-txt="建议后续回访跟进，">建议回访</span>
+        <span class="nd-tag" data-txt="客户皮肤状态需要调理后再做。">皮肤需调理</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">详细说明 * <span class="opt">(至少50字，反馈给客服跟进)</span></label>
+      <textarea class="form-input" id="nodeal-detail" rows="5" placeholder="请描述：&#10;1. 客户对哪个项目感兴趣&#10;2. 未成交的具体原因&#10;3. 客户的价格预期 vs 我方报价&#10;4. 客户后续意向和跟进建议" style="resize:vertical;line-height:1.6"></textarea>
+      <div style="display:flex;justify-content:space-between;margin-top:4px">
+        <span id="nodeal-hint" style="font-size:10px;color:#FCA5A5"></span>
+        <span id="nodeal-count" style="font-size:10px;color:#475569">0/50</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <button class="btn btn-danger" style="flex:1" id="nodeal-confirm">提交说明</button>
+      <button class="btn btn-outline" style="flex:1" onclick="closeModal('modal-nodeal')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- 待定/取消弹窗 -->
+<div class="modal-mask" id="modal-pending">
+  <div class="modal">
+    <h3 id="pending-title">标记待定</h3>
+    <div class="form-group">
+      <label class="form-label">原因</label>
+      <select class="form-input" id="pend-reason">
+        <option>客户出差</option>
+        <option>客户时间未定</option>
+        <option>客户犹豫</option>
+        <option>客户要求退款</option>
+        <option>其他</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button class="btn btn-danger" style="flex:1" id="pend-confirm">确认</button>
+      <button class="btn btn-outline" style="flex:1" onclick="closeModal('modal-pending')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- 提交确认弹窗 -->
+<div class="confirm-mask" id="confirm-deposit">
+  <div class="confirm-box">
+    <h3>确认提交定金记录？</h3>
+    <div class="confirm-detail" id="confirm-deposit-detail"></div>
+    <div class="confirm-btns">
+      <button class="btn btn-primary" style="flex:1" id="confirm-deposit-yes">确认提交</button>
+      <button class="btn btn-outline" style="flex:1" onclick="document.getElementById('confirm-deposit').classList.remove('show')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 配置
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const API_BASE = localStorage.getItem('api_base') || 'https://1408834087-bdkp2qzmmz.ap-guangzhou.tencentscf.com';
+const params = new URLSearchParams(location.search);
+let TOKEN = params.get('token') || localStorage.getItem('entry_token') || '';
+
+if (params.get('api')) {
+  const raw = params.get('api');
+  try {
+    const u = new URL(raw);
+    const ok = /^https:\/\/.*\.(tencentscf|myqcloud|workers\.dev|feishu\.cn)/.test(u.origin);
+    if (ok) { localStorage.setItem('api_base', u.origin); location.reload(); }
+    else { console.warn('api base 不在白名单内，已忽略:', raw); }
+  } catch (_) { console.warn('api 参数不是合法 URL:', raw); }
+}
+
+const FEISHU_APP_ID = 'cli_a93bd735f479dcd3';
+
+let STAFF = null;
+let currentAppt = null;
+let pendingAction = '';
+
+function isInFeishu() {
+  return /Lark|Feishu/i.test(navigator.userAgent);
+}
+
+function waitForH5SDK(timeout) {
+  return new Promise(resolve => {
+    if (window.h5sdk) return resolve(true);
+    const t0 = Date.now();
+    const iv = setInterval(() => {
+      if (window.h5sdk) { clearInterval(iv); resolve(true); }
+      else if (Date.now() - t0 > timeout) { clearInterval(iv); resolve(false); }
+    }, 100);
+  });
+}
+
+function getCityKey() {
+  if (STAFF && STAFF.city === 'all') {
+    const sel = document.getElementById('admin-city');
+    return sel ? sel.value : 'chengdu';
+  }
+  return STAFF ? STAFF.city : 'chengdu';
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 初始化
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function feishuLogin() {
+  return new Promise((resolve, reject) => {
+    window.h5sdk.ready(() => {
+      window.tt.requestAuthCode({
+        appId: FEISHU_APP_ID,
+        success: (res) => resolve(res.code),
+        fail: (err) => reject(new Error(err.errMsg || '飞书免登失败')),
+      });
+    });
+  });
+}
+
+async function init() {
+  const loadEl = document.getElementById('loading-screen');
+
+  if (!TOKEN && isInFeishu()) {
+    loadEl.textContent = '飞书免登中...';
+    const sdkReady = await waitForH5SDK(3000);
+    if (sdkReady) {
+      try {
+        const code = await feishuLogin();
+        const resp = await fetch(API_BASE + '/api/feishu-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code }),
+        });
+        const data = await resp.json();
+        if (!data.ok) throw new Error(data.error);
+        TOKEN = data.token;
+        STAFF = data.staff;
+        localStorage.setItem('entry_token', TOKEN);
+      } catch (e) {
+        loadEl.textContent = '飞书免登失败: ' + e.message;
+        return;
+      }
+    } else {
+      loadEl.textContent = '飞书SDK加载超时，请刷新重试';
+      return;
+    }
+  } else if (!TOKEN) {
+    loadEl.textContent = '缺少访问令牌，请通过飞书打开或使用个人链接';
+    return;
+  }
+
+  if (!STAFF) {
+    localStorage.setItem('entry_token', TOKEN);
+    try {
+      const resp = await api('/api/auth');
+      if (!resp.ok) throw new Error(resp.error);
+      STAFF = resp.staff;
+    } catch (e) {
+      loadEl.textContent = '身份验证失败: ' + e.message;
+      return;
+    }
+  }
+
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('app').style.display = '';
+
+  if (STAFF.city === 'all') {
+    document.getElementById('admin-city-bar').style.display = '';
+  }
+
+  document.getElementById('user-badge').textContent = `${STAFF.name} · ${getCityName(STAFF.city)}`;
+  document.getElementById('app-title').textContent = STAFF.role === 'artist' ? '美管家 · 纹绣师' : '美管家 · 客服工作台';
+
+  setupNav();
+  setupForms();
+}
+
+function getCityName(key) {
+  return { chengdu: '成都', harbin: '哈尔滨', all: '全部' }[key] || key;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 导航
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function setupNav() {
+  const nav = document.getElementById('bottom-nav');
+  let tabs;
+
+  if (STAFF.role === 'artist') {
+    tabs = [
+      { id: 'appt', icon: '📋', label: '今日预约' },
+      { id: 'schedule', icon: '📅', label: '排期' },
+      { id: 'artist', icon: '✏️', label: '操作登记' },
+    ];
+  } else if (STAFF.role === 'admin') {
+    tabs = [
+      { id: 'deposit', icon: '💰', label: '收定金' },
+      { id: 'appt', icon: '📋', label: '预约管理' },
+      { id: 'schedule', icon: '📅', label: '排期' },
+      { id: 'followup', icon: '🔔', label: '回访' },
+      { id: 'artist', icon: '✏️', label: '纹绣师' },
+    ];
+  } else {
+    tabs = [
+      { id: 'deposit', icon: '💰', label: '收定金' },
+      { id: 'appt', icon: '📋', label: '预约管理' },
+      { id: 'schedule', icon: '📅', label: '排期' },
+      { id: 'followup', icon: '🔔', label: '回访' },
+    ];
+  }
+
+  nav.innerHTML = tabs.map((t, i) =>
+    `<div class="bnav-item${i === 0 ? ' active' : ''}" data-page="${t.id}" onclick="switchPage('${t.id}',this)">
+      <span class="icon">${t.icon}</span>${t.label}
+    </div>`
+  ).join('');
+
+  switchPage(tabs[0].id);
+}
+
+function switchPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.bnav-item').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) page.classList.add('active');
+  if (el) el.classList.add('active');
+  else document.querySelector(`.bnav-item[data-page="${id}"]`)?.classList.add('active');
+
+  if (id === 'appt') loadAppointments();
+  if (id === 'schedule') loadSchedule();
+  if (id === 'followup') loadFollowups();
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 表单设置
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function setupForms() {
+  const principals = { chengdu: { value: '夏夏老师', label: '主理人(夏夏)' }, harbin: { value: '嘉仪', label: '主理人(嘉仪)' } };
+
+  function populateDepTeacher(cityKey) {
+    const sel = document.getElementById('dep-teacher');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">不指定</option>';
+    const p = principals[cityKey];
+    if (p) { const o = document.createElement('option'); o.value = p.value; o.textContent = p.label; sel.appendChild(o); }
+  }
+
+  const city = getCityKey();
+  populateDepTeacher(city);
+
+  document.getElementById('dep-submit')?.addEventListener('click', previewDeposit);
+  document.getElementById('art-submit')?.addEventListener('click', submitArtistOp);
+  document.getElementById('resc-confirm')?.addEventListener('click', confirmReschedule);
+  document.getElementById('deal-confirm')?.addEventListener('click', confirmDeal);
+  document.getElementById('nodeal-confirm')?.addEventListener('click', confirmNoDeal);
+  document.getElementById('pend-confirm')?.addEventListener('click', confirmPending);
+  document.getElementById('confirm-deposit-yes')?.addEventListener('click', submitDeposit);
+  document.getElementById('fu-confirm')?.addEventListener('click', submitFollowup);
+  document.getElementById('qs-submit')?.addEventListener('click', submitQuickSchedule);
+  document.getElementById('qs-customer')?.addEventListener('change', onQsCustomerChange);
+
+  const qsDateInput = document.getElementById('qs-date');
+  if (qsDateInput) {
+    qsDateInput.addEventListener('change', async () => {
+      const dateVal = qsDateInput.value;
+      const statusEl = document.getElementById('qs-date-status');
+      if (!dateVal) { statusEl.innerHTML = ''; return; }
+      statusEl.innerHTML = '<span style="color:#64748B">检查排期中...</span>';
+      try {
+        const cityKey = getCityKey();
+        const resp = await api(`/api/schedule/check?city=${cityKey}&date=${dateVal}`);
+        if (resp.ok) {
+          statusEl.innerHTML = resp.available
+            ? `<span style="color:#10B981">✓ 可预约（已排${resp.count}个，上限${resp.max}）</span>`
+            : `<span style="color:#FCA5A5">✗ ${resp.message}</span>`;
+        } else {
+          statusEl.innerHTML = `<span style="color:#FCA5A5">${resp.error || '检查失败'}</span>`;
+        }
+      } catch (e) { statusEl.innerHTML = ''; }
+    });
+  }
+
+  const depDateInput = document.getElementById('dep-date');
+  if (depDateInput) {
+    depDateInput.addEventListener('change', async () => {
+      const dateVal = depDateInput.value;
+      const statusEl = document.getElementById('dep-date-status');
+      if (!dateVal) { statusEl.innerHTML = ''; return; }
+      statusEl.innerHTML = '<span style="color:#64748B">检查排期中...</span>';
+      try {
+        const cityKey = getCityKey();
+        const resp = await api(`/api/schedule/check?city=${cityKey}&date=${dateVal}`);
+        if (resp.ok) {
+          if (resp.available) {
+            statusEl.innerHTML = `<span style="color:#10B981">✓ 可预约（已排${resp.count}个，上限${resp.max}）</span>`;
+          } else {
+            statusEl.innerHTML = `<span style="color:#FCA5A5">✗ ${resp.message}</span>`;
+          }
+        } else {
+          statusEl.innerHTML = `<span style="color:#FCA5A5">${resp.error || '检查失败'}</span>`;
+        }
+      } catch (e) {
+        statusEl.innerHTML = '';
+      }
+    });
+  }
+
+  const rescDateInput = document.getElementById('resc-date');
+  if (rescDateInput) {
+    rescDateInput.addEventListener('change', async () => {
+      const dateVal = rescDateInput.value;
+      const statusEl = document.getElementById('resc-date-status');
+      if (!dateVal) { statusEl.innerHTML = ''; return; }
+      statusEl.innerHTML = '<span style="color:#64748B">检查排期中...</span>';
+      try {
+        const cityKey = currentAppt ? currentAppt.city_key : (getCityKey());
+        const resp = await api(`/api/schedule/check?city=${cityKey}&date=${dateVal}`);
+        if (resp.ok) {
+          statusEl.innerHTML = resp.available
+            ? `<span style="color:#10B981">✓ 可预约（已排${resp.count}个，上限${resp.max}）</span>`
+            : `<span style="color:#FCA5A5">✗ ${resp.message}</span>`;
+        } else {
+          statusEl.innerHTML = `<span style="color:#FCA5A5">${resp.error || '检查失败'}</span>`;
+        }
+      } catch (e) { statusEl.innerHTML = ''; }
+    });
+  }
+
+  document.querySelectorAll('.nd-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const ta = document.getElementById('nodeal-detail');
+      ta.value += tag.dataset.txt;
+      ta.focus();
+      ta.dispatchEvent(new Event('input'));
+    });
+  });
+
+  const ndTextarea = document.getElementById('nodeal-detail');
+  if (ndTextarea) {
+    ndTextarea.addEventListener('input', () => {
+      const len = ndTextarea.value.trim().length;
+      const counter = document.getElementById('nodeal-count');
+      counter.textContent = len >= 50 ? `${len}字 ✓` : `${len}/50`;
+      counter.style.color = len >= 50 ? '#10B981' : '#FCA5A5';
+      document.getElementById('nodeal-hint').textContent = len >= 50 ? '' : `还需${50 - len}字`;
+    });
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 收定金 — 预览确认 → 提交
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function previewDeposit() {
+  const customer = document.getElementById('dep-customer').value.trim();
+  const phone = document.getElementById('dep-phone').value.trim();
+  const amount = document.getElementById('dep-amount').value;
+  const channel = document.getElementById('dep-channel').value;
+  if (!customer) return toast('请填写客户姓名', 'err');
+  if (!phone) return toast('请填写客户手机号', 'err');
+  if (!amount) return toast('请填写定金金额', 'err');
+  if (!channel) return toast('请选择付款渠道', 'err');
+
+  const wechatDate = document.getElementById('dep-wechat-date').value;
+  const arrDate = document.getElementById('dep-date').value;
+  const arrTime = document.getElementById('dep-time').value;
+  const project = document.getElementById('dep-project').value;
+  const teacher = document.getElementById('dep-teacher').value;
+  const cityKey = getCityKey();
+
+  const schedEl = document.getElementById('dep-date-status');
+  if (arrDate && schedEl && schedEl.textContent.includes('✗')) return toast('预约日期排期已满，请更换日期', 'err');
+
+  let detail = `客户：${customer}　电话：${phone}\n`;
+  detail += `定金：¥${amount}　渠道：${channel}\n`;
+  if (wechatDate) detail += `加V时间：${wechatDate}\n`;
+  if (arrDate) detail += `预约到店：${arrDate}${arrTime ? ' ' + arrTime : ''}\n`;
+  if (project) detail += `项目：${project}\n`;
+  detail += `纹绣师：${teacher || '不指定'}\n`;
+  detail += `城市：${getCityName(cityKey)}　客服：${STAFF.name}`;
+
+  document.getElementById('confirm-deposit-detail').textContent = detail;
+  document.getElementById('confirm-deposit').classList.add('show');
+}
+
+async function submitDeposit() {
+  document.getElementById('confirm-deposit').classList.remove('show');
+
+  const btn = document.getElementById('dep-submit');
+  const customer = document.getElementById('dep-customer').value.trim();
+  const phone = document.getElementById('dep-phone').value.trim();
+  const amount = document.getElementById('dep-amount').value;
+  const channel = document.getElementById('dep-channel').value;
+  const wechatDate = document.getElementById('dep-wechat-date').value;
+  const arrDate = document.getElementById('dep-date').value;
+  const arrTime = document.getElementById('dep-time').value;
+  const project = document.getElementById('dep-project').value;
+  const teacher = document.getElementById('dep-teacher').value;
+  const cityKey = getCityKey();
+
+  btn.disabled = true;
+  btn.textContent = '提交中...';
+  try {
+    const resp = await api('/api/deposit', 'POST', {
+      city: cityKey,
+      customer,
+      phone,
+      deposit_amt: Number(amount),
+      payment_channel: channel,
+      add_wechat_date: wechatDate,
+      arrival_date: arrDate,
+      arrival_time: arrTime,
+      project,
+      teacher,
+      kefu: STAFF.name,
+    });
+    if (resp.ok) {
+      toast(resp.message || '定金记录已提交');
+      document.getElementById('dep-customer').value = '';
+      document.getElementById('dep-phone').value = '';
+      document.getElementById('dep-amount').value = '';
+      document.getElementById('dep-channel').value = '';
+      document.getElementById('dep-wechat-date').value = '';
+      document.getElementById('dep-date').value = '';
+      document.getElementById('dep-time').value = '';
+      document.getElementById('dep-date-status').innerHTML = '';
+      document.getElementById('dep-project').value = '';
+      document.getElementById('dep-teacher').value = '';
+    } else {
+      toast(resp.error || '提交失败', 'err');
+    }
+  } catch (e) { toast('网络错误: ' + e.message, 'err'); }
+  btn.disabled = false;
+  btn.textContent = '提交定金记录';
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 排期总览 + 快速排期
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+let _eligibleCustomers = [];
+
+async function toggleQuickSchedule() {
+  const card = document.getElementById('sch-quick-card');
+  const btn = document.getElementById('sch-toggle-btn');
+  if (card.style.display === 'none') {
+    card.style.display = '';
+    btn.textContent = '收起';
+    const sel = document.getElementById('qs-customer');
+    sel.innerHTML = '<option value="">加载客户列表...</option>';
+    document.getElementById('qs-phone').value = '';
+    document.getElementById('qs-teacher').value = '';
+    try {
+      const cityKey = getCityKey();
+      const resp = await api(`/api/schedule/customers?city=${cityKey}`);
+      _eligibleCustomers = resp.customers || [];
+      sel.innerHTML = '<option value="">请选择客户</option>';
+      if (_eligibleCustomers.length === 0) {
+        sel.innerHTML = '<option value="">暂无可排期客户</option>';
+      } else {
+        _eligibleCustomers.forEach((c, i) => {
+          const o = document.createElement('option');
+          o.value = i;
+          o.textContent = `${c.name}（${c.phone || '无电话'}）`;
+          sel.appendChild(o);
+        });
+      }
+    } catch (e) { sel.innerHTML = '<option value="">加载失败</option>'; }
+  } else {
+    card.style.display = 'none';
+    btn.textContent = '+ 客户排期';
+  }
+}
+
+function onQsCustomerChange() {
+  const sel = document.getElementById('qs-customer');
+  const idx = parseInt(sel.value);
+  const c = !isNaN(idx) ? _eligibleCustomers[idx] : null;
+  document.getElementById('qs-phone').value = c ? c.phone : '';
+  document.getElementById('qs-teacher').value = c ? c.teacher : '';
+}
+
+async function submitQuickSchedule() {
+  const selIdx = parseInt(document.getElementById('qs-customer').value);
+  const c = !isNaN(selIdx) ? _eligibleCustomers[selIdx] : null;
+  if (!c) return toast('请选择客户', 'err');
+  const project = document.getElementById('qs-project').value;
+  if (!project) return toast('请选择项目', 'err');
+  const date = document.getElementById('qs-date').value;
+  if (!date) return toast('请选择日期', 'err');
+  const time = document.getElementById('qs-time').value;
+
+  const schedEl = document.getElementById('qs-date-status');
+  if (schedEl && schedEl.textContent.includes('✗')) return toast('该日期排期已满', 'err');
+
+  const cityKey = getCityKey();
+  const btn = document.getElementById('qs-submit');
+  btn.disabled = true; btn.textContent = '写入中...';
+  try {
+    const resp = await api('/api/schedule/quick', 'POST', {
+      city: cityKey, customer: c.name, phone: c.phone, project, teacher: c.teacher, date, time,
+    });
+    if (resp.ok) {
+      toast('排期已写入');
+      document.getElementById('qs-customer').value = '';
+      document.getElementById('qs-phone').value = '';
+      document.getElementById('qs-teacher').value = '';
+      document.getElementById('qs-project').value = '';
+      document.getElementById('qs-date').value = '';
+      document.getElementById('qs-time').value = '';
+      document.getElementById('qs-date-status').innerHTML = '';
+      document.getElementById('sch-quick-card').style.display = 'none';
+      document.getElementById('sch-toggle-btn').textContent = '+ 客户排期';
+      loadSchedule();
+    } else { toast(resp.error || '写入失败', 'err'); }
+  } catch (e) { toast('网络错误: ' + e.message, 'err'); }
+  btn.disabled = false; btn.textContent = '写入排期';
+}
+
+async function loadHeatmap(todayStr) {
+  const container = document.getElementById('heatmap-container');
+  const card = document.getElementById('heatmap-card');
+  const cityKey = getCityKey();
+  const maxBeds = { chengdu: 4, harbin: 3 }[cityKey] || 4;
+
+  const days = [];
+  for (let d = 0; d < 7; d++) {
+    const dt = new Date();
+    dt.setDate(dt.getDate() + d);
+    const ds = `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+    const dayNames = ['日','一','二','三','四','五','六'];
+    days.push({ date: ds, label: d === 0 ? '今天' : `${dt.getMonth()+1}/${dt.getDate()} 周${dayNames[dt.getDay()]}` });
+  }
+
+  const results = await Promise.all(days.map(d =>
+    api(`/api/schedule/check?city=${cityKey}&date=${d.date}`).catch(() => null)
+  ));
+
+
+  const timeLabels = ['9:00','9:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30'];
+
+  function cellColor(occ, max) {
+    if (occ === 0) return 'rgba(30,41,59,.4)';
+    const ratio = occ / max;
+    if (ratio < 0.5) return 'rgba(16,185,129,.25)';
+    if (ratio < 0.75) return 'rgba(251,191,36,.3)';
+    if (ratio < 1) return 'rgba(249,115,22,.35)';
+    return 'rgba(239,68,68,.4)';
+  }
+
+  let html = '<table style="border-collapse:collapse;width:100%;min-width:420px;font-size:10px">';
+  html += '<tr><td style="padding:4px;color:#64748B;font-weight:600;min-width:40px">时段</td>';
+  days.forEach(d => { html += `<td style="padding:4px;color:#94A3B8;text-align:center;font-weight:600;white-space:nowrap">${d.label}</td>`; });
+  html += '</tr>';
+
+  timeLabels.forEach((t, ti) => {
+    html += `<tr><td style="padding:2px 4px;color:#475569">${t}</td>`;
+    days.forEach((d, di) => {
+      const r = results[di];
+      const occ = r && r.ok && r.slots && r.slots[ti] ? r.slots[ti].occupied : 0;
+      const bg = cellColor(occ, maxBeds);
+      const txt = occ > 0 ? occ : '';
+      html += `<td style="padding:2px;text-align:center"><div style="background:${bg};border-radius:3px;padding:3px 0;color:${occ >= maxBeds ? '#FCA5A5' : '#94A3B8'};font-weight:${occ >= maxBeds ? '700' : '400'}">${txt}</div></td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</table>';
+  html += `<div style="margin-top:6px;font-size:9px;color:#475569;display:flex;gap:8px;flex-wrap:wrap">
+    <span>🟩 空闲</span><span>🟨 较忙</span><span>🟧 繁忙</span><span>🟥 已满(${maxBeds}床)</span></div>`;
+
+  container.innerHTML = html;
+  card.style.display = '';
+}
+
+async function loadSchedule() {
+  const toggleWrap = document.getElementById('sch-toggle-wrap');
+  if (toggleWrap) toggleWrap.style.display = STAFF.role === 'artist' ? 'none' : '';
+
+  const list = document.getElementById('schedule-list');
+  list.innerHTML = '<div style="text-align:center;color:#475569;padding:20px">加载中...</div>';
+
+  const cities = [getCityKey()];
+  let allAppts = [];
+
+  for (const city of cities) {
+    try {
+      const resp = await api(`/api/appointments?city=${city}`);
+      if (resp.ok) allAppts = allAppts.concat(resp.appointments.map(a => ({ ...a, city_key: city, city_name: resp.city })));
+    } catch (e) { console.error(e); }
+  }
+
+  allAppts.forEach(a => {
+    a.arrival_date = serialToDate(a.arrival_date) || '待定';
+  });
+
+  const groups = {};
+  allAppts.forEach(a => {
+    const d = a.arrival_date;
+    if (!groups[d]) groups[d] = [];
+    groups[d].push(a);
+  });
+
+  const dates = Object.keys(groups).sort((a, b) => {
+    if (a === '待定') return 1;
+    if (b === '待定') return -1;
+    return a.localeCompare(b);
+  });
+
+  const _n = new Date();
+  const today = `${_n.getFullYear()}-${String(_n.getMonth()+1).padStart(2,'0')}-${String(_n.getDate()).padStart(2,'0')}`;
+  const futureCount = allAppts.filter(a => a.arrival_date >= today && a.arrival_date !== '待定').length;
+  const todayAppts = allAppts.filter(a => a.arrival_date === today).length;
+  const pendingCount = allAppts.filter(a => a.arrival_date === '待定').length;
+
+  document.getElementById('sch-stats').innerHTML = `
+    <div class="stat-item"><div class="stat-val" style="color:#22D3EE">${allAppts.length}</div><div class="stat-label">总预约</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:#34D399">${todayAppts}</div><div class="stat-label">今日</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:#FBBF24">${pendingCount}</div><div class="stat-label">待定</div></div>`;
+
+  loadHeatmap(today);
+
+  if (!dates.length) {
+    list.innerHTML = '<div style="text-align:center;color:#34D399;padding:30px">暂无排期</div>';
+    return;
+  }
+
+  const dayNames = ['日','一','二','三','四','五','六'];
+
+  list.innerHTML = dates.map(date => {
+    const appts = groups[date];
+    const isToday = date === today;
+    const isPast = date !== '待定' && date < today;
+    const dt = date !== '待定' ? new Date(date + 'T00:00:00') : null;
+    const dayName = dt ? `周${dayNames[dt.getDay()]}` : '';
+    const dateLabel = date === '待定' ? '待定' : isToday ? `${date} 今天` : `${date} ${dayName}`;
+    const headColor = isToday ? '#22D3EE' : isPast ? '#FCA5A5' : '#E2E8F0';
+
+    return `<div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 4px;border-bottom:1px solid rgba(148,163,184,.15)">
+        <span style="font-size:13px;font-weight:700;color:${headColor}">${dateLabel}</span>
+        <span style="font-size:11px;color:#94A3B8;background:rgba(51,65,85,.5);padding:2px 8px;border-radius:6px">${appts.length}人</span>
+      </div>
+      ${appts.map(a => {
+        const cityTag = STAFF.city === 'all' ? ` [${a.city_name}]` : '';
+        return `<div style="padding:6px 4px 6px 10px;border-bottom:1px solid rgba(51,65,85,.12);font-size:12px;color:#94A3B8;line-height:1.5">
+          <span style="color:#E2E8F0;font-weight:600">${a.customer}</span>${a.project ? ` · <span style="color:#22D3EE">${a.project}</span>` : ''} · ${a.teacher || '不指定'} · ${a.phone || '—'} · <span style="color:#64748B">${a.kefu || ''}${cityTag}</span>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 预约管理
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function loadAppointments() {
+  const list = document.getElementById('appt-list');
+  list.innerHTML = '<div style="text-align:center;color:#475569;padding:20px">加载中...</div>';
+
+  const cities = [getCityKey()];
+  let allAppts = [];
+
+  for (const city of cities) {
+    try {
+      const resp = await api(`/api/appointments?city=${city}`);
+      if (resp.ok) {
+        allAppts = allAppts.concat(resp.appointments.map(a => ({ ...a, city_key: city, city_name: resp.city })));
+      }
+    } catch (e) { console.error(e); }
+  }
+
+  allAppts.forEach(a => {
+    a.arrival_date = serialToDate(a.arrival_date) || '待定';
+    a.deposit_date = serialToDate(a.deposit_date) || '';
+  });
+
+  if (STAFF.role === 'artist') {
+    // Artist sees all — no filter; actions restricted in rendering
+  }
+
+  const _n = new Date();
+  const today = `${_n.getFullYear()}-${String(_n.getMonth()+1).padStart(2,'0')}-${String(_n.getDate()).padStart(2,'0')}`;
+  const arrivedCount = allAppts.filter(a => a.status === '已到店').length;
+  const todayCount = allAppts.filter(a => a.arrival_date === today).length;
+  const pendingCount = allAppts.filter(a => a.arrival_date === '待定' || (a.status && a.status.includes('待定'))).length;
+
+  document.getElementById('appt-stats').innerHTML = `
+    <div class="stat-item"><div class="stat-val" style="color:#22D3EE">${allAppts.length}</div><div class="stat-label">总预约</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:#10B981">${arrivedCount}</div><div class="stat-label">已到店</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:#34D399">${todayCount}</div><div class="stat-label">今日预约</div></div>`;
+
+  const titleEl = document.getElementById('appt-title');
+  if (titleEl) titleEl.textContent = STAFF.role === 'artist' ? '今日预约总览' : '预约管理';
+
+  if (!allAppts.length) {
+    list.innerHTML = `<div style="text-align:center;color:#34D399;padding:30px">${STAFF.role === 'artist' ? '暂无预约客户' : '暂无待处理预约'}</div>`;
+    return;
+  }
+
+  allAppts.sort((a, b) => {
+    const aArrived = a.status === '已到店';
+    const bArrived = b.status === '已到店';
+    if (aArrived && !bArrived) return -1;
+    if (bArrived && !aArrived) return 1;
+    if (a.arrival_date === today && b.arrival_date !== today) return -1;
+    if (b.arrival_date === today && a.arrival_date !== today) return 1;
+    if (a.arrival_date === '待定' && b.arrival_date !== '待定') return 1;
+    if (b.arrival_date === '待定' && a.arrival_date !== '待定') return -1;
+    return a.arrival_date < b.arrival_date ? -1 : 1;
+  });
+
+  window._apptMap = {};
+  allAppts.forEach(a => { window._apptMap[a.row_index + '_' + a.sheet_id] = a; });
+
+  list.innerHTML = allAppts.map(a => {
+    const aid = `${a.row_index}_${a.sheet_id}`;
+    const isToday = a.arrival_date === today;
+    const isPending = a.arrival_date === '待定' || (a.status && a.status.includes('待定'));
+    const isArrived = a.status === '已到店';
+    const cls = isArrived ? 'today' : isToday ? 'today' : isPending ? 'pending-status' : '';
+    const dateLabel = isToday ? '今天' : (a.arrival_date || '待定');
+    const statusBadge = isArrived
+      ? '<span style="font-size:10px;color:#10B981;font-weight:700;margin-left:6px">已到店</span>'
+      : isPending
+        ? '<span style="font-size:10px;color:#FBBF24;font-weight:700;margin-left:6px">待定</span>'
+        : '<span style="font-size:10px;color:#64748B;font-weight:600;margin-left:6px">待到店</span>';
+    const cityTag = STAFF.city === 'all' ? `<span style="font-size:9px;color:#64748B;background:rgba(51,65,85,.5);padding:2px 6px;border-radius:4px;margin-left:6px">${a.city_name}</span>` : '';
+
+    let actions = '';
+    if (STAFF.role === 'artist') {
+      if (isArrived) {
+        actions = `<button class="btn btn-sm btn-success" onclick="openDeal('${aid}')">成交</button>
+          <button class="btn btn-sm btn-danger" onclick="openNoDeal('${aid}')">未成交</button>`;
+      }
+    } else if (isArrived) {
+      actions = `<button class="btn btn-sm btn-success" onclick="openDeal('${aid}')">成交</button>
+        <button class="btn btn-sm btn-danger" onclick="openNoDeal('${aid}')">未成交</button>`;
+    } else {
+      actions = `<button class="btn btn-sm btn-success" onclick="confirmArrivalQuick('${aid}')">确认到店</button>
+        <button class="btn btn-sm btn-outline" onclick="openReschedule('${aid}')">改期</button>
+        <button class="btn btn-sm btn-outline" onclick="openPending('${aid}','pending')">待定</button>
+        <button class="btn btn-sm btn-danger" onclick="openPending('${aid}','cancel')">取消</button>`;
+    }
+
+    return `<div class="appt-item ${cls}">
+      <div class="appt-top">
+        <span class="appt-name">${a.customer}${statusBadge}${cityTag}</span>
+        <span class="appt-date">${dateLabel}</span>
+      </div>
+      <div class="appt-meta">${a.project ? a.project + ' · ' : ''}定金 ¥${a.deposit_amt || '—'} · ${a.teacher || '不指定'} · ${a.kefu || ''}${a.phone ? ' · ' + a.phone : ''}</div>
+      <div class="appt-actions">${actions}</div>
+    </div>`;
+  }).join('');
+}
+
+async function confirmArrivalQuick(aid) {
+  currentAppt = window._apptMap[aid];
+  if (!currentAppt) return toast('预约数据已变更，请刷新', 'err');
+  const resp = await api('/api/appointment', 'PUT', {
+    obj_token: currentAppt.obj_token, sheet_id: currentAppt.sheet_id,
+    row_index: currentAppt.row_index, action: 'confirm_arrival',
+    city: currentAppt.city_key,
+  });
+  if (resp.ok) {
+    toast('已确认到店，等待操作成交/未成交');
+    setTimeout(loadAppointments, 1500);
+  } else toast(resp.error || '操作失败', 'err');
+}
+
+function openDeal(aid) {
+  currentAppt = window._apptMap[aid];
+  if (!currentAppt) return toast('预约数据已变更，请刷新', 'err');
+  document.getElementById('deal-revenue').value = '';
+  document.getElementById('deal-project').value = '';
+  showModal('modal-deal');
+}
+
+function openNoDeal(aid) {
+  currentAppt = window._apptMap[aid];
+  if (!currentAppt) return toast('预约数据已变更，请刷新', 'err');
+  document.getElementById('nodeal-detail').value = '';
+  document.getElementById('nodeal-count').textContent = '0/50';
+  document.getElementById('nodeal-count').style.color = '#475569';
+  document.getElementById('nodeal-hint').textContent = '';
+  showModal('modal-nodeal');
+}
+
+function openReschedule(aid) {
+  currentAppt = window._apptMap[aid];
+  if (!currentAppt) return toast('预约数据已变更，请刷新', 'err');
+  document.getElementById('resc-date').value = '';
+  document.getElementById('resc-time').value = '';
+  document.getElementById('resc-date-status').innerHTML = '';
+  showModal('modal-reschedule');
+}
+
+function openPending(aid, action) {
+  currentAppt = window._apptMap[aid];
+  if (!currentAppt) return toast('预约数据已变更，请刷新', 'err');
+  pendingAction = action;
+  document.getElementById('pending-title').textContent = action === 'cancel' ? '取消预约' : '标记待定';
+  showModal('modal-pending');
+}
+
+async function confirmDeal() {
+  if (!currentAppt) return;
+  const revenue = document.getElementById('deal-revenue').value;
+  if (!revenue) return toast('请填写实收金额', 'err');
+  const project = document.getElementById('deal-project').value;
+  const resp = await api('/api/appointment', 'PUT', {
+    obj_token: currentAppt.obj_token, sheet_id: currentAppt.sheet_id,
+    row_index: currentAppt.row_index, action: 'arrived',
+    revenue_amt: revenue, project, city: currentAppt.city_key,
+  });
+  closeModal('modal-deal');
+  if (resp.ok) { toast('已确认成交'); setTimeout(loadAppointments, 1000); }
+  else toast(resp.error || '操作失败', 'err');
+}
+
+async function confirmNoDeal() {
+  if (!currentAppt) return;
+  const reason = document.getElementById('nodeal-reason').value;
+  const detail = document.getElementById('nodeal-detail').value.trim();
+  if (detail.length < 50) {
+    document.getElementById('nodeal-hint').textContent = `还需${50 - detail.length}字，请补充详细说明`;
+    return toast('情况说明至少50字', 'err');
+  }
+  const resp = await api('/api/appointment', 'PUT', {
+    obj_token: currentAppt.obj_token, sheet_id: currentAppt.sheet_id,
+    row_index: currentAppt.row_index, action: 'not_completed',
+    reason, detail, city: currentAppt.city_key,
+  });
+  closeModal('modal-nodeal');
+  if (resp.ok) { toast('未成交说明已提交'); setTimeout(loadAppointments, 1000); }
+  else toast(resp.error || '操作失败', 'err');
+}
+
+async function confirmReschedule() {
+  if (!currentAppt) return;
+  const newDate = document.getElementById('resc-date').value;
+  if (!newDate) return toast('请选择新日期', 'err');
+  const rescStatus = document.getElementById('resc-date-status');
+  if (rescStatus && rescStatus.textContent.includes('✗')) return toast('该日期排期已满，请选其他日期', 'err');
+  const newTime = document.getElementById('resc-time').value;
+  const resp = await api('/api/appointment', 'PUT', {
+    obj_token: currentAppt.obj_token, sheet_id: currentAppt.sheet_id,
+    row_index: currentAppt.row_index, action: 'reschedule', new_date: newDate,
+    new_time: newTime, city: currentAppt.city_key,
+  });
+  closeModal('modal-reschedule');
+  if (resp.ok) { toast('改期成功'); setTimeout(loadAppointments, 1000); }
+  else toast(resp.error || '操作失败', 'err');
+}
+
+async function confirmPending() {
+  if (!currentAppt) return;
+  const reason = document.getElementById('pend-reason').value;
+  const resp = await api('/api/appointment', 'PUT', {
+    obj_token: currentAppt.obj_token, sheet_id: currentAppt.sheet_id,
+    row_index: currentAppt.row_index, action: pendingAction, reason,
+    city: currentAppt.city_key,
+  });
+  closeModal('modal-pending');
+  if (resp.ok) { toast(pendingAction === 'cancel' ? '已取消预约' : '已标记待定'); setTimeout(loadAppointments, 1000); }
+  else toast(resp.error || '操作失败', 'err');
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 售后回访
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const STAGE_CSS = { '术后1天': 'fu-stage-1', '术后3天': 'fu-stage-3', '术后7天': 'fu-stage-7', '术后1个月': 'fu-stage-30', '术后3个月': 'fu-stage-90' };
+
+async function loadFollowups() {
+  const list = document.getElementById('fu-list');
+  list.innerHTML = '<div style="text-align:center;color:#475569;padding:20px">加载中...</div>';
+
+  const cities = [getCityKey()];
+  let allFu = [];
+
+  for (const city of cities) {
+    try {
+      const resp = await api(`/api/followups?city=${city}`);
+      if (resp.ok) allFu = allFu.concat(resp.followups.map(f => ({ ...f, city_key: city, city_name: resp.city })));
+    } catch (e) { console.error(e); }
+  }
+
+  // Backend already filters by staff role
+
+  const overdueCount = allFu.filter(f => f.overdue).length;
+  const todayCount = allFu.length - overdueCount;
+
+  document.getElementById('fu-stats').innerHTML = `
+    <div class="stat-item"><div class="stat-val" style="color:#22D3EE">${allFu.length}</div><div class="stat-label">待回访</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:#34D399">${todayCount}</div><div class="stat-label">今日</div></div>
+    <div class="stat-item"><div class="stat-val" style="color:${overdueCount > 0 ? '#FCA5A5' : '#34D399'}">${overdueCount}</div><div class="stat-label">逾期</div></div>`;
+
+  if (!allFu.length) {
+    list.innerHTML = '<div style="text-align:center;color:#34D399;padding:30px">暂无待回访客户</div>';
+    return;
+  }
+
+  allFu.sort((a, b) => {
+    if (a.overdue && !b.overdue) return -1;
+    if (!a.overdue && b.overdue) return 1;
+    return (a.plan_date || '').localeCompare(b.plan_date || '');
+  });
+
+  window._fuMap = {};
+  allFu.forEach(f => { window._fuMap[f.row_index + '_' + f.sheet_id] = f; });
+
+  list.innerHTML = allFu.map(f => {
+    const fid = `${f.row_index}_${f.sheet_id}`;
+    const stageCls = STAGE_CSS[f.stage] || 'fu-stage-1';
+    const stageLabel = f.stage || '待回访';
+    const cityTag = STAFF.city === 'all' ? ` · ${f.city_name}` : '';
+    const isTouchup = /补色|洗眉|复查/.test(f.project || '');
+
+    return `<div class="fu-card ${f.overdue ? 'overdue' : ''}">
+      <div class="fu-card-top">
+        <span class="fu-card-name">${f.customer} <span class="fu-stage ${stageCls}">${stageLabel}</span>${isTouchup ? '<span style="font-size:9px;color:#FBBF24;margin-left:4px">补色轮</span>' : ''}</span>
+        <span style="font-size:11px;color:${f.overdue ? '#FCA5A5' : '#22D3EE'};font-weight:600">${f.overdue ? '逾期' : '今日'}</span>
+      </div>
+      <div class="fu-card-meta">
+        ${f.project || ''} · ¥${f.price || '—'} · ${f.teacher || ''}${cityTag}<br>
+        成交 ${f.deal_date || '—'} · ${f.phone || '—'} · 客服 ${f.staff || ''}
+      </div>
+      <div class="fu-card-actions">
+        <button class="btn btn-sm btn-success" onclick="openFollowup('${fid}')">已回访</button>
+        <button class="btn btn-sm btn-outline" onclick="touchupRestart('${fid}')" title="客户补色完成后，重新开始回访流程">补色已完成</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+let currentFu = null;
+
+function openFollowup(fid) {
+  currentFu = window._fuMap[fid];
+  if (!currentFu) return toast('数据已变更，请刷新', 'err');
+  document.getElementById('fu-modal-title').textContent = `回访 · ${currentFu.customer} · ${currentFu.stage || ''}`;
+  document.getElementById('fu-modal-info').innerHTML =
+    `项目：${currentFu.project || '—'} · 金额：¥${currentFu.price || '—'}<br>` +
+    `操作老师：${currentFu.teacher || '—'} · 成交日期：${currentFu.deal_date || '—'}<br>` +
+    `电话：${currentFu.phone || '—'}`;
+  document.getElementById('fu-color').value = '';
+  document.getElementById('fu-note').value = '';
+  showModal('modal-followup');
+}
+
+async function submitFollowup() {
+  if (!currentFu) return;
+  const resp = await api('/api/followup/done', 'POST', {
+    obj_token: currentFu.obj_token, sheet_id: currentFu.sheet_id,
+    row_index: currentFu.row_index, col: currentFu.col, city: currentFu.city_key,
+    color_grade: document.getElementById('fu-color').value,
+    note: document.getElementById('fu-note').value,
+    deal_date: currentFu.deal_date, stage: currentFu.stage,
+    project: currentFu.project || '',
+  });
+  closeModal('modal-followup');
+  if (resp.ok) {
+    toast(`回访完成，下阶段：${resp.next_stage || '已完成'}`);
+    loadFollowups();
+  } else toast(resp.error || '操作失败', 'err');
+}
+
+async function touchupRestart(fid) {
+  const f = window._fuMap[fid];
+  if (!f) return toast('数据已变更，请刷新', 'err');
+  if (!confirm(`确认「${f.customer}」补色已完成？将重新开始术后回访流程`)) return;
+  const resp = await api('/api/followup/done', 'POST', {
+    obj_token: f.obj_token, sheet_id: f.sheet_id,
+    row_index: f.row_index, col: f.col, city: f.city_key,
+    deal_date: f.deal_date, stage: f.stage, project: f.project || '',
+    touchup_restart: true,
+  });
+  if (resp.ok) {
+    toast('补色回访已重启，新一轮术后1天起');
+    loadFollowups();
+  } else toast(resp.error || '操作失败', 'err');
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 纹绣师操作登记
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function submitArtistOp() {
+  const btn = document.getElementById('art-submit');
+  const customer = document.getElementById('art-customer').value.trim();
+  const project = document.getElementById('art-project').value;
+  const amount = document.getElementById('art-amount').value;
+  if (!customer || !project || !amount) return toast('客户、项目、金额必填', 'err');
+
+  btn.disabled = true;
+  btn.textContent = '提交中...';
+  try {
+    const resp = await api('/api/artist/operation', 'POST', {
+      city: getCityKey(),
+      artist: STAFF.name,
+      customer,
+      project,
+      amount: Number(amount),
+      is_touch_up: document.getElementById('art-touchup').value === 'yes',
+      remark: document.getElementById('art-remark').value,
+    });
+    if (resp.ok) {
+      toast('操作记录已提交');
+      document.getElementById('art-customer').value = '';
+      document.getElementById('art-amount').value = '';
+      document.getElementById('art-remark').value = '';
+    } else { toast(resp.error || '提交失败', 'err'); }
+  } catch (e) { toast('网络错误: ' + e.message, 'err'); }
+  btn.disabled = false;
+  btn.textContent = '提交操作记录';
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 工具
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function api(path, method, body) {
+  const sep = path.includes('?') ? '&' : '?';
+  const url = API_BASE + path + sep + 'token=' + TOKEN;
+  const opts = {
+    method: method || 'GET',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + TOKEN },
+  };
+  if (body) opts.body = JSON.stringify(body);
+  let resp;
+  try { resp = await fetch(url, opts); } catch (e) {
+    return { ok: false, error: '网络连接失败: ' + e.message };
+  }
+  if (!resp.ok && resp.status >= 500) {
+    return { ok: false, error: `服务器错误 (${resp.status})` };
+  }
+  try { return await resp.json(); } catch (_) {
+    return { ok: false, error: `响应解析失败 (${resp.status})` };
+  }
+}
+
+function toast(msg, type) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show ' + (type === 'err' ? 'toast-err' : 'toast-ok');
+  setTimeout(() => el.className = 'toast', 2500);
+}
+
+function serialToDate(val) {
+  if (!val) return '';
+  const s = String(val).trim();
+  if (/^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}/.test(s)) return s.slice(0, 10);
+  const n = Number(s);
+  if (!isNaN(n) && n > 40000 && n < 60000) {
+    const d = new Date(Date.UTC(1899, 11, 30 + n));
+    const y = d.getUTCFullYear(), m = String(d.getUTCMonth() + 1).padStart(2, '0'), day = String(d.getUTCDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+  return s;
+}
+
+function showModal(id) { document.getElementById(id).classList.add('show'); }
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+document.querySelectorAll('.modal-mask').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); });
+});
+document.querySelectorAll('.confirm-mask').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); });
+});
+
+init();
+</script>
+</body>
+</html>
