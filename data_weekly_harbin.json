@@ -1,118 +1,102 @@
 {
   "city": "哈尔滨",
-  "week_num": 13,
-  "week_label": "第13周 (03.23-03.29)",
-  "week_start": "2026-03-23",
-  "week_end": "2026-03-29",
-  "days": 7,
-  "week_revenue": 0.0,
-  "week_spend": 1419.25,
-  "week_wechat": 42,
-  "week_deposit": 4,
-  "week_open": 34.0,
-  "week_roi": 0.0,
-  "week_complete": true,
+  "week_num": 14,
+  "week_label": "第14周 (03.30-04.05)",
+  "week_start": "2026-03-30",
+  "week_end": "2026-04-05",
+  "days": 5,
+  "week_revenue": 5560.0,
+  "week_spend": 209.99,
+  "week_wechat": 54,
+  "week_deposit": 7,
+  "week_open": 6.0,
+  "week_roi": 26.48,
+  "week_complete": false,
   "daily_breakdown": [
     {
-      "date": "03-23",
+      "date": "03-30",
       "weekday": "周一",
-      "revenue": 0.0,
-      "spend": 204.82,
-      "wechat": 5,
-      "deposit": 1
-    },
-    {
-      "date": "03-24",
-      "weekday": "周二",
-      "revenue": 0.0,
-      "spend": 404.26,
-      "wechat": 9,
-      "deposit": 2
-    },
-    {
-      "date": "03-25",
-      "weekday": "周三",
-      "revenue": 0.0,
-      "spend": 200.81,
-      "wechat": 8,
-      "deposit": 0
-    },
-    {
-      "date": "03-26",
-      "weekday": "周四",
-      "revenue": 0.0,
-      "spend": 400.38,
-      "wechat": 6,
-      "deposit": 0
-    },
-    {
-      "date": "03-27",
-      "weekday": "周五",
-      "revenue": 0.0,
-      "spend": 0.0,
-      "wechat": 2,
-      "deposit": 0
-    },
-    {
-      "date": "03-28",
-      "weekday": "周六",
       "revenue": 0.0,
       "spend": 0,
       "wechat": 6,
       "deposit": 1
     },
     {
-      "date": "03-29",
-      "weekday": "周日",
-      "revenue": 0.0,
-      "spend": 208.98,
-      "wechat": 6,
+      "date": "03-31",
+      "weekday": "周二",
+      "revenue": 5560.0,
+      "spend": 209.99,
+      "wechat": 10,
       "deposit": 0
+    },
+    {
+      "date": "04-01",
+      "weekday": "周三",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 17,
+      "deposit": 3
+    },
+    {
+      "date": "04-02",
+      "weekday": "周四",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 12,
+      "deposit": 0
+    },
+    {
+      "date": "04-03",
+      "weekday": "周五",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 9,
+      "deposit": 3
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 42,
-      "deposit": 4,
+      "wechat": 54,
+      "deposit": 7,
       "revenue": 0.0,
-      "w2d_rate": 9.5
+      "w2d_rate": 13.0
     }
   ],
   "month_target": 100000,
   "month_total_weeks": 6,
-  "month_elapsed_weeks": 5,
+  "month_elapsed_weeks": 6,
   "month_cum_revenue": 5560.0,
   "ideal_pace": 16666.67,
-  "actual_pace": 1112.0,
+  "actual_pace": 926.67,
   "pace_status": "behind",
   "trend_weeks": [
-    "第10周",
     "第11周",
     "第12周",
-    "第13周"
+    "第13周",
+    "第14周"
   ],
   "trend_revenue": [
     0.0,
     0.0,
     0.0,
-    0.0
+    5560.0
   ],
   "trend_spend": [
-    0,
     1557.75,
     1849.12,
-    1419.25
+    1419.25,
+    209.99
   ],
   "trend_roi": [
-    "—",
     0.0,
     0.0,
-    0.0
+    0.0,
+    26.48
   ],
   "last_week": {
     "revenue": 0,
-    "spend": 1849.12,
+    "spend": 1419.25,
     "roi": 0.0
   },
   "wow_change": null

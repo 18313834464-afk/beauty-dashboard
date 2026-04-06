@@ -1,71 +1,55 @@
 {
   "city": "重庆",
-  "week_num": 13,
-  "week_label": "第13周 (03.23-03.29)",
-  "week_start": "2026-03-23",
-  "week_end": "2026-03-29",
-  "days": 7,
-  "week_revenue": 3500.0,
-  "week_spend": 2703.81,
-  "week_wechat": 19,
+  "week_num": 14,
+  "week_label": "第14周 (03.30-04.05)",
+  "week_start": "2026-03-30",
+  "week_end": "2026-04-05",
+  "days": 5,
+  "week_revenue": 0.0,
+  "week_spend": 0,
+  "week_wechat": 6,
   "week_deposit": 0,
-  "week_open": 40.0,
-  "week_roi": 1.29,
-  "week_complete": true,
+  "week_open": 0,
+  "week_roi": "—",
+  "week_complete": false,
   "daily_breakdown": [
     {
-      "date": "03-23",
+      "date": "03-30",
       "weekday": "周一",
       "revenue": 0.0,
-      "spend": 470.61,
-      "wechat": 4,
+      "spend": 0,
+      "wechat": 0,
       "deposit": 0
     },
     {
-      "date": "03-24",
+      "date": "03-31",
       "weekday": "周二",
       "revenue": 0.0,
-      "spend": 409.9,
-      "wechat": 3,
+      "spend": 0,
+      "wechat": 6,
       "deposit": 0
     },
     {
-      "date": "03-25",
+      "date": "04-01",
       "weekday": "周三",
-      "revenue": 3500.0,
-      "spend": 600.27,
-      "wechat": 3,
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 0,
       "deposit": 0
     },
     {
-      "date": "03-26",
+      "date": "04-02",
       "weekday": "周四",
       "revenue": 0.0,
-      "spend": 411.34,
-      "wechat": 2,
+      "spend": 0,
+      "wechat": 0,
       "deposit": 0
     },
     {
-      "date": "03-27",
+      "date": "04-03",
       "weekday": "周五",
       "revenue": 0.0,
-      "spend": 403.9,
-      "wechat": 4,
-      "deposit": 0
-    },
-    {
-      "date": "03-28",
-      "weekday": "周六",
-      "revenue": 0.0,
-      "spend": 407.79,
-      "wechat": 3,
-      "deposit": 0
-    },
-    {
-      "date": "03-29",
-      "weekday": "周日",
-      "revenue": 0.0,
-      "spend": 0.0,
+      "spend": 0,
       "wechat": 0,
       "deposit": 0
     }
@@ -73,51 +57,52 @@
   "cs_table": [
     {
       "name": "侯芳",
-      "wechat": 19,
+      "wechat": 6,
       "deposit": 0,
-      "revenue": 3600.0,
+      "revenue": 0.0,
       "w2d_rate": 0.0
     }
   ],
   "month_target": 100000,
   "month_total_weeks": 6,
-  "month_elapsed_weeks": 5,
+  "month_elapsed_weeks": 6,
   "month_cum_revenue": 11140.0,
   "ideal_pace": 16666.67,
-  "actual_pace": 2228.0,
+  "actual_pace": 1856.67,
   "pace_status": "behind",
   "trend_weeks": [
-    "第10周",
     "第11周",
     "第12周",
-    "第13周"
+    "第13周",
+    "第14周"
   ],
   "trend_revenue": [
     0.0,
-    0.0,
     7640.0,
-    3500.0
+    3500.0,
+    0.0
   ],
   "trend_spend": [
     0,
-    0,
     1294.76,
-    2703.81
+    2703.81,
+    0
   ],
   "trend_roi": [
     "—",
-    "—",
     5.9,
-    1.29
+    1.29,
+    "—"
   ],
   "last_week": {
-    "revenue": 7640.0,
-    "spend": 1294.76,
-    "roi": 5.9
+    "revenue": 3500.0,
+    "spend": 2703.81,
+    "roi": 1.29
   },
   "wow_change": {
-    "revenue_pct": -54.2,
-    "spend_pct": 108.8,
-    "roi_change": -4.61
+    "revenue_pct": -100.0,
+    "spend_pct": 0,
+    "roi_change": 0,
+    "note": "本周仅5天数据，按日均对比"
   }
 }

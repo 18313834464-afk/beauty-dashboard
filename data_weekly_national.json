@@ -1,140 +1,137 @@
 {
-  "week_num": 13,
-  "week_label": "第13周 (03.23-03.29)",
-  "week_start": "2026-03-23",
-  "week_end": "2026-03-29",
+  "week_num": 14,
+  "week_label": "第14周 (03.30-04.05)",
+  "week_start": "2026-03-30",
+  "week_end": "2026-04-05",
   "city_count": 3,
-  "week_revenue": 50977.0,
-  "week_spend": 26951.31,
-  "week_wechat": 279,
-  "week_deposit": 29,
-  "week_roi": 1.89,
+  "week_revenue": 38284.26,
+  "week_spend": 6795.39,
+  "week_wechat": 196,
+  "week_deposit": 20,
+  "week_roi": 5.63,
   "month_target": 500000,
   "month_total_weeks": 6,
-  "month_elapsed_weeks": 5,
+  "month_elapsed_weeks": 6,
   "month_cum_revenue": 260391.26,
   "ideal_pace": 83333.33,
-  "actual_pace": 52078.25,
+  "actual_pace": 43398.54,
   "pace_status": "behind",
   "city_matrix": [
     {
       "city": "成都",
-      "revenue": 47477.0,
-      "spend": 22828.25,
-      "roi": 2.08,
-      "wechat": 218,
-      "deposit": 25,
-      "wow_revenue_pct": -34.2,
-      "pace_status": "on_track"
-    },
-    {
-      "city": "重庆",
-      "revenue": 3500.0,
-      "spend": 2703.81,
-      "roi": 1.29,
-      "wechat": 19,
-      "deposit": 0,
-      "wow_revenue_pct": -54.2,
+      "revenue": 32724.26,
+      "spend": 6585.4,
+      "roi": 4.97,
+      "wechat": 136,
+      "deposit": 13,
+      "wow_revenue_pct": -3.5,
       "pace_status": "behind"
     },
     {
       "city": "哈尔滨",
-      "revenue": 0.0,
-      "spend": 1419.25,
-      "roi": 0.0,
-      "wechat": 42,
-      "deposit": 4,
+      "revenue": 5560.0,
+      "spend": 209.99,
+      "roi": 26.48,
+      "wechat": 54,
+      "deposit": 7,
       "wow_revenue_pct": 0,
+      "pace_status": "behind"
+    },
+    {
+      "city": "重庆",
+      "revenue": 0.0,
+      "spend": 0,
+      "roi": "—",
+      "wechat": 6,
+      "deposit": 0,
+      "wow_revenue_pct": -100.0,
       "pace_status": "behind"
     }
   ],
   "cs_table": [
     {
       "name": "李小叶(成都)",
-      "wechat": 77,
-      "deposit": 11,
-      "revenue": 23003.0,
-      "w2d_rate": 14.3
+      "wechat": 56,
+      "deposit": 5,
+      "revenue": 21580.0,
+      "w2d_rate": 8.9
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 57,
+      "wechat": 59,
       "deposit": 5,
-      "revenue": 12314.0,
-      "w2d_rate": 8.8
+      "revenue": 7260.0,
+      "w2d_rate": 8.5
     },
     {
       "name": "会媛(成都)",
-      "wechat": 84,
-      "deposit": 9,
-      "revenue": 12160.0,
-      "w2d_rate": 10.7
+      "wechat": 21,
+      "deposit": 3,
+      "revenue": 6680.0,
+      "w2d_rate": 14.3
     },
     {
       "name": "侯芳(重庆)",
-      "wechat": 19,
+      "wechat": 6,
       "deposit": 0,
-      "revenue": 3600.0,
+      "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 42,
-      "deposit": 4,
+      "wechat": 54,
+      "deposit": 7,
       "revenue": 0.0,
-      "w2d_rate": 9.5
+      "w2d_rate": 13.0
     }
   ],
   "trend_weeks": [
-    "第10周",
     "第11周",
     "第12周",
-    "第13周"
+    "第13周",
+    "第14周"
   ],
   "trend_revenue": [
-    36935.84,
     59367.0,
     79781.48,
-    50977.0
+    50977.0,
+    38284.26
   ],
   "trend_spend": [
-    23617.47,
     22992.6,
     24016.13,
-    26951.31
+    26951.31,
+    6795.39
   ],
   "trend_roi": [
-    1.56,
     2.58,
     3.32,
-    1.89
+    1.89,
+    5.63
   ],
   "last_week": {
-    "revenue": 79781.48,
-    "spend": 24016.129999999997,
-    "roi": 3.32
+    "revenue": 50977.0,
+    "spend": 26951.31,
+    "roi": 1.89
   },
   "wow_change": {
-    "revenue_pct": -36.1,
-    "spend_pct": 12.2,
-    "roi_change": -1.43
+    "revenue_pct": 5.1,
+    "spend_pct": 0,
+    "roi_change": 0,
+    "note": "本周仅5天数据，按日均对比"
   },
   "alerts": [
     {
-      "level": "danger",
-      "msg": "成都第13周变现环比下滑34.2%"
+      "level": "warning",
+      "msg": "成都第14周步速落后月目标，需加速"
     },
     {
       "level": "warning",
-      "msg": "重庆第13周步速落后月目标，需加速"
-    },
-    {
-      "level": "danger",
-      "msg": "重庆第13周变现环比下滑54.2%"
+      "msg": "重庆第14周步速落后月目标，需加速"
     },
     {
       "level": "warning",
-      "msg": "哈尔滨第13周步速落后月目标，需加速"
+      "msg": "哈尔滨第14周步速落后月目标，需加速"
     }
   ]
 }
