@@ -3,18 +3,18 @@
   "month": "2026-03",
   "days_elapsed": 31,
   "total_days": 31,
-  "cum_revenue": 249591.77,
+  "cum_revenue": 253093.77,
   "cum_spend": 95338.22,
   "cum_wechat": 993,
   "cum_deposit": 118,
   "cum_open": 1522.0,
-  "cum_refund": 31,
+  "cum_refund": 30,
   "roi": 2.56,
   "revenue_target": 300000,
   "progress": 81.2,
-  "predicted_revenue": 249591.77,
+  "predicted_revenue": 253093.77,
   "predicted_spend": 95338.22,
-  "predicted_roi": 2.62,
+  "predicted_roi": 2.65,
   "daily_trend": [
     {
       "date": "2026-03-01",
@@ -424,6 +424,36 @@
   ],
   "cs_table": [
     {
+      "name": "阳珂欣",
+      "wechat": 47,
+      "deposit": 5,
+      "revenue": 22222.0,
+      "arrived": 0,
+      "deposit_rate": 10.6,
+      "fulfill_rate": 0.0,
+      "gap_total": 0,
+      "sop_score": 100,
+      "intent_a": 6,
+      "intent_b": 60,
+      "intent_c": 80,
+      "intent_total": 146
+    },
+    {
+      "name": "会媛",
+      "wechat": 27,
+      "deposit": 3,
+      "revenue": 9720.0,
+      "arrived": 0,
+      "deposit_rate": 11.1,
+      "fulfill_rate": 0.0,
+      "gap_total": 13,
+      "sop_score": 0,
+      "intent_a": 25,
+      "intent_b": 42,
+      "intent_c": 45,
+      "intent_total": 112
+    },
+    {
       "name": "李小叶",
       "wechat": 24,
       "deposit": 4,
@@ -437,36 +467,6 @@
       "intent_b": 77,
       "intent_c": 82,
       "intent_total": 161
-    },
-    {
-      "name": "阳珂欣",
-      "wechat": 30,
-      "deposit": 4,
-      "revenue": 7260.0,
-      "arrived": 0,
-      "deposit_rate": 13.3,
-      "fulfill_rate": 0.0,
-      "gap_total": 0,
-      "sop_score": 100,
-      "intent_a": 6,
-      "intent_b": 60,
-      "intent_c": 80,
-      "intent_total": 146
-    },
-    {
-      "name": "会媛",
-      "wechat": 10,
-      "deposit": 0,
-      "revenue": 3780.0,
-      "arrived": 0,
-      "deposit_rate": 0.0,
-      "fulfill_rate": 0,
-      "gap_total": 13,
-      "sop_score": 0,
-      "intent_a": 25,
-      "intent_b": 42,
-      "intent_c": 45,
-      "intent_total": 112
     }
   ],
   "refund_details": [
@@ -579,12 +579,6 @@
       "status": "到店退款"
     },
     {
-      "customer": "张小六",
-      "revenue": 0,
-      "cs": "阳珂欣",
-      "status": "未到店退款"
-    },
-    {
       "customer": "邬田",
       "revenue": 0,
       "cs": "阳珂欣",
@@ -674,7 +668,7 @@
       "cs": "阳珂欣",
       "city": "成都",
       "arrived": 0,
-      "not_arrived": 9
+      "not_arrived": 8
     }
   ]
 }

@@ -425,11 +425,11 @@
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 38,
+      "wechat": 44,
       "deposit": 6,
-      "revenue": 0,
+      "revenue": 6060.0,
       "arrived": 0,
-      "deposit_rate": 15.8,
+      "deposit_rate": 13.6,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
@@ -437,6 +437,21 @@
       "intent_b": 22,
       "intent_c": 62,
       "intent_total": 94
+    },
+    {
+      "name": "侯芳",
+      "wechat": 0,
+      "deposit": 0,
+      "revenue": 0,
+      "arrived": 0,
+      "deposit_rate": 0,
+      "fulfill_rate": 0,
+      "gap_total": 0,
+      "sop_score": 100,
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
     }
   ],
   "refund_details": [

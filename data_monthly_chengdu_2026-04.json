@@ -1,18 +1,18 @@
 {
   "city": "成都",
   "month": "2026-04",
-  "days_elapsed": 3,
+  "days_elapsed": 4,
   "total_days": 30,
-  "cum_revenue": 17200.0,
+  "cum_revenue": 37680.0,
   "cum_spend": 0,
-  "cum_wechat": 64,
-  "cum_deposit": 8,
+  "cum_wechat": 98,
+  "cum_deposit": 12,
   "cum_open": 0,
   "cum_refund": 1,
   "roi": 0,
   "revenue_target": 300000,
   "progress": 5.7,
-  "predicted_revenue": 172000.0,
+  "predicted_revenue": 226080.0,
   "predicted_spend": 0.0,
   "predicted_roi": 0,
   "daily_trend": [
@@ -34,18 +34,18 @@
     },
     {
       "date": "2026-04-03",
-      "revenue": 3780.0,
+      "revenue": 16942.0,
       "spend": 0,
-      "wechat": 0,
-      "deposit": 0,
+      "wechat": 29,
+      "deposit": 3,
       "open": 0
     },
     {
       "date": "2026-04-04",
-      "revenue": 0,
+      "revenue": 7740.0,
       "spend": 0,
-      "wechat": 0,
-      "deposit": 0,
+      "wechat": 4,
+      "deposit": 1,
       "open": 0
     },
     {
@@ -60,7 +60,7 @@
       "date": "2026-04-06",
       "revenue": 0,
       "spend": 0,
-      "wechat": 0,
+      "wechat": 1,
       "deposit": 0,
       "open": 0
     },
@@ -272,9 +272,44 @@
       "date": "2026-04-03",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0
+    },
+    {
+      "date": "2026-04-06",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
+    {
+      "name": "阳珂欣",
+      "wechat": 47,
+      "deposit": 5,
+      "revenue": 22222.0,
+      "arrived": 0,
+      "deposit_rate": 10.6,
+      "fulfill_rate": 0.0,
+      "gap_total": 0,
+      "sop_score": 100,
+      "intent_a": 4,
+      "intent_b": 9,
+      "intent_c": 29,
+      "intent_total": 42
+    },
+    {
+      "name": "会媛",
+      "wechat": 27,
+      "deposit": 3,
+      "revenue": 9720.0,
+      "arrived": 0,
+      "deposit_rate": 11.1,
+      "fulfill_rate": 0.0,
+      "gap_total": 2,
+      "sop_score": 84,
+      "intent_a": 2,
+      "intent_b": 3,
+      "intent_c": 9,
+      "intent_total": 14
+    },
     {
       "name": "李小叶",
       "wechat": 24,
@@ -289,36 +324,6 @@
       "intent_b": 2,
       "intent_c": 18,
       "intent_total": 20
-    },
-    {
-      "name": "阳珂欣",
-      "wechat": 30,
-      "deposit": 4,
-      "revenue": 7260.0,
-      "arrived": 0,
-      "deposit_rate": 13.3,
-      "fulfill_rate": 0.0,
-      "gap_total": 0,
-      "sop_score": 100,
-      "intent_a": 4,
-      "intent_b": 6,
-      "intent_c": 16,
-      "intent_total": 26
-    },
-    {
-      "name": "会媛",
-      "wechat": 10,
-      "deposit": 0,
-      "revenue": 3780.0,
-      "arrived": 0,
-      "deposit_rate": 0.0,
-      "fulfill_rate": 0,
-      "gap_total": 1,
-      "sop_score": 92,
-      "intent_a": 2,
-      "intent_b": 3,
-      "intent_c": 9,
-      "intent_total": 14
     }
   ],
   "refund_details": [

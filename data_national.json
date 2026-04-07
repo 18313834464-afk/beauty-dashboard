@@ -1,20 +1,20 @@
 {
-  "date": "2026-04-03",
-  "total_revenue": 3780.0,
+  "date": "2026-04-06",
+  "total_revenue": 2980.0,
   "total_spend": 0,
-  "total_wechat": 9,
-  "total_deposit": 3,
+  "total_wechat": 1,
+  "total_deposit": 0,
   "roi": 0,
   "roi_level": "danger",
   "city_matrix": {
     "成都": {
       "spend": 0,
       "open": 0,
-      "wechat": 0,
+      "wechat": 1,
       "open_to_wechat": 0,
       "deposit": 0,
-      "wechat_to_deposit": 0,
-      "revenue": 3780.0,
+      "wechat_to_deposit": 0.0,
+      "revenue": 0.0,
       "refund_count": 0,
       "open_cost": 0
     },
@@ -32,44 +32,60 @@
     "哈尔滨": {
       "spend": 0,
       "open": 0,
-      "wechat": 9,
+      "wechat": 0,
       "open_to_wechat": 0,
-      "deposit": 3,
-      "wechat_to_deposit": 33.3,
-      "revenue": 0.0,
+      "deposit": 0,
+      "wechat_to_deposit": 0,
+      "revenue": 2980.0,
       "refund_count": 0,
       "open_cost": 0
     }
   },
   "acquire_chain": {
     "open": 0,
-    "wechat": 9,
-    "deposit": 3,
+    "wechat": 1,
+    "deposit": 0,
     "open_to_wechat": 0,
-    "wechat_to_deposit": 33.3
+    "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
-    "expected": 2,
-    "arrived": 1,
-    "revenue": 3780.0,
-    "arrival_rate": 50.0
+    "expected": 0,
+    "arrived": 0,
+    "revenue": 2980.0,
+    "arrival_rate": 0
   },
   "national_blacklist": [
     {
       "client": "?",
       "problem": "回访",
       "type": "未完成",
-      "cs": "小叶",
+      "cs": "会媛",
       "level": "warning",
       "city": "成都"
     },
     {
-      "client": "何女士",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "阳珂欣",
-      "level": "normal",
-      "city": "成都"
+      "client": "Y",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "汤娅",
+      "level": "warning",
+      "city": "哈尔滨"
+    },
+    {
+      "client": "顾瑞",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "汤娅",
+      "level": "warning",
+      "city": "哈尔滨"
+    },
+    {
+      "client": "顾瑞",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "汤娅",
+      "level": "warning",
+      "city": "哈尔滨"
     }
   ],
   "city_open_cost": {
@@ -78,5 +94,5 @@
     "哈尔滨": 0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "1. 🏆 哈尔滨：加微→定金率33.3%\n\n2. 🚨 重庆：变现¥0，建议加强销售转化\n\n3. ⚠️ 交付端全绿"
+  "ai_national_summary": "1. 🏆 哈尔滨变现¥2980.0，领先其他城市。\n\n2. 🚨 成都和重庆变现为¥0.0，建议加强销售策略。\n\n3. ⚠️ 交付端全绿，全国无退款。"
 }
