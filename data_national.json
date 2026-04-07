@@ -1,15 +1,15 @@
 {
   "date": "2026-04-06",
   "total_revenue": 2980.0,
-  "total_spend": 0,
+  "total_spend": 0.0,
   "total_wechat": 1,
   "total_deposit": 0,
   "roi": 0,
   "roi_level": "danger",
   "city_matrix": {
     "成都": {
-      "spend": 0,
-      "open": 0,
+      "spend": 0.0,
+      "open": 0.0,
       "wechat": 1,
       "open_to_wechat": 0,
       "deposit": 0,
@@ -30,19 +30,19 @@
       "open_cost": 0
     },
     "哈尔滨": {
-      "spend": 0,
-      "open": 0,
+      "spend": 0.0,
+      "open": 0.0,
       "wechat": 0,
       "open_to_wechat": 0,
       "deposit": 0,
       "wechat_to_deposit": 0,
       "revenue": 2980.0,
       "refund_count": 0,
-      "open_cost": 0
+      "open_cost": 0.0
     }
   },
   "acquire_chain": {
-    "open": 0,
+    "open": 0.0,
     "wechat": 1,
     "deposit": 0,
     "open_to_wechat": 0,
@@ -91,8 +91,8 @@
   "city_open_cost": {
     "成都": 0,
     "重庆": 0,
-    "哈尔滨": 0
+    "哈尔滨": 0.0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "1. 🏆 哈尔滨变现¥2980.0，领先其他城市。\n\n2. 🚨 成都和重庆变现为¥0.0，建议加强销售策略。\n\n3. ⚠️ 交付端全绿，全国无退款。"
+  "ai_national_summary": "1. 🏆 哈尔滨变现¥2980.0，表现最佳。\n\n2. 🚨 成都和重庆变现为¥0.0，建议加强营销策略。\n\n3. ⚠️ 交付端全绿，无退款或爽约情况。"
 }

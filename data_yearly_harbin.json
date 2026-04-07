@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 8640.0,
-  "cum_spend": 5036.11,
+  "cum_spend": 7848.13,
   "cum_wechat": 147,
   "cum_deposit": 14,
-  "cum_open": 99.0,
-  "cum_roi": 1.72,
+  "cum_open": 181.0,
+  "cum_roi": 1.1,
   "monthly_avg_rev": 4320.0,
   "predicted_annual": 51840.0,
   "revenue_target": 0,
@@ -59,12 +59,12 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 3080.0,
-      "spend": 0,
-      "roi": 0,
+      "spend": 2812.02,
+      "roi": 1.1,
       "wechat": 44,
       "deposit": 6,
-      "open": 0,
-      "open_cost": 0,
+      "open": 82,
+      "open_cost": 34.29,
       "refund": 0,
       "days": 4,
       "mom_revenue": -46.4
@@ -102,7 +102,7 @@
     0,
     0,
     5036.11,
-    0,
+    2812.02,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     1.1,
-    0,
+    1.1,
     null,
     null,
     null,
@@ -135,7 +135,10 @@
           "deposit": 0,
           "revenue": 0
         }
-      }
+      },
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 1
     },
     {
       "name": "汤娅",
@@ -153,7 +156,7 @@
       },
       "intent_a": 5,
       "intent_b": 6,
-      "intent_c": 31
+      "intent_c": 32
     }
   ],
   "health_score": 80,

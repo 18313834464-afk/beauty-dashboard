@@ -4,41 +4,41 @@
   "days_elapsed": 4,
   "total_days": 30,
   "cum_revenue": 37680.0,
-  "cum_spend": 0,
+  "cum_spend": 11097.01,
   "cum_wechat": 98,
   "cum_deposit": 12,
-  "cum_open": 0,
+  "cum_open": 171,
   "cum_refund": 1,
   "roi": 0,
   "revenue_target": 300000,
   "progress": 5.7,
   "predicted_revenue": 226080.0,
-  "predicted_spend": 0.0,
-  "predicted_roi": 0,
+  "predicted_spend": 66582.06,
+  "predicted_roi": 3.4,
   "daily_trend": [
     {
       "date": "2026-04-01",
       "revenue": 2180.0,
-      "spend": 0,
+      "spend": 3671.63,
       "wechat": 34,
       "deposit": 3,
-      "open": 0
+      "open": 56
     },
     {
       "date": "2026-04-02",
       "revenue": 14020.0,
-      "spend": 0,
+      "spend": 3636.68,
       "wechat": 30,
       "deposit": 5,
-      "open": 0
+      "open": 57
     },
     {
       "date": "2026-04-03",
       "revenue": 16942.0,
-      "spend": 0,
+      "spend": 3788.7,
       "wechat": 29,
       "deposit": 3,
-      "open": 0
+      "open": 58
     },
     {
       "date": "2026-04-04",
@@ -59,10 +59,10 @@
     {
       "date": "2026-04-06",
       "revenue": 0,
-      "spend": 0,
+      "spend": 0.0,
       "wechat": 1,
       "deposit": 0,
-      "open": 0
+      "open": 0.0
     },
     {
       "date": "2026-04-07",

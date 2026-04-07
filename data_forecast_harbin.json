@@ -2,7 +2,7 @@
   "city": "哈尔滨",
   "city_key": "harbin",
   "month": "2026-04",
-  "generated_at": "2026-04-07 06:27:11",
+  "generated_at": "2026-04-07 07:00:48",
   "days_elapsed": 4,
   "total_days": 30,
   "progress_pct": 13.3,
@@ -107,11 +107,11 @@
   "pnl_forecast": {
     "current_sales": 6060.0,
     "predicted_sales": 45450,
-    "predicted_your_income": 7878,
-    "predicted_your_margin": 17.3,
+    "predicted_your_income": -8994,
+    "predicted_your_margin": -19.8,
     "predicted_partner_income": 12096,
     "predicted_cs_salary": 13309,
-    "predicted_ad_actual": 0,
+    "predicted_ad_actual": 16872,
     "predicted_manager_fee": 18180,
     "predicted_artist_fee": 0,
     "predicted_shared_costs": 6084

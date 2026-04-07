@@ -4,41 +4,41 @@
   "days_elapsed": 4,
   "total_days": 30,
   "cum_revenue": 3080.0,
-  "cum_spend": 0,
+  "cum_spend": 2812.02,
   "cum_wechat": 44,
   "cum_deposit": 6,
-  "cum_open": 0,
+  "cum_open": 82,
   "cum_refund": 0,
   "roi": 0,
   "revenue_target": 100000,
   "progress": 3.0,
   "predicted_revenue": 15400.0,
-  "predicted_spend": 0.0,
-  "predicted_roi": 0,
+  "predicted_spend": 14060.1,
+  "predicted_roi": 1.1,
   "daily_trend": [
     {
       "date": "2026-04-01",
       "revenue": 0,
-      "spend": 0,
+      "spend": 994.46,
       "wechat": 17,
       "deposit": 3,
-      "open": 0
+      "open": 36
     },
     {
       "date": "2026-04-02",
       "revenue": 0,
-      "spend": 0,
+      "spend": 814.45,
       "wechat": 12,
       "deposit": 0,
-      "open": 0
+      "open": 21
     },
     {
       "date": "2026-04-03",
       "revenue": 0,
-      "spend": 0,
+      "spend": 1003.11,
       "wechat": 9,
       "deposit": 3,
-      "open": 0
+      "open": 25
     },
     {
       "date": "2026-04-04",
@@ -59,10 +59,10 @@
     {
       "date": "2026-04-06",
       "revenue": 2980.0,
-      "spend": 0,
+      "spend": 0.0,
       "wechat": 0,
       "deposit": 0,
-      "open": 0
+      "open": 0.0
     },
     {
       "date": "2026-04-07",
@@ -292,8 +292,8 @@
       "sop_score": 76,
       "intent_a": 5,
       "intent_b": 6,
-      "intent_c": 31,
-      "intent_total": 42
+      "intent_c": 32,
+      "intent_total": 43
     },
     {
       "name": "侯芳",

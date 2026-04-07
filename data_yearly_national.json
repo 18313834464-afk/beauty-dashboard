@@ -2,10 +2,10 @@
   "year": 2026,
   "city_count": 3,
   "cum_revenue": 310553.77,
-  "cum_spend": 104372.9,
+  "cum_spend": 119101.89,
   "cum_wechat": 1360,
   "cum_deposit": 154,
-  "cum_roi": 2.98,
+  "cum_roi": 2.61,
   "monthly_avg_rev": 155276.89,
   "predicted_annual": 1863322.68,
   "revenue_target": 3000000,
@@ -41,8 +41,8 @@
   "trend_spend": [
     0.0,
     0.0,
-    104372.9,
-    0.0,
+    104782.88,
+    14319.01,
     null,
     null,
     null,
@@ -55,8 +55,8 @@
   "trend_roi": [
     null,
     null,
-    2.58,
-    null,
+    2.57,
+    2.85,
     null,
     null,
     null,
@@ -71,8 +71,8 @@
       "city": "成都",
       "start_month": 3,
       "cum_revenue": 290773.77,
-      "cum_spend": 95338.22,
-      "roi": 3.05,
+      "cum_spend": 106435.23,
+      "roi": 2.73,
       "monthly_avg_wechat": 546,
       "wechat_to_deposit": 11.9,
       "health_score": 80
@@ -81,8 +81,8 @@
       "city": "重庆",
       "start_month": 3,
       "cum_revenue": 11140.0,
-      "cum_spend": 3998.57,
-      "roi": 2.79,
+      "cum_spend": 4818.53,
+      "roi": 2.31,
       "monthly_avg_wechat": 61,
       "wechat_to_deposit": 8.2,
       "health_score": 60
@@ -91,8 +91,8 @@
       "city": "哈尔滨",
       "start_month": 3,
       "cum_revenue": 8640.0,
-      "cum_spend": 5036.11,
-      "roi": 1.72,
+      "cum_spend": 7848.13,
+      "roi": 1.1,
       "monthly_avg_wechat": 74,
       "wechat_to_deposit": 9.5,
       "health_score": 80
@@ -145,15 +145,15 @@
   "cost_pie": [
     {
       "name": "成都",
-      "value": 95338.22
+      "value": 106435.23
     },
     {
       "name": "重庆",
-      "value": 3998.57
+      "value": 4818.53
     },
     {
       "name": "哈尔滨",
-      "value": 5036.11
+      "value": 7848.13
     }
   ],
   "alerts": [
@@ -163,8 +163,12 @@
     },
     {
       "level": "warning",
+      "msg": "哈尔滨ROI=1.1，接近预警线"
+    },
+    {
+      "level": "warning",
       "msg": "哈尔滨最新月变现环比下降44.6%"
     }
   ],
-  "ai_diagnosis": "### 1. 🏆 成都表现最强：累计变现¥290773.77，ROI=3.05，月均加微546，健康评分80分，表现出色。\n\n### 2. 🚨 重庆战略风险：累计变现仅¥11140.0，ROI=2.79，月均加微122，健康评分60分，建议加强市场推广和客户转化。\n\n### 3. 🎯 战略建议：优先扩张成都市场，巩固现有优势；重庆需提升运营效率，哈尔滨可维持现状观察。"
+  "ai_diagnosis": "### 1. 🏆 表扬年度表现最强的城市+核心亮点\n\n成都表现最佳：累计变现¥290773.77，ROI=2.73，月均加微546，健康评分80分，领先全国。\n\n### 2. 🚨 指出最大战略风险+具体建议\n\n重庆变现低，仅¥11140.0，ROI=2.31，月均加微122。建议加强营销投入，提升客户转化率。\n\n### 3. 🎯 给出下一步扩张/收缩的战略建议\n\n优先扩张成都市场，巩固现有优势；重庆需优化策略，哈尔滨维持现状，聚焦提升ROI。"
 }

@@ -2,7 +2,7 @@
   "city": "成都",
   "city_key": "chengdu",
   "month": "2026-04",
-  "generated_at": "2026-04-07 06:27:11",
+  "generated_at": "2026-04-07 07:00:48",
   "days_elapsed": 4,
   "total_days": 30,
   "progress_pct": 13.3,
@@ -154,11 +154,11 @@
   "pnl_forecast": {
     "current_sales": 40882.0,
     "predicted_sales": 306615,
-    "predicted_your_income": 124997,
-    "predicted_your_margin": 40.8,
+    "predicted_your_income": 58415,
+    "predicted_your_margin": 19.1,
     "predicted_partner_income": 87657,
     "predicted_cs_salary": 27049,
-    "predicted_ad_actual": 0,
+    "predicted_ad_actual": 66582,
     "predicted_manager_fee": 61323,
     "predicted_artist_fee": 80507,
     "predicted_shared_costs": 7000
