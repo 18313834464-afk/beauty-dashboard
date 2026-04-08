@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 290773.77,
-  "cum_spend": 106435.23,
-  "cum_wechat": 1091,
-  "cum_deposit": 130,
-  "cum_open": 1693.0,
-  "cum_roi": 2.73,
-  "monthly_avg_rev": 145386.89,
-  "predicted_annual": 1744642.68,
+  "cum_revenue": 293553.77,
+  "cum_spend": 109700.95,
+  "cum_wechat": 1122,
+  "cum_deposit": 133,
+  "cum_open": 1744.0,
+  "cum_roi": 2.68,
+  "monthly_avg_rev": 146776.89,
+  "predicted_annual": 1761322.68,
   "revenue_target": 3000000,
-  "progress": 8.7,
+  "progress": 8.8,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 37680.0,
-      "spend": 11097.01,
-      "roi": 3.4,
-      "wechat": 98,
-      "deposit": 12,
-      "open": 171,
-      "open_cost": 64.89,
-      "refund": 1,
-      "days": 4,
-      "mom_revenue": -92.9
+      "revenue": 40460.0,
+      "spend": 14362.73,
+      "roi": 2.82,
+      "wechat": 129,
+      "deposit": 15,
+      "open": 222,
+      "open_cost": 64.7,
+      "refund": 4,
+      "days": 5,
+      "mom_revenue": -91.8
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    37680.0,
+    40460.0,
     null,
     null,
     null,
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    11097.01,
+    14362.73,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    3.4,
+    2.82,
     null,
     null,
     null,
@@ -136,9 +136,9 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 27,
-          "deposit": 3,
-          "revenue": 9720.0
+          "wechat": 40,
+          "deposit": 5,
+          "revenue": 12500.0
         }
       },
       "intent_a": 2,
@@ -172,8 +172,8 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 47,
-          "deposit": 5,
+          "wechat": 65,
+          "deposit": 6,
           "revenue": 22222.0
         }
       },

@@ -425,11 +425,11 @@
   "cs_table": [
     {
       "name": "阳珂欣",
-      "wechat": 47,
-      "deposit": 5,
+      "wechat": 65,
+      "deposit": 6,
       "revenue": 22222.0,
       "arrived": 0,
-      "deposit_rate": 10.6,
+      "deposit_rate": 9.2,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
@@ -440,11 +440,11 @@
     },
     {
       "name": "会媛",
-      "wechat": 27,
-      "deposit": 3,
-      "revenue": 9720.0,
+      "wechat": 40,
+      "deposit": 5,
+      "revenue": 12500.0,
       "arrived": 0,
-      "deposit_rate": 11.1,
+      "deposit_rate": 12.5,
       "fulfill_rate": 0.0,
       "gap_total": 13,
       "sop_score": 0,
@@ -509,7 +509,7 @@
     {
       "customer": "雷倩",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "未到店退款"
     },
     {
@@ -527,7 +527,7 @@
     {
       "customer": "王鹌鹑",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "未到店退款"
     },
     {
@@ -539,19 +539,19 @@
     {
       "customer": "梁亚萍",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "未到店退款"
     },
     {
       "customer": "乔乔",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "到店退款"
     },
     {
       "customer": "黄娇",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "未到店退款"
     },
     {
@@ -575,7 +575,7 @@
     {
       "customer": "章婷",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "到店退款"
     },
     {
@@ -611,7 +611,7 @@
     {
       "customer": "张顾曦",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "到店退款"
     },
     {
@@ -635,13 +635,13 @@
     {
       "customer": "西西",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "到店退款"
     },
     {
       "customer": "唐微丽",
       "revenue": 0,
-      "cs": "李小叶",
+      "cs": "胡娜",
       "status": "未到店退款"
     },
     {
@@ -659,7 +659,7 @@
       "not_arrived": 8
     },
     {
-      "cs": "李小叶",
+      "cs": "胡娜",
       "city": "成都",
       "arrived": 4,
       "not_arrived": 5

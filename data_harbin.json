@@ -1,13 +1,13 @@
 {
-  "date": "2026-04-06",
-  "generated_at": "2026-04-07 06:57:41",
-  "revenue": 2980.0,
-  "wechat_total": 0,
+  "date": "2026-04-07",
+  "generated_at": "2026-04-08 07:02:00",
+  "revenue": 0.0,
+  "wechat_total": 16,
   "deposit_total": 0,
-  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：无退款客户记录，无需定责。\n🚨 P0 履约爽约：无爽约客户记录，无需挽回。\n⚠️ P1 转化率：开口→加微转化率为 0%，触发红线。客户名：无，责任客服：汤娅、侯芳。\n👀 P2 回访漏打：Y、顾瑞，责任客服：汤娅。\n\n**二、根因诊断**\n转化率为0%的核心问题是，客服汤娅和侯芳在昨日没有完成任何加微和定金转化，这可能是因为她们没有接诊任何客户，导致无法进行后续的转化步骤。此外，汤娅还存在回访漏打的情况，这可能影响了客户满意度和复购率。\n\n**三、今日行动项**\n1. 店长今天需与汤娅和侯芳进行紧急会议，了解昨日无接诊记录的原因，并制定改进措施。\n2. 汤娅需立即完成Y和顾瑞的回访工作，并确保今后的回访任务不再出现遗漏。\n3. 运营团队需检查前端投放策略，确保素材和定向设置能够吸引目标客户群体，避免素材疲劳或定向跑偏问题。",
-  "ad_spend": 0.0,
-  "open_count": 0.0,
-  "open_cost": 0.0,
+  "ai_summary": "**一、红线审查**（按严重度排序，无问题写「✅全绿」）\n🚨 P0 资金流失：无\n🚨 P0 履约爽约：无\n⚠️ P1 转化率：开口→加微转化率为 0%，低于65%红线！必须点名报警\n👀 P2 回访漏打：无\n\n**二、根因诊断**\n转化率问题的核心在于开口到加微的转化率严重低于行业标准。根据客服接待数据，汤娅和侯芳昨日共接待16人，但加微人数为0。这表明在初步接触阶段，我们的客服未能有效吸引客户关注并留下联系方式，可能是因为缺乏有效的沟通技巧或者没有使用到吸引客户的内容和话术。\n\n**三、今日行动项**（给出具体可执行的1-3条动作，谁做什么）\n1. 店长今天组织汤娅和侯芳进行紧急沟通，重点分析昨日接待中未能加微的原因，并制定改进措施。\n2. 要求汤娅和侯芳在今日的接待中，针对每位客户至少使用3次以上的有效沟通技巧，以提高加微率。\n3. 运营团队需检查并优化小红书和抖音的投放素材，确保内容能够吸引目标客户群体，提高开口成本的效率和质量。",
+  "ad_spend": 0,
+  "open_count": 0,
+  "open_cost": 0,
   "arrived_count": 0,
   "noshow_count": 0,
   "deal_count": 0,
@@ -16,8 +16,8 @@
     "侯芳"
   ],
   "wechat_list": [
-    0,
-    0
+    10,
+    6
   ],
   "deposit_list": [
     0,
@@ -25,7 +25,7 @@
   ],
   "revenue_pie": [
     {
-      "value": 2980.0,
+      "value": 0.0,
       "name": "汤娅",
       "itemStyle": {
         "color": "#3B82F6"
@@ -40,73 +40,37 @@
     }
   ],
   "fulfill_list": [
-    0,
+    1,
     0
   ],
   "gap_list": [
-    3,
+    0,
     0
   ],
   "arrived_list": [
     0,
     0
   ],
-  "blacklist": [
-    {
-      "client": "Y",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "汤娅",
-      "level": "warning"
+  "blacklist": [],
+  "staff_intentions": {
+    "汤娅": {
+      "C级(低意向)": 8,
+      "B级(中意向)": 2
     },
-    {
-      "client": "顾瑞",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "汤娅",
-      "level": "warning"
-    },
-    {
-      "client": "顾瑞",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "汤娅",
-      "level": "warning"
+    "侯芳": {
+      "C级(低意向)": 6
     }
-  ],
-  "staff_intentions": {},
+  },
   "y_axis_days": [
-    "4月7日",
     "4月8日",
     "4月9日",
     "4月10日",
     "4月11日",
     "4月12日",
-    "4月13日"
+    "4月13日",
+    "4月14日"
   ],
   "bed_heatmap": [
-    [
-      0,
-      0,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      0,
-      0,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      0,
-      0
-    ],
     [
       0,
       0,
@@ -238,20 +202,43 @@
       1,
       1,
       1
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
     ]
   ],
   "data_quality": {
     "tables_ok": {
       "前端投放": false,
       "客服接待": true,
-      "成交台账": true,
+      "成交台账": false,
       "客户回访": true,
       "门店排期": true
     },
     "missing": [
-      "前端投放"
+      "前端投放",
+      "成交台账"
     ],
-    "completeness": 0.8
+    "completeness": 0.6
   },
   "health_score": {
     "dimensions": {
@@ -274,39 +261,39 @@
         "label": "交付"
       },
       "aftersales": {
-        "score": 0,
-        "status": "danger",
-        "detail": "回访完成率0% (0/3)",
+        "score": 100,
+        "status": "healthy",
+        "detail": "回访完成率100% (1/1)",
         "label": "售后"
       },
       "team": {
-        "score": 1,
+        "score": 2,
         "status": "danger",
-        "detail": "人均产出¥1,490, 人均加微0",
+        "detail": "人均产出¥0, 人均加微8",
         "label": "团队"
       }
     },
-    "overall_score": 15,
+    "overall_score": 30,
     "overall_status": "danger",
     "kpis": {
       "spend": 0.0,
       "open_count": 0.0,
-      "wechat": 0.0,
+      "wechat": 16.0,
       "deposit": 0.0,
-      "revenue": 2980.0,
+      "revenue": 0.0,
       "arrived": 0.0,
       "noshow": 0.0,
       "refund_count": 0,
       "open_cost": 0,
       "open_to_wechat": 0,
       "ad_roi": 0,
-      "wechat_to_dep": 0,
+      "wechat_to_dep": 0.0,
       "dep_to_arrival": 0.0,
       "noshow_rate": 0,
       "refund_rate": 0.0,
-      "followup_rate": 0.0,
-      "revenue_per_cs": 1490.0,
-      "wechat_per_cs": 0.0,
+      "followup_rate": 1.0,
+      "revenue_per_cs": 0.0,
+      "wechat_per_cs": 8.0,
       "cs_count": 2,
       "monthly_target": 150000
     }
@@ -325,13 +312,6 @@
       "message": "哈尔滨转化健康度仅0分: 加微→定金0%, 到店率0%",
       "city": "哈尔滨",
       "action": "抽查客服聊天记录，检查话术和跟进节奏"
-    },
-    {
-      "level": "P2",
-      "category": "回访",
-      "message": "哈尔滨回访完成率不足: 回访完成率0% (0/3)",
-      "city": "哈尔滨",
-      "action": "督促客服今日补齐回访"
     }
   ]
 }

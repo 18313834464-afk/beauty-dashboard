@@ -7,71 +7,72 @@
 <script src="https://lf1-cdn-tos.bytegoofy.com/goofy/ee/lark/html/js-sdk/h5-js-sdk-1.5.16.js" async></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0B1120;color:#E2E8F0;font-family:-apple-system,'Helvetica Neue',sans-serif;min-height:100vh;padding-bottom:80px}
-.loading{display:flex;align-items:center;justify-content:center;height:100vh;font-size:14px;color:#64748B}
+body{background:#0B1120;color:#E2E8F0;font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;min-height:100vh;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 72px);-webkit-text-size-adjust:100%;color-scheme:dark}
+.loading{display:flex;align-items:center;justify-content:center;height:100vh;font-size:15px;color:#64748B}
 
 /* Header */
-.hdr{background:rgba(30,41,59,.8);backdrop-filter:blur(12px);padding:12px 16px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(148,163,184,.1)}
+.hdr{background:rgba(30,41,59,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:14px 16px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(148,163,184,.1)}
 .hdr-top{display:flex;justify-content:space-between;align-items:center}
-.hdr h1{font-size:15px;font-weight:700}
-.hdr .badge{font-size:10px;padding:3px 8px;border-radius:10px;background:rgba(34,211,238,.1);color:#22D3EE;border:1px solid rgba(34,211,238,.2)}
+.hdr h1{font-size:16px;font-weight:700}
+.hdr .badge{font-size:11px;padding:3px 10px;border-radius:10px;background:rgba(34,211,238,.1);color:#22D3EE;border:1px solid rgba(34,211,238,.2)}
 
 /* Bottom Nav */
-.bnav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(148,163,184,.1);z-index:100}
-.bnav-item{flex:1;text-align:center;padding:8px 0 6px;cursor:pointer;color:#64748B;font-size:10px;transition:color .2s}
+.bnav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(15,23,42,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(148,163,184,.1);z-index:100;padding-bottom:env(safe-area-inset-bottom,0px)}
+.bnav-item{flex:1;text-align:center;padding:10px 0 6px;cursor:pointer;color:#64748B;font-size:10px;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .bnav-item.active{color:#22D3EE}
-.bnav-item .icon{font-size:20px;display:block;margin-bottom:2px}
+.bnav-item .icon{font-size:22px;display:block;margin-bottom:2px}
 
 /* Pages */
-.page{display:none;padding:14px}
+.page{display:none;padding:16px}
 .page.active{display:block}
 
 /* Cards */
-.card{background:rgba(30,41,59,.65);backdrop-filter:blur(16px);border:1px solid rgba(148,163,184,.12);border-radius:14px;padding:14px;margin-bottom:10px}
-.card-title{font-size:12px;font-weight:700;color:#94A3B8;letter-spacing:.5px;margin-bottom:10px}
+.card{background:rgba(30,41,59,.65);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(148,163,184,.12);border-radius:16px;padding:16px;margin-bottom:12px}
+.card-title{font-size:13px;font-weight:700;color:#94A3B8;letter-spacing:.5px;margin-bottom:12px}
 
-/* Form */
-.form-group{margin-bottom:14px}
-.form-label{font-size:11px;color:#94A3B8;font-weight:600;margin-bottom:5px;display:block}
+/* Form — mobile-first: single column by default */
+.form-group{margin-bottom:16px}
+.form-label{font-size:12px;color:#94A3B8;font-weight:600;margin-bottom:6px;display:block}
 .form-label .opt{font-weight:400;color:#475569;font-size:10px}
-.form-input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.2);background:rgba(15,23,42,.6);color:#E2E8F0;font-size:14px;outline:none;transition:border .2s}
+.form-input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(148,163,184,.2);background:rgba(15,23,42,.6);color:#E2E8F0;font-size:15px;outline:none;transition:border .2s;-webkit-appearance:none;appearance:none;min-height:44px}
 .form-input:focus{border-color:#22D3EE}
 .form-input::placeholder{color:#475569}
-select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.form-static{font-size:14px;padding:10px 12px;border-radius:10px;background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.15);color:#22D3EE}
+select.form-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-row{display:grid;grid-template-columns:1fr;gap:4px}
+.form-row>.form-group{min-width:0}
+.form-static{font-size:15px;padding:12px 14px;border-radius:10px;background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.15);color:#22D3EE}
 
 /* Button */
-.btn{width:100%;padding:12px;border-radius:12px;border:none;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.btn{width:100%;padding:14px;border-radius:12px;border:none;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s;-webkit-tap-highlight-color:transparent;min-height:48px}
 .btn:active{opacity:.7}
 .btn-primary{background:linear-gradient(135deg,#06B6D4,#3B82F6);color:#fff}
 .btn-success{background:linear-gradient(135deg,#10B981,#34D399);color:#fff}
 .btn-danger{background:rgba(239,68,68,.15);color:#FCA5A5;border:1px solid rgba(239,68,68,.2)}
-.btn-sm{padding:8px 14px;font-size:12px;width:auto;border-radius:8px}
+.btn-sm{padding:8px 16px;font-size:13px;width:auto;border-radius:8px;min-height:36px}
 .btn-outline{background:transparent;border:1px solid rgba(148,163,184,.3);color:#94A3B8}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 
 /* Appointment list */
-.appt-item{background:rgba(30,41,59,.5);border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid rgba(148,163,184,.08)}
+.appt-item{background:rgba(30,41,59,.5);border-radius:12px;padding:14px;margin-bottom:8px;border:1px solid rgba(148,163,184,.08)}
 .appt-item.today{border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.03)}
 .appt-item.pending-status{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.03)}
 .appt-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.appt-name{font-size:14px;font-weight:700;color:#E2E8F0}
-.appt-date{font-size:11px;color:#22D3EE;font-weight:600}
-.appt-meta{font-size:11px;color:#64748B;margin-bottom:8px}
-.appt-actions{display:flex;gap:6px;flex-wrap:wrap}
+.appt-name{font-size:15px;font-weight:700;color:#E2E8F0}
+.appt-date{font-size:12px;color:#22D3EE;font-weight:600}
+.appt-meta{font-size:12px;color:#64748B;margin-bottom:8px;line-height:1.5}
+.appt-actions{display:flex;gap:8px;flex-wrap:wrap}
 
 /* Followup list */
-.fu-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(51,65,85,.3)}
-.fu-check{width:24px;height:24px;border-radius:50%;border:2px solid rgba(148,163,184,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:14px;transition:all .2s}
+.fu-item{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid rgba(51,65,85,.3)}
+.fu-check{width:28px;height:28px;border-radius:50%;border:2px solid rgba(148,163,184,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:14px;transition:all .2s;-webkit-tap-highlight-color:transparent}
 .fu-check.done{background:#10B981;border-color:#10B981;color:#fff}
 .fu-info{flex:1}
-.fu-name{font-size:13px;font-weight:600;color:#E2E8F0}
-.fu-staff{font-size:10px;color:#64748B}
+.fu-name{font-size:14px;font-weight:600;color:#E2E8F0}
+.fu-staff{font-size:11px;color:#64748B}
 .fu-overdue{color:#FCA5A5}
 
 /* Toast */
-.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:12px 24px;border-radius:10px;font-size:14px;font-weight:600;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;max-width:90vw;text-align:center}
 .toast.show{opacity:1}
 .toast-ok{background:rgba(16,185,129,.9);color:#fff}
 .toast-err{background:rgba(239,68,68,.9);color:#fff}
@@ -79,43 +80,50 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 /* Modal */
 .modal-mask{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:none;align-items:flex-end;justify-content:center}
 .modal-mask.show{display:flex}
-.modal{background:#1E293B;border-radius:16px 16px 0 0;width:100%;max-width:480px;padding:20px;max-height:70vh;overflow-y:auto}
-.modal h3{font-size:15px;font-weight:700;margin-bottom:14px;color:#E2E8F0}
+.modal{background:#1E293B;border-radius:16px 16px 0 0;width:100%;max-width:480px;padding:20px 16px calc(env(safe-area-inset-bottom,0px) + 20px);max-height:80vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.modal h3{font-size:16px;font-weight:700;margin-bottom:16px;color:#E2E8F0}
 .modal-close{position:absolute;top:16px;right:16px;font-size:20px;color:#64748B;cursor:pointer}
 
 /* Confirm dialog */
 .confirm-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;display:none;align-items:center;justify-content:center}
 .confirm-mask.show{display:flex}
-.confirm-box{background:#1E293B;border-radius:14px;padding:20px;width:85%;max-width:360px;text-align:center}
-.confirm-box h3{font-size:15px;margin-bottom:10px;color:#E2E8F0}
-.confirm-detail{font-size:12px;color:#94A3B8;margin-bottom:16px;line-height:1.6;text-align:left}
+.confirm-box{background:#1E293B;border-radius:14px;padding:20px;width:88%;max-width:360px;text-align:center}
+.confirm-box h3{font-size:16px;margin-bottom:10px;color:#E2E8F0}
+.confirm-detail{font-size:13px;color:#94A3B8;margin-bottom:16px;line-height:1.6;text-align:left}
 .confirm-btns{display:flex;gap:10px}
 
 /* Stats */
-.stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
-.stat-item{text-align:center;padding:10px 6px;background:rgba(30,41,59,.5);border-radius:10px}
-.stat-val{font-size:20px;font-weight:900}
-.stat-label{font-size:9px;color:#64748B;margin-top:2px}
+.stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+.stat-item{text-align:center;padding:12px 6px;background:rgba(30,41,59,.5);border-radius:10px}
+.stat-val{font-size:22px;font-weight:900}
+.stat-label{font-size:10px;color:#64748B;margin-top:2px}
 
 /* Follow-up stage badge */
-.fu-stage{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700}
+.fu-stage{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
 .fu-stage-1{background:rgba(34,211,238,.12);color:#22D3EE}
 .fu-stage-3{background:rgba(52,211,153,.12);color:#34D399}
 .fu-stage-7{background:rgba(96,165,250,.12);color:#60A5FA}
 .fu-stage-30{background:rgba(251,191,36,.12);color:#FBBF24}
 .fu-stage-90{background:rgba(167,139,250,.12);color:#A78BFA}
-.fu-card{background:rgba(30,41,59,.5);border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid rgba(148,163,184,.08)}
+.fu-card{background:rgba(30,41,59,.5);border-radius:12px;padding:14px;margin-bottom:8px;border:1px solid rgba(148,163,184,.08)}
 .fu-card.overdue{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.03)}
-.fu-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-.fu-card-name{font-size:14px;font-weight:700;color:#E2E8F0}
-.fu-card-meta{font-size:11px;color:#64748B;margin-bottom:8px;line-height:1.5}
-.fu-card-actions{display:flex;gap:6px}
+.fu-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.fu-card-name{font-size:15px;font-weight:700;color:#E2E8F0}
+.fu-card-meta{font-size:12px;color:#64748B;margin-bottom:8px;line-height:1.5}
+.fu-card-actions{display:flex;gap:8px}
 
 /* No-deal tags */
-.nd-tag{display:inline-block;padding:5px 10px;border-radius:8px;font-size:11px;cursor:pointer;background:rgba(34,211,238,.08);color:#22D3EE;border:1px solid rgba(34,211,238,.2);transition:all .2s;user-select:none}
+.nd-tag{display:inline-block;padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;background:rgba(34,211,238,.08);color:#22D3EE;border:1px solid rgba(34,211,238,.2);transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
 .nd-tag:active{background:rgba(34,211,238,.2);transform:scale(.95)}
 
 .form-input[readonly]{background:#1E293B;color:#64748B;cursor:not-allowed;border-color:rgba(100,116,139,.15)}
+
+/* Desktop: two-column form rows on wider screens */
+@media(min-width:500px){
+  .form-row{grid-template-columns:1fr 1fr;gap:10px}
+  .page{padding:20px}
+  .card{padding:18px}
+}
 </style>
 </head>
 <body>
@@ -144,6 +152,28 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
   <!-- 定金录入 -->
   <div class="page" id="page-deposit">
+    <div class="card" id="today-stats-card" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div class="card-title" style="margin:0">昨日概览</div>
+        <span id="stats-date" style="font-size:11px;color:#64748B"></span>
+      </div>
+      <div style="display:flex;gap:12px;margin-bottom:12px">
+        <div style="flex:1;text-align:center;background:rgba(34,211,238,.08);border-radius:8px;padding:10px 0">
+          <div style="font-size:20px;font-weight:700;color:#22D3EE" id="stats-deposit">-</div>
+          <div style="font-size:11px;color:#64748B;margin-top:2px">昨日定金</div>
+        </div>
+        <div style="flex:1;text-align:center;background:rgba(16,185,129,.08);border-radius:8px;padding:10px 0">
+          <div style="font-size:20px;font-weight:700;color:#10B981" id="stats-revenue">-</div>
+          <div style="font-size:11px;color:#64748B;margin-top:2px">昨日变现</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <label style="font-size:13px;color:#94A3B8;white-space:nowrap" id="wechat-label">昨日加微</label>
+        <input class="form-input" id="wechat-count" type="number" placeholder="填写加微人数" style="flex:1;height:36px;font-size:14px">
+        <button class="btn btn-primary" id="wechat-save" style="height:36px;padding:0 16px;font-size:13px;white-space:nowrap">保存</button>
+      </div>
+      <div id="wechat-status" style="font-size:11px;color:#64748B;margin-top:6px;min-height:14px"></div>
+    </div>
     <div class="card">
       <div class="card-title">收定金录入</div>
       <div class="form-row">
@@ -158,8 +188,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label class="form-label">定金金额 *</label>
-          <input class="form-input" id="dep-amount" type="number" placeholder="¥">
+          <label class="form-label">定金金额 <span class="opt">(无定金填0)</span></label>
+          <input class="form-input" id="dep-amount" type="number" placeholder="¥ 无定金填0" value="0">
         </div>
         <div class="form-group">
           <label class="form-label">付款渠道 *</label>
@@ -208,7 +238,16 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <option value="14:00">14:00</option>
             <option value="14:30">14:30</option>
             <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
             <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
           </select>
         </div>
       </div>
@@ -280,7 +319,16 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <option value="14:00">14:00</option>
             <option value="14:30">14:30</option>
             <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
             <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
           </select>
         </div>
       </div>
@@ -397,19 +445,26 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <label class="form-label">预约时段</label>
         <select class="form-input" id="resc-time">
           <option value="">未定</option>
-          <option value="09:00">上午 9:00</option>
-          <option value="09:30">上午 9:30</option>
-          <option value="10:00">上午 10:00</option>
-          <option value="10:30">上午 10:30</option>
-          <option value="11:00">上午 11:00</option>
-          <option value="11:30">上午 11:30</option>
-          <option value="13:00">下午 1:00</option>
-          <option value="13:30">下午 1:30</option>
-          <option value="14:00">下午 2:00</option>
-          <option value="14:30">下午 2:30</option>
-          <option value="15:00">下午 3:00</option>
-          <option value="15:30">下午 3:30</option>
-          <option value="16:00">下午 4:00</option>
+          <option value="09:00">9:00</option>
+          <option value="09:30">9:30</option>
+          <option value="10:00">10:00</option>
+          <option value="10:30">10:30</option>
+          <option value="11:00">11:00</option>
+          <option value="13:00">13:00</option>
+          <option value="13:30">13:30</option>
+          <option value="14:00">14:00</option>
+          <option value="14:30">14:30</option>
+          <option value="15:00">15:00</option>
+          <option value="15:30">15:30</option>
+          <option value="16:00">16:00</option>
+          <option value="16:30">16:30</option>
+          <option value="17:00">17:00</option>
+          <option value="17:30">17:30</option>
+          <option value="18:00">18:00</option>
+          <option value="18:30">18:30</option>
+          <option value="19:00">19:00</option>
+          <option value="19:30">19:30</option>
+          <option value="20:00">20:00</option>
         </select>
       </div>
     </div>
@@ -534,7 +589,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 配置
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const API_BASE = localStorage.getItem('api_base') || 'https://1408834087-bdkp2qzmmz.ap-guangzhou.tencentscf.com';
+const _SCF_DIRECT = 'https://1408834087-bdkp2qzmmz.ap-guangzhou.tencentscf.com';
+const _DOMAIN_PROXY = location.hostname === 'cdmgj.com' ? location.origin : null;
+const API_BASE = localStorage.getItem('api_base') || _DOMAIN_PROXY || _SCF_DIRECT;
 const params = new URLSearchParams(location.search);
 let TOKEN = params.get('token') || localStorage.getItem('entry_token') || '';
 
@@ -549,6 +606,7 @@ if (params.get('api')) {
 }
 
 const FEISHU_APP_ID = 'cli_a93bd735f479dcd3';
+const FEISHU_REDIRECT_URI = encodeURIComponent(location.origin + location.pathname);
 
 let STAFF = null;
 let currentAppt = null;
@@ -556,17 +614,6 @@ let pendingAction = '';
 
 function isInFeishu() {
   return /Lark|Feishu/i.test(navigator.userAgent);
-}
-
-function waitForH5SDK(timeout) {
-  return new Promise(resolve => {
-    if (window.h5sdk) return resolve(true);
-    const t0 = Date.now();
-    const iv = setInterval(() => {
-      if (window.h5sdk) { clearInterval(iv); resolve(true); }
-      else if (Date.now() - t0 > timeout) { clearInterval(iv); resolve(false); }
-    }, 100);
-  });
 }
 
 function getCityKey() {
@@ -580,47 +627,36 @@ function getCityKey() {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 初始化
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-async function feishuLogin() {
-  return new Promise((resolve, reject) => {
-    window.h5sdk.ready(() => {
-      window.tt.requestAuthCode({
-        appId: FEISHU_APP_ID,
-        success: (res) => resolve(res.code),
-        fail: (err) => reject(new Error(err.errMsg || '飞书免登失败')),
-      });
-    });
-  });
-}
-
 async function init() {
   const loadEl = document.getElementById('loading-screen');
+  const feishuCode = params.get('code');
 
-  if (!TOKEN && isInFeishu()) {
-    loadEl.textContent = '飞书免登中...';
-    const sdkReady = await waitForH5SDK(3000);
-    if (sdkReady) {
-      try {
-        const code = await feishuLogin();
-        const resp = await fetch(API_BASE + '/api/feishu-login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ code }),
-        });
-        const data = await resp.json();
-        if (!data.ok) throw new Error(data.error);
-        TOKEN = data.token;
-        STAFF = data.staff;
-        localStorage.setItem('entry_token', TOKEN);
-      } catch (e) {
-        loadEl.textContent = '飞书免登失败: ' + e.message;
-        return;
-      }
-    } else {
-      loadEl.textContent = '飞书SDK加载超时，请刷新重试';
+  if (!TOKEN && feishuCode) {
+    loadEl.textContent = '正在登录，请稍候...';
+    try {
+      const resp = await fetch(API_BASE + '/api/feishu-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: feishuCode }),
+      });
+      const data = await resp.json();
+      if (!data.ok) throw new Error(data.error);
+      TOKEN = data.token;
+      STAFF = data.staff;
+      localStorage.setItem('entry_token', TOKEN);
+      history.replaceState(null, '', location.pathname);
+    } catch (e) {
+      history.replaceState(null, '', location.pathname);
+      location.href = 'https://open.feishu.cn/open-apis/authen/v1/authorize?app_id='
+        + FEISHU_APP_ID + '&redirect_uri=' + FEISHU_REDIRECT_URI + '&response_type=code';
       return;
     }
+  } else if (!TOKEN && isInFeishu()) {
+    location.href = 'https://open.feishu.cn/open-apis/authen/v1/authorize?app_id='
+      + FEISHU_APP_ID + '&redirect_uri=' + FEISHU_REDIRECT_URI + '&response_type=code';
+    return;
   } else if (!TOKEN) {
-    loadEl.textContent = '缺少访问令牌，请通过飞书打开或使用个人链接';
+    loadEl.textContent = '请使用个人专属链接访问（联系管理员获取）';
     return;
   }
 
@@ -646,8 +682,21 @@ async function init() {
   document.getElementById('user-badge').textContent = `${STAFF.name} · ${getCityName(STAFF.city)}`;
   document.getElementById('app-title').textContent = STAFF.role === 'artist' ? '美管家 · 纹绣师' : '美管家 · 客服工作台';
 
+  if (STAFF.role === 'artist') {
+    ['page-deposit', 'page-followup', 'confirm-deposit'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    });
+  } else if (STAFF.role === 'cs') {
+    ['page-artist', 'modal-deal', 'modal-nodeal'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    });
+  }
+
   setupNav();
   setupForms();
+  if (STAFF.role !== 'artist') loadTodayStats();
 }
 
 function getCityName(key) {
@@ -701,6 +750,7 @@ function switchPage(id, el) {
   if (el) el.classList.add('active');
   else document.querySelector(`.bnav-item[data-page="${id}"]`)?.classList.add('active');
 
+  if (id === 'deposit') loadTodayStats();
   if (id === 'appt') loadAppointments();
   if (id === 'schedule') loadSchedule();
   if (id === 'followup') loadFollowups();
@@ -823,6 +873,57 @@ function setupForms() {
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 今日概览 — 自动加载 + 加微保存
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function loadTodayStats() {
+  const card = document.getElementById('today-stats-card');
+  if (!card || STAFF.role === 'artist') return;
+  card.style.display = '';
+
+  const yesterday = new Date(Date.now() - 86400000);
+  const yStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth()+1).padStart(2,'0')}-${String(yesterday.getDate()).padStart(2,'0')}`;
+  const yLabel = `${yesterday.getMonth()+1}月${yesterday.getDate()}日`;
+  document.getElementById('stats-date').textContent = yLabel;
+  document.getElementById('wechat-label').textContent = `昨日加微(${yLabel})`;
+
+  try {
+    const resp = await api(`/api/today-stats?city=${getCityKey()}&date=${yStr}`);
+    if (resp.ok) {
+      document.getElementById('stats-deposit').textContent = resp.deposit_count + '笔';
+      document.getElementById('stats-revenue').textContent = '¥' + (resp.revenue || 0).toLocaleString();
+    }
+  } catch(e) { console.error('loadTodayStats:', e); }
+
+  document.getElementById('wechat-save').onclick = saveWechatCount;
+}
+
+async function saveWechatCount() {
+  const input = document.getElementById('wechat-count');
+  const btn = document.getElementById('wechat-save');
+  const status = document.getElementById('wechat-status');
+  const count = input.value;
+  if (count === '' || count === null) { toast('请填写加微人数', 'err'); return; }
+
+  btn.disabled = true;
+  btn.textContent = '保存中...';
+  try {
+    const resp = await api('/api/daily-wechat', 'POST', {
+      city: getCityKey(),
+      count: Number(count),
+    });
+    if (resp.ok) {
+      toast(resp.message || '已保存');
+      status.innerHTML = `<span style="color:#10B981">✓ ${resp.message}</span>`;
+    } else {
+      toast(resp.error || '保存失败', 'err');
+      status.innerHTML = `<span style="color:#FCA5A5">${resp.error}</span>`;
+    }
+  } catch(e) { toast('网络错误', 'err'); }
+  btn.disabled = false;
+  btn.textContent = '保存';
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 收定金 — 预览确认 → 提交
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function previewDeposit() {
@@ -832,8 +933,8 @@ function previewDeposit() {
   const channel = document.getElementById('dep-channel').value;
   if (!customer) return toast('请填写客户姓名', 'err');
   if (!phone) return toast('请填写客户手机号', 'err');
-  if (!amount) return toast('请填写定金金额', 'err');
-  if (!channel) return toast('请选择付款渠道', 'err');
+  if (amount === '' || amount === null) return toast('请填写定金金额（无定金填0）', 'err');
+  if (Number(amount) > 0 && !channel) return toast('请选择付款渠道', 'err');
 
   const wechatDate = document.getElementById('dep-wechat-date').value;
   const arrDate = document.getElementById('dep-date').value;
@@ -857,10 +958,15 @@ function previewDeposit() {
   document.getElementById('confirm-deposit').classList.add('show');
 }
 
+let _depositSubmitting = false;
 async function submitDeposit() {
+  if (_depositSubmitting) return;
+  _depositSubmitting = true;
+
   document.getElementById('confirm-deposit').classList.remove('show');
 
   const btn = document.getElementById('dep-submit');
+  const confirmBtn = document.getElementById('confirm-deposit-yes');
   const customer = document.getElementById('dep-customer').value.trim();
   const phone = document.getElementById('dep-phone').value.trim();
   const amount = document.getElementById('dep-amount').value;
@@ -873,6 +979,7 @@ async function submitDeposit() {
   const cityKey = getCityKey();
 
   btn.disabled = true;
+  if (confirmBtn) confirmBtn.disabled = true;
   btn.textContent = '提交中...';
   try {
     const resp = await api('/api/deposit', 'POST', {
@@ -890,9 +997,10 @@ async function submitDeposit() {
     });
     if (resp.ok) {
       toast(resp.message || '定金记录已提交');
+      loadTodayStats();
       document.getElementById('dep-customer').value = '';
       document.getElementById('dep-phone').value = '';
-      document.getElementById('dep-amount').value = '';
+      document.getElementById('dep-amount').value = '0';
       document.getElementById('dep-channel').value = '';
       document.getElementById('dep-wechat-date').value = '';
       document.getElementById('dep-date').value = '';
@@ -905,7 +1013,9 @@ async function submitDeposit() {
     }
   } catch (e) { toast('网络错误: ' + e.message, 'err'); }
   btn.disabled = false;
+  if (confirmBtn) confirmBtn.disabled = false;
   btn.textContent = '提交定金记录';
+  _depositSubmitting = false;
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1010,7 +1120,7 @@ async function loadHeatmap(todayStr) {
   ));
 
 
-  const timeLabels = ['9:00','9:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30'];
+  const timeLabels = ['9:00','9:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30','19:00','19:30','20:00'];
 
   function cellColor(occ, max) {
     if (occ === 0) return 'rgba(30,41,59,.4)';
@@ -1206,14 +1316,25 @@ async function loadAppointments() {
         actions = `<button class="btn btn-sm btn-success" onclick="openDeal('${aid}')">成交</button>
           <button class="btn btn-sm btn-danger" onclick="openNoDeal('${aid}')">未成交</button>`;
       }
-    } else if (isArrived) {
-      actions = `<button class="btn btn-sm btn-success" onclick="openDeal('${aid}')">成交</button>
-        <button class="btn btn-sm btn-danger" onclick="openNoDeal('${aid}')">未成交</button>`;
+    } else if (STAFF.role === 'cs') {
+      if (isArrived) {
+        actions = `<span style="font-size:11px;color:#10B981">✓ 已到店，等待纹绣师操作</span>`;
+      } else {
+        actions = `<button class="btn btn-sm btn-success" onclick="confirmArrivalQuick('${aid}')">确认到店</button>
+          <button class="btn btn-sm btn-outline" onclick="openReschedule('${aid}')">改期</button>
+          <button class="btn btn-sm btn-outline" onclick="openPending('${aid}','pending')">待定</button>
+          <button class="btn btn-sm btn-danger" onclick="openPending('${aid}','cancel')">取消</button>`;
+      }
     } else {
-      actions = `<button class="btn btn-sm btn-success" onclick="confirmArrivalQuick('${aid}')">确认到店</button>
-        <button class="btn btn-sm btn-outline" onclick="openReschedule('${aid}')">改期</button>
-        <button class="btn btn-sm btn-outline" onclick="openPending('${aid}','pending')">待定</button>
-        <button class="btn btn-sm btn-danger" onclick="openPending('${aid}','cancel')">取消</button>`;
+      if (isArrived) {
+        actions = `<button class="btn btn-sm btn-success" onclick="openDeal('${aid}')">成交</button>
+          <button class="btn btn-sm btn-danger" onclick="openNoDeal('${aid}')">未成交</button>`;
+      } else {
+        actions = `<button class="btn btn-sm btn-success" onclick="confirmArrivalQuick('${aid}')">确认到店</button>
+          <button class="btn btn-sm btn-outline" onclick="openReschedule('${aid}')">改期</button>
+          <button class="btn btn-sm btn-outline" onclick="openPending('${aid}','pending')">待定</button>
+          <button class="btn btn-sm btn-danger" onclick="openPending('${aid}','cancel')">取消</button>`;
+      }
     }
 
     return `<div class="appt-item ${cls}">
