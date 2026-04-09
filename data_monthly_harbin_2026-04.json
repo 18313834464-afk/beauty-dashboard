@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-04",
-  "days_elapsed": 5,
+  "days_elapsed": 6,
   "total_days": 30,
-  "cum_revenue": 2980.0,
+  "cum_revenue": 6060.0,
   "cum_spend": 2812.02,
-  "cum_wechat": 60,
+  "cum_wechat": 67,
   "cum_deposit": 6,
   "cum_open": 82,
-  "cum_refund": 0,
+  "cum_refund": 1,
   "roi": 0,
   "revenue_target": 100000,
   "progress": 3.0,
-  "predicted_revenue": 12771.43,
-  "predicted_spend": 12051.51,
-  "predicted_roi": 1.06,
+  "predicted_revenue": 22725.0,
+  "predicted_spend": 10545.08,
+  "predicted_roi": 2.16,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -76,7 +76,7 @@
       "date": "2026-04-08",
       "revenue": 0,
       "spend": 0,
-      "wechat": 0,
+      "wechat": 7,
       "deposit": 0,
       "open": 0
     },
@@ -282,6 +282,11 @@
       "date": "2026-04-07",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-04-08",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -295,14 +300,14 @@
       "fulfill_rate": 0.0,
       "gap_total": 3,
       "sop_score": 76,
-      "intent_a": 5,
-      "intent_b": 10,
-      "intent_c": 40,
-      "intent_total": 55
+      "intent_a": 6,
+      "intent_b": 14,
+      "intent_c": 42,
+      "intent_total": 62
     },
     {
       "name": "侯芳",
-      "wechat": 6,
+      "wechat": 13,
       "deposit": 0,
       "revenue": 0,
       "arrived": 0,
@@ -310,12 +315,26 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 0,
+      "intent_a": 1,
       "intent_b": 0,
-      "intent_c": 10,
-      "intent_total": 10
+      "intent_c": 16,
+      "intent_total": 17
     }
   ],
-  "refund_details": [],
-  "refund_summary": []
+  "refund_details": [
+    {
+      "customer": "柴女士",
+      "revenue": 0,
+      "cs": "汤娅",
+      "status": "未到店退款"
+    }
+  ],
+  "refund_summary": [
+    {
+      "cs": "汤娅",
+      "city": "哈尔滨",
+      "arrived": 0,
+      "not_arrived": 1
+    }
+  ]
 }

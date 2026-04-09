@@ -2,14 +2,14 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 293553.77,
+  "cum_revenue": 299835.77,
   "cum_spend": 109700.95,
-  "cum_wechat": 1122,
-  "cum_deposit": 133,
+  "cum_wechat": 1164,
+  "cum_deposit": 136,
   "cum_open": 1744.0,
-  "cum_roi": 2.68,
-  "monthly_avg_rev": 146776.89,
-  "predicted_annual": 1761322.68,
+  "cum_roi": 2.73,
+  "monthly_avg_rev": 149917.89,
+  "predicted_annual": 1799014.68,
   "revenue_target": 3000000,
   "progress": 8.8,
   "monthly_kpi": [
@@ -58,15 +58,15 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 40460.0,
+      "revenue": 46742.0,
       "spend": 14362.73,
-      "roi": 2.82,
-      "wechat": 129,
-      "deposit": 15,
+      "roi": 3.25,
+      "wechat": 171,
+      "deposit": 18,
       "open": 222,
       "open_cost": 64.7,
-      "refund": 4,
-      "days": 5,
+      "refund": 6,
+      "days": 6,
       "mom_revenue": -91.8
     }
   ],
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    40460.0,
+    46742.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.82,
+    3.25,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 40,
-          "deposit": 5,
+          "wechat": 55,
+          "deposit": 8,
           "revenue": 12500.0
         }
       },
-      "intent_a": 2,
-      "intent_b": 3,
-      "intent_c": 9
+      "intent_a": 5,
+      "intent_b": 15,
+      "intent_c": 13
     },
     {
       "name": "李小叶",
@@ -164,6 +164,16 @@
       "intent_c": 18
     },
     {
+      "name": "胡娜",
+      "months": {
+        "4": {
+          "wechat": 2,
+          "deposit": 0,
+          "revenue": 0
+        }
+      }
+    },
+    {
       "name": "阳珂欣",
       "months": {
         "3": {
@@ -172,14 +182,14 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 65,
+          "wechat": 90,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
       "intent_a": 4,
-      "intent_b": 9,
-      "intent_c": 29
+      "intent_b": 15,
+      "intent_c": 37
     }
   ],
   "health_score": 80,
