@@ -2,56 +2,56 @@
   "month": "2026-04",
   "days_elapsed": 8,
   "total_days": 30,
-  "cum_revenue": 52802.0,
-  "cum_spend": 17174.75,
-  "cum_wechat": 299,
-  "cum_deposit": 29,
-  "cum_open": 304,
+  "cum_revenue": 55182.0,
+  "cum_spend": 24910.14,
+  "cum_wechat": 378,
+  "cum_deposit": 30,
+  "cum_open": 464,
   "cum_refund": 8,
-  "roi": 3.07,
+  "roi": 2.22,
   "revenue_target": 500000,
-  "progress": 10.6,
-  "predicted_revenue": 198007.5,
-  "predicted_spend": 64405.31,
-  "predicted_roi": 3.07,
+  "progress": 11.0,
+  "predicted_revenue": 206932.5,
+  "predicted_spend": 93413.02,
+  "predicted_roi": 2.22,
   "daily_trend": [
     {
       "date": "2026-04-01",
       "revenue": 2180.0,
-      "spend": 4666.09,
+      "spend": 3671.63,
       "wechat": 51,
       "deposit": 6,
-      "open": 92
+      "open": 56
     },
     {
       "date": "2026-04-02",
       "revenue": 14020.0,
-      "spend": 4451.13,
+      "spend": 3636.68,
       "wechat": 42,
       "deposit": 5,
-      "open": 78
+      "open": 57
     },
     {
       "date": "2026-04-03",
       "revenue": 16942.0,
-      "spend": 4791.8099999999995,
+      "spend": 3788.7,
       "wechat": 38,
       "deposit": 6,
-      "open": 83
+      "open": 58
     },
     {
       "date": "2026-04-04",
-      "revenue": 8240.0,
+      "revenue": 7740.0,
       "spend": 0,
-      "wechat": 8,
+      "wechat": 4,
       "deposit": 1,
       "open": 0
     },
     {
       "date": "2026-04-05",
-      "revenue": 2580.0,
+      "revenue": 0,
       "spend": 0,
-      "wechat": 2,
+      "wechat": 0,
       "deposit": 0,
       "open": 0
     },
@@ -73,7 +73,7 @@
     },
     {
       "date": "2026-04-08",
-      "revenue": 0,
+      "revenue": 0.0,
       "spend": 0,
       "wechat": 49,
       "deposit": 3,
@@ -81,11 +81,11 @@
     },
     {
       "date": "2026-04-09",
-      "revenue": 0,
-      "spend": 0,
-      "wechat": 0,
-      "deposit": 0,
-      "open": 0
+      "revenue": 2380.0,
+      "spend": 5065.87,
+      "wechat": 64,
+      "deposit": 1,
+      "open": 87.0
     },
     {
       "date": "2026-04-10",
@@ -259,28 +259,28 @@
   "rate_trend": [
     {
       "date": "2026-04-01",
-      "open_to_wechat": 55.4,
+      "open_to_wechat": 91.1,
       "wechat_to_deposit": 11.8
     },
     {
       "date": "2026-04-02",
-      "open_to_wechat": 53.8,
+      "open_to_wechat": 73.7,
       "wechat_to_deposit": 11.9
     },
     {
       "date": "2026-04-03",
-      "open_to_wechat": 45.8,
+      "open_to_wechat": 65.5,
       "wechat_to_deposit": 15.8
     },
     {
       "date": "2026-04-04",
       "open_to_wechat": 0,
-      "wechat_to_deposit": 12.5
+      "wechat_to_deposit": 25.0
     },
     {
       "date": "2026-04-05",
       "open_to_wechat": 0,
-      "wechat_to_deposit": 0.0
+      "wechat_to_deposit": 0
     },
     {
       "date": "2026-04-06",
@@ -299,8 +299,8 @@
     },
     {
       "date": "2026-04-09",
-      "open_to_wechat": 0,
-      "wechat_to_deposit": 0
+      "open_to_wechat": 73.6,
+      "wechat_to_deposit": 1.6
     },
     {
       "date": "2026-04-10",
@@ -410,15 +410,15 @@
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 14362.73,
-      "cum_wechat": 171,
-      "cum_deposit": 18,
-      "cum_revenue": 46742.0,
-      "roi": 6.12,
+      "cum_spend": 18445.81,
+      "cum_wechat": 221,
+      "cum_deposit": 19,
+      "cum_revenue": 49122.0,
+      "roi": 3.04,
       "cum_refund": 6
     },
     "重庆": {
-      "cum_spend": 0,
+      "cum_spend": 409.98,
       "cum_wechat": 61,
       "cum_deposit": 5,
       "cum_revenue": 0.0,
@@ -426,38 +426,38 @@
       "cum_refund": 1
     },
     "哈尔滨": {
-      "cum_spend": 2812.02,
-      "cum_wechat": 67,
+      "cum_spend": 6054.35,
+      "cum_wechat": 96,
       "cum_deposit": 6,
       "cum_revenue": 6060.0,
-      "roi": 0,
+      "roi": 3.03,
       "cum_refund": 1
     }
   },
   "cs_table": [
     {
       "name": "阳珂欣(成都)",
-      "wechat": 90,
+      "wechat": 117,
       "deposit": 6,
       "revenue": 22222.0,
       "arrived": 0,
-      "deposit_rate": 6.7,
+      "deposit_rate": 5.1,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 4,
-      "intent_b": 15,
-      "intent_c": 37,
-      "intent_total": 56
+      "intent_a": 5,
+      "intent_b": 23,
+      "intent_c": 77,
+      "intent_total": 105
     },
     {
       "name": "会媛(成都)",
-      "wechat": 55,
-      "deposit": 8,
-      "revenue": 12500.0,
-      "arrived": 1,
-      "deposit_rate": 14.5,
-      "fulfill_rate": 12.5,
+      "wechat": 72,
+      "deposit": 9,
+      "revenue": 14880.0,
+      "arrived": 2,
+      "deposit_rate": 12.5,
+      "fulfill_rate": 22.2,
       "gap_total": 2,
       "sop_score": 84,
       "intent_a": 5,
@@ -491,35 +491,35 @@
       "gap_total": 3,
       "sop_score": 76,
       "intent_a": 0,
-      "intent_b": 2,
-      "intent_c": 18,
-      "intent_total": 20
+      "intent_b": 7,
+      "intent_c": 21,
+      "intent_total": 28
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 54,
+      "wechat": 70,
       "deposit": 6,
       "revenue": 6060.0,
       "arrived": 0,
-      "deposit_rate": 11.1,
+      "deposit_rate": 8.6,
       "fulfill_rate": 0.0,
       "gap_total": 3,
       "sop_score": 76,
       "intent_a": 6,
       "intent_b": 14,
-      "intent_c": 42,
-      "intent_total": 62
+      "intent_c": 48,
+      "intent_total": 68
     },
     {
       "name": "胡娜(成都)",
-      "wechat": 2,
+      "wechat": 8,
       "deposit": 0,
       "revenue": 0,
       "arrived": 0,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 1,
-      "sop_score": 92,
+      "gap_total": 2,
+      "sop_score": 84,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -527,7 +527,7 @@
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 13,
+      "wechat": 26,
       "deposit": 0,
       "revenue": 0,
       "arrived": 0,
@@ -536,9 +536,9 @@
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 1,
-      "intent_b": 0,
-      "intent_c": 16,
-      "intent_total": 17
+      "intent_b": 7,
+      "intent_c": 24,
+      "intent_total": 32
     }
   ],
   "refund_summary": [
