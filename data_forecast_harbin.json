@@ -2,20 +2,20 @@
   "city": "哈尔滨",
   "city_key": "harbin",
   "month": "2026-04",
-  "generated_at": "2026-04-10 07:14:16",
-  "days_elapsed": 7,
+  "generated_at": "2026-04-11 06:21:59",
+  "days_elapsed": 8,
   "total_days": 30,
-  "progress_pct": 23.3,
+  "progress_pct": 26.7,
   "revenue_target": 100000,
   "cs_forecasts": [
     {
       "name": "汤娅",
-      "days_elapsed": 7,
+      "days_elapsed": 8,
       "total_days": 30,
       "current": {
         "revenue": 6060.0,
-        "wechat": 70,
-        "deposit": 6,
+        "wechat": 84,
+        "deposit": 7,
         "arrived": 0,
         "salary": 5221,
         "salary_base": 5000,
@@ -23,21 +23,21 @@
         "salary_bonus": 100
       },
       "predicted": {
-        "revenue": 25971,
-        "wechat": 300,
+        "revenue": 22725,
+        "wechat": 315,
         "deposit": 26,
         "arrived": 0,
-        "salary": 5619,
+        "salary": 5554,
         "salary_base": 5000,
-        "salary_commission": 519,
+        "salary_commission": 454,
         "salary_bonus": 100
       },
-      "daily_avg_revenue": 866,
+      "daily_avg_revenue": 758,
       "kpi": {
-        "deposit_rate": 8.6,
+        "deposit_rate": 8.3,
         "fulfill_rate": 0.0,
         "sop_score": 76,
-        "sop_predicted": 0,
+        "sop_predicted": 12,
         "gap_total": 3
       },
       "bonus_detail": {
@@ -57,11 +57,11 @@
     },
     {
       "name": "侯芳",
-      "days_elapsed": 7,
+      "days_elapsed": 8,
       "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 26,
+        "wechat": 35,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -71,7 +71,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 111,
+        "wechat": 131,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -103,25 +103,25 @@
       }
     }
   ],
-  "cs_salary_total_predicted": 11419,
+  "cs_salary_total_predicted": 11354,
   "pnl_forecast": {
     "current_sales": 6060.0,
-    "predicted_sales": 25971,
-    "predicted_your_income": -24178,
-    "predicted_your_margin": -93.1,
-    "predicted_partner_income": 4305,
-    "predicted_cs_salary": 12919,
-    "predicted_ad_actual": 20758,
-    "predicted_manager_fee": 10388,
+    "predicted_sales": 22725,
+    "predicted_your_income": -23466,
+    "predicted_your_margin": -103.3,
+    "predicted_partner_income": 3006,
+    "predicted_cs_salary": 12854,
+    "predicted_ad_actual": 18163,
+    "predicted_manager_fee": 9090,
     "predicted_artist_fee": 0,
     "predicted_shared_costs": 6084
   },
   "target_analysis": {
     "current_revenue": 6060.0,
-    "predicted_revenue": 25971,
+    "predicted_revenue": 22725,
     "target": 100000,
-    "gap": 74029,
-    "daily_needed": 3219,
+    "gap": 77275,
+    "daily_needed": 3512,
     "on_track": false
   }
 }

@@ -4,8 +4,8 @@
   "start_month": 3,
   "cum_revenue": 11620.0,
   "cum_spend": 12108.7,
-  "cum_wechat": 199,
-  "cum_deposit": 14,
+  "cum_wechat": 238,
+  "cum_deposit": 15,
   "cum_open": 336.0,
   "cum_roi": 0.96,
   "monthly_avg_rev": 5810.0,
@@ -47,7 +47,7 @@
       "revenue": 5560.0,
       "spend": 6054.35,
       "roi": 0.92,
-      "wechat": 103,
+      "wechat": 119,
       "deposit": 8,
       "open": 168,
       "open_cost": 50.87,
@@ -61,12 +61,12 @@
       "revenue": 6060.0,
       "spend": 6054.35,
       "roi": 1.0,
-      "wechat": 96,
-      "deposit": 6,
+      "wechat": 119,
+      "deposit": 7,
       "open": 168,
       "open_cost": 36.04,
       "refund": 1,
-      "days": 7,
+      "days": 8,
       "mom_revenue": -46.4
     }
   ],
@@ -131,14 +131,14 @@
       "name": "侯芳",
       "months": {
         "4": {
-          "wechat": 26,
+          "wechat": 35,
           "deposit": 0,
           "revenue": 0
         }
       },
-      "intent_a": 1,
-      "intent_b": 7,
-      "intent_c": 24
+      "intent_a": 2,
+      "intent_b": 8,
+      "intent_c": 32
     },
     {
       "name": "汤娅",
@@ -149,14 +149,14 @@
           "revenue": 0.0
         },
         "4": {
-          "wechat": 70,
-          "deposit": 6,
+          "wechat": 84,
+          "deposit": 7,
           "revenue": 6060.0
         }
       },
-      "intent_a": 6,
-      "intent_b": 14,
-      "intent_c": 48
+      "intent_a": 7,
+      "intent_b": 18,
+      "intent_c": 59
     }
   ],
   "health_score": 65,

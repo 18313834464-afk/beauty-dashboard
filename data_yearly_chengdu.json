@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 302215.77,
+  "cum_revenue": 309955.77,
   "cum_spend": 113784.03,
-  "cum_wechat": 1214,
-  "cum_deposit": 137,
+  "cum_wechat": 1249,
+  "cum_deposit": 139,
   "cum_open": 1808.0,
-  "cum_roi": 2.66,
-  "monthly_avg_rev": 151107.89,
-  "predicted_annual": 1813294.68,
+  "cum_roi": 2.72,
+  "monthly_avg_rev": 154977.89,
+  "predicted_annual": 1859734.68,
   "revenue_target": 3000000,
-  "progress": 8.9,
+  "progress": 9.1,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 49122.0,
+      "revenue": 56862.0,
       "spend": 18445.81,
-      "roi": 2.66,
-      "wechat": 221,
-      "deposit": 19,
+      "roi": 3.08,
+      "wechat": 256,
+      "deposit": 21,
       "open": 286,
       "open_cost": 64.5,
-      "refund": 6,
-      "days": 7,
-      "mom_revenue": -90.8
+      "refund": 7,
+      "days": 8,
+      "mom_revenue": -87.6
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    49122.0,
+    56862.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.66,
+    3.08,
     null,
     null,
     null,
@@ -136,13 +136,13 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 72,
-          "deposit": 9,
-          "revenue": 14880.0
+          "wechat": 83,
+          "deposit": 11,
+          "revenue": 22620.0
         }
       },
       "intent_a": 5,
-      "intent_b": 15,
+      "intent_b": 18,
       "intent_c": 13
     },
     {
@@ -161,13 +161,13 @@
       },
       "intent_a": 0,
       "intent_b": 7,
-      "intent_c": 21
+      "intent_c": 22
     },
     {
       "name": "胡娜",
       "months": {
         "4": {
-          "wechat": 8,
+          "wechat": 12,
           "deposit": 0,
           "revenue": 0
         }
@@ -182,13 +182,13 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 117,
+          "wechat": 137,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
-      "intent_a": 5,
-      "intent_b": 23,
+      "intent_a": 6,
+      "intent_b": 22,
       "intent_c": 77
     }
   ],
