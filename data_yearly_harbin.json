@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 11620.0,
+  "cum_revenue": 17180.0,
   "cum_spend": 12108.7,
-  "cum_wechat": 238,
-  "cum_deposit": 15,
+  "cum_wechat": 268,
+  "cum_deposit": 18,
   "cum_open": 336.0,
-  "cum_roi": 0.96,
-  "monthly_avg_rev": 5810.0,
-  "predicted_annual": 69720.0,
+  "cum_roi": 1.42,
+  "monthly_avg_rev": 8590.0,
+  "predicted_annual": 103080.0,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -47,8 +47,8 @@
       "revenue": 5560.0,
       "spend": 6054.35,
       "roi": 0.92,
-      "wechat": 119,
-      "deposit": 8,
+      "wechat": 134,
+      "deposit": 9,
       "open": 168,
       "open_cost": 50.87,
       "refund": 0,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 6060.0,
+      "revenue": 11620.0,
       "spend": 6054.35,
-      "roi": 1.0,
-      "wechat": 119,
-      "deposit": 7,
+      "roi": 1.92,
+      "wechat": 134,
+      "deposit": 9,
       "open": 168,
       "open_cost": 36.04,
-      "refund": 1,
-      "days": 8,
-      "mom_revenue": -46.4
+      "refund": 2,
+      "days": 9,
+      "mom_revenue": 7.2
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     5560.0,
-    6060.0,
+    11620.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     0.92,
-    1.0,
+    1.92,
     null,
     null,
     null,
@@ -131,8 +131,8 @@
       "name": "侯芳",
       "months": {
         "4": {
-          "wechat": 35,
-          "deposit": 0,
+          "wechat": 42,
+          "deposit": 2,
           "revenue": 0
         }
       },
@@ -149,19 +149,19 @@
           "revenue": 0.0
         },
         "4": {
-          "wechat": 84,
+          "wechat": 92,
           "deposit": 7,
-          "revenue": 6060.0
+          "revenue": 9040.0
         }
       },
       "intent_a": 7,
-      "intent_b": 18,
-      "intent_c": 59
+      "intent_b": 19,
+      "intent_c": 66
     }
   ],
-  "health_score": 65,
+  "health_score": 80,
   "health_breakdown": {
-    "revenue_efficiency": 1,
+    "revenue_efficiency": 2,
     "cost_control": 3,
     "team_stability": 2
   }
