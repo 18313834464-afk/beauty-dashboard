@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 318835.77,
-  "cum_spend": 113784.03,
-  "cum_wechat": 1277,
+  "cum_revenue": 334575.77,
+  "cum_spend": 125010.56,
+  "cum_wechat": 1293,
   "cum_deposit": 140,
-  "cum_open": 1808.0,
-  "cum_roi": 2.8,
-  "monthly_avg_rev": 159417.89,
-  "predicted_annual": 1913014.68,
+  "cum_open": 1977.0,
+  "cum_roi": 2.68,
+  "monthly_avg_rev": 167287.89,
+  "predicted_annual": 2007454.68,
   "revenue_target": 3000000,
-  "progress": 9.4,
+  "progress": 9.9,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 65742.0,
-      "spend": 18445.81,
-      "roi": 3.56,
-      "wechat": 284,
+      "revenue": 81482.0,
+      "spend": 29672.34,
+      "roi": 2.75,
+      "wechat": 300,
       "deposit": 22,
-      "open": 286,
-      "open_cost": 64.5,
-      "refund": 11,
-      "days": 9,
-      "mom_revenue": -84.0
+      "open": 455,
+      "open_cost": 65.21,
+      "refund": 13,
+      "days": 10,
+      "mom_revenue": -78.0
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    65742.0,
+    81482.0,
     null,
     null,
     null,
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    18445.81,
+    29672.34,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    3.56,
+    2.75,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 97,
+          "wechat": 107,
           "deposit": 12,
           "revenue": 27720.0
         }
       },
-      "intent_a": 5,
-      "intent_b": 22,
-      "intent_c": 15
+      "intent_a": 7,
+      "intent_b": 35,
+      "intent_c": 21
     },
     {
       "name": "李小叶",
@@ -167,7 +167,7 @@
       "name": "胡娜",
       "months": {
         "4": {
-          "wechat": 15,
+          "wechat": 16,
           "deposit": 0,
           "revenue": 0
         }
@@ -182,14 +182,14 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 148,
+          "wechat": 153,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
-      "intent_a": 7,
-      "intent_b": 28,
-      "intent_c": 87
+      "intent_a": 8,
+      "intent_b": 30,
+      "intent_c": 98
     }
   ],
   "health_score": 80,
