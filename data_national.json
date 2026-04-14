@@ -1,8 +1,8 @@
 {
-  "date": "2026-04-12",
-  "total_revenue": 14740.0,
+  "date": "2026-04-13",
+  "total_revenue": 8660.0,
   "total_spend": 0,
-  "total_wechat": 37,
+  "total_wechat": 46,
   "total_deposit": 0,
   "roi": 0,
   "roi_level": "danger",
@@ -10,12 +10,12 @@
     "成都": {
       "spend": 0,
       "open": 0,
-      "wechat": 16,
+      "wechat": 31,
       "open_to_wechat": 0,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 14740.0,
-      "refund_count": 2,
+      "revenue": 8660.0,
+      "refund_count": 0,
       "open_cost": 0
     },
     "重庆": {
@@ -32,7 +32,7 @@
     "哈尔滨": {
       "spend": 0,
       "open": 0,
-      "wechat": 21,
+      "wechat": 15,
       "open_to_wechat": 0,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
@@ -43,36 +43,20 @@
   },
   "acquire_chain": {
     "open": 0,
-    "wechat": 37,
+    "wechat": 46,
     "deposit": 0,
     "open_to_wechat": 0,
     "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
-    "expected": 9,
-    "arrived": 8,
-    "revenue": 14740.0,
-    "arrival_rate": 88.9
+    "expected": 6,
+    "arrived": 6,
+    "revenue": 8660.0,
+    "arrival_rate": 100.0
   },
   "national_blacklist": [
     {
-      "client": "焦雅楠",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger",
-      "city": "成都"
-    },
-    {
-      "client": "王梓文",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger",
-      "city": "成都"
-    },
-    {
-      "client": "文壹涵妈妈",
+      "client": "沈女士",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -80,7 +64,7 @@
       "city": "成都"
     },
     {
-      "client": "李小草",
+      "client": "于雨",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -88,7 +72,7 @@
       "city": "成都"
     },
     {
-      "client": "姜女士",
+      "client": "李伟宁妈妈",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -96,7 +80,7 @@
       "city": "成都"
     },
     {
-      "client": "姜姜",
+      "client": "王女士",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -104,108 +88,12 @@
       "city": "成都"
     },
     {
-      "client": "梁艳",
+      "client": "张女士",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
       "level": "warning",
       "city": "成都"
-    },
-    {
-      "client": "双七",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "陈美丽",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "李云儿",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "庄玉",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "郭思齐",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "曾拉拉",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "子言",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "达达",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "文壹涵",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "舟舟",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "刘梦思",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "张嘉月",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal",
-      "city": "哈尔滨"
     }
   ],
   "city_open_cost": {
@@ -214,5 +102,5 @@
     "哈尔滨": 0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "1. 🏆 成都变现¥14740.0，表现最佳。\n\n2. 🚨 重庆变现¥0.0，建议加强营销活动。\n\n3. ⚠️ 全国退款2笔（成都），交付端全绿。"
+  "ai_national_summary": "### 诊断结果：\n\n1. 🏆 成都变现¥8660.0，为昨日最高。\n\n2. 🚨 重庆各项指标均为0，建议启动市场活动。\n\n3. ⚠️ 交付端全绿，全国无退款/爽约。"
 }

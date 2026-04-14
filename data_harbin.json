@@ -1,23 +1,23 @@
 {
-  "date": "2026-04-12",
-  "generated_at": "2026-04-13 09:15:30",
+  "date": "2026-04-13",
+  "generated_at": "2026-04-14 07:12:33",
   "revenue": 0.0,
-  "wechat_total": 21,
+  "wechat_total": 15,
   "deposit_total": 0,
-  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：无\n🚨 P0 履约爽约：张嘉月(客服:汤娅)，建议电话或微信联系，了解原因并尝试挽回。\n⚠️ P1 转化率：开口→加微转化率为 0%，触发红线，需立即整改。\n👀 P2 回访漏打：无\n\n**二、根因诊断**\n汤娅和侯芳两位客服昨日的开口→加微转化率均为0%，远低于65%的红线。根据客服接待明细，大部分客户意向级别较低，仅有张嘉月为A级高意向客户，但最终也未到店。转化率低可能与客服未能有效挖掘客户需求、处理价格异议、以及逼单技巧有关。\n\n**三、今日行动项**\n1. 店长今天与汤娅和侯芳进行一对一沟通，重点分析昨日接待中的问题，提升转化率。\n2. 运营团队今天检查前端投放素材和策略，确保素材新鲜度和定向准确性。\n3. 客服团队今天进行紧急培训，强化开口咨询到私聊转化的沟通技巧，特别是需求挖掘和价格异议处理。",
+  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：无退款记录，暂无责任客服。\n🚨 P0 履约爽约：无爽约记录，暂无责任客服。\n⚠️ P1 转化率：开口→加微转化率为 0%，低于65%红线！汤娅和侯芳均触发红线。\n👀 P2 回访漏打：无漏打回访记录。\n\n**二、根因诊断**\n汤娅和侯芳在昨日的接待中均未实现加微信转化，转化率为0%。汤娅接待了11位客户，侯芳接待了4位客户，但均未能成功加微。核心问题可能是未能有效挖掘客户需求，以及未能在沟通中建立足够的信任感，导致客户没有加微信的意愿。\n\n**三、今日行动项**\n1. 店长需立即与汤娅和侯芳进行一对一沟通，了解她们在与客户沟通中的具体问题，并针对性地提供改进策略。\n2. 指导汤娅和侯芳在后续的客户沟通中，使用更加精准的需求挖掘技巧，以及如何通过有效沟通建立信任，提高加微信的成功率。\n3. 要求汤娅和侯芳在今日的接待中，至少完成5次有效加微信转化，以验证改进措施的有效性。",
   "ad_spend": 0,
   "open_count": 0,
   "open_cost": 0,
   "arrived_count": 0,
-  "noshow_count": 1,
+  "noshow_count": 0,
   "deal_count": 0,
   "cs_names": [
     "汤娅",
     "侯芳"
   ],
   "wechat_list": [
-    20,
-    1
+    11,
+    4
   ],
   "deposit_list": [
     0,
@@ -40,8 +40,8 @@
     }
   ],
   "fulfill_list": [
-    0,
-    0
+    1,
+    1
   ],
   "gap_list": [
     0,
@@ -51,34 +51,25 @@
     0,
     0
   ],
-  "blacklist": [
-    {
-      "client": "张嘉月",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal"
-    }
-  ],
+  "blacklist": [],
   "staff_intentions": {
     "汤娅": {
-      "C级(低意向)": 15,
-      "D级(无效)": 1,
-      "B级(中意向)": 2,
-      "A级(高意向)": 1
+      "C级(低意向)": 7,
+      "B级(中意向)": 3,
+      "D级(无效)": 1
     },
     "侯芳": {
-      "C级(低意向)": 1
+      "C级(低意向)": 4
     }
   },
   "y_axis_days": [
-    "4月13日",
     "4月14日",
     "4月15日",
     "4月16日",
     "4月17日",
     "4月18日",
-    "4月19日"
+    "4月19日",
+    "4月20日"
   ],
   "bed_heatmap": [
     [
@@ -199,16 +190,15 @@
       "前端投放": false,
       "客服接待": true,
       "成交台账": false,
-      "客户回访": false,
+      "客户回访": true,
       "门店排期": false
     },
     "missing": [
       "前端投放",
       "成交台账",
-      "客户回访",
       "门店排期"
     ],
-    "completeness": 0.2
+    "completeness": 0.4
   },
   "health_score": {
     "dimensions": {
@@ -225,57 +215,50 @@
         "label": "转化"
       },
       "deliver": {
-        "score": 30,
-        "status": "danger",
-        "detail": "退款率0%, 爽约率100%",
+        "score": 50,
+        "status": "warning",
+        "detail": "退款率0%, 爽约率0%",
         "label": "交付"
       },
       "aftersales": {
         "score": 100,
         "status": "healthy",
-        "detail": "回访完成率100% (0/0)",
+        "detail": "回访完成率100% (2/2)",
         "label": "售后"
       },
       "team": {
-        "score": 3,
+        "score": 2,
         "status": "danger",
-        "detail": "人均产出¥0, 人均加微10",
+        "detail": "人均产出¥0, 人均加微8",
         "label": "团队"
       }
     },
-    "overall_score": 26,
+    "overall_score": 30,
     "overall_status": "danger",
     "kpis": {
       "spend": 0.0,
       "open_count": 0.0,
-      "wechat": 21.0,
+      "wechat": 15.0,
       "deposit": 0.0,
       "revenue": 0.0,
       "arrived": 0.0,
-      "noshow": 1.0,
+      "noshow": 0.0,
       "refund_count": 0,
       "open_cost": 0,
       "open_to_wechat": 0,
       "ad_roi": 0,
       "wechat_to_dep": 0.0,
       "dep_to_arrival": 0.0,
-      "noshow_rate": 1.0,
+      "noshow_rate": 0,
       "refund_rate": 0.0,
       "followup_rate": 1.0,
       "revenue_per_cs": 0.0,
-      "wechat_per_cs": 10.5,
+      "wechat_per_cs": 7.5,
       "cs_count": 2,
       "monthly_target": 150000
     }
   },
   "alerts": [
-    {
-      "level": "P0",
-      "category": "爽约",
-      "message": "哈尔滨站1位客户爽约未到店",
-      "city": "哈尔滨",
-      "action": "客服立刻联系挽回，确认下次到店时间"
-    },
     {
       "level": "P1",
       "category": "引流",
