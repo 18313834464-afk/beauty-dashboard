@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 342235.77,
-  "cum_spend": 125010.56,
-  "cum_wechat": 1324,
+  "cum_revenue": 353495.77,
+  "cum_spend": 132848.0,
+  "cum_wechat": 1348,
   "cum_deposit": 140,
-  "cum_open": 1977.0,
-  "cum_roi": 2.74,
-  "monthly_avg_rev": 171117.89,
-  "predicted_annual": 2053414.68,
+  "cum_open": 2098.0,
+  "cum_roi": 2.66,
+  "monthly_avg_rev": 176747.89,
+  "predicted_annual": 2120974.68,
   "revenue_target": 3000000,
-  "progress": 10.2,
+  "progress": 10.5,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 89142.0,
-      "spend": 29672.34,
-      "roi": 3.0,
-      "wechat": 331,
+      "revenue": 100402.0,
+      "spend": 37509.78,
+      "roi": 2.68,
+      "wechat": 355,
       "deposit": 22,
-      "open": 455,
-      "open_cost": 65.21,
-      "refund": 13,
-      "days": 11,
-      "mom_revenue": -74.4
+      "open": 576,
+      "open_cost": 65.12,
+      "refund": 16,
+      "days": 12,
+      "mom_revenue": -70.8
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    89142.0,
+    100402.0,
     null,
     null,
     null,
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    29672.34,
+    37509.78,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    3.0,
+    2.68,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 109,
+          "wechat": 119,
           "deposit": 12,
-          "revenue": 29500.0
+          "revenue": 31880.0
         }
       },
-      "intent_a": 7,
-      "intent_b": 35,
-      "intent_c": 21
+      "intent_a": 10,
+      "intent_b": 42,
+      "intent_c": 23
     },
     {
       "name": "李小叶",
@@ -164,14 +164,14 @@
       "name": "胡娜",
       "months": {
         "4": {
-          "wechat": 32,
+          "wechat": 35,
           "deposit": 0,
           "revenue": 0
         }
       },
       "intent_a": 1,
       "intent_b": 14,
-      "intent_c": 30
+      "intent_c": 31
     },
     {
       "name": "阳珂欣",
@@ -182,14 +182,24 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 166,
+          "wechat": 174,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
       "intent_a": 8,
-      "intent_b": 30,
-      "intent_c": 99
+      "intent_b": 34,
+      "intent_c": 110
+    },
+    {
+      "name": "陈相",
+      "months": {
+        "4": {
+          "wechat": 3,
+          "deposit": 0,
+          "revenue": 0
+        }
+      }
     }
   ],
   "health_score": 80,

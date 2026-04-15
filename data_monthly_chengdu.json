@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-04",
-  "days_elapsed": 11,
+  "days_elapsed": 12,
   "total_days": 30,
-  "cum_revenue": 89142.0,
-  "cum_spend": 29672.34,
-  "cum_wechat": 331,
+  "cum_revenue": 100402.0,
+  "cum_spend": 37509.78,
+  "cum_wechat": 355,
   "cum_deposit": 22,
-  "cum_open": 455,
-  "cum_refund": 13,
-  "roi": 8.49,
+  "cum_open": 576,
+  "cum_refund": 16,
+  "roi": 7.18,
   "revenue_target": 300000,
-  "progress": 20.8,
-  "predicted_revenue": 222855.0,
-  "predicted_spend": 74180.85,
-  "predicted_roi": 3.0,
+  "progress": 23.8,
+  "predicted_revenue": 231696.92,
+  "predicted_spend": 86561.03,
+  "predicted_roi": 2.68,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -107,26 +107,26 @@
     {
       "date": "2026-04-12",
       "revenue": 6880.0,
-      "spend": 0,
+      "spend": 2044.91,
       "wechat": 16,
       "deposit": 0,
-      "open": 0
+      "open": 30
     },
     {
       "date": "2026-04-13",
       "revenue": 0,
-      "spend": 0,
+      "spend": 3215.27,
       "wechat": 31,
       "deposit": 0,
-      "open": 0
+      "open": 51
     },
     {
       "date": "2026-04-14",
-      "revenue": 0,
-      "spend": 0,
-      "wechat": 0,
+      "revenue": 2380.0,
+      "spend": 2577.26,
+      "wechat": 24,
       "deposit": 0,
-      "open": 0
+      "open": 40
     },
     {
       "date": "2026-04-15",
@@ -312,38 +312,43 @@
       "date": "2026-04-13",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-04-14",
+      "open_to_wechat": 60.0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 109,
+      "wechat": 119,
       "deposit": 12,
-      "revenue": 29500.0,
+      "revenue": 31880.0,
       "arrived": 8,
-      "deposit_rate": 11.0,
+      "deposit_rate": 10.1,
       "fulfill_rate": 66.7,
       "gap_total": 24,
       "sop_score": 0,
-      "intent_a": 7,
-      "intent_b": 35,
-      "intent_c": 21,
-      "intent_total": 63
+      "intent_a": 10,
+      "intent_b": 42,
+      "intent_c": 23,
+      "intent_total": 75
     },
     {
       "name": "阳珂欣",
-      "wechat": 166,
+      "wechat": 174,
       "deposit": 6,
       "revenue": 22222.0,
-      "arrived": 14,
-      "deposit_rate": 3.6,
-      "fulfill_rate": 233.3,
+      "arrived": 15,
+      "deposit_rate": 3.4,
+      "fulfill_rate": 250.0,
       "gap_total": 5,
       "sop_score": 60,
       "intent_a": 8,
-      "intent_b": 30,
-      "intent_c": 99,
-      "intent_total": 137
+      "intent_b": 34,
+      "intent_c": 110,
+      "intent_total": 152
     },
     {
       "name": "李小叶",
@@ -362,18 +367,33 @@
     },
     {
       "name": "胡娜",
-      "wechat": 32,
+      "wechat": 35,
       "deposit": 0,
       "revenue": 0,
-      "arrived": 2,
+      "arrived": 5,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 3,
       "sop_score": 76,
       "intent_a": 1,
       "intent_b": 14,
-      "intent_c": 30,
-      "intent_total": 45
+      "intent_c": 31,
+      "intent_total": 46
+    },
+    {
+      "name": "陈相",
+      "wechat": 3,
+      "deposit": 0,
+      "revenue": 0,
+      "arrived": 0,
+      "deposit_rate": 0.0,
+      "fulfill_rate": 0,
+      "gap_total": 0,
+      "sop_score": 100,
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
     }
   ],
   "refund_details": [
@@ -405,6 +425,12 @@
       "customer": "张行雨",
       "revenue": 0,
       "cs": "阳珂欣",
+      "status": "到店退款"
+    },
+    {
+      "customer": "刘泳吕",
+      "revenue": 0,
+      "cs": "会媛",
       "status": "到店退款"
     },
     {
@@ -454,6 +480,18 @@
       "revenue": 0,
       "cs": "会媛",
       "status": "到店退款"
+    },
+    {
+      "customer": "刘女士",
+      "revenue": 0,
+      "cs": "胡娜",
+      "status": "到店退款"
+    },
+    {
+      "customer": "彭心悦",
+      "revenue": 0,
+      "cs": "胡娜",
+      "status": "到店退款"
     }
   ],
   "refund_summary": [
@@ -466,13 +504,13 @@
     {
       "cs": "会媛",
       "city": "成都",
-      "arrived": 4,
+      "arrived": 5,
       "not_arrived": 0
     },
     {
       "cs": "胡娜",
       "city": "成都",
-      "arrived": 2,
+      "arrived": 4,
       "not_arrived": 0
     }
   ]

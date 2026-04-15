@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-04",
-  "days_elapsed": 11,
+  "days_elapsed": 12,
   "total_days": 30,
   "cum_revenue": 11620.0,
-  "cum_spend": 9251.91,
-  "cum_wechat": 171,
+  "cum_spend": 11794.54,
+  "cum_wechat": 191,
   "cum_deposit": 9,
-  "cum_open": 268,
+  "cum_open": 347,
   "cum_refund": 2,
   "roi": 6.06,
   "revenue_target": 100000,
   "progress": 6.0,
-  "predicted_revenue": 31690.91,
-  "predicted_spend": 25232.48,
-  "predicted_roi": 1.26,
+  "predicted_revenue": 29050.0,
+  "predicted_spend": 29486.35,
+  "predicted_roi": 0.99,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -103,6 +103,14 @@
       "wechat": 15,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-04-14",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 20,
+      "deposit": 0,
+      "open": 0
     }
   ],
   "rate_trend": [
@@ -160,38 +168,43 @@
       "date": "2026-04-13",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-04-14",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 123,
+      "wechat": 134,
       "deposit": 7,
       "revenue": 9040.0,
       "arrived": 0,
-      "deposit_rate": 5.7,
+      "deposit_rate": 5.2,
       "fulfill_rate": 0.0,
       "gap_total": 3,
       "sop_score": 76,
       "intent_a": 8,
-      "intent_b": 26,
-      "intent_c": 87,
-      "intent_total": 121
+      "intent_b": 28,
+      "intent_c": 91,
+      "intent_total": 127
     },
     {
       "name": "侯芳",
-      "wechat": 48,
+      "wechat": 57,
       "deposit": 2,
       "revenue": 0,
       "arrived": 0,
-      "deposit_rate": 4.2,
+      "deposit_rate": 3.5,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 2,
-      "intent_b": 7,
-      "intent_c": 42,
-      "intent_total": 51
+      "intent_b": 9,
+      "intent_c": 47,
+      "intent_total": 58
     }
   ],
   "refund_details": [
