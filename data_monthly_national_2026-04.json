@@ -1,19 +1,19 @@
 {
   "month": "2026-04",
-  "days_elapsed": 13,
+  "days_elapsed": 14,
   "total_days": 30,
-  "cum_revenue": 112022.0,
+  "cum_revenue": 124962.0,
   "cum_spend": 49714.3,
-  "cum_wechat": 607,
-  "cum_deposit": 36,
+  "cum_wechat": 655,
+  "cum_deposit": 39,
   "cum_open": 933,
   "cum_refund": 19,
-  "roi": 2.25,
+  "roi": 2.51,
   "revenue_target": 500000,
-  "progress": 22.4,
-  "predicted_revenue": 258512.31,
-  "predicted_spend": 114725.31,
-  "predicted_roi": 2.25,
+  "progress": 25.0,
+  "predicted_revenue": 267775.71,
+  "predicted_spend": 106530.64,
+  "predicted_roi": 2.51,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -129,10 +129,10 @@
     },
     {
       "date": "2026-04-15",
-      "revenue": 0,
+      "revenue": 2680.0,
       "spend": 0,
-      "wechat": 0,
-      "deposit": 0,
+      "wechat": 48,
+      "deposit": 3,
       "open": 0
     },
     {
@@ -330,7 +330,7 @@
     {
       "date": "2026-04-15",
       "open_to_wechat": 0,
-      "wechat_to_deposit": 0
+      "wechat_to_deposit": 6.2
     },
     {
       "date": "2026-04-16",
@@ -411,10 +411,10 @@
   "city_matrix": {
     "成都": {
       "cum_spend": 37509.78,
-      "cum_wechat": 355,
-      "cum_deposit": 22,
-      "cum_revenue": 100402.0,
-      "roi": 7.18,
+      "cum_wechat": 393,
+      "cum_deposit": 24,
+      "cum_revenue": 102902.0,
+      "roi": 7.67,
       "cum_refund": 16
     },
     "重庆": {
@@ -427,36 +427,36 @@
     },
     "哈尔滨": {
       "cum_spend": 11794.54,
-      "cum_wechat": 191,
-      "cum_deposit": 9,
-      "cum_revenue": 11620.0,
-      "roi": 6.06,
+      "cum_wechat": 201,
+      "cum_deposit": 10,
+      "cum_revenue": 22060.0,
+      "roi": 8.79,
       "cum_refund": 2
     }
   },
   "cs_table": [
     {
       "name": "会媛(成都)",
-      "wechat": 119,
-      "deposit": 12,
+      "wechat": 135,
+      "deposit": 14,
       "revenue": 31880.0,
-      "arrived": 8,
-      "deposit_rate": 10.1,
-      "fulfill_rate": 66.7,
-      "gap_total": 24,
+      "arrived": 10,
+      "deposit_rate": 10.4,
+      "fulfill_rate": 71.4,
+      "gap_total": 26,
       "sop_score": 0,
       "intent_a": 10,
-      "intent_b": 42,
+      "intent_b": 43,
       "intent_c": 23,
-      "intent_total": 75
+      "intent_total": 76
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 174,
+      "wechat": 192,
       "deposit": 6,
       "revenue": 22222.0,
       "arrived": 15,
-      "deposit_rate": 3.4,
+      "deposit_rate": 3.1,
       "fulfill_rate": 250.0,
       "gap_total": 5,
       "sop_score": 60,
@@ -464,6 +464,21 @@
       "intent_b": 34,
       "intent_c": 110,
       "intent_total": 152
+    },
+    {
+      "name": "汤娅(哈尔滨)",
+      "wechat": 141,
+      "deposit": 8,
+      "revenue": 15500.0,
+      "arrived": 1,
+      "deposit_rate": 5.7,
+      "fulfill_rate": 12.5,
+      "gap_total": 3,
+      "sop_score": 76,
+      "intent_a": 9,
+      "intent_b": 30,
+      "intent_c": 96,
+      "intent_total": 135
     },
     {
       "name": "侯芳(重庆)",
@@ -479,21 +494,6 @@
       "intent_b": 1,
       "intent_c": 7,
       "intent_total": 8
-    },
-    {
-      "name": "汤娅(哈尔滨)",
-      "wechat": 134,
-      "deposit": 7,
-      "revenue": 9040.0,
-      "arrived": 0,
-      "deposit_rate": 5.2,
-      "fulfill_rate": 0.0,
-      "gap_total": 3,
-      "sop_score": 76,
-      "intent_a": 8,
-      "intent_b": 28,
-      "intent_c": 91,
-      "intent_total": 127
     },
     {
       "name": "李小叶(成都)",
@@ -515,11 +515,11 @@
       "wechat": 35,
       "deposit": 0,
       "revenue": 0,
-      "arrived": 5,
+      "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 3,
-      "sop_score": 76,
+      "gap_total": 6,
+      "sop_score": 52,
       "intent_a": 1,
       "intent_b": 14,
       "intent_c": 31,
@@ -527,7 +527,7 @@
     },
     {
       "name": "陈相(成都)",
-      "wechat": 3,
+      "wechat": 7,
       "deposit": 0,
       "revenue": 0,
       "arrived": 0,
@@ -542,18 +542,18 @@
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 57,
+      "wechat": 60,
       "deposit": 2,
       "revenue": 0,
       "arrived": 0,
-      "deposit_rate": 3.5,
+      "deposit_rate": 3.3,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 2,
-      "intent_b": 9,
-      "intent_c": 47,
-      "intent_total": 58
+      "intent_b": 11,
+      "intent_c": 50,
+      "intent_total": 63
     }
   ],
   "refund_summary": [

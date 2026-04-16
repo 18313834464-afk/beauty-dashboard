@@ -1,16 +1,16 @@
 {
-  "date": "2026-04-14",
-  "generated_at": "2026-04-15 07:13:01",
-  "revenue": 8880.0,
-  "wechat_total": 24,
-  "deposit_total": 0,
-  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：退款客户为刘女士、刘泳吕、彭心悦，责任客服为胡娜。建议重点审查退款原因，优化后端交付流程，避免重复发生。\n🚨 P0 履约爽约：无爽约记录。\n⚠️ P1 转化率：开口→加微转化率为 0.0%，低于65%红线，触发红线。\n👀 P2 回访漏打：无回访漏打记录。\n\n**二、根因诊断**\n转化率为0.0%，远低于目标65%，核心问题在于前端投放与客服接待环节。前端投放虽然有进线和开口，但加微和定金转化均未发生，表明在开口咨询到私聊转化环节存在严重问题。客服接待方面，会媛、阳珂欣、李小叶、胡娜、陈相五位客服均未实现加微和定金转化，可能由于缺乏有效的沟通和转化技巧。\n\n**三、今日行动项**\n1. 运营团队今天需暂停前端投放计划，深入分析转化失败原因，调整素材和定向策略。\n2. 店长今天组织客服团队进行紧急培训，重点提升开口咨询到私聊转化的沟通技巧，特别是如何处理价格异议和逼单策略。\n3. 由客服经理对会媛、阳珂欣、李小叶、胡娜、陈相进行一对一辅导，分析昨日接待记录，找出转化失败的具体原因，并制定改进措施。",
-  "ad_spend": 2577.26,
-  "open_count": 40.0,
-  "open_cost": 64.4315,
-  "arrived_count": 4,
+  "date": "2026-04-15",
+  "generated_at": "2026-04-16 07:14:43",
+  "revenue": 4880.0,
+  "wechat_total": 38,
+  "deposit_total": 2,
+  "ai_summary": "**一、红线审查**（按严重度排序，无问题写「✅全绿」）\n🚨 P0 资金流失：无退款客户，无需定责。\n🚨 P0 履约爽约：无爽约客户，无需挽回话术。\n⚠️ P1 转化率：开口→加微转化率为 0%，触发红线。\n👀 P2 回访漏打：刘迪(会媛)、雷凤群妈妈(胡娜)、安安(胡娜)、曹雯迪(会媛)、魏小姐(胡娜)，责任客服需补回访。\n\n**二、根因诊断**\n1. 转化率为0%，表明前端投放和客服接待环节存在严重问题。可能的原因包括素材质量低、投放策略不当、客服沟通技巧不足、价格异议处理不当或客户对服务价值认知不足。\n2. 回访漏打问题，可能是因为客服工作量过大、时间管理不当或对回访重要性认识不足。\n\n**三、今日行动项**\n1. 店长需立即组织一次紧急会议，针对转化率为0%的问题进行深入分析，检查前端素材、投放策略和客服接待流程，确保找到并解决根本原因。\n2. 店长需对会媛、胡娜等客服进行回访培训，明确回访的重要性，并制定严格的回访制度和监督机制，确保客户满意度和忠诚度。\n3. 运营需暂停所有前端投放计划，重新审视和优化投放素材和策略，确保投放效果能够提升开口→加微转化率。",
+  "ad_spend": 0,
+  "open_count": 0,
+  "open_cost": 0,
+  "arrived_count": 3,
   "noshow_count": 0,
-  "deal_count": 4,
+  "deal_count": 3,
   "cs_names": [
     "会媛",
     "阳珂欣",
@@ -19,14 +19,14 @@
     "陈相"
   ],
   "wechat_list": [
-    10,
-    8,
+    16,
+    18,
     0,
-    3,
-    3
+    0,
+    4
   ],
   "deposit_list": [
-    0,
+    2,
     0,
     0,
     0,
@@ -34,7 +34,7 @@
   ],
   "revenue_pie": [
     {
-      "value": 2380.0,
+      "value": 0.0,
       "name": "会媛",
       "itemStyle": {
         "color": "#3B82F6"
@@ -70,72 +70,77 @@
     }
   ],
   "fulfill_list": [
-    17,
-    5,
     0,
-    4,
+    3,
+    0,
+    0,
     0
   ],
   "gap_list": [
+    2,
     0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "arrived_list": [
-    0,
-    1,
     0,
     3,
     0
   ],
+  "arrived_list": [
+    2,
+    0,
+    0,
+    1,
+    0
+  ],
   "blacklist": [
     {
-      "client": "刘女士",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger"
+      "client": "刘迪",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "会媛",
+      "level": "warning"
     },
     {
-      "client": "刘泳吕",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger"
+      "client": "雷凤群妈妈",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "胡娜",
+      "level": "warning"
     },
     {
-      "client": "彭心悦",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger"
+      "client": "安安",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "胡娜",
+      "level": "warning"
+    },
+    {
+      "client": "曹雯迪",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "会媛",
+      "level": "warning"
+    },
+    {
+      "client": "魏小姐",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "胡娜",
+      "level": "warning"
     }
   ],
   "staff_intentions": {
     "会媛": {
-      "B级(中意向)": 2,
-      "C级(低意向)": 1,
-      "A级(高意向)": 2
-    },
-    "阳珂欣": {
-      "B级(中意向)": 2,
-      "C级(低意向)": 3
-    },
-    "胡娜": {
       "B级(中意向)": 1,
-      "C级(低意向)": 1
+      "D级(无效)": 1
     }
   },
   "y_axis_days": [
-    "4月15日",
     "4月16日",
     "4月17日",
     "4月18日",
     "4月19日",
     "4月20日",
-    "4月21日"
+    "4月21日",
+    "4月22日"
   ],
   "bed_heatmap": [
     [
@@ -253,89 +258,90 @@
   ],
   "data_quality": {
     "tables_ok": {
-      "前端投放": true,
+      "前端投放": false,
       "客服接待": true,
       "成交台账": true,
       "客户回访": true,
       "门店排期": false
     },
     "missing": [
+      "前端投放",
       "门店排期"
     ],
-    "completeness": 0.8
+    "completeness": 0.6
   },
   "health_score": {
     "dimensions": {
       "acquire": {
-        "score": 94,
-        "status": "healthy",
-        "detail": "开口成本¥64, 开口→加微60%, ROI 3.4",
+        "score": 20,
+        "status": "danger",
+        "detail": "开口成本¥0, 开口→加微0%, ROI 0.0",
         "label": "引流"
       },
       "convert": {
-        "score": 5,
-        "status": "danger",
-        "detail": "加微→定金0%, 到店率17%",
+        "score": 52,
+        "status": "warning",
+        "detail": "加微→定金5%, 到店率150%",
         "label": "转化"
       },
       "deliver": {
-        "score": 20,
-        "status": "danger",
-        "detail": "退款率75%, 爽约率0%",
+        "score": 50,
+        "status": "warning",
+        "detail": "退款率0%, 爽约率0%",
         "label": "交付"
       },
       "aftersales": {
-        "score": 100,
-        "status": "healthy",
-        "detail": "回访完成率100% (26/26)",
+        "score": 22,
+        "status": "danger",
+        "detail": "回访完成率38% (3/8)",
         "label": "售后"
       },
       "team": {
-        "score": 6,
+        "score": 7,
         "status": "danger",
-        "detail": "人均产出¥4,440, 人均加微12",
+        "detail": "人均产出¥2,440, 人均加微19",
         "label": "团队"
       }
     },
-    "overall_score": 45,
+    "overall_score": 32,
     "overall_status": "danger",
     "kpis": {
-      "spend": 2577.26,
-      "open_count": 40.0,
-      "wechat": 24.0,
-      "deposit": 0.0,
-      "revenue": 8880.0,
-      "arrived": 4.0,
+      "spend": 0.0,
+      "open_count": 0.0,
+      "wechat": 38.0,
+      "deposit": 2.0,
+      "revenue": 4880.0,
+      "arrived": 3.0,
       "noshow": 0.0,
-      "refund_count": 3,
-      "open_cost": 64.4,
-      "open_to_wechat": 0.6,
-      "ad_roi": 3.45,
-      "wechat_to_dep": 0.0,
-      "dep_to_arrival": 0.167,
+      "refund_count": 0,
+      "open_cost": 0,
+      "open_to_wechat": 0,
+      "ad_roi": 0,
+      "wechat_to_dep": 0.053,
+      "dep_to_arrival": 1.5,
       "noshow_rate": 0.0,
-      "refund_rate": 0.75,
-      "followup_rate": 1.0,
-      "revenue_per_cs": 4440.0,
-      "wechat_per_cs": 12.0,
+      "refund_rate": 0.0,
+      "followup_rate": 0.375,
+      "revenue_per_cs": 2440.0,
+      "wechat_per_cs": 19.0,
       "cs_count": 2,
       "monthly_target": 200000
     }
   },
   "alerts": [
     {
-      "level": "P0",
-      "category": "退款",
-      "message": "成都站今日新增3笔退款",
+      "level": "P1",
+      "category": "引流",
+      "message": "成都引流健康度仅20分: 开口成本¥0, 开口→加微0%, ROI 0.0",
       "city": "成都",
-      "action": "立即查看退款明细，定责到客服"
+      "action": "检查投放素材和出价策略"
     },
     {
-      "level": "P1",
-      "category": "转化",
-      "message": "成都转化健康度仅5分: 加微→定金0%, 到店率17%",
+      "level": "P2",
+      "category": "回访",
+      "message": "成都回访完成率不足: 回访完成率38% (3/8)",
       "city": "成都",
-      "action": "抽查客服聊天记录，检查话术和跟进节奏"
+      "action": "督促客服今日补齐回访"
     }
   ]
 }

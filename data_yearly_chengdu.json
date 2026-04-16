@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 353495.77,
+  "cum_revenue": 355995.77,
   "cum_spend": 132848.0,
-  "cum_wechat": 1348,
-  "cum_deposit": 140,
+  "cum_wechat": 1386,
+  "cum_deposit": 142,
   "cum_open": 2098.0,
-  "cum_roi": 2.66,
-  "monthly_avg_rev": 176747.89,
-  "predicted_annual": 2120974.68,
+  "cum_roi": 2.68,
+  "monthly_avg_rev": 177997.89,
+  "predicted_annual": 2135974.68,
   "revenue_target": 3000000,
-  "progress": 10.5,
+  "progress": 10.7,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 100402.0,
+      "revenue": 102902.0,
       "spend": 37509.78,
-      "roi": 2.68,
-      "wechat": 355,
-      "deposit": 22,
+      "roi": 2.74,
+      "wechat": 393,
+      "deposit": 24,
       "open": 576,
       "open_cost": 65.12,
-      "refund": 16,
-      "days": 12,
-      "mom_revenue": -70.8
+      "refund": 17,
+      "days": 13,
+      "mom_revenue": -68.8
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    100402.0,
+    102902.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.68,
+    2.74,
     null,
     null,
     null,
@@ -136,13 +136,13 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 119,
-          "deposit": 12,
+          "wechat": 135,
+          "deposit": 14,
           "revenue": 31880.0
         }
       },
       "intent_a": 10,
-      "intent_b": 42,
+      "intent_b": 43,
       "intent_c": 23
     },
     {
@@ -182,7 +182,7 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 174,
+          "wechat": 192,
           "deposit": 6,
           "revenue": 22222.0
         }
@@ -195,16 +195,16 @@
       "name": "陈相",
       "months": {
         "4": {
-          "wechat": 3,
+          "wechat": 7,
           "deposit": 0,
           "revenue": 0
         }
       }
     }
   ],
-  "health_score": 80,
+  "health_score": 90,
   "health_breakdown": {
-    "revenue_efficiency": 2,
+    "revenue_efficiency": 3,
     "cost_control": 2,
     "team_stability": 3
   }

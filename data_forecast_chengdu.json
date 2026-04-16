@@ -2,43 +2,43 @@
   "city": "成都",
   "city_key": "chengdu",
   "month": "2026-04",
-  "generated_at": "2026-04-15 07:16:51",
-  "days_elapsed": 12,
+  "generated_at": "2026-04-16 07:18:47",
+  "days_elapsed": 13,
   "total_days": 30,
-  "progress_pct": 40.0,
+  "progress_pct": 43.3,
   "revenue_target": 300000,
   "cs_forecasts": [
     {
       "name": "会媛",
-      "days_elapsed": 12,
+      "days_elapsed": 13,
       "total_days": 30,
       "current": {
         "revenue": 31880.0,
-        "wechat": 119,
-        "deposit": 12,
-        "arrived": 8,
+        "wechat": 135,
+        "deposit": 14,
+        "arrived": 10,
         "salary": 5738,
         "salary_base": 5000,
         "salary_commission": 638,
         "salary_bonus": 100
       },
       "predicted": {
-        "revenue": 79700,
-        "wechat": 298,
-        "deposit": 30,
-        "arrived": 20,
-        "salary": 6991,
+        "revenue": 73569,
+        "wechat": 312,
+        "deposit": 32,
+        "arrived": 23,
+        "salary": 6807,
         "salary_base": 5000,
-        "salary_commission": 1891,
+        "salary_commission": 1707,
         "salary_bonus": 100
       },
-      "daily_avg_revenue": 2657,
+      "daily_avg_revenue": 2452,
       "kpi": {
-        "deposit_rate": 10.1,
-        "fulfill_rate": 66.7,
+        "deposit_rate": 10.4,
+        "fulfill_rate": 71.4,
         "sop_score": 0,
         "sop_predicted": 0,
-        "gap_total": 24
+        "gap_total": 26
       },
       "bonus_detail": {
         "定金转化率": {
@@ -57,11 +57,11 @@
     },
     {
       "name": "阳珂欣",
-      "days_elapsed": 12,
+      "days_elapsed": 13,
       "total_days": 30,
       "current": {
         "revenue": 22222.0,
-        "wechat": 174,
+        "wechat": 192,
         "deposit": 6,
         "arrived": 15,
         "salary": 5944,
@@ -70,18 +70,18 @@
         "salary_bonus": 500
       },
       "predicted": {
-        "revenue": 55555,
-        "wechat": 435,
-        "deposit": 15,
-        "arrived": 38,
-        "salary": 6667,
+        "revenue": 51282,
+        "wechat": 443,
+        "deposit": 14,
+        "arrived": 35,
+        "salary": 6538,
         "salary_base": 5000,
-        "salary_commission": 1167,
+        "salary_commission": 1038,
         "salary_bonus": 500
       },
-      "daily_avg_revenue": 1852,
+      "daily_avg_revenue": 1709,
       "kpi": {
-        "deposit_rate": 3.4,
+        "deposit_rate": 3.1,
         "fulfill_rate": 250.0,
         "sop_score": 60,
         "sop_predicted": 4,
@@ -104,7 +104,7 @@
     },
     {
       "name": "李小叶",
-      "days_elapsed": 12,
+      "days_elapsed": 13,
       "total_days": 30,
       "current": {
         "revenue": 8940.0,
@@ -117,21 +117,21 @@
         "salary_bonus": 700
       },
       "predicted": {
-        "revenue": 22350,
-        "wechat": 60,
-        "deposit": 10,
+        "revenue": 20631,
+        "wechat": 55,
+        "deposit": 9,
         "arrived": 0,
-        "salary": 6147,
+        "salary": 6113,
         "salary_base": 5000,
-        "salary_commission": 447,
+        "salary_commission": 413,
         "salary_bonus": 700
       },
-      "daily_avg_revenue": 745,
+      "daily_avg_revenue": 688,
       "kpi": {
         "deposit_rate": 16.7,
         "fulfill_rate": 0.0,
         "sop_score": 76,
-        "sop_predicted": 36,
+        "sop_predicted": 44,
         "gap_total": 3
       },
       "bonus_detail": {
@@ -151,13 +151,13 @@
     },
     {
       "name": "胡娜",
-      "days_elapsed": 12,
+      "days_elapsed": 13,
       "total_days": 30,
       "current": {
         "revenue": 0,
         "wechat": 35,
         "deposit": 0,
-        "arrived": 5,
+        "arrived": 6,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -165,9 +165,9 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 88,
+        "wechat": 81,
         "deposit": 0,
-        "arrived": 12,
+        "arrived": 14,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -177,9 +177,9 @@
       "kpi": {
         "deposit_rate": 0.0,
         "fulfill_rate": null,
-        "sop_score": 76,
-        "sop_predicted": 36,
-        "gap_total": 3
+        "sop_score": 52,
+        "sop_predicted": 0,
+        "gap_total": 6
       },
       "bonus_detail": {
         "定金转化率": {
@@ -198,11 +198,11 @@
     },
     {
       "name": "陈相",
-      "days_elapsed": 12,
+      "days_elapsed": 13,
       "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 3,
+        "wechat": 7,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -212,7 +212,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 8,
+        "wechat": 16,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -244,25 +244,25 @@
       }
     }
   ],
-  "cs_salary_total_predicted": 30905,
+  "cs_salary_total_predicted": 30558,
   "pnl_forecast": {
     "current_sales": 63042.0,
-    "predicted_sales": 157605,
-    "predicted_your_income": -36230,
-    "predicted_your_margin": -23.0,
-    "predicted_partner_income": 40198,
-    "predicted_cs_salary": 34505,
-    "predicted_ad_actual": 75019,
-    "predicted_manager_fee": 31521,
-    "predicted_artist_fee": 44298,
+    "predicted_sales": 145482,
+    "predicted_your_income": -36520,
+    "predicted_your_margin": -25.1,
+    "predicted_partner_income": 36337,
+    "predicted_cs_salary": 34158,
+    "predicted_ad_actual": 69249,
+    "predicted_manager_fee": 29096,
+    "predicted_artist_fee": 41352,
     "predicted_shared_costs": 7000
   },
   "target_analysis": {
-    "current_revenue": 100402.0,
-    "predicted_revenue": 157605,
+    "current_revenue": 102902.0,
+    "predicted_revenue": 145482,
     "target": 300000,
-    "gap": 142395,
-    "daily_needed": 7911,
+    "gap": 154518,
+    "daily_needed": 9089,
     "on_track": false
   }
 }
