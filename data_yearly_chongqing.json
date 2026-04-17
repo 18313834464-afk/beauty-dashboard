@@ -64,7 +64,7 @@
       "wechat": 61,
       "deposit": 5,
       "open": 10,
-      "open_cost": 0,
+      "open_cost": 41.0,
       "refund": 1,
       "days": 3,
       "mom_revenue": -100.0

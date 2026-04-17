@@ -1,15 +1,15 @@
 {
   "year": 2026,
   "city_count": 3,
-  "cum_revenue": 394755.77,
-  "cum_spend": 161255.61,
-  "cum_wechat": 1910,
-  "cum_deposit": 172,
-  "cum_roi": 2.45,
-  "monthly_avg_rev": 197377.89,
-  "predicted_annual": 2368534.68,
+  "cum_revenue": 397855.77,
+  "cum_spend": 164336.6,
+  "cum_wechat": 1965,
+  "cum_deposit": 174,
+  "cum_roi": 2.42,
+  "monthly_avg_rev": 198927.89,
+  "predicted_annual": 2387134.68,
   "revenue_target": 3000000,
-  "progress": 13.2,
+  "progress": 13.3,
   "trend_months": [
     "1月",
     "2月",
@@ -28,7 +28,7 @@
     0.0,
     0.0,
     269793.77,
-    124962.0,
+    128062.0,
     null,
     null,
     null,
@@ -42,7 +42,7 @@
     0.0,
     0.0,
     111541.31,
-    49714.3,
+    52795.29,
     null,
     null,
     null,
@@ -56,7 +56,7 @@
     null,
     null,
     2.42,
-    2.51,
+    2.43,
     null,
     null,
     null,
@@ -70,10 +70,10 @@
     {
       "city": "成都",
       "start_month": 3,
-      "cum_revenue": 355995.77,
-      "cum_spend": 132848.0,
-      "roi": 2.68,
-      "monthly_avg_wechat": 693,
+      "cum_revenue": 359095.77,
+      "cum_spend": 135928.99,
+      "roi": 2.64,
+      "monthly_avg_wechat": 702,
       "wechat_to_deposit": 10.2,
       "health_score": 90
     },
@@ -83,9 +83,9 @@
       "cum_revenue": 27620.0,
       "cum_spend": 23589.08,
       "roi": 1.17,
-      "monthly_avg_wechat": 201,
-      "wechat_to_deposit": 5.0,
-      "health_score": 80
+      "monthly_avg_wechat": 219,
+      "wechat_to_deposit": 4.6,
+      "health_score": 90
     },
     {
       "city": "重庆",
@@ -115,10 +115,10 @@
     },
     {
       "name": "会媛(成都)",
-      "wechat": 431,
-      "deposit": 48,
+      "wechat": 445,
+      "deposit": 50,
       "revenue": 87060.0,
-      "w2d_rate": 11.1
+      "w2d_rate": 11.2
     },
     {
       "name": "侯芳(重庆)",
@@ -129,10 +129,10 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 244,
+      "wechat": 250,
       "deposit": 16,
       "revenue": 15500.0,
-      "w2d_rate": 6.6
+      "w2d_rate": 6.4
     },
     {
       "name": "胡娜(成都)",
@@ -143,23 +143,23 @@
     },
     {
       "name": "陈相(成都)",
-      "wechat": 7,
+      "wechat": 12,
       "deposit": 0,
       "revenue": 0,
       "w2d_rate": 0.0
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 60,
+      "wechat": 72,
       "deposit": 2,
       "revenue": 0,
-      "w2d_rate": 3.3
+      "w2d_rate": 2.8
     }
   ],
   "cost_pie": [
     {
       "name": "成都",
-      "value": 132848.0
+      "value": 135928.99
     },
     {
       "name": "重庆",
@@ -173,12 +173,12 @@
   "alerts": [
     {
       "level": "warning",
-      "msg": "成都最新月变现环比下降59.3%"
+      "msg": "成都最新月变现环比下降58.1%"
     },
     {
       "level": "warning",
       "msg": "哈尔滨ROI=1.17，接近预警线"
     }
   ],
-  "ai_diagnosis": "### 1. 🏆 表扬年度表现最强的城市+核心亮点\n\n成都表现最佳：累计变现¥355995.77，ROI达2.68，月均加微693，健康评分90分，运营高效且客户粘性高。\n\n### 2. 🚨 指出最大战略风险+具体建议\n\n重庆变现仅¥11140.0，ROI虽达2.31，但月均加微仅122，健康评分60分。建议加强市场推广和客户引流，提升门店活跃度。\n\n### 3. 🎯 给出下一步扩张/收缩的战略建议\n\n哈尔滨ROI仅1.17，建议暂缓扩张，聚焦提升现有门店效率。成都可考虑适度扩张，重庆需优化运营策略以提升整体表现。"
+  "ai_diagnosis": "### 战略诊断\n\n🏆 **成都表现最佳**：变现¥359095.77，ROI=2.64，月均加微702，健康评分90分，表现出色。\n\n🚨 **重庆变现能力弱**：累计变现仅¥11140.0，ROI=2.31，健康评分60分，建议加强营销和客户转化。\n\n🎯 **战略建议**：优先扩张成都市场，优化重庆运营，哈尔滨保持现状并提升变现效率。"
 }

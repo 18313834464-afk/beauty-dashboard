@@ -2,14 +2,14 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 355995.77,
-  "cum_spend": 132848.0,
-  "cum_wechat": 1386,
-  "cum_deposit": 142,
-  "cum_open": 2098.0,
-  "cum_roi": 2.68,
-  "monthly_avg_rev": 177997.89,
-  "predicted_annual": 2135974.68,
+  "cum_revenue": 359095.77,
+  "cum_spend": 135928.99,
+  "cum_wechat": 1405,
+  "cum_deposit": 144,
+  "cum_open": 2146.0,
+  "cum_roi": 2.64,
+  "monthly_avg_rev": 179547.89,
+  "predicted_annual": 2154574.68,
   "revenue_target": 3000000,
   "progress": 10.7,
   "monthly_kpi": [
@@ -58,15 +58,15 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 102902.0,
-      "spend": 37509.78,
-      "roi": 2.74,
-      "wechat": 393,
-      "deposit": 24,
-      "open": 576,
-      "open_cost": 65.12,
-      "refund": 17,
-      "days": 13,
+      "revenue": 106002.0,
+      "spend": 40590.77,
+      "roi": 2.61,
+      "wechat": 412,
+      "deposit": 26,
+      "open": 624,
+      "open_cost": 65.05,
+      "refund": 18,
+      "days": 14,
       "mom_revenue": -68.8
     }
   ],
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    102902.0,
+    106002.0,
     null,
     null,
     null,
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    37509.78,
+    40590.77,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.74,
+    2.61,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 135,
-          "deposit": 14,
+          "wechat": 149,
+          "deposit": 16,
           "revenue": 31880.0
         }
       },
       "intent_a": 10,
-      "intent_b": 43,
-      "intent_c": 23
+      "intent_b": 46,
+      "intent_c": 30
     },
     {
       "name": "李小叶",
@@ -187,15 +187,15 @@
           "revenue": 22222.0
         }
       },
-      "intent_a": 8,
-      "intent_b": 34,
-      "intent_c": 110
+      "intent_a": 10,
+      "intent_b": 38,
+      "intent_c": 129
     },
     {
       "name": "陈相",
       "months": {
         "4": {
-          "wechat": 7,
+          "wechat": 12,
           "deposit": 0,
           "revenue": 0
         }

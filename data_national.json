@@ -1,21 +1,21 @@
 {
-  "date": "2026-04-15",
-  "total_revenue": 7560.0,
+  "date": "2026-04-16",
+  "total_revenue": 3980.0,
   "total_spend": 0,
-  "total_wechat": 48,
-  "total_deposit": 3,
+  "total_wechat": 37,
+  "total_deposit": 2,
   "roi": 0,
   "roi_level": "danger",
   "city_matrix": {
     "成都": {
       "spend": 0,
       "open": 0,
-      "wechat": 38,
+      "wechat": 19,
       "open_to_wechat": 0,
       "deposit": 2,
-      "wechat_to_deposit": 5.3,
-      "revenue": 4880.0,
-      "refund_count": 0,
+      "wechat_to_deposit": 10.5,
+      "revenue": 0.0,
+      "refund_count": 2,
       "open_cost": 0
     },
     "重庆": {
@@ -32,31 +32,47 @@
     "哈尔滨": {
       "spend": 0,
       "open": 0,
-      "wechat": 10,
+      "wechat": 18,
       "open_to_wechat": 0,
-      "deposit": 1,
-      "wechat_to_deposit": 10.0,
-      "revenue": 2680.0,
+      "deposit": 0,
+      "wechat_to_deposit": 0.0,
+      "revenue": 3980.0,
       "refund_count": 0,
       "open_cost": 0
     }
   },
   "acquire_chain": {
     "open": 0,
-    "wechat": 48,
-    "deposit": 3,
+    "wechat": 37,
+    "deposit": 2,
     "open_to_wechat": 0,
-    "wechat_to_deposit": 6.2
+    "wechat_to_deposit": 5.4
   },
   "deliver_chain": {
-    "expected": 5,
-    "arrived": 4,
-    "revenue": 7560.0,
-    "arrival_rate": 80.0
+    "expected": 3,
+    "arrived": 1,
+    "revenue": 3980.0,
+    "arrival_rate": 33.3
   },
   "national_blacklist": [
     {
-      "client": "刘迪",
+      "client": "朱端",
+      "problem": "退款",
+      "type": "前端定金流失",
+      "cs": "阳珂欣",
+      "level": "danger",
+      "city": "成都"
+    },
+    {
+      "client": "罗欣玥",
+      "problem": "退款",
+      "type": "前端定金流失",
+      "cs": "阳珂欣",
+      "level": "danger",
+      "city": "成都"
+    },
+    {
+      "client": "胡文",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -64,23 +80,15 @@
       "city": "成都"
     },
     {
-      "client": "雷凤群妈妈",
+      "client": "张瑞雪",
       "problem": "回访",
       "type": "未完成",
-      "cs": "胡娜",
+      "cs": "阳珂欣",
       "level": "warning",
       "city": "成都"
     },
     {
-      "client": "安安",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "胡娜",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "曹雯迪",
+      "client": "潘蕾",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -88,18 +96,34 @@
       "city": "成都"
     },
     {
-      "client": "魏小姐",
+      "client": "邓雅维",
       "problem": "回访",
       "type": "未完成",
-      "cs": "胡娜",
+      "cs": "会媛",
       "level": "warning",
       "city": "成都"
     },
     {
-      "client": "朱琳",
+      "client": "王小希",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "张女士",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
+      "level": "normal",
+      "city": "哈尔滨"
+    },
+    {
+      "client": "马丽",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "侯芳",
       "level": "normal",
       "city": "哈尔滨"
     }
@@ -110,5 +134,5 @@
     "哈尔滨": 0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "1. 🏆 哈尔滨变现¥2680.0，定金率10.0%表现最佳。\n\n2. 🚨 重庆变现为¥0.0，建议加强营销活动。\n\n3. ⚠️ 交付端全绿，无退款或爽约情况。"
+  "ai_national_summary": "1. 🏆 哈尔滨变现¥3980.0，表现最佳。\n\n2. 🚨 成都和重庆开口→加微率为0%，建议加强引流。\n\n3. ⚠️ 全国退款2笔，集中在成都。"
 }
