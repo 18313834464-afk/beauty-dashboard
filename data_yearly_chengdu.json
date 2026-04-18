@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 359095.77,
+  "cum_revenue": 364355.77,
   "cum_spend": 135928.99,
-  "cum_wechat": 1405,
+  "cum_wechat": 1417,
   "cum_deposit": 144,
   "cum_open": 2146.0,
-  "cum_roi": 2.64,
-  "monthly_avg_rev": 179547.89,
-  "predicted_annual": 2154574.68,
+  "cum_roi": 2.68,
+  "monthly_avg_rev": 182177.89,
+  "predicted_annual": 2186134.68,
   "revenue_target": 3000000,
-  "progress": 10.7,
+  "progress": 10.9,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 106002.0,
+      "revenue": 111262.0,
       "spend": 40590.77,
-      "roi": 2.61,
-      "wechat": 412,
+      "roi": 2.74,
+      "wechat": 424,
       "deposit": 26,
       "open": 624,
       "open_cost": 65.05,
-      "refund": 18,
-      "days": 14,
-      "mom_revenue": -68.8
+      "refund": 19,
+      "days": 15,
+      "mom_revenue": -65.3
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    106002.0,
+    111262.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.61,
+    2.74,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 149,
+          "wechat": 159,
           "deposit": 16,
           "revenue": 31880.0
         }
       },
-      "intent_a": 10,
-      "intent_b": 46,
-      "intent_c": 30
+      "intent_a": 13,
+      "intent_b": 51,
+      "intent_c": 36
     },
     {
       "name": "李小叶",
@@ -188,14 +188,14 @@
         }
       },
       "intent_a": 10,
-      "intent_b": 38,
-      "intent_c": 129
+      "intent_b": 39,
+      "intent_c": 131
     },
     {
       "name": "陈相",
       "months": {
         "4": {
-          "wechat": 12,
+          "wechat": 14,
           "deposit": 0,
           "revenue": 0
         }
