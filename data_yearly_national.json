@@ -1,15 +1,15 @@
 {
   "year": 2026,
   "city_count": 3,
-  "cum_revenue": 399135.77,
-  "cum_spend": 163516.64,
-  "cum_wechat": 2019,
-  "cum_deposit": 174,
-  "cum_roi": 2.44,
-  "monthly_avg_rev": 199567.89,
-  "predicted_annual": 2394814.68,
+  "cum_revenue": 413695.77,
+  "cum_spend": 164336.6,
+  "cum_wechat": 2067,
+  "cum_deposit": 180,
+  "cum_roi": 2.52,
+  "monthly_avg_rev": 206847.89,
+  "predicted_annual": 2482174.68,
   "revenue_target": 3000000,
-  "progress": 13.3,
+  "progress": 13.8,
   "trend_months": [
     "1月",
     "2月",
@@ -28,7 +28,7 @@
     0.0,
     0.0,
     269793.77,
-    129342.0,
+    143902.0,
     null,
     null,
     null,
@@ -41,8 +41,8 @@
   "trend_spend": [
     0.0,
     0.0,
-    111131.33,
-    52385.31,
+    111541.31,
+    52795.29,
     null,
     null,
     null,
@@ -55,8 +55,8 @@
   "trend_roi": [
     null,
     null,
-    2.43,
-    2.47,
+    2.42,
+    2.73,
     null,
     null,
     null,
@@ -70,29 +70,29 @@
     {
       "city": "成都",
       "start_month": 3,
-      "cum_revenue": 364355.77,
+      "cum_revenue": 369735.77,
       "cum_spend": 135928.99,
-      "roi": 2.68,
-      "monthly_avg_wechat": 708,
-      "wechat_to_deposit": 10.2,
+      "roi": 2.72,
+      "monthly_avg_wechat": 718,
+      "wechat_to_deposit": 10.5,
       "health_score": 90
     },
     {
       "city": "哈尔滨",
       "start_month": 3,
-      "cum_revenue": 23640.0,
+      "cum_revenue": 32820.0,
       "cum_spend": 23589.08,
-      "roi": 1.0,
-      "monthly_avg_wechat": 240,
-      "wechat_to_deposit": 4.2,
+      "roi": 1.39,
+      "monthly_avg_wechat": 255,
+      "wechat_to_deposit": 3.9,
       "health_score": 90
     },
     {
       "city": "重庆",
       "start_month": 3,
       "cum_revenue": 11140.0,
-      "cum_spend": 3998.57,
-      "roi": 2.79,
+      "cum_spend": 4818.53,
+      "roi": 2.31,
       "monthly_avg_wechat": 61,
       "wechat_to_deposit": 8.2,
       "health_score": 60
@@ -108,17 +108,17 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 526,
+      "wechat": 535,
       "deposit": 46,
       "revenue": 103160.8,
-      "w2d_rate": 8.7
+      "w2d_rate": 8.6
     },
     {
       "name": "会媛(成都)",
-      "wechat": 455,
-      "deposit": 50,
-      "revenue": 87060.0,
-      "w2d_rate": 11.0
+      "wechat": 461,
+      "deposit": 56,
+      "revenue": 89440.0,
+      "w2d_rate": 12.1
     },
     {
       "name": "侯芳(重庆)",
@@ -131,7 +131,7 @@
       "name": "汤娅(哈尔滨)",
       "wechat": 250,
       "deposit": 16,
-      "revenue": 15500.0,
+      "revenue": 18380.0,
       "w2d_rate": 6.4
     },
     {
@@ -143,17 +143,17 @@
     },
     {
       "name": "陈相(成都)",
-      "wechat": 14,
+      "wechat": 17,
       "deposit": 0,
       "revenue": 0,
       "w2d_rate": 0.0
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 93,
+      "wechat": 108,
       "deposit": 2,
       "revenue": 0,
-      "w2d_rate": 2.2
+      "w2d_rate": 1.9
     }
   ],
   "cost_pie": [
@@ -163,7 +163,7 @@
     },
     {
       "name": "重庆",
-      "value": 3998.57
+      "value": 4818.53
     },
     {
       "name": "哈尔滨",
@@ -173,12 +173,12 @@
   "alerts": [
     {
       "level": "warning",
-      "msg": "成都最新月变现环比下降56.0%"
+      "msg": "成都最新月变现环比下降53.9%"
     },
     {
       "level": "warning",
-      "msg": "哈尔滨ROI=1.0，接近预警线"
+      "msg": "哈尔滨ROI=1.39，接近预警线"
     }
   ],
-  "ai_diagnosis": "### 1. 🏆 表扬年度表现最强的城市+核心亮点\n成都表现最佳：累计变现¥364355.77，ROI=2.68，月均加微708，健康评分90分，显示出强大的变现能力和客户粘性。\n\n### 2. 🚨 指出最大战略风险+具体建议\n重庆变现能力弱：累计变现仅¥11140.0，建议分析市场定位和营销策略，优化客户获取和转化流程，提升变现能力。\n\n### 3. 🎯 给出下一步扩张/收缩的战略建议\n哈尔滨ROI=1.0，建议暂缓扩张，聚焦提升现有门店效率，优化成本结构，确保ROI提升后再考虑进一步扩展。"
+  "ai_diagnosis": "### 战略诊断\n\n🏆 **成都表现最佳**：变现¥369735.77，ROI=2.72，月均加微718，健康评分90分，核心亮点是变现能力和客户增长强劲。\n\n🚨 **重庆面临风险**：变现仅¥11140.0，ROI=2.31，月均加微122，健康评分60分，建议加强市场推广和客户获取策略。\n\n🎯 **战略建议**：优先扩张成都市场，巩固哈尔滨市场，暂缓重庆扩张，集中资源提升重庆运营效率和客户转化率。"
 }

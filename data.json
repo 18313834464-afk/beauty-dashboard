@@ -1,16 +1,16 @@
 {
-  "date": "2026-04-17",
-  "generated_at": "2026-04-18 06:50:43",
-  "revenue": 8360.0,
-  "wechat_total": 12,
-  "deposit_total": 0,
-  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：雍婷，责任客服阳珂欣。退款原因需详细调查，若为服务或产品问题，需制定改进措施避免再次发生。\n🚨 P0 履约爽约：无。\n⚠️ P1 转化率：0%，触发红线。所有客服均未实现开口→加微转化，需立即查明原因并采取行动。\n👀 P2 回访漏打：Moooooona、马誉宁、玲子，责任客服会媛。需立即进行回访并记录反馈。\n\n**二、根因诊断**\n1. 转化率为0%：所有客服均未实现开口→加微转化，核心问题可能在于客服的开口咨询和私聊转化能力不足，未能有效吸引潜在客户。\n2. 开口成本和获客成本数据缺失：无法判断前端投放效果，需核实数据并优化投放策略。\n3. 客服个人明细中，意向客户分布不均，且无定金转化记录，表明客服在需求挖掘和价格异议处理上存在明显不足。\n\n**三、今日行动项**\n1. 立即组织客服团队进行紧急培训，重点提升开口咨询和私聊转化技巧，确保能够有效吸引并留住潜在客户。\n2. 运营团队需核查并补充前端投放数据，评估投放效果，并根据数据调整投放策略。\n3. 客服会媛需立即对漏打回访的客户进行补访，并详细记录客户反馈，确保服务质量。",
+  "date": "2026-04-18",
+  "generated_at": "2026-04-19 07:56:00",
+  "revenue": 5380.0,
+  "wechat_total": 9,
+  "deposit_total": 5,
+  "ai_summary": "**一、红线审查**（按严重度排序，无问题写「✅全绿」）\n🚨 P0 资金流失：无\n🚨 P0 履约爽约：无\n⚠️ P1 转化率：开口→加微转化率为 0%，低于65%红线！必须点名报警\n👀 P2 回访漏打：王珊(会媛)、赵心宁(会媛)、郭尔惠(阳珂欣)、潘灿(阳珂欣)、马青秀(阳珂欣)、薛小胖(阳珂欣)、张诗若(阳珂欣)、周小琳(会媛)\n\n**二、根因诊断**（不要说「建议关注」这种废话，直接说原因）\n开口→加微转化率为0%的核心问题在于前端投放数据缺失，无法计算开口成本和获客成本，以及加微人数和转化率。此外，客服接待数据也显示昨日无接诊记录，表明前端流量获取和客服接待均存在问题。\n\n**三、今日行动项**（给出具体可执行的1-3条动作，谁做什么）\n1. 运营团队需立即检查并修复前端投放数据，确保能够正常获取开口数、进线数、加微数等关键数据。\n2. 客服团队需针对昨日无接诊记录的问题进行调查，并确保客服人员今日有接诊记录，同时对转化率进行监控。\n3. 会媛和阳珂欣两位客服需对漏打回访的客户进行补访，并对超期回访的客户进行优先处理，确保回访完成率达到100%。",
   "ad_spend": 0,
   "open_count": 0,
   "open_cost": 0,
-  "arrived_count": 5,
+  "arrived_count": 3,
   "noshow_count": 0,
-  "deal_count": 5,
+  "deal_count": 3,
   "cs_names": [
     "会媛",
     "阳珂欣",
@@ -19,14 +19,14 @@
     "陈相"
   ],
   "wechat_list": [
-    10,
+    6,
     0,
     0,
     0,
-    2
+    3
   ],
   "deposit_list": [
-    0,
+    5,
     0,
     0,
     0,
@@ -34,7 +34,7 @@
   ],
   "revenue_pie": [
     {
-      "value": 0.0,
+      "value": 2380.0,
       "name": "会媛",
       "itemStyle": {
         "color": "#3B82F6"
@@ -71,69 +71,92 @@
   ],
   "fulfill_list": [
     0,
-    6,
+    1,
     0,
     0,
     0
   ],
   "gap_list": [
     3,
-    0,
+    5,
     0,
     0,
     0
   ],
   "arrived_list": [
+    2,
     1,
-    4,
     0,
     0,
     0
   ],
   "blacklist": [
     {
-      "client": "Moooooona",
+      "client": "王珊",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
       "level": "warning"
     },
     {
-      "client": "马誉宁",
+      "client": "赵心宁",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
       "level": "warning"
     },
     {
-      "client": "玲子",
+      "client": "郭尔惠",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "潘灿",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "马青秀",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "薛小胖",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "张诗若",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "周小琳",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
       "level": "warning"
-    },
-    {
-      "client": "雍婷",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger"
     }
   ],
-  "staff_intentions": {
-    "会媛": {
-      "B级(中意向)": 3,
-      "C级(低意向)": 3
-    }
-  },
+  "staff_intentions": {},
   "y_axis_days": [
-    "4月18日",
     "4月19日",
     "4月20日",
     "4月21日",
     "4月22日",
     "4月23日",
-    "4月24日"
+    "4月24日",
+    "4月25日"
   ],
   "bed_heatmap": [
     [
@@ -272,63 +295,56 @@
         "label": "引流"
       },
       "convert": {
-        "score": 13,
-        "status": "danger",
-        "detail": "加微→定金0%, 到店率42%",
+        "score": 88,
+        "status": "healthy",
+        "detail": "加微→定金56%, 到店率60%",
         "label": "转化"
       },
       "deliver": {
-        "score": 32,
-        "status": "danger",
-        "detail": "退款率20%, 爽约率0%",
+        "score": 50,
+        "status": "warning",
+        "detail": "退款率0%, 爽约率0%",
         "label": "交付"
       },
       "aftersales": {
-        "score": 63,
-        "status": "warning",
-        "detail": "回访完成率67% (6/9)",
+        "score": 7,
+        "status": "danger",
+        "detail": "回访完成率11% (1/9)",
         "label": "售后"
       },
       "team": {
-        "score": 4,
+        "score": 3,
         "status": "danger",
-        "detail": "人均产出¥4,180, 人均加微6",
+        "detail": "人均产出¥2,690, 人均加微4",
         "label": "团队"
       }
     },
-    "overall_score": 25,
+    "overall_score": 38,
     "overall_status": "danger",
     "kpis": {
       "spend": 0.0,
       "open_count": 0.0,
-      "wechat": 12.0,
-      "deposit": 0.0,
-      "revenue": 8360.0,
-      "arrived": 5.0,
+      "wechat": 9.0,
+      "deposit": 5.0,
+      "revenue": 5380.0,
+      "arrived": 3.0,
       "noshow": 0.0,
-      "refund_count": 1,
+      "refund_count": 0,
       "open_cost": 0,
       "open_to_wechat": 0,
       "ad_roi": 0,
-      "wechat_to_dep": 0.0,
-      "dep_to_arrival": 0.417,
+      "wechat_to_dep": 0.556,
+      "dep_to_arrival": 0.6,
       "noshow_rate": 0.0,
-      "refund_rate": 0.2,
-      "followup_rate": 0.667,
-      "revenue_per_cs": 4180.0,
-      "wechat_per_cs": 6.0,
+      "refund_rate": 0.0,
+      "followup_rate": 0.111,
+      "revenue_per_cs": 2690.0,
+      "wechat_per_cs": 4.5,
       "cs_count": 2,
       "monthly_target": 200000
     }
   },
   "alerts": [
-    {
-      "level": "P0",
-      "category": "退款",
-      "message": "成都站今日新增1笔退款",
-      "city": "成都",
-      "action": "立即查看退款明细，定责到客服"
-    },
     {
       "level": "P1",
       "category": "引流",
@@ -337,11 +353,11 @@
       "action": "检查投放素材和出价策略"
     },
     {
-      "level": "P1",
-      "category": "转化",
-      "message": "成都转化健康度仅13分: 加微→定金0%, 到店率42%",
+      "level": "P2",
+      "category": "回访",
+      "message": "成都回访完成率不足: 回访完成率11% (1/9)",
       "city": "成都",
-      "action": "抽查客服聊天记录，检查话术和跟进节奏"
+      "action": "督促客服今日补齐回访"
     }
   ]
 }

@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 23640.0,
+  "cum_revenue": 32820.0,
   "cum_spend": 23589.08,
-  "cum_wechat": 480,
+  "cum_wechat": 510,
   "cum_deposit": 20,
   "cum_open": 694.0,
-  "cum_roi": 1.0,
-  "monthly_avg_rev": 11820.0,
-  "predicted_annual": 141840.0,
+  "cum_roi": 1.39,
+  "monthly_avg_rev": 16410.0,
+  "predicted_annual": 196920.0,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -47,7 +47,7 @@
       "revenue": 5560.0,
       "spend": 11794.54,
       "roi": 0.47,
-      "wechat": 240,
+      "wechat": 255,
       "deposit": 10,
       "open": 347,
       "open_cost": 50.87,
@@ -58,15 +58,15 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 18080.0,
+      "revenue": 27260.0,
       "spend": 11794.54,
-      "roi": 1.53,
-      "wechat": 240,
+      "roi": 2.31,
+      "wechat": 255,
       "deposit": 10,
       "open": 347,
       "open_cost": 33.99,
       "refund": 3,
-      "days": 15,
+      "days": 16,
       "mom_revenue": 127.0
     }
   ],
@@ -88,7 +88,7 @@
     0,
     0,
     5560.0,
-    18080.0,
+    27260.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     0.47,
-    1.53,
+    2.31,
     null,
     null,
     null,
@@ -131,14 +131,14 @@
       "name": "侯芳",
       "months": {
         "4": {
-          "wechat": 93,
+          "wechat": 108,
           "deposit": 2,
           "revenue": 0
         }
       },
       "intent_a": 5,
       "intent_b": 15,
-      "intent_c": 78
+      "intent_c": 80
     },
     {
       "name": "汤娅",
@@ -151,12 +151,12 @@
         "4": {
           "wechat": 147,
           "deposit": 8,
-          "revenue": 15500.0
+          "revenue": 18380.0
         }
       },
-      "intent_a": 9,
-      "intent_b": 30,
-      "intent_c": 98
+      "intent_a": 12,
+      "intent_b": 31,
+      "intent_c": 106
     }
   ],
   "health_score": 90,
