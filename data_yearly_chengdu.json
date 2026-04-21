@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 381875.77,
+  "cum_revenue": 392954.77,
   "cum_spend": 147626.66,
-  "cum_wechat": 1477,
-  "cum_deposit": 150,
+  "cum_wechat": 1498,
+  "cum_deposit": 153,
   "cum_open": 2289.0,
-  "cum_roi": 2.59,
-  "monthly_avg_rev": 190937.89,
-  "predicted_annual": 2291254.68,
+  "cum_roi": 2.66,
+  "monthly_avg_rev": 196477.39,
+  "predicted_annual": 2357728.68,
   "revenue_target": 3000000,
-  "progress": 11.5,
+  "progress": 11.9,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 128782.0,
+      "revenue": 139861.0,
       "spend": 52288.44,
-      "roi": 2.46,
-      "wechat": 484,
-      "deposit": 32,
+      "roi": 2.67,
+      "wechat": 505,
+      "deposit": 35,
       "open": 767,
       "open_cost": 68.17,
-      "refund": 19,
-      "days": 17,
-      "mom_revenue": -58.1
+      "refund": 20,
+      "days": 18,
+      "mom_revenue": -53.6
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    128782.0,
+    139861.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.46,
+    2.67,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 171,
-          "deposit": 22,
+          "wechat": 175,
+          "deposit": 25,
           "revenue": 34260.0
         }
       },
       "intent_a": 13,
-      "intent_b": 56,
-      "intent_c": 41
+      "intent_b": 57,
+      "intent_c": 43
     },
     {
       "name": "李小叶",
@@ -182,7 +182,7 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 233,
+          "wechat": 248,
           "deposit": 6,
           "revenue": 22222.0
         }
@@ -195,7 +195,7 @@
       "name": "陈相",
       "months": {
         "4": {
-          "wechat": 21,
+          "wechat": 23,
           "deposit": 0,
           "revenue": 0
         }

@@ -1,22 +1,22 @@
 {
-  "date": "2026-04-19",
-  "total_revenue": 15820.0,
-  "total_spend": 3570.1,
-  "total_wechat": 36,
+  "date": "2026-04-20",
+  "total_revenue": 14759.0,
+  "total_spend": 0,
+  "total_wechat": 32,
   "total_deposit": 1,
-  "roi": 4.43,
-  "roi_level": "healthy",
+  "roi": 0,
+  "roi_level": "danger",
   "city_matrix": {
     "成都": {
-      "spend": 2374.68,
-      "open": 27.0,
-      "wechat": 20,
-      "open_to_wechat": 74.1,
-      "deposit": 0,
-      "wechat_to_deposit": 0.0,
-      "revenue": 12140.0,
-      "refund_count": 0,
-      "open_cost": 87.9511111111111
+      "spend": 0,
+      "open": 0,
+      "wechat": 21,
+      "open_to_wechat": 0,
+      "deposit": 1,
+      "wechat_to_deposit": 4.8,
+      "revenue": 11079.0,
+      "refund_count": 1,
+      "open_cost": 0
     },
     "重庆": {
       "spend": 0,
@@ -30,41 +30,49 @@
       "open_cost": 0
     },
     "哈尔滨": {
-      "spend": 1195.42,
-      "open": 22.0,
-      "wechat": 16,
-      "open_to_wechat": 72.7,
-      "deposit": 1,
-      "wechat_to_deposit": 6.2,
+      "spend": 0,
+      "open": 0,
+      "wechat": 11,
+      "open_to_wechat": 0,
+      "deposit": 0,
+      "wechat_to_deposit": 0.0,
       "revenue": 3680.0,
       "refund_count": 1,
-      "open_cost": 17.0
+      "open_cost": 0
     }
   },
   "acquire_chain": {
-    "open": 49.0,
-    "wechat": 36,
+    "open": 0,
+    "wechat": 32,
     "deposit": 1,
-    "open_to_wechat": 73.5,
-    "wechat_to_deposit": 2.8
+    "open_to_wechat": 0,
+    "wechat_to_deposit": 3.1
   },
   "deliver_chain": {
-    "expected": 7,
-    "arrived": 6,
-    "revenue": 15820.0,
-    "arrival_rate": 85.7
+    "expected": 3,
+    "arrived": 3,
+    "revenue": 14759.0,
+    "arrival_rate": 100.0
   },
   "national_blacklist": [
     {
-      "client": "丁丁",
+      "client": "付女士",
       "problem": "退款",
       "type": "后端交付失败",
-      "cs": "18045295939",
+      "cs": "",
+      "level": "danger",
+      "city": "成都"
+    },
+    {
+      "client": "艾凤怡",
+      "problem": "退款",
+      "type": "后端交付失败",
+      "cs": "15045306323",
       "level": "danger",
       "city": "哈尔滨"
     },
     {
-      "client": "茉莉花",
+      "client": "韩楚依",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -72,7 +80,7 @@
       "city": "成都"
     },
     {
-      "client": "刘渝星",
+      "client": "孙女士",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -80,7 +88,55 @@
       "city": "成都"
     },
     {
-      "client": "源源",
+      "client": "亚亚",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "周琪",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "赖亭",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "李慧玲",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "魏小姐",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "王小希",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "王菁浍",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -88,19 +144,43 @@
       "city": "成都"
     },
     {
-      "client": "香草",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal",
-      "city": "哈尔滨"
+      "client": "王菁浍妈妈",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "会媛",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "张帮春",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "会媛",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "苏苏",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "会媛",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "张剑鸣  朱利（两个人）",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
     }
   ],
   "city_open_cost": {
-    "成都": 87.9511111111111,
+    "成都": 0,
     "重庆": 0,
-    "哈尔滨": 17.0
+    "哈尔滨": 0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "1. 🏆 哈尔滨变现¥3680.0，消耗仅¥1195.42，开口成本仅¥17.0，表现最佳。\n\n2. 🚨 重庆变现、消耗均为¥0，建议立即排查投放策略和资源分配。\n\n3. ⚠️ 全国退款/爽约：仅哈尔滨1笔退款，交付端整体良好。"
+  "ai_national_summary": "### 诊断结果：\n\n1. 🏆 成都变现¥11079.0，领先其他城市。\n\n2. 🚨 重庆各项指标均为0，需立即启动营销活动。\n\n3. ⚠️ 全国退款2笔：成都1笔，哈尔滨1笔。"
 }

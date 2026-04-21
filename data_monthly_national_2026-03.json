@@ -4,7 +4,7 @@
   "total_days": 31,
   "cum_revenue": 269793.77,
   "cum_spend": 119281.23,
-  "cum_wechat": 1325,
+  "cum_wechat": 1336,
   "cum_deposit": 134,
   "cum_open": 2106.0,
   "cum_refund": 31,
@@ -453,7 +453,7 @@
     },
     "哈尔滨": {
       "cum_spend": 19534.46,
-      "cum_wechat": 271,
+      "cum_wechat": 282,
       "cum_deposit": 11,
       "cum_revenue": 5560.0,
       "roi": 1.1,
@@ -463,11 +463,11 @@
   "cs_table": [
     {
       "name": "会媛(成都)",
-      "wechat": 171,
-      "deposit": 22,
+      "wechat": 175,
+      "deposit": 25,
       "revenue": 34260.0,
       "arrived": 0,
-      "deposit_rate": 12.9,
+      "deposit_rate": 14.3,
       "fulfill_rate": 0.0,
       "gap_total": 13,
       "sop_score": 0,
@@ -477,27 +477,12 @@
       "intent_total": 109
     },
     {
-      "name": "阳珂欣(成都)",
-      "wechat": 233,
-      "deposit": 6,
-      "revenue": 22222.0,
-      "arrived": 0,
-      "deposit_rate": 2.6,
-      "fulfill_rate": 0.0,
-      "gap_total": 0,
-      "sop_score": 100,
-      "intent_a": 6,
-      "intent_b": 60,
-      "intent_c": 80,
-      "intent_total": 146
-    },
-    {
       "name": "汤娅(哈尔滨)",
-      "wechat": 162,
+      "wechat": 169,
       "deposit": 9,
-      "revenue": 22060.0,
+      "revenue": 26920.0,
       "arrived": 0,
-      "deposit_rate": 5.6,
+      "deposit_rate": 5.3,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
@@ -505,6 +490,21 @@
       "intent_b": 22,
       "intent_c": 62,
       "intent_total": 94
+    },
+    {
+      "name": "阳珂欣(成都)",
+      "wechat": 248,
+      "deposit": 6,
+      "revenue": 22222.0,
+      "arrived": 0,
+      "deposit_rate": 2.4,
+      "fulfill_rate": 0.0,
+      "gap_total": 0,
+      "sop_score": 100,
+      "intent_a": 6,
+      "intent_b": 60,
+      "intent_c": 80,
+      "intent_total": 146
     },
     {
       "name": "侯芳(重庆)",
@@ -553,7 +553,7 @@
     },
     {
       "name": "陈相(成都)",
-      "wechat": 21,
+      "wechat": 23,
       "deposit": 0,
       "revenue": 0,
       "arrived": 0,
@@ -568,7 +568,7 @@
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 109,
+      "wechat": 113,
       "deposit": 2,
       "revenue": 0,
       "arrived": 0,
