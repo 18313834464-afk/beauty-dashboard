@@ -1,19 +1,19 @@
 {
   "city": "哈尔滨",
   "month": "2026-04",
-  "days_elapsed": 18,
+  "days_elapsed": 19,
   "total_days": 30,
   "cum_revenue": 35900.0,
   "cum_spend": 19534.46,
-  "cum_wechat": 282,
+  "cum_wechat": 292,
   "cum_deposit": 11,
   "cum_open": 513,
   "cum_refund": 5,
   "roi": 9.17,
   "revenue_target": 100000,
   "progress": 20.0,
-  "predicted_revenue": 59833.33,
-  "predicted_spend": 32557.43,
+  "predicted_revenue": 56684.21,
+  "predicted_spend": 30843.88,
   "predicted_roi": 1.84,
   "daily_trend": [
     {
@@ -159,6 +159,14 @@
       "wechat": 11,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-04-21",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 10,
+      "deposit": 0,
+      "open": 0
     }
   ],
   "rate_trend": [
@@ -251,6 +259,11 @@
       "date": "2026-04-20",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-04-21",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -264,25 +277,25 @@
       "fulfill_rate": 22.2,
       "gap_total": 3,
       "sop_score": 76,
-      "intent_a": 12,
-      "intent_b": 34,
-      "intent_c": 118,
-      "intent_total": 164
+      "intent_a": 14,
+      "intent_b": 39,
+      "intent_c": 123,
+      "intent_total": 176
     },
     {
       "name": "侯芳",
-      "wechat": 113,
+      "wechat": 123,
       "deposit": 2,
       "revenue": 0,
       "arrived": 1,
-      "deposit_rate": 1.8,
+      "deposit_rate": 1.6,
       "fulfill_rate": 50.0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 6,
+      "intent_a": 7,
       "intent_b": 17,
-      "intent_c": 89,
-      "intent_total": 112
+      "intent_c": 96,
+      "intent_total": 120
     }
   ],
   "refund_details": [
