@@ -12,9 +12,9 @@
   "month_target": 400000,
   "month_total_weeks": 5,
   "month_elapsed_weeks": 3,
-  "month_cum_revenue": 149979.0,
+  "month_cum_revenue": 153739.0,
   "ideal_pace": 80000.0,
-  "actual_pace": 49993.0,
+  "actual_pace": 51246.33,
   "pace_status": "behind",
   "city_matrix": [
     {

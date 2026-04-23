@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-04",
-  "days_elapsed": 19,
+  "days_elapsed": 20,
   "total_days": 30,
-  "cum_revenue": 35900.0,
-  "cum_spend": 19534.46,
-  "cum_wechat": 292,
+  "cum_revenue": 41960.0,
+  "cum_spend": 25678.6,
+  "cum_wechat": 330,
   "cum_deposit": 11,
-  "cum_open": 513,
+  "cum_open": 612,
   "cum_refund": 5,
-  "roi": 9.17,
+  "roi": 4.26,
   "revenue_target": 100000,
   "progress": 20.0,
-  "predicted_revenue": 56684.21,
-  "predicted_spend": 30843.88,
-  "predicted_roi": 1.84,
+  "predicted_revenue": 62940.0,
+  "predicted_spend": 38517.9,
+  "predicted_roi": 1.63,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -167,6 +167,14 @@
       "wechat": 10,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-04-22",
+      "revenue": 0.0,
+      "spend": 2515.16,
+      "wechat": 25,
+      "deposit": 0,
+      "open": 38.0
     }
   ],
   "rate_trend": [
@@ -264,38 +272,43 @@
       "date": "2026-04-21",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-04-22",
+      "open_to_wechat": 65.8,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 169,
+      "wechat": 198,
       "deposit": 9,
       "revenue": 26920.0,
       "arrived": 2,
-      "deposit_rate": 5.3,
+      "deposit_rate": 4.5,
       "fulfill_rate": 22.2,
       "gap_total": 3,
       "sop_score": 76,
-      "intent_a": 14,
-      "intent_b": 39,
-      "intent_c": 123,
-      "intent_total": 176
+      "intent_a": 15,
+      "intent_b": 48,
+      "intent_c": 132,
+      "intent_total": 195
     },
     {
       "name": "侯芳",
-      "wechat": 123,
+      "wechat": 132,
       "deposit": 2,
       "revenue": 0,
       "arrived": 1,
-      "deposit_rate": 1.6,
+      "deposit_rate": 1.5,
       "fulfill_rate": 50.0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 7,
+      "intent_a": 8,
       "intent_b": 17,
-      "intent_c": 96,
-      "intent_total": 120
+      "intent_c": 105,
+      "intent_total": 130
     }
   ],
   "refund_details": [
