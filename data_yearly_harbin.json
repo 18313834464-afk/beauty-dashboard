@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 50300.0,
+  "cum_revenue": 54380.0,
   "cum_spend": 56619.84,
-  "cum_wechat": 704,
+  "cum_wechat": 752,
   "cum_deposit": 22,
   "cum_open": 1308.0,
-  "cum_roi": 0.89,
-  "monthly_avg_rev": 25150.0,
-  "predicted_annual": 301800.0,
+  "cum_roi": 0.96,
+  "monthly_avg_rev": 27190.0,
+  "predicted_annual": 326280.0,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -47,7 +47,7 @@
       "revenue": 5560.0,
       "spend": 28309.92,
       "roi": 0.2,
-      "wechat": 352,
+      "wechat": 376,
       "deposit": 11,
       "open": 654,
       "open_cost": 50.87,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 44740.0,
+      "revenue": 48820.0,
       "spend": 28309.92,
-      "roi": 1.58,
-      "wechat": 352,
+      "roi": 1.72,
+      "wechat": 376,
       "deposit": 11,
       "open": 654,
       "open_cost": 43.29,
       "refund": 5,
-      "days": 21,
-      "mom_revenue": 309.4
+      "days": 22,
+      "mom_revenue": 382.7
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     5560.0,
-    44740.0,
+    48820.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     0.2,
-    1.58,
+    1.72,
     null,
     null,
     null,
@@ -131,14 +131,14 @@
       "name": "侯芳",
       "months": {
         "4": {
-          "wechat": 141,
+          "wechat": 150,
           "deposit": 2,
           "revenue": 0
         }
       },
-      "intent_a": 9,
+      "intent_a": 10,
       "intent_b": 20,
-      "intent_c": 114
+      "intent_c": 117
     },
     {
       "name": "汤娅",
@@ -149,14 +149,14 @@
           "revenue": 0.0
         },
         "4": {
-          "wechat": 211,
+          "wechat": 226,
           "deposit": 9,
-          "revenue": 29700.0
+          "revenue": 33780.0
         }
       },
-      "intent_a": 16,
-      "intent_b": 55,
-      "intent_c": 141
+      "intent_a": 17,
+      "intent_b": 56,
+      "intent_c": 146
     }
   ],
   "health_score": 80,

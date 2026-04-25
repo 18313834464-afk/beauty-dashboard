@@ -4,7 +4,7 @@
   "start_month": 3,
   "cum_revenue": 423946.77,
   "cum_spend": 160816.31,
-  "cum_wechat": 1582,
+  "cum_wechat": 1598,
   "cum_deposit": 153,
   "cum_open": 2444.0,
   "cum_roi": 2.64,
@@ -61,12 +61,12 @@
       "revenue": 170853.0,
       "spend": 65478.09,
       "roi": 2.61,
-      "wechat": 589,
+      "wechat": 605,
       "deposit": 35,
       "open": 922,
       "open_cost": 71.02,
       "refund": 24,
-      "days": 21,
+      "days": 22,
       "mom_revenue": -40.9
     }
   ],
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 232,
+          "wechat": 240,
           "deposit": 25,
           "revenue": 34260.0
         }
       },
-      "intent_a": 15,
-      "intent_b": 57,
-      "intent_c": 45
+      "intent_a": 21,
+      "intent_b": 62,
+      "intent_c": 62
     },
     {
       "name": "李小叶",
@@ -182,14 +182,14 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 259,
+          "wechat": 267,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
       "intent_a": 16,
       "intent_b": 50,
-      "intent_c": 167
+      "intent_c": 169
     },
     {
       "name": "陈相",
