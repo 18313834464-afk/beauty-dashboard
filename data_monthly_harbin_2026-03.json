@@ -5,7 +5,7 @@
   "total_days": 31,
   "cum_revenue": 5560.0,
   "cum_spend": 28309.92,
-  "cum_wechat": 376,
+  "cum_wechat": 388,
   "cum_deposit": 11,
   "cum_open": 654,
   "cum_refund": 0,
@@ -425,11 +425,11 @@
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 226,
+      "wechat": 238,
       "deposit": 9,
-      "revenue": 33780.0,
+      "revenue": 36760.0,
       "arrived": 0,
-      "deposit_rate": 4.0,
+      "deposit_rate": 3.8,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
