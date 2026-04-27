@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 60340.0,
-  "cum_spend": 56619.84,
-  "cum_wechat": 776,
+  "cum_revenue": 65420.0,
+  "cum_spend": 67103.38,
+  "cum_wechat": 808,
   "cum_deposit": 22,
-  "cum_open": 1308.0,
-  "cum_roi": 1.07,
-  "monthly_avg_rev": 30170.0,
-  "predicted_annual": 362040.0,
+  "cum_open": 1490.0,
+  "cum_roi": 0.97,
+  "monthly_avg_rev": 32710.0,
+  "predicted_annual": 392520.0,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -45,11 +45,11 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 5560.0,
-      "spend": 28309.92,
-      "roi": 0.2,
-      "wechat": 388,
+      "spend": 33551.69,
+      "roi": 0.17,
+      "wechat": 404,
       "deposit": 11,
-      "open": 654,
+      "open": 745,
       "open_cost": 50.87,
       "refund": 0,
       "days": 31,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 54780.0,
-      "spend": 28309.92,
-      "roi": 1.94,
-      "wechat": 388,
+      "revenue": 59860.0,
+      "spend": 33551.69,
+      "roi": 1.78,
+      "wechat": 404,
       "deposit": 11,
-      "open": 654,
-      "open_cost": 43.29,
+      "open": 745,
+      "open_cost": 45.04,
       "refund": 5,
-      "days": 23,
-      "mom_revenue": 436.3
+      "days": 24,
+      "mom_revenue": 509.7
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     5560.0,
-    54780.0,
+    59860.0,
     null,
     null,
     null,
@@ -101,8 +101,8 @@
   "trend_spend": [
     0,
     0,
-    28309.92,
-    28309.92,
+    33551.69,
+    33551.69,
     null,
     null,
     null,
@@ -115,8 +115,8 @@
   "trend_roi": [
     0,
     0,
-    0.2,
-    1.94,
+    0.17,
+    1.78,
     null,
     null,
     null,
@@ -131,14 +131,14 @@
       "name": "侯芳",
       "months": {
         "4": {
-          "wechat": 150,
+          "wechat": 159,
           "deposit": 2,
           "revenue": 0
         }
       },
       "intent_a": 10,
       "intent_b": 20,
-      "intent_c": 126
+      "intent_c": 131
     },
     {
       "name": "汤娅",
@@ -149,14 +149,14 @@
           "revenue": 0.0
         },
         "4": {
-          "wechat": 238,
+          "wechat": 245,
           "deposit": 9,
-          "revenue": 36760.0
+          "revenue": 40840.0
         }
       },
-      "intent_a": 18,
-      "intent_b": 58,
-      "intent_c": 147
+      "intent_a": 19,
+      "intent_b": 63,
+      "intent_c": 160
     }
   ],
   "health_score": 80,

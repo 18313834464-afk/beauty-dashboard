@@ -425,11 +425,11 @@
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 245,
+      "wechat": 250,
       "deposit": 25,
       "revenue": 34260.0,
       "arrived": 0,
-      "deposit_rate": 10.2,
+      "deposit_rate": 10.0,
       "fulfill_rate": 0.0,
       "gap_total": 13,
       "sop_score": 0,
@@ -440,11 +440,11 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 273,
+      "wechat": 280,
       "deposit": 6,
       "revenue": 22222.0,
       "arrived": 0,
-      "deposit_rate": 2.2,
+      "deposit_rate": 2.1,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,

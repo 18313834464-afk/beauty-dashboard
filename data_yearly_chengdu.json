@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 435066.77,
-  "cum_spend": 160816.31,
-  "cum_wechat": 1609,
+  "cum_revenue": 447406.77,
+  "cum_spend": 165874.28,
+  "cum_wechat": 1621,
   "cum_deposit": 153,
-  "cum_open": 2444.0,
-  "cum_roi": 2.71,
-  "monthly_avg_rev": 217533.39,
-  "predicted_annual": 2610400.68,
+  "cum_open": 2504.0,
+  "cum_roi": 2.7,
+  "monthly_avg_rev": 223703.39,
+  "predicted_annual": 2684440.68,
   "revenue_target": 3000000,
-  "progress": 13.3,
+  "progress": 13.7,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 181973.0,
-      "spend": 65478.09,
-      "roi": 2.78,
-      "wechat": 616,
+      "revenue": 194313.0,
+      "spend": 70536.06,
+      "roi": 2.75,
+      "wechat": 628,
       "deposit": 35,
-      "open": 922,
-      "open_cost": 71.02,
+      "open": 982,
+      "open_cost": 71.83,
       "refund": 25,
-      "days": 23,
-      "mom_revenue": -36.3
+      "days": 24,
+      "mom_revenue": -31.2
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    181973.0,
+    194313.0,
     null,
     null,
     null,
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    65478.09,
+    70536.06,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.78,
+    2.75,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 245,
+          "wechat": 250,
           "deposit": 25,
           "revenue": 34260.0
         }
       },
       "intent_a": 21,
       "intent_b": 65,
-      "intent_c": 65
+      "intent_c": 66
     },
     {
       "name": "李小叶",
@@ -182,14 +182,14 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 273,
+          "wechat": 280,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
-      "intent_a": 16,
-      "intent_b": 50,
-      "intent_c": 169
+      "intent_a": 17,
+      "intent_b": 52,
+      "intent_c": 176
     },
     {
       "name": "陈相",

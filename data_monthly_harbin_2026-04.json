@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-04",
-  "days_elapsed": 23,
+  "days_elapsed": 24,
   "total_days": 30,
-  "cum_revenue": 54780.0,
-  "cum_spend": 28309.92,
-  "cum_wechat": 388,
+  "cum_revenue": 59860.0,
+  "cum_spend": 33551.69,
+  "cum_wechat": 404,
   "cum_deposit": 11,
-  "cum_open": 654,
+  "cum_open": 745,
   "cum_refund": 5,
-  "roi": 4.07,
+  "roi": 3.89,
   "revenue_target": 100000,
-  "progress": 29.8,
-  "predicted_revenue": 71452.17,
-  "predicted_spend": 36925.98,
-  "predicted_roi": 1.94,
+  "progress": 33.9,
+  "predicted_revenue": 74825.0,
+  "predicted_spend": 41939.61,
+  "predicted_roi": 1.78,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -199,6 +199,14 @@
       "wechat": 12,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-04-26",
+      "revenue": 4080.0,
+      "spend": 1397.45,
+      "wechat": 16,
+      "deposit": 0,
+      "open": 24.0
     }
   ],
   "rate_trend": [
@@ -316,27 +324,32 @@
       "date": "2026-04-25",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-04-26",
+      "open_to_wechat": 66.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 238,
+      "wechat": 245,
       "deposit": 9,
-      "revenue": 36760.0,
+      "revenue": 40840.0,
       "arrived": 2,
-      "deposit_rate": 3.8,
+      "deposit_rate": 3.7,
       "fulfill_rate": 22.2,
       "gap_total": 3,
       "sop_score": 76,
-      "intent_a": 18,
-      "intent_b": 58,
-      "intent_c": 147,
-      "intent_total": 223
+      "intent_a": 19,
+      "intent_b": 63,
+      "intent_c": 160,
+      "intent_total": 242
     },
     {
       "name": "侯芳",
-      "wechat": 150,
+      "wechat": 159,
       "deposit": 2,
       "revenue": 0,
       "arrived": 1,
@@ -346,8 +359,8 @@
       "sop_score": 100,
       "intent_a": 10,
       "intent_b": 20,
-      "intent_c": 126,
-      "intent_total": 156
+      "intent_c": 131,
+      "intent_total": 161
     }
   ],
   "refund_details": [

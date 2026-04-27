@@ -1,21 +1,21 @@
 {
-  "date": "2026-04-25",
-  "total_revenue": 14100.0,
-  "total_spend": 0,
-  "total_wechat": 23,
+  "date": "2026-04-26",
+  "total_revenue": 16420.0,
+  "total_spend": 1397.45,
+  "total_wechat": 28,
   "total_deposit": 0,
-  "roi": 0,
-  "roi_level": "danger",
+  "roi": 11.75,
+  "roi_level": "healthy",
   "city_matrix": {
     "成都": {
       "spend": 0,
       "open": 0,
-      "wechat": 11,
+      "wechat": 12,
       "open_to_wechat": 0,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 11120.0,
-      "refund_count": 1,
+      "revenue": 12340.0,
+      "refund_count": 0,
       "open_cost": 0
     },
     "重庆": {
@@ -30,41 +30,33 @@
       "open_cost": 0
     },
     "哈尔滨": {
-      "spend": 0,
-      "open": 0,
-      "wechat": 12,
-      "open_to_wechat": 0,
+      "spend": 1397.45,
+      "open": 24.0,
+      "wechat": 16,
+      "open_to_wechat": 66.7,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 2980.0,
+      "revenue": 4080.0,
       "refund_count": 0,
-      "open_cost": 0
+      "open_cost": 16.0
     }
   },
   "acquire_chain": {
-    "open": 0,
-    "wechat": 23,
+    "open": 24.0,
+    "wechat": 28,
     "deposit": 0,
-    "open_to_wechat": 0,
+    "open_to_wechat": 116.7,
     "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
-    "expected": 9,
-    "arrived": 7,
-    "revenue": 14100.0,
-    "arrival_rate": 77.8
+    "expected": 5,
+    "arrived": 4,
+    "revenue": 16420.0,
+    "arrival_rate": 80.0
   },
   "national_blacklist": [
     {
-      "client": "李女士",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger",
-      "city": "成都"
-    },
-    {
-      "client": "源源",
+      "client": "黄女士",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -72,15 +64,7 @@
       "city": "成都"
     },
     {
-      "client": "谢楠",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal",
-      "city": "哈尔滨"
-    },
-    {
-      "client": "旭旭",
+      "client": "詹娜",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
@@ -91,8 +75,8 @@
   "city_open_cost": {
     "成都": 0,
     "重庆": 0,
-    "哈尔滨": 0
+    "哈尔滨": 16.0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "1. 🏆 成都变现¥11120.0，领先其他城市。\n\n2. 🚨 重庆变现¥0.0，建议加强销售和推广。\n\n3. ⚠️ 全国退款1笔，发生在成都。"
+  "ai_national_summary": "1. 🏆 哈尔滨变现¥4080.0，消耗¥1397.45，开口成本¥16.0。\n\n2. 🚨 重庆变现¥0.0，建议加强营销活动，提升客户转化。\n\n3. ⚠️ 交付端全绿，全国无退款/爽约情况。"
 }
