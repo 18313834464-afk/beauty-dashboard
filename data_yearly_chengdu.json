@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 447406.77,
-  "cum_spend": 165874.28,
-  "cum_wechat": 1621,
+  "cum_revenue": 458446.77,
+  "cum_spend": 168759.45,
+  "cum_wechat": 1641,
   "cum_deposit": 153,
-  "cum_open": 2504.0,
-  "cum_roi": 2.7,
-  "monthly_avg_rev": 223703.39,
-  "predicted_annual": 2684440.68,
+  "cum_open": 2830.0,
+  "cum_roi": 2.72,
+  "monthly_avg_rev": 229223.39,
+  "predicted_annual": 2750680.68,
   "revenue_target": 3000000,
-  "progress": 13.7,
+  "progress": 14.1,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,16 +58,16 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 194313.0,
-      "spend": 70536.06,
-      "roi": 2.75,
-      "wechat": 628,
+      "revenue": 205353.0,
+      "spend": 73421.23,
+      "roi": 2.8,
+      "wechat": 648,
       "deposit": 35,
-      "open": 982,
-      "open_cost": 71.83,
+      "open": 1308.0,
+      "open_cost": 56.13,
       "refund": 25,
-      "days": 24,
-      "mom_revenue": -31.2
+      "days": 25,
+      "mom_revenue": -26.7
     }
   ],
   "trend_months": [
@@ -88,7 +88,7 @@
     0,
     0,
     253093.77,
-    194313.0,
+    205353.0,
     null,
     null,
     null,
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    70536.06,
+    73421.23,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.75,
+    2.8,
     null,
     null,
     null,
@@ -136,14 +136,14 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 250,
+          "wechat": 254,
           "deposit": 25,
           "revenue": 34260.0
         }
       },
-      "intent_a": 21,
-      "intent_b": 65,
-      "intent_c": 66
+      "intent_a": 26,
+      "intent_b": 67,
+      "intent_c": 69
     },
     {
       "name": "李小叶",
@@ -182,7 +182,7 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 280,
+          "wechat": 296,
           "deposit": 6,
           "revenue": 22222.0
         }
