@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 458446.77,
-  "cum_spend": 168759.45,
-  "cum_wechat": 1641,
+  "cum_spend": 176012.51,
+  "cum_wechat": 1675,
   "cum_deposit": 153,
-  "cum_open": 2830.0,
-  "cum_roi": 2.72,
+  "cum_open": 2915.0,
+  "cum_roi": 2.6,
   "monthly_avg_rev": 229223.39,
   "predicted_annual": 2750680.68,
   "revenue_target": 3000000,
@@ -59,14 +59,14 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 205353.0,
-      "spend": 73421.23,
-      "roi": 2.8,
-      "wechat": 648,
+      "spend": 80674.29,
+      "roi": 2.55,
+      "wechat": 682,
       "deposit": 35,
-      "open": 1308.0,
-      "open_cost": 56.13,
-      "refund": 25,
-      "days": 25,
+      "open": 1393.0,
+      "open_cost": 57.91,
+      "refund": 26,
+      "days": 26,
       "mom_revenue": -26.7
     }
   ],
@@ -102,7 +102,7 @@
     0,
     0,
     95338.22,
-    73421.23,
+    80674.29,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     2.65,
-    2.8,
+    2.55,
     null,
     null,
     null,
@@ -136,7 +136,7 @@
           "revenue": 55180.0
         },
         "4": {
-          "wechat": 254,
+          "wechat": 273,
           "deposit": 25,
           "revenue": 34260.0
         }
@@ -182,14 +182,14 @@
           "revenue": 80938.8
         },
         "4": {
-          "wechat": 296,
+          "wechat": 311,
           "deposit": 6,
           "revenue": 22222.0
         }
       },
       "intent_a": 17,
-      "intent_b": 52,
-      "intent_c": 176
+      "intent_b": 57,
+      "intent_c": 186
     },
     {
       "name": "陈相",
