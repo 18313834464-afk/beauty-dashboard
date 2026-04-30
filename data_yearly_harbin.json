@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 65920.0,
-  "cum_spend": 72037.8,
-  "cum_wechat": 870,
+  "cum_spend": 76378.4,
+  "cum_wechat": 910,
   "cum_deposit": 22,
-  "cum_open": 1558.0,
-  "cum_roi": 0.92,
+  "cum_open": 1620.0,
+  "cum_roi": 0.86,
   "monthly_avg_rev": 32960.0,
   "predicted_annual": 395520.0,
   "revenue_target": 0,
@@ -45,11 +45,11 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 5560.0,
-      "spend": 36018.9,
+      "spend": 38189.2,
       "roi": 0.15,
-      "wechat": 435,
+      "wechat": 455,
       "deposit": 11,
-      "open": 779,
+      "open": 810,
       "open_cost": 50.87,
       "refund": 0,
       "days": 31,
@@ -59,14 +59,14 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 60360.0,
-      "spend": 36018.9,
-      "roi": 1.68,
-      "wechat": 435,
+      "spend": 38189.2,
+      "roi": 1.58,
+      "wechat": 455,
       "deposit": 11,
-      "open": 779,
-      "open_cost": 46.24,
-      "refund": 6,
-      "days": 26,
+      "open": 810,
+      "open_cost": 47.15,
+      "refund": 7,
+      "days": 27,
       "mom_revenue": 509.7
     }
   ],
@@ -101,8 +101,8 @@
   "trend_spend": [
     0,
     0,
-    36018.9,
-    36018.9,
+    38189.2,
+    38189.2,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     0.15,
-    1.68,
+    1.58,
     null,
     null,
     null,
@@ -131,14 +131,14 @@
       "name": "侯芳",
       "months": {
         "4": {
-          "wechat": 172,
+          "wechat": 182,
           "deposit": 2,
           "revenue": 0
         }
       },
       "intent_a": 11,
       "intent_b": 20,
-      "intent_c": 145
+      "intent_c": 155
     },
     {
       "name": "汤娅",
@@ -149,14 +149,14 @@
           "revenue": 0.0
         },
         "4": {
-          "wechat": 263,
+          "wechat": 273,
           "deposit": 9,
           "revenue": 40840.0
         }
       },
-      "intent_a": 20,
+      "intent_a": 23,
       "intent_b": 70,
-      "intent_c": 167
+      "intent_c": 170
     }
   ],
   "health_score": 80,

@@ -1,18 +1,18 @@
 {
   "month": "2026-04",
-  "days_elapsed": 27,
+  "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 265713.0,
-  "cum_spend": 117103.17,
-  "cum_wechat": 1178,
+  "cum_revenue": 277015.0,
+  "cum_spend": 122247.34,
+  "cum_wechat": 1229,
   "cum_deposit": 51,
-  "cum_open": 2182.0,
-  "cum_refund": 33,
+  "cum_open": 2248.0,
+  "cum_refund": 36,
   "roi": 2.27,
   "revenue_target": 500000,
-  "progress": 53.1,
-  "predicted_revenue": 295236.67,
-  "predicted_spend": 130114.63,
+  "progress": 55.4,
+  "predicted_revenue": 296801.79,
+  "predicted_spend": 130979.29,
   "predicted_roi": 2.27,
   "daily_trend": [
     {
@@ -241,11 +241,11 @@
     },
     {
       "date": "2026-04-29",
-      "revenue": 0,
-      "spend": 0,
-      "wechat": 0,
+      "revenue": 0.0,
+      "spend": 5144.17,
+      "wechat": 51,
       "deposit": 0,
-      "open": 0
+      "open": 66.0
     },
     {
       "date": "2026-04-30",
@@ -399,8 +399,8 @@
     },
     {
       "date": "2026-04-29",
-      "open_to_wechat": 0,
-      "wechat_to_deposit": 0
+      "open_to_wechat": 77.3,
+      "wechat_to_deposit": 0.0
     },
     {
       "date": "2026-04-30",
@@ -410,12 +410,12 @@
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 80674.29,
-      "cum_wechat": 682,
+      "cum_spend": 83648.16,
+      "cum_wechat": 713,
       "cum_deposit": 35,
-      "cum_revenue": 205353.0,
-      "roi": 6.45,
-      "cum_refund": 26
+      "cum_revenue": 216655.0,
+      "roi": 5.92,
+      "cum_refund": 28
     },
     "重庆": {
       "cum_spend": 409.98,
@@ -426,38 +426,38 @@
       "cum_refund": 1
     },
     "哈尔滨": {
-      "cum_spend": 36018.9,
-      "cum_wechat": 435,
+      "cum_spend": 38189.2,
+      "cum_wechat": 455,
       "cum_deposit": 11,
       "cum_revenue": 60360.0,
-      "roi": 3.03,
-      "cum_refund": 6
+      "roi": 2.54,
+      "cum_refund": 7
     }
   },
   "cs_table": [
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 263,
+      "wechat": 273,
       "deposit": 9,
       "revenue": 40840.0,
       "arrived": 2,
-      "deposit_rate": 3.4,
+      "deposit_rate": 3.3,
       "fulfill_rate": 22.2,
       "gap_total": 3,
       "sop_score": 76,
-      "intent_a": 20,
+      "intent_a": 23,
       "intent_b": 70,
-      "intent_c": 167,
-      "intent_total": 257
+      "intent_c": 170,
+      "intent_total": 263
     },
     {
       "name": "会媛(成都)",
-      "wechat": 273,
+      "wechat": 285,
       "deposit": 25,
       "revenue": 34260.0,
-      "arrived": 38,
-      "deposit_rate": 9.2,
-      "fulfill_rate": 152.0,
+      "arrived": 40,
+      "deposit_rate": 8.8,
+      "fulfill_rate": 160.0,
       "gap_total": 59,
       "sop_score": 0,
       "intent_a": 26,
@@ -467,18 +467,18 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 311,
+      "wechat": 330,
       "deposit": 6,
       "revenue": 22222.0,
-      "arrived": 37,
-      "deposit_rate": 1.9,
-      "fulfill_rate": 616.7,
+      "arrived": 38,
+      "deposit_rate": 1.8,
+      "fulfill_rate": 633.3,
       "gap_total": 25,
       "sop_score": 0,
-      "intent_a": 17,
-      "intent_b": 57,
-      "intent_c": 186,
-      "intent_total": 260
+      "intent_a": 23,
+      "intent_b": 64,
+      "intent_c": 200,
+      "intent_total": 287
     },
     {
       "name": "侯芳(重庆)",
@@ -542,25 +542,25 @@
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 172,
+      "wechat": 182,
       "deposit": 2,
       "revenue": 0,
-      "arrived": 1,
-      "deposit_rate": 1.2,
-      "fulfill_rate": 50.0,
+      "arrived": 2,
+      "deposit_rate": 1.1,
+      "fulfill_rate": 100.0,
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 11,
       "intent_b": 20,
-      "intent_c": 145,
-      "intent_total": 176
+      "intent_c": 155,
+      "intent_total": 186
     }
   ],
   "refund_summary": [
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 7,
+      "arrived": 9,
       "not_arrived": 8
     },
     {
@@ -578,7 +578,7 @@
     {
       "cs": "侯芳",
       "city": "哈尔滨",
-      "arrived": 2,
+      "arrived": 3,
       "not_arrived": 0
     },
     {
