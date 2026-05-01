@@ -64,10 +64,24 @@
       "wechat": 61,
       "deposit": 5,
       "open": 10,
-      "open_cost": 41.0,
-      "refund": 1,
+      "open_cost": 0,
+      "refund": 0,
       "days": 3,
       "mom_revenue": -100.0
+    },
+    {
+      "month": 5,
+      "month_label": "5月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
     }
   ],
   "trend_months": [
@@ -89,7 +103,7 @@
     0,
     11140.0,
     0.0,
-    null,
+    0,
     null,
     null,
     null,
@@ -103,7 +117,7 @@
     0,
     4408.55,
     409.98,
-    null,
+    0,
     null,
     null,
     null,
@@ -117,7 +131,7 @@
     0,
     2.53,
     0.0,
-    null,
+    0,
     null,
     null,
     null,
@@ -134,16 +148,8 @@
           "wechat": 57,
           "deposit": 5,
           "revenue": 11240.0
-        },
-        "4": {
-          "wechat": 61,
-          "deposit": 5,
-          "revenue": 11240.0
         }
-      },
-      "intent_a": 0,
-      "intent_b": 1,
-      "intent_c": 7
+      }
     }
   ],
   "health_score": 60,
