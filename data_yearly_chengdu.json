@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 478828.77,
-  "cum_spend": 182267.1,
-  "cum_wechat": 1733,
-  "cum_deposit": 153,
-  "cum_open": 2990.0,
-  "cum_roi": 2.63,
-  "monthly_avg_rev": 239414.39,
-  "predicted_annual": 2872972.68,
+  "cum_revenue": 493348.77,
+  "cum_spend": 129268.76,
+  "cum_wechat": 1689,
+  "cum_deposit": 146,
+  "cum_open": 1954.0,
+  "cum_roi": 3.82,
+  "monthly_avg_rev": 164449.59,
+  "predicted_annual": 1973395.08,
   "revenue_target": 3000000,
-  "progress": 14.5,
+  "progress": 14.7,
   "monthly_kpi": [
     {
       "month": 1,
@@ -58,12 +58,12 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 225735.0,
-      "spend": 86928.88,
-      "roi": 2.6,
-      "wechat": 740,
-      "deposit": 35,
-      "open": 1468.0,
+      "revenue": 232295.0,
+      "spend": 33930.54,
+      "roi": 6.85,
+      "wechat": 676,
+      "deposit": 28,
+      "open": 432.0,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -72,16 +72,16 @@
     {
       "month": 5,
       "month_label": "5月",
-      "revenue": 0,
+      "revenue": 7960.0,
       "spend": 0,
       "roi": 0,
-      "wechat": 0,
+      "wechat": 20,
       "deposit": 0,
       "open": 0,
       "open_cost": 0,
       "refund": 0,
-      "days": 0,
-      "mom_revenue": null
+      "days": 1,
+      "mom_revenue": -95.8
     }
   ],
   "trend_months": [
@@ -102,8 +102,8 @@
     0,
     0,
     253093.77,
-    225735.0,
-    0,
+    232295.0,
+    7960.0,
     null,
     null,
     null,
@@ -116,7 +116,7 @@
     0,
     0,
     95338.22,
-    86928.88,
+    33930.54,
     0,
     null,
     null,
@@ -130,7 +130,7 @@
     0,
     0,
     2.65,
-    2.6,
+    6.85,
     0,
     null,
     null,
@@ -153,6 +153,11 @@
           "wechat": 282,
           "deposit": 19,
           "revenue": 26540.0
+        },
+        "5": {
+          "wechat": 11,
+          "deposit": 0,
+          "revenue": 0.0
         }
       }
     },
@@ -193,14 +198,27 @@
           "wechat": 296,
           "deposit": 5,
           "revenue": 7260.0
+        },
+        "5": {
+          "wechat": 9,
+          "deposit": 0,
+          "revenue": 0.0
         }
-      }
+      },
+      "intent_a": 1,
+      "intent_b": 2,
+      "intent_c": 5
     },
     {
       "name": "陈相",
       "months": {
         "4": {
           "wechat": 39,
+          "deposit": 0,
+          "revenue": 0.0
+        },
+        "5": {
+          "wechat": 0,
           "deposit": 0,
           "revenue": 0.0
         }
