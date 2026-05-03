@@ -2,18 +2,18 @@
   "month": "2026-04",
   "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 308755.0,
+  "cum_revenue": 325275.0,
   "cum_spend": 49176.7,
   "cum_wechat": 1174,
   "cum_deposit": 43,
   "cum_open": 678.0,
   "cum_refund": 37,
-  "roi": 6.28,
+  "roi": 6.61,
   "revenue_target": 500000,
-  "progress": 61.8,
-  "predicted_revenue": 330808.93,
+  "progress": 65.1,
+  "predicted_revenue": 348508.93,
   "predicted_spend": 52689.32,
-  "predicted_roi": 6.28,
+  "predicted_roi": 6.61,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -387,7 +387,7 @@
       "cum_spend": 33930.54,
       "cum_wechat": 676,
       "cum_deposit": 28,
-      "cum_revenue": 232295.0,
+      "cum_revenue": 246235.0,
       "roi": 5.6,
       "cum_refund": 29
     },
@@ -403,7 +403,7 @@
       "cum_spend": 15246.16,
       "cum_wechat": 437,
       "cum_deposit": 10,
-      "cum_revenue": 76460.0,
+      "cum_revenue": 79040.0,
       "roi": 2.22,
       "cum_refund": 7
     }
@@ -546,8 +546,8 @@
     {
       "cs": "汤娅",
       "city": "哈尔滨",
-      "arrived": 2,
-      "not_arrived": 2
+      "arrived": 1,
+      "not_arrived": 3
     },
     {
       "cs": "侯芳",

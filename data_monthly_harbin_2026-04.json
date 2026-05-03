@@ -3,7 +3,7 @@
   "month": "2026-04",
   "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 76460.0,
+  "cum_revenue": 79040.0,
   "cum_spend": 15246.16,
   "cum_wechat": 437,
   "cum_deposit": 10,
@@ -12,9 +12,9 @@
   "roi": 2.22,
   "revenue_target": 100000,
   "progress": 33.9,
-  "predicted_revenue": 81921.43,
+  "predicted_revenue": 84685.71,
   "predicted_spend": 16335.17,
-  "predicted_roi": 5.02,
+  "predicted_roi": 5.18,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -426,7 +426,7 @@
       "customer": "艾凤怡",
       "revenue": 0,
       "cs": "汤娅",
-      "status": "到店退款"
+      "status": "未到店退款"
     },
     {
       "customer": "芋头",
@@ -463,8 +463,8 @@
     {
       "cs": "汤娅",
       "city": "哈尔滨",
-      "arrived": 2,
-      "not_arrived": 2
+      "arrived": 1,
+      "not_arrived": 3
     },
     {
       "cs": "侯芳",

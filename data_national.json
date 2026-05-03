@@ -1,8 +1,8 @@
 {
-  "date": "2026-05-01",
-  "total_revenue": 7960.0,
+  "date": "2026-05-02",
+  "total_revenue": 2300.0,
   "total_spend": 0,
-  "total_wechat": 37,
+  "total_wechat": 41,
   "total_deposit": 0,
   "roi": 0,
   "roi_level": "danger",
@@ -10,11 +10,11 @@
     "成都": {
       "spend": 0,
       "open": 0,
-      "wechat": 20,
+      "wechat": 24,
       "open_to_wechat": 0,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 7960.0,
+      "revenue": 2300.0,
       "refund_count": 0,
       "open_cost": 0
     },
@@ -43,20 +43,20 @@
   },
   "acquire_chain": {
     "open": 0,
-    "wechat": 37,
+    "wechat": 41,
     "deposit": 0,
     "open_to_wechat": 0,
     "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
     "expected": 3,
-    "arrived": 3,
-    "revenue": 7960.0,
-    "arrival_rate": 100.0
+    "arrived": 2,
+    "revenue": 2300.0,
+    "arrival_rate": 66.7
   },
   "national_blacklist": [
     {
-      "client": "范女士",
+      "client": "殷彩云",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -64,7 +64,7 @@
       "city": "成都"
     },
     {
-      "client": "何利华",
+      "client": "Yika",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -72,7 +72,23 @@
       "city": "成都"
     },
     {
-      "client": "何利华",
+      "client": "钰瑞",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "高晗雨",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "陈相",
+      "level": "warning",
+      "city": "成都"
+    },
+    {
+      "client": "李爽",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -80,12 +96,20 @@
       "city": "成都"
     },
     {
-      "client": "王姐",
+      "client": "唐蓉",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
       "level": "warning",
       "city": "成都"
+    },
+    {
+      "client": "木子衿",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "汤娅",
+      "level": "normal",
+      "city": "哈尔滨"
     }
   ],
   "city_open_cost": {
@@ -94,5 +118,5 @@
     "哈尔滨": 0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "🏆 成都变现¥7960.0，为昨日表现最佳城市。\n\n🚨 重庆各项指标均为0，建议加强营销活动。\n\n⚠️ 交付端全绿，全国无退款或爽约情况。"
+  "ai_national_summary": "🏆 成都变现¥2300.0，表现最佳。\n\n🚨 重庆各项指标均为0，建议加强推广。\n\n⚠️ 交付端全绿，无退款或爽约。"
 }

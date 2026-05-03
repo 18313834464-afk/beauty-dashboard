@@ -2,21 +2,21 @@
   "city": "哈尔滨",
   "city_key": "harbin",
   "month": "2026-05",
-  "generated_at": "2026-05-02 08:18:23",
-  "days_elapsed": 1,
+  "generated_at": "2026-05-03 09:03:57",
+  "days_elapsed": 2,
   "total_days": 31,
-  "progress_pct": 3.2,
+  "progress_pct": 6.5,
   "revenue_target": 100000,
   "cs_forecasts": [
     {
       "name": "汤娅",
-      "days_elapsed": 1,
+      "days_elapsed": 2,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 17,
+        "wechat": 29,
         "deposit": 0,
-        "arrived": 0,
+        "arrived": 1,
         "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -24,9 +24,9 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 527,
+        "wechat": 450,
         "deposit": 0,
-        "arrived": 0,
+        "arrived": 16,
         "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -57,31 +57,31 @@
     },
     {
       "name": "侯芳",
-      "days_elapsed": 1,
+      "days_elapsed": 2,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 0,
+        "wechat": 5,
         "deposit": 0,
         "arrived": 0,
-        "salary": 6400,
+        "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
-        "salary_bonus": 1400
+        "salary_bonus": 800
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 0,
+        "wechat": 78,
         "deposit": 0,
         "arrived": 0,
-        "salary": 6400,
+        "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
-        "salary_bonus": 1400
+        "salary_bonus": 800
       },
       "daily_avg_revenue": 0,
       "kpi": {
-        "deposit_rate": null,
+        "deposit_rate": 0.0,
         "fulfill_rate": null,
         "sop_score": 100,
         "sop_predicted": 100,
@@ -89,8 +89,8 @@
       },
       "bonus_detail": {
         "定金转化率": {
-          "金额": 600,
-          "说明": "中档估算→600"
+          "金额": 0,
+          "说明": "<15%→0"
         },
         "到店履约率": {
           "金额": 300,
@@ -103,7 +103,7 @@
       }
     }
   ],
-  "cs_salary_total_predicted": 12200,
+  "cs_salary_total_predicted": 11600,
   "pnl_forecast": {
     "current_sales": 0,
     "predicted_sales": 0,
@@ -121,7 +121,7 @@
     "predicted_revenue": 0,
     "target": 100000,
     "gap": 100000,
-    "daily_needed": 3333,
+    "daily_needed": 3448,
     "on_track": false
   }
 }
