@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 84600.0,
+  "cum_revenue": 90760.0,
   "cum_spend": 20282.27,
-  "cum_wechat": 574,
+  "cum_wechat": 594,
   "cum_deposit": 18,
   "cum_open": 345.0,
-  "cum_roi": 4.17,
-  "monthly_avg_rev": 42300.0,
-  "predicted_annual": 507600.0,
+  "cum_roi": 4.47,
+  "monthly_avg_rev": 30253.33,
+  "predicted_annual": 363039.96,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -58,9 +58,9 @@
     {
       "month": 4,
       "month_label": "4月",
-      "revenue": 79040.0,
+      "revenue": 82620.0,
       "spend": 15246.16,
-      "roi": 5.18,
+      "roi": 5.42,
       "wechat": 437,
       "deposit": 10,
       "open": 246.0,
@@ -72,15 +72,15 @@
     {
       "month": 5,
       "month_label": "5月",
-      "revenue": 0.0,
+      "revenue": 2580.0,
       "spend": 0,
       "roi": 0,
-      "wechat": 34,
+      "wechat": 54,
       "deposit": 0,
       "open": 0,
       "open_cost": 0,
       "refund": 0,
-      "days": 2,
+      "days": 3,
       "mom_revenue": -100.0
     }
   ],
@@ -102,8 +102,8 @@
     0,
     0,
     5560.0,
-    79040.0,
-    0.0,
+    82620.0,
+    2580.0,
     null,
     null,
     null,
@@ -130,7 +130,7 @@
     0,
     0,
     1.1,
-    5.18,
+    5.42,
     0,
     null,
     null,
@@ -150,7 +150,7 @@
           "revenue": 0.0
         },
         "5": {
-          "wechat": 5,
+          "wechat": 14,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -170,14 +170,14 @@
           "revenue": 34880.0
         },
         "5": {
-          "wechat": 29,
+          "wechat": 40,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 1,
-      "intent_b": 12,
-      "intent_c": 20
+      "intent_b": 14,
+      "intent_c": 22
     }
   ],
   "health_score": 80,
