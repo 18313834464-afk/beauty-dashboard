@@ -2,19 +2,19 @@
   "city": "哈尔滨",
   "city_key": "harbin",
   "month": "2026-05",
-  "generated_at": "2026-05-04 10:28:57",
-  "days_elapsed": 3,
+  "generated_at": "2026-05-05 05:03:00",
+  "days_elapsed": 4,
   "total_days": 31,
-  "progress_pct": 9.7,
+  "progress_pct": 12.9,
   "revenue_target": 100000,
   "cs_forecasts": [
     {
       "name": "汤娅",
-      "days_elapsed": 3,
+      "days_elapsed": 4,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 40,
+        "wechat": 53,
         "deposit": 0,
         "arrived": 1,
         "salary": 5800,
@@ -24,9 +24,9 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 413,
+        "wechat": 411,
         "deposit": 0,
-        "arrived": 10,
+        "arrived": 8,
         "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -57,11 +57,11 @@
     },
     {
       "name": "侯芳",
-      "days_elapsed": 3,
+      "days_elapsed": 4,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 14,
+        "wechat": 20,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -71,7 +71,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 145,
+        "wechat": 155,
         "deposit": 0,
         "arrived": 0,
         "salary": 5300,
@@ -84,7 +84,7 @@
         "deposit_rate": 0.0,
         "fulfill_rate": null,
         "sop_score": 92,
-        "sop_predicted": 20,
+        "sop_predicted": 36,
         "gap_total": 1
       },
       "bonus_detail": {
@@ -121,7 +121,7 @@
     "predicted_revenue": 0,
     "target": 100000,
     "gap": 100000,
-    "daily_needed": 3571,
+    "daily_needed": 3704,
     "on_track": false
   }
 }
