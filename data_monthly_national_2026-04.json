@@ -7,7 +7,7 @@
   "cum_wechat": 1174,
   "cum_deposit": 43,
   "cum_open": 678.0,
-  "cum_refund": 37,
+  "cum_refund": 38,
   "roi": 6.81,
   "revenue_target": 500000,
   "progress": 67.0,
@@ -389,7 +389,7 @@
       "cum_deposit": 28,
       "cum_revenue": 252395.0,
       "roi": 5.6,
-      "cum_refund": 29
+      "cum_refund": 30
     },
     "重庆": {
       "cum_spend": 0,
@@ -534,7 +534,7 @@
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 10,
+      "arrived": 11,
       "not_arrived": 8
     },
     {
