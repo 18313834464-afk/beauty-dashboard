@@ -2,18 +2,18 @@
   "month": "2026-04",
   "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 335015.0,
+  "cum_revenue": 338298.0,
   "cum_spend": 49176.7,
   "cum_wechat": 1174,
   "cum_deposit": 43,
   "cum_open": 678.0,
   "cum_refund": 38,
-  "roi": 6.81,
+  "roi": 6.88,
   "revenue_target": 500000,
-  "progress": 67.0,
-  "predicted_revenue": 358944.64,
+  "progress": 67.7,
+  "predicted_revenue": 362462.14,
   "predicted_spend": 52689.32,
-  "predicted_roi": 6.81,
+  "predicted_roi": 6.88,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -387,7 +387,7 @@
       "cum_spend": 33930.54,
       "cum_wechat": 676,
       "cum_deposit": 28,
-      "cum_revenue": 252395.0,
+      "cum_revenue": 255378.0,
       "roi": 5.6,
       "cum_refund": 30
     },
@@ -403,7 +403,7 @@
       "cum_spend": 15246.16,
       "cum_wechat": 437,
       "cum_deposit": 10,
-      "cum_revenue": 82620.0,
+      "cum_revenue": 82920.0,
       "roi": 2.22,
       "cum_refund": 7
     }

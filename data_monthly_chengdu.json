@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 5,
+  "days_elapsed": 6,
   "total_days": 31,
   "cum_revenue": 17140.0,
-  "cum_spend": 9648.21,
-  "cum_wechat": 104,
+  "cum_spend": 19358.63,
+  "cum_wechat": 133,
   "cum_deposit": 0,
-  "cum_open": 116,
+  "cum_open": 241,
   "cum_refund": 0,
-  "roi": 0,
+  "roi": 4.17,
   "revenue_target": 300000,
   "progress": 4.9,
-  "predicted_revenue": 106268.0,
-  "predicted_spend": 59818.9,
-  "predicted_roi": 1.78,
+  "predicted_revenue": 88556.67,
+  "predicted_spend": 100019.59,
+  "predicted_roi": 0.89,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -55,6 +55,14 @@
       "wechat": 25,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-05-06",
+      "revenue": 0.0,
+      "spend": 3536.23,
+      "wechat": 29,
+      "deposit": 0,
+      "open": 43.0
     }
   ],
   "rate_trend": [
@@ -82,6 +90,11 @@
       "date": "2026-05-05",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-06",
+      "open_to_wechat": 67.4,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -90,10 +103,10 @@
       "wechat": 59,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 1,
+      "arrived": 2,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 20,
+      "gap_total": 22,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -102,14 +115,14 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 45,
+      "wechat": 61,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 3,
-      "sop_score": 76,
+      "gap_total": 4,
+      "sop_score": 68,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -125,6 +138,21 @@
       "fulfill_rate": 0,
       "gap_total": 1,
       "sop_score": 92,
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
+    },
+    {
+      "name": "林俐",
+      "wechat": 13,
+      "deposit": 0,
+      "revenue": 0.0,
+      "arrived": 0,
+      "deposit_rate": 0.0,
+      "fulfill_rate": 0,
+      "gap_total": 0,
+      "sop_score": 100,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,

@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 5,
+  "days_elapsed": 6,
   "total_days": 31,
-  "cum_revenue": 14582.0,
-  "cum_spend": 6624.96,
-  "cum_wechat": 83,
+  "cum_revenue": 16462.0,
+  "cum_spend": 11846.08,
+  "cum_wechat": 100,
   "cum_deposit": 0,
-  "cum_open": 116,
+  "cum_open": 204,
   "cum_refund": 0,
-  "roi": 0,
+  "roi": 1.04,
   "revenue_target": 100000,
   "progress": 2.1,
-  "predicted_revenue": 90408.4,
-  "predicted_spend": 41074.75,
-  "predicted_roi": 2.2,
+  "predicted_revenue": 85053.67,
+  "predicted_spend": 61204.75,
+  "predicted_roi": 1.39,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -55,6 +55,14 @@
       "wechat": 10,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-05-06",
+      "revenue": 0.0,
+      "spend": 2005.72,
+      "wechat": 17,
+      "deposit": 0,
+      "open": 28.0
     }
   ],
   "rate_trend": [
@@ -82,12 +90,17 @@
       "date": "2026-05-05",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-06",
+      "open_to_wechat": 60.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 62,
+      "wechat": 63,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 2,
@@ -95,14 +108,14 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 1,
-      "intent_b": 1,
-      "intent_c": 7,
-      "intent_total": 9
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "侯芳",
-      "wechat": 21,
+      "wechat": 30,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -112,8 +125,23 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_c": 9,
+      "intent_total": 9
+    },
+    {
+      "name": "杨雪",
+      "wechat": 7,
+      "deposit": 0,
+      "revenue": 0.0,
+      "arrived": 0,
+      "deposit_rate": 0.0,
+      "fulfill_rate": 0,
+      "gap_total": 0,
+      "sop_score": 100,
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
     }
   ],
   "refund_details": [],
