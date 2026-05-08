@@ -2,18 +2,18 @@
   "month": "2026-04",
   "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 338298.0,
+  "cum_revenue": 283575.0,
   "cum_spend": 49176.7,
   "cum_wechat": 1174,
   "cum_deposit": 43,
   "cum_open": 678.0,
-  "cum_refund": 38,
-  "roi": 6.88,
+  "cum_refund": 36,
+  "roi": 5.77,
   "revenue_target": 500000,
-  "progress": 67.7,
-  "predicted_revenue": 362462.14,
+  "progress": 56.7,
+  "predicted_revenue": 303830.36,
   "predicted_spend": 52689.32,
-  "predicted_roi": 6.88,
+  "predicted_roi": 5.77,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -387,9 +387,9 @@
       "cum_spend": 33930.54,
       "cum_wechat": 676,
       "cum_deposit": 28,
-      "cum_revenue": 255378.0,
+      "cum_revenue": 216255.0,
       "roi": 5.6,
-      "cum_refund": 30
+      "cum_refund": 29
     },
     "重庆": {
       "cum_spend": 0,
@@ -403,9 +403,9 @@
       "cum_spend": 15246.16,
       "cum_wechat": 437,
       "cum_deposit": 10,
-      "cum_revenue": 82920.0,
+      "cum_revenue": 67320.0,
       "roi": 2.22,
-      "cum_refund": 7
+      "cum_refund": 6
     }
   },
   "cs_table": [
@@ -534,8 +534,8 @@
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 11,
-      "not_arrived": 8
+      "arrived": 9,
+      "not_arrived": 9
     },
     {
       "cs": "会媛",
@@ -552,7 +552,7 @@
     {
       "cs": "侯芳",
       "city": "哈尔滨",
-      "arrived": 3,
+      "arrived": 2,
       "not_arrived": 0
     },
     {

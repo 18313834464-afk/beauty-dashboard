@@ -3,18 +3,18 @@
   "month": "2026-04",
   "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 82920.0,
+  "cum_revenue": 67320.0,
   "cum_spend": 15246.16,
   "cum_wechat": 437,
   "cum_deposit": 10,
   "cum_open": 246.0,
-  "cum_refund": 7,
+  "cum_refund": 6,
   "roi": 2.22,
   "revenue_target": 100000,
   "progress": 33.9,
-  "predicted_revenue": 88842.86,
+  "predicted_revenue": 72128.57,
   "predicted_spend": 16335.17,
-  "predicted_roi": 5.44,
+  "predicted_roi": 4.42,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -447,12 +447,6 @@
       "status": "到店退款"
     },
     {
-      "customer": "彤彤",
-      "revenue": 0,
-      "cs": "侯芳",
-      "status": "到店退款"
-    },
-    {
       "customer": "艾凤怡",
       "revenue": 0,
       "cs": "汤娅",
@@ -469,7 +463,7 @@
     {
       "cs": "侯芳",
       "city": "哈尔滨",
-      "arrived": 3,
+      "arrived": 2,
       "not_arrived": 0
     }
   ]

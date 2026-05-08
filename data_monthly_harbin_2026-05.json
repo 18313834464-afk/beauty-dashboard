@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 6,
+  "days_elapsed": 7,
   "total_days": 31,
-  "cum_revenue": 16462.0,
-  "cum_spend": 11846.08,
-  "cum_wechat": 100,
+  "cum_revenue": 32062.0,
+  "cum_spend": 14053.65,
+  "cum_wechat": 115,
   "cum_deposit": 0,
-  "cum_open": 204,
-  "cum_refund": 0,
-  "roi": 1.04,
+  "cum_open": 233,
+  "cum_refund": 1,
+  "roi": 0.49,
   "revenue_target": 100000,
   "progress": 2.1,
-  "predicted_revenue": 85053.67,
-  "predicted_spend": 61204.75,
-  "predicted_roi": 1.39,
+  "predicted_revenue": 141988.86,
+  "predicted_spend": 62237.59,
+  "predicted_roi": 2.28,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -63,6 +63,14 @@
       "wechat": 17,
       "deposit": 0,
       "open": 28.0
+    },
+    {
+      "date": "2026-05-07",
+      "revenue": 0.0,
+      "spend": 2207.57,
+      "wechat": 15,
+      "deposit": 0,
+      "open": 29.0
     }
   ],
   "rate_trend": [
@@ -95,12 +103,17 @@
       "date": "2026-05-06",
       "open_to_wechat": 60.7,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-07",
+      "open_to_wechat": 51.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 63,
+      "wechat": 71,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 2,
@@ -109,13 +122,13 @@
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 0,
-      "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_b": 3,
+      "intent_c": 1,
+      "intent_total": 4
     },
     {
       "name": "侯芳",
-      "wechat": 30,
+      "wechat": 37,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -125,8 +138,8 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 9,
-      "intent_total": 9
+      "intent_c": 7,
+      "intent_total": 7
     },
     {
       "name": "杨雪",
@@ -140,10 +153,24 @@
       "sop_score": 100,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_c": 2,
+      "intent_total": 2
     }
   ],
-  "refund_details": [],
-  "refund_summary": []
+  "refund_details": [
+    {
+      "customer": "彤彤",
+      "revenue": 0,
+      "cs": "侯芳",
+      "status": "到店退款"
+    }
+  ],
+  "refund_summary": [
+    {
+      "cs": "侯芳",
+      "city": "哈尔滨",
+      "arrived": 1,
+      "not_arrived": 0
+    }
+  ]
 }
