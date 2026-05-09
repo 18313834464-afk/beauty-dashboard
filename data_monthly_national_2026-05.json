@@ -1,19 +1,19 @@
 {
   "month": "2026-05",
-  "days_elapsed": 7,
+  "days_elapsed": 8,
   "total_days": 31,
-  "cum_revenue": 98205.0,
-  "cum_spend": 37583.63,
-  "cum_wechat": 278,
+  "cum_revenue": 100007.0,
+  "cum_spend": 44690.09,
+  "cum_wechat": 320,
   "cum_deposit": 0,
-  "cum_open": 525,
-  "cum_refund": 2,
-  "roi": 2.61,
+  "cum_open": 613,
+  "cum_refund": 3,
+  "roi": 2.24,
   "revenue_target": 400000,
-  "progress": 24.6,
-  "predicted_revenue": 434907.86,
-  "predicted_spend": 166441.79,
-  "predicted_roi": 2.61,
+  "progress": 25.0,
+  "predicted_revenue": 387527.12,
+  "predicted_spend": 173174.1,
+  "predicted_roi": 2.24,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -70,6 +70,14 @@
       "wechat": 45,
       "deposit": 0,
       "open": 80.0
+    },
+    {
+      "date": "2026-05-08",
+      "revenue": 0.0,
+      "spend": 6777.51,
+      "wechat": 42,
+      "deposit": 0,
+      "open": 81.0
     }
   ],
   "rate_trend": [
@@ -107,23 +115,28 @@
       "date": "2026-05-07",
       "open_to_wechat": 56.2,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-08",
+      "open_to_wechat": 51.9,
+      "wechat_to_deposit": 0.0
     }
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 23529.98,
-      "cum_wechat": 163,
+      "cum_spend": 28043.22,
+      "cum_wechat": 189,
       "cum_deposit": 0,
-      "cum_revenue": 66143.0,
-      "roi": 3.2,
-      "cum_refund": 1
+      "cum_revenue": 67945.0,
+      "roi": 2.07,
+      "cum_refund": 2
     },
     "哈尔滨": {
-      "cum_spend": 14053.65,
-      "cum_wechat": 115,
+      "cum_spend": 16646.87,
+      "cum_wechat": 131,
       "cum_deposit": 0,
       "cum_revenue": 32062.0,
-      "roi": 0.49,
+      "roi": 0.31,
       "cum_refund": 1
     }
   },
@@ -145,18 +158,18 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 75,
+      "wechat": 85,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 5,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 4,
-      "sop_score": 68,
+      "gap_total": 5,
+      "sop_score": 60,
       "intent_a": 0,
-      "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_b": 3,
+      "intent_c": 4,
+      "intent_total": 7
     },
     {
       "name": "陈相(成都)",
@@ -175,10 +188,10 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 29,
+      "wechat": 45,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 0,
+      "arrived": 1,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 0,
@@ -190,7 +203,7 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 71,
+      "wechat": 72,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 2,
@@ -199,13 +212,13 @@
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 0,
-      "intent_b": 3,
+      "intent_b": 0,
       "intent_c": 1,
-      "intent_total": 4
+      "intent_total": 1
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 37,
+      "wechat": 52,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -215,8 +228,8 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 7,
-      "intent_total": 7
+      "intent_c": 12,
+      "intent_total": 12
     },
     {
       "name": "杨雪(哈尔滨)",
@@ -230,15 +243,15 @@
       "sop_score": 100,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 2,
-      "intent_total": 2
+      "intent_c": 1,
+      "intent_total": 1
     }
   ],
   "refund_summary": [
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 1,
+      "arrived": 2,
       "not_arrived": 0
     },
     {

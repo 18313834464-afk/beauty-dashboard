@@ -2,14 +2,14 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 529209.77,
-  "cum_spend": 152798.74,
-  "cum_wechat": 1832,
+  "cum_revenue": 531011.77,
+  "cum_spend": 157311.98,
+  "cum_wechat": 1858,
   "cum_deposit": 146,
-  "cum_open": 2246.0,
-  "cum_roi": 3.46,
-  "monthly_avg_rev": 176403.26,
-  "predicted_annual": 2116839.12,
+  "cum_open": 2300.0,
+  "cum_roi": 3.38,
+  "monthly_avg_rev": 177003.92,
+  "predicted_annual": 2124047.04,
   "revenue_target": 3000000,
   "progress": 15.3,
   "monthly_kpi": [
@@ -72,15 +72,15 @@
     {
       "month": 5,
       "month_label": "5月",
-      "revenue": 66143.0,
-      "spend": 23529.98,
-      "roi": 2.81,
-      "wechat": 163,
+      "revenue": 67945.0,
+      "spend": 28043.22,
+      "roi": 2.42,
+      "wechat": 189,
       "deposit": 0,
-      "open": 292,
-      "open_cost": 80.58,
-      "refund": 1,
-      "days": 7,
+      "open": 346,
+      "open_cost": 81.05,
+      "refund": 2,
+      "days": 8,
       "mom_revenue": -87.0
     }
   ],
@@ -103,7 +103,7 @@
     0,
     246811.77,
     216255.0,
-    66143.0,
+    67945.0,
     null,
     null,
     null,
@@ -117,7 +117,7 @@
     0,
     95338.22,
     33930.54,
-    23529.98,
+    28043.22,
     null,
     null,
     null,
@@ -131,7 +131,7 @@
     0,
     2.59,
     6.37,
-    2.81,
+    2.42,
     null,
     null,
     null,
@@ -180,14 +180,14 @@
       "name": "林俐",
       "months": {
         "5": {
-          "wechat": 29,
+          "wechat": 45,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 1,
-      "intent_b": 5,
-      "intent_c": 13
+      "intent_a": 2,
+      "intent_b": 9,
+      "intent_c": 27
     },
     {
       "name": "胡娜",
@@ -213,14 +213,14 @@
           "revenue": 7260.0
         },
         "5": {
-          "wechat": 75,
+          "wechat": 85,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 2,
-      "intent_b": 6,
-      "intent_c": 38
+      "intent_a": 4,
+      "intent_b": 14,
+      "intent_c": 59
     },
     {
       "name": "陈相",

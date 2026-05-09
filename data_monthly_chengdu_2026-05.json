@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 7,
+  "days_elapsed": 8,
   "total_days": 31,
-  "cum_revenue": 66143.0,
-  "cum_spend": 23529.98,
-  "cum_wechat": 163,
+  "cum_revenue": 67945.0,
+  "cum_spend": 28043.22,
+  "cum_wechat": 189,
   "cum_deposit": 0,
-  "cum_open": 292,
-  "cum_refund": 1,
-  "roi": 3.2,
+  "cum_open": 346,
+  "cum_refund": 2,
+  "roi": 2.07,
   "revenue_target": 300000,
   "progress": 8.2,
-  "predicted_revenue": 292919.0,
-  "predicted_spend": 104204.2,
-  "predicted_roi": 2.81,
+  "predicted_revenue": 263286.88,
+  "predicted_spend": 108667.48,
+  "predicted_roi": 2.42,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -71,6 +71,14 @@
       "wechat": 30,
       "deposit": 0,
       "open": 51.0
+    },
+    {
+      "date": "2026-05-08",
+      "revenue": 0.0,
+      "spend": 4184.29,
+      "wechat": 26,
+      "deposit": 0,
+      "open": 47.0
     }
   ],
   "rate_trend": [
@@ -108,6 +116,11 @@
       "date": "2026-05-07",
       "open_to_wechat": 58.8,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-08",
+      "open_to_wechat": 55.3,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -128,18 +141,18 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 75,
+      "wechat": 85,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 5,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 4,
-      "sop_score": 68,
+      "gap_total": 5,
+      "sop_score": 60,
       "intent_a": 0,
-      "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_b": 3,
+      "intent_c": 4,
+      "intent_total": 7
     },
     {
       "name": "陈相",
@@ -158,10 +171,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 29,
+      "wechat": 45,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 0,
+      "arrived": 1,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 0,
@@ -178,13 +191,19 @@
       "revenue": 0,
       "cs": "阳珂欣",
       "status": "到店退款"
+    },
+    {
+      "customer": "李女士",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "到店退款"
     }
   ],
   "refund_summary": [
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 1,
+      "arrived": 2,
       "not_arrived": 0
     }
   ]
