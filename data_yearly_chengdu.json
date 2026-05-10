@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 531011.77,
-  "cum_spend": 157311.98,
-  "cum_wechat": 1858,
+  "cum_revenue": 531611.77,
+  "cum_spend": 157344.31,
+  "cum_wechat": 1877,
   "cum_deposit": 146,
   "cum_open": 2300.0,
   "cum_roi": 3.38,
-  "monthly_avg_rev": 177003.92,
-  "predicted_annual": 2124047.04,
+  "monthly_avg_rev": 177203.92,
+  "predicted_annual": 2126447.04,
   "revenue_target": 3000000,
-  "progress": 15.3,
+  "progress": 15.4,
   "monthly_kpi": [
     {
       "month": 1,
@@ -72,16 +72,16 @@
     {
       "month": 5,
       "month_label": "5月",
-      "revenue": 67945.0,
-      "spend": 28043.22,
-      "roi": 2.42,
-      "wechat": 189,
+      "revenue": 68545.0,
+      "spend": 28075.55,
+      "roi": 2.44,
+      "wechat": 208,
       "deposit": 0,
       "open": 346,
-      "open_cost": 81.05,
-      "refund": 2,
-      "days": 8,
-      "mom_revenue": -87.0
+      "open_cost": 81.14,
+      "refund": 3,
+      "days": 9,
+      "mom_revenue": -85.1
     }
   ],
   "trend_months": [
@@ -103,7 +103,7 @@
     0,
     246811.77,
     216255.0,
-    67945.0,
+    68545.0,
     null,
     null,
     null,
@@ -117,7 +117,7 @@
     0,
     95338.22,
     33930.54,
-    28043.22,
+    28075.55,
     null,
     null,
     null,
@@ -131,7 +131,7 @@
     0,
     2.59,
     6.37,
-    2.42,
+    2.44,
     null,
     null,
     null,
@@ -155,7 +155,7 @@
           "revenue": 26540.0
         },
         "5": {
-          "wechat": 59,
+          "wechat": 67,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -180,12 +180,12 @@
       "name": "林俐",
       "months": {
         "5": {
-          "wechat": 45,
+          "wechat": 47,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 2,
+      "intent_a": 3,
       "intent_b": 9,
       "intent_c": 27
     },
@@ -213,7 +213,7 @@
           "revenue": 7260.0
         },
         "5": {
-          "wechat": 85,
+          "wechat": 94,
           "deposit": 0,
           "revenue": 0.0
         }

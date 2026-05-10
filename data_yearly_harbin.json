@@ -4,7 +4,7 @@
   "start_month": 3,
   "cum_revenue": 104942.0,
   "cum_spend": 49940.61,
-  "cum_wechat": 671,
+  "cum_wechat": 688,
   "cum_deposit": 18,
   "cum_open": 801.0,
   "cum_roi": 2.1,
@@ -75,12 +75,12 @@
       "revenue": 32062.0,
       "spend": 16646.87,
       "roi": 1.93,
-      "wechat": 131,
+      "wechat": 148,
       "deposit": 0,
       "open": 267,
       "open_cost": 62.35,
-      "refund": 1,
-      "days": 8,
+      "refund": 2,
+      "days": 9,
       "mom_revenue": -93.9
     }
   ],
@@ -150,27 +150,27 @@
           "revenue": 0.0
         },
         "5": {
-          "wechat": 52,
+          "wechat": 58,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 1,
       "intent_b": 1,
-      "intent_c": 51
+      "intent_c": 54
     },
     {
       "name": "杨雪",
       "months": {
         "5": {
-          "wechat": 7,
+          "wechat": 12,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 0,
-      "intent_b": 2,
-      "intent_c": 11
+      "intent_b": 5,
+      "intent_c": 13
     },
     {
       "name": "汤娅",
@@ -186,14 +186,14 @@
           "revenue": 34880.0
         },
         "5": {
-          "wechat": 72,
+          "wechat": 78,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 6,
       "intent_b": 23,
-      "intent_c": 42
+      "intent_c": 43
     }
   ],
   "health_score": 80,
