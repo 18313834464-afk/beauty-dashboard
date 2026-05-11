@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 104942.0,
-  "cum_spend": 49940.61,
-  "cum_wechat": 688,
+  "cum_spend": 64824.96,
+  "cum_wechat": 703,
   "cum_deposit": 18,
-  "cum_open": 801.0,
-  "cum_roi": 2.1,
+  "cum_open": 1002.0,
+  "cum_roi": 1.62,
   "monthly_avg_rev": 34980.67,
   "predicted_annual": 419768.04,
   "revenue_target": 0,
@@ -45,11 +45,11 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 5560.0,
-      "spend": 16646.87,
-      "roi": 0.33,
+      "spend": 21608.32,
+      "roi": 0.26,
       "wechat": 103,
       "deposit": 8,
-      "open": 267,
+      "open": 334,
       "open_cost": 50.87,
       "refund": 0,
       "days": 31,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 67320.0,
-      "spend": 16646.87,
-      "roi": 4.04,
+      "spend": 21608.32,
+      "roi": 3.12,
       "wechat": 437,
       "deposit": 10,
-      "open": 267,
+      "open": 334,
       "open_cost": 61.98,
       "refund": 0,
       "days": 28,
@@ -73,14 +73,14 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 32062.0,
-      "spend": 16646.87,
-      "roi": 1.93,
-      "wechat": 148,
+      "spend": 21608.32,
+      "roi": 1.48,
+      "wechat": 163,
       "deposit": 0,
-      "open": 267,
-      "open_cost": 62.35,
+      "open": 334,
+      "open_cost": 64.7,
       "refund": 2,
-      "days": 9,
+      "days": 10,
       "mom_revenue": -93.9
     }
   ],
@@ -115,9 +115,9 @@
   "trend_spend": [
     0,
     0,
-    16646.87,
-    16646.87,
-    16646.87,
+    21608.32,
+    21608.32,
+    21608.32,
     null,
     null,
     null,
@@ -129,9 +129,9 @@
   "trend_roi": [
     0,
     0,
-    0.33,
-    4.04,
-    1.93,
+    0.26,
+    3.12,
+    1.48,
     null,
     null,
     null,
@@ -150,27 +150,27 @@
           "revenue": 0.0
         },
         "5": {
-          "wechat": 58,
+          "wechat": 62,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 1,
       "intent_b": 1,
-      "intent_c": 54
+      "intent_c": 60
     },
     {
       "name": "杨雪",
       "months": {
         "5": {
-          "wechat": 12,
+          "wechat": 17,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 0,
-      "intent_b": 5,
-      "intent_c": 13
+      "intent_b": 8,
+      "intent_c": 16
     },
     {
       "name": "汤娅",
@@ -186,19 +186,19 @@
           "revenue": 34880.0
         },
         "5": {
-          "wechat": 78,
+          "wechat": 84,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 6,
-      "intent_b": 23,
-      "intent_c": 43
+      "intent_a": 8,
+      "intent_b": 26,
+      "intent_c": 48
     }
   ],
-  "health_score": 80,
+  "health_score": 65,
   "health_breakdown": {
-    "revenue_efficiency": 2,
+    "revenue_efficiency": 1,
     "cost_control": 2,
     "team_stability": 3
   }
