@@ -4,7 +4,7 @@
   "start_month": 3,
   "cum_revenue": 104942.0,
   "cum_spend": 64824.96,
-  "cum_wechat": 703,
+  "cum_wechat": 712,
   "cum_deposit": 18,
   "cum_open": 1002.0,
   "cum_roi": 1.62,
@@ -75,12 +75,12 @@
       "revenue": 32062.0,
       "spend": 21608.32,
       "roi": 1.48,
-      "wechat": 163,
+      "wechat": 172,
       "deposit": 0,
       "open": 334,
       "open_cost": 64.7,
       "refund": 2,
-      "days": 10,
+      "days": 11,
       "mom_revenue": -93.9
     }
   ],
@@ -150,7 +150,7 @@
           "revenue": 0.0
         },
         "5": {
-          "wechat": 62,
+          "wechat": 64,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -168,8 +168,8 @@
           "revenue": 0.0
         }
       },
-      "intent_a": 0,
-      "intent_b": 8,
+      "intent_a": 1,
+      "intent_b": 9,
       "intent_c": 16
     },
     {
@@ -186,14 +186,14 @@
           "revenue": 34880.0
         },
         "5": {
-          "wechat": 84,
+          "wechat": 91,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 8,
-      "intent_b": 26,
-      "intent_c": 48
+      "intent_b": 29,
+      "intent_c": 52
     }
   ],
   "health_score": 65,
