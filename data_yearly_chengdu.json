@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 561576.77,
-  "cum_spend": 181424.42,
-  "cum_wechat": 1959,
+  "cum_spend": 194313.8,
+  "cum_wechat": 1973,
   "cum_deposit": 146,
-  "cum_open": 2544.0,
-  "cum_roi": 3.1,
+  "cum_open": 2676.0,
+  "cum_roi": 2.89,
   "monthly_avg_rev": 187192.26,
   "predicted_annual": 2246307.12,
   "revenue_target": 3000000,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 43043.1,
-      "roi": 5.02,
+      "spend": 49487.79,
+      "roi": 4.37,
       "wechat": 676,
       "deposit": 28,
-      "open": 511,
+      "open": 577,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -73,14 +73,14 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 98510.0,
-      "spend": 43043.1,
-      "roi": 2.29,
-      "wechat": 290,
+      "spend": 49487.79,
+      "roi": 1.99,
+      "wechat": 304,
       "deposit": 0,
-      "open": 511,
-      "open_cost": 84.23,
-      "refund": 6,
-      "days": 13,
+      "open": 577,
+      "open_cost": 85.77,
+      "refund": 7,
+      "days": 14,
       "mom_revenue": -69.3
     }
   ],
@@ -116,8 +116,8 @@
     0,
     0,
     95338.22,
-    43043.1,
-    43043.1,
+    49487.79,
+    49487.79,
     null,
     null,
     null,
@@ -130,8 +130,8 @@
     0,
     0,
     2.59,
-    5.02,
-    2.29,
+    4.37,
+    1.99,
     null,
     null,
     null,
@@ -155,11 +155,14 @@
           "revenue": 26540.0
         },
         "5": {
-          "wechat": 96,
+          "wechat": 101,
           "deposit": 0,
           "revenue": 0.0
         }
-      }
+      },
+      "intent_a": 1,
+      "intent_b": 3,
+      "intent_c": 1
     },
     {
       "name": "李小叶",
@@ -180,14 +183,14 @@
       "name": "林俐",
       "months": {
         "5": {
-          "wechat": 68,
+          "wechat": 77,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 3,
-      "intent_b": 13,
-      "intent_c": 42
+      "intent_a": 4,
+      "intent_b": 14,
+      "intent_c": 46
     },
     {
       "name": "胡娜",
