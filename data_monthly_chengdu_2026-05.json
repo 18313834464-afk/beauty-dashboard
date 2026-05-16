@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 14,
+  "days_elapsed": 15,
   "total_days": 31,
-  "cum_revenue": 98510.0,
-  "cum_spend": 49487.79,
-  "cum_wechat": 304,
+  "cum_revenue": 110330.0,
+  "cum_spend": 52737.65,
+  "cum_wechat": 310,
   "cum_deposit": 0,
-  "cum_open": 577,
+  "cum_open": 610,
   "cum_refund": 7,
-  "roi": 2.61,
+  "roi": 2.74,
   "revenue_target": 300000,
-  "progress": 19.4,
-  "predicted_revenue": 218129.29,
-  "predicted_spend": 109580.11,
-  "predicted_roi": 1.99,
+  "progress": 23.4,
+  "predicted_revenue": 228015.33,
+  "predicted_spend": 108991.14,
+  "predicted_roi": 2.09,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -127,6 +127,14 @@
       "wechat": 14,
       "deposit": 0,
       "open": 34.0
+    },
+    {
+      "date": "2026-05-15",
+      "revenue": 11820.0,
+      "spend": 3249.86,
+      "wechat": 6,
+      "deposit": 0,
+      "open": 33.0
     }
   ],
   "rate_trend": [
@@ -199,6 +207,11 @@
       "date": "2026-05-14",
       "open_to_wechat": 41.2,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-15",
+      "open_to_wechat": 18.2,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -207,10 +220,10 @@
       "wechat": 101,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 7,
+      "arrived": 8,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 53,
+      "gap_total": 57,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -222,7 +235,7 @@
       "wechat": 126,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 14,
+      "arrived": 16,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 26,
@@ -249,10 +262,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 77,
+      "wechat": 83,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 3,
+      "arrived": 4,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 2,

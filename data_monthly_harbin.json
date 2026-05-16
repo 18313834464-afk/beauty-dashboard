@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 14,
+  "days_elapsed": 15,
   "total_days": 31,
-  "cum_revenue": 37322.0,
-  "cum_spend": 28900.17,
-  "cum_wechat": 214,
+  "cum_revenue": 37422.0,
+  "cum_spend": 30923.65,
+  "cum_wechat": 228,
   "cum_deposit": 0,
-  "cum_open": 434,
-  "cum_refund": 4,
-  "roi": 0.17,
+  "cum_open": 461,
+  "cum_refund": 5,
+  "roi": 0.15,
   "revenue_target": 100000,
-  "progress": 2.1,
-  "predicted_revenue": 82641.57,
-  "predicted_spend": 63993.23,
-  "predicted_roi": 1.29,
+  "progress": 2.2,
+  "predicted_revenue": 77338.8,
+  "predicted_spend": 63908.88,
+  "predicted_roi": 1.21,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -127,6 +127,14 @@
       "wechat": 15,
       "deposit": 0,
       "open": 20.0
+    },
+    {
+      "date": "2026-05-15",
+      "revenue": 100.0,
+      "spend": 2023.48,
+      "wechat": 14,
+      "deposit": 0,
+      "open": 27.0
     }
   ],
   "rate_trend": [
@@ -199,27 +207,32 @@
       "date": "2026-05-14",
       "open_to_wechat": 75.0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-15",
+      "open_to_wechat": 51.9,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 106,
+      "wechat": 111,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 2,
+      "arrived": 3,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 0,
       "intent_b": 1,
-      "intent_c": 4,
-      "intent_total": 5
+      "intent_c": 2,
+      "intent_total": 3
     },
     {
       "name": "侯芳",
-      "wechat": 80,
+      "wechat": 85,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -227,14 +240,14 @@
       "fulfill_rate": 0,
       "gap_total": 1,
       "sop_score": 92,
-      "intent_a": 1,
-      "intent_b": 1,
-      "intent_c": 8,
-      "intent_total": 10
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 4,
+      "intent_total": 4
     },
     {
       "name": "杨雪",
-      "wechat": 28,
+      "wechat": 32,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -243,9 +256,9 @@
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 0,
-      "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_b": 3,
+      "intent_c": 1,
+      "intent_total": 4
     }
   ],
   "refund_details": [
@@ -268,6 +281,12 @@
       "status": "到店退款"
     },
     {
+      "customer": "洋洋",
+      "revenue": 0,
+      "cs": "汤娅",
+      "status": "到店退款"
+    },
+    {
       "customer": "张女士",
       "revenue": 0,
       "cs": "汤娅",
@@ -278,7 +297,7 @@
     {
       "cs": "汤娅",
       "city": "哈尔滨",
-      "arrived": 3,
+      "arrived": 4,
       "not_arrived": 0
     },
     {
