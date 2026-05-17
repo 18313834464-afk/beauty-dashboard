@@ -8,7 +8,7 @@
   "cum_wechat": 61,
   "cum_deposit": 5,
   "cum_open": 61.0,
-  "cum_refund": 1,
+  "cum_refund": 0,
   "roi": 2.79,
   "revenue_target": 100000,
   "progress": 11.1,
@@ -439,20 +439,6 @@
       "intent_total": 61
     }
   ],
-  "refund_details": [
-    {
-      "customer": "泡泡王",
-      "revenue": 0,
-      "cs": "侯芳",
-      "status": "到店退款"
-    }
-  ],
-  "refund_summary": [
-    {
-      "cs": "侯芳",
-      "city": "重庆",
-      "arrived": 1,
-      "not_arrived": 0
-    }
-  ]
+  "refund_details": [],
+  "refund_summary": []
 }

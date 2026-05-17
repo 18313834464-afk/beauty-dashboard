@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 573396.77,
+  "cum_revenue": 592676.77,
   "cum_spend": 200813.52,
-  "cum_wechat": 1979,
+  "cum_wechat": 1996,
   "cum_deposit": 146,
   "cum_open": 2742.0,
-  "cum_roi": 2.86,
-  "monthly_avg_rev": 191132.26,
-  "predicted_annual": 2293587.12,
+  "cum_roi": 2.95,
+  "monthly_avg_rev": 197558.92,
+  "predicted_annual": 2370707.04,
   "revenue_target": 3000000,
-  "progress": 16.8,
+  "progress": 17.3,
   "monthly_kpi": [
     {
       "month": 1,
@@ -72,16 +72,16 @@
     {
       "month": 5,
       "month_label": "5月",
-      "revenue": 110330.0,
+      "revenue": 129610.0,
       "spend": 52737.65,
-      "roi": 2.09,
-      "wechat": 310,
+      "roi": 2.46,
+      "wechat": 327,
       "deposit": 0,
       "open": 610,
       "open_cost": 86.46,
       "refund": 7,
-      "days": 15,
-      "mom_revenue": -63.1
+      "days": 16,
+      "mom_revenue": -54.3
     }
   ],
   "trend_months": [
@@ -103,7 +103,7 @@
     0,
     246811.77,
     216255.0,
-    110330.0,
+    129610.0,
     null,
     null,
     null,
@@ -131,7 +131,7 @@
     0,
     2.59,
     4.1,
-    2.09,
+    2.46,
     null,
     null,
     null,
@@ -155,7 +155,7 @@
           "revenue": 26540.0
         },
         "5": {
-          "wechat": 101,
+          "wechat": 110,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -183,14 +183,14 @@
       "name": "林俐",
       "months": {
         "5": {
-          "wechat": 83,
+          "wechat": 91,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 4,
-      "intent_b": 15,
-      "intent_c": 51
+      "intent_b": 16,
+      "intent_c": 54
     },
     {
       "name": "胡娜",
