@@ -3207,11 +3207,25 @@ async function openDesignDeposit(aid) {
 }
 
 // ─── 老客回访操作（已补色 / 未补色 / 已洗眉 / 未洗眉） ───
+// ★ 写入类按钮全局防重 Set —— 防止双击造成回访表/台账重复写入
+//   5/17：CS / 纹绣师反馈回访表常出现完全相同的两行（罗蓉/张梓墨）
+//   定位是 onclick 没 disable，双击发两个并发请求 → 后端 dup check 来不及命中
+//   两端都加锁：前端 2s 冷却 + 后端 module 锁 + 写后失效缓存
+const _writeActionInflight = new Set();
+function _acquireWriteLock(key, cooldownMs) {
+  if (_writeActionInflight.has(key)) return false;
+  _writeActionInflight.add(key);
+  setTimeout(() => _writeActionInflight.delete(key), cooldownMs || 2000);
+  return true;
+}
+
 async function confirmFollowupActionQuick(aid, action) {
   const appt = window._apptMap[aid];
   if (!appt) return toast('预约数据已变更，请刷新', 'err');
   const isOrphan = appt.source === 'schedule_orphan';
   if (appt.source !== 'followup' && !isOrphan) return toast('该客户非回访来源，无法操作', 'err');
+  const lockKey = `followup_action|${aid}|${action}`;
+  if (!_acquireWriteLock(lockKey, 3000)) return toast('请勿重复点击', 'err');
   const labels = {
     already_touchup: '已补色', not_touchup: '未补色',
     already_wash: '已洗眉', not_wash: '未洗眉',
@@ -3221,7 +3235,7 @@ async function confirmFollowupActionQuick(aid, action) {
     ? `确认 ${appt.customer || '该客户'}：${lab}？\n\n⚠ 此客户在排期表里但回访表无明确匹配，系统将按客户名兜底匹配。\n\n可补充客情备注（可选）：`
     : `确认 ${appt.customer || '该客户'}：${lab}？\n\n可补充客情备注（可选）：`;
   const note = prompt(promptMsg, '');
-  if (note === null) return;
+  if (note === null) { _writeActionInflight.delete(lockKey); return; }
   // schedule_orphan 卡片：不传 row_index/sheet_id，传 customer/customer_phone 让后端兜底匹配
   const payload = isOrphan
     ? { city: appt.city_key, action, customer: appt.customer, customer_phone: appt.phone || '', customer_note: (note || '').trim() }
@@ -3358,6 +3372,9 @@ async function confirmDeal() {
   if (!revenue) return toast('请填写实收金额', 'err');
   const teacherVal = document.getElementById('deal-teacher').value;
   if (!teacherVal) return toast('请选择纹绣师', 'err');
+  // 防双击：同一条预约 3 秒内只放行一次
+  const lockKey = `deal|${currentAppt.obj_token}|${currentAppt.sheet_id}|${currentAppt.row_index}`;
+  if (!_acquireWriteLock(lockKey, 3000)) return toast('请勿重复点击', 'err');
   const project = document.getElementById('deal-project').value;
   const realname = document.getElementById('deal-realname').value.trim();
   const customerNote = document.getElementById('deal-customer-note').value.trim();
