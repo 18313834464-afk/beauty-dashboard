@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 16,
+  "days_elapsed": 17,
   "total_days": 31,
-  "cum_revenue": 129610.0,
-  "cum_spend": 52737.65,
-  "cum_wechat": 327,
+  "cum_revenue": 141870.0,
+  "cum_spend": 59987.82,
+  "cum_wechat": 356,
   "cum_deposit": 0,
-  "cum_open": 610,
-  "cum_refund": 7,
-  "roi": 3.39,
+  "cum_open": 687,
+  "cum_refund": 8,
+  "roi": 3.37,
   "revenue_target": 300000,
-  "progress": 28.9,
-  "predicted_revenue": 251119.38,
-  "predicted_spend": 102179.2,
-  "predicted_roi": 2.46,
+  "progress": 33.0,
+  "predicted_revenue": 258704.12,
+  "predicted_spend": 109389.55,
+  "predicted_roi": 2.36,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -143,6 +143,14 @@
       "wechat": 17,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-05-17",
+      "revenue": 12260.0,
+      "spend": 3760.39,
+      "wechat": 29,
+      "deposit": 0,
+      "open": 41.0
     }
   ],
   "rate_trend": [
@@ -225,18 +233,23 @@
       "date": "2026-05-16",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-17",
+      "open_to_wechat": 70.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 110,
+      "wechat": 119,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 11,
+      "arrived": 13,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 57,
+      "gap_total": 62,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -245,13 +258,13 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 126,
+      "wechat": 138,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 18,
+      "arrived": 20,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 26,
+      "gap_total": 27,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -275,7 +288,7 @@
     },
     {
       "name": "林俐",
-      "wechat": 91,
+      "wechat": 99,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -292,6 +305,12 @@
   "refund_details": [
     {
       "customer": "陈亦新",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "到店退款"
+    },
+    {
+      "customer": "芒果",
       "revenue": 0,
       "cs": "会媛",
       "status": "到店退款"
@@ -337,7 +356,7 @@
     {
       "cs": "会媛",
       "city": "成都",
-      "arrived": 4,
+      "arrived": 5,
       "not_arrived": 0
     },
     {

@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 16,
+  "days_elapsed": 17,
   "total_days": 31,
-  "cum_revenue": 37922.0,
-  "cum_spend": 30923.65,
-  "cum_wechat": 239,
+  "cum_revenue": 40002.0,
+  "cum_spend": 34753.35,
+  "cum_wechat": 259,
   "cum_deposit": 0,
-  "cum_open": 461,
+  "cum_open": 513,
   "cum_refund": 5,
-  "roi": 0.15,
+  "roi": 0.13,
   "revenue_target": 100000,
   "progress": 2.2,
-  "predicted_revenue": 73473.88,
-  "predicted_spend": 59914.57,
-  "predicted_roi": 1.23,
+  "predicted_revenue": 72944.82,
+  "predicted_spend": 63373.76,
+  "predicted_roi": 1.15,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -143,6 +143,14 @@
       "wechat": 11,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-05-17",
+      "revenue": 0.0,
+      "spend": 2265.1,
+      "wechat": 20,
+      "deposit": 0,
+      "open": 32.0
     }
   ],
   "rate_trend": [
@@ -225,12 +233,17 @@
       "date": "2026-05-16",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-17",
+      "open_to_wechat": 62.5,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 116,
+      "wechat": 125,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 3,
@@ -238,14 +251,14 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 2,
+      "intent_a": 1,
       "intent_b": 1,
-      "intent_c": 2,
-      "intent_total": 5
+      "intent_c": 6,
+      "intent_total": 8
     },
     {
       "name": "侯芳",
-      "wechat": 87,
+      "wechat": 92,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -255,12 +268,12 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 2,
-      "intent_total": 2
+      "intent_c": 5,
+      "intent_total": 5
     },
     {
       "name": "杨雪",
-      "wechat": 36,
+      "wechat": 42,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -269,8 +282,8 @@
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 0,
-      "intent_b": 2,
-      "intent_c": 2,
+      "intent_b": 0,
+      "intent_c": 4,
       "intent_total": 4
     }
   ],
