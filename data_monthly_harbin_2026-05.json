@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 17,
+  "days_elapsed": 18,
   "total_days": 31,
-  "cum_revenue": 40002.0,
+  "cum_revenue": 43382.0,
   "cum_spend": 34753.35,
-  "cum_wechat": 259,
+  "cum_wechat": 272,
   "cum_deposit": 0,
   "cum_open": 513,
   "cum_refund": 5,
   "roi": 0.13,
   "revenue_target": 100000,
   "progress": 2.2,
-  "predicted_revenue": 72944.82,
-  "predicted_spend": 63373.76,
-  "predicted_roi": 1.15,
+  "predicted_revenue": 74713.44,
+  "predicted_spend": 59852.99,
+  "predicted_roi": 1.25,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -151,6 +151,14 @@
       "wechat": 20,
       "deposit": 0,
       "open": 32.0
+    },
+    {
+      "date": "2026-05-18",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 13,
+      "deposit": 0,
+      "open": 0
     }
   ],
   "rate_trend": [
@@ -238,12 +246,17 @@
       "date": "2026-05-17",
       "open_to_wechat": 62.5,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-18",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 125,
+      "wechat": 134,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 3,
@@ -251,14 +264,14 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 1,
-      "intent_b": 1,
-      "intent_c": 6,
-      "intent_total": 8
+      "intent_a": 0,
+      "intent_b": 2,
+      "intent_c": 7,
+      "intent_total": 9
     },
     {
       "name": "侯芳",
-      "wechat": 92,
+      "wechat": 96,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -268,8 +281,8 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 5,
-      "intent_total": 5
+      "intent_c": 2,
+      "intent_total": 2
     },
     {
       "name": "杨雪",
@@ -283,8 +296,8 @@
       "sop_score": 100,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 4,
-      "intent_total": 4
+      "intent_c": 0,
+      "intent_total": 0
     }
   ],
   "refund_details": [

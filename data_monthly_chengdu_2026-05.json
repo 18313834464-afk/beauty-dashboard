@@ -1,19 +1,19 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 17,
+  "days_elapsed": 18,
   "total_days": 31,
   "cum_revenue": 141870.0,
   "cum_spend": 59987.82,
-  "cum_wechat": 356,
+  "cum_wechat": 377,
   "cum_deposit": 0,
   "cum_open": 687,
-  "cum_refund": 8,
+  "cum_refund": 9,
   "roi": 3.37,
   "revenue_target": 300000,
   "progress": 33.0,
-  "predicted_revenue": 258704.12,
-  "predicted_spend": 109389.55,
+  "predicted_revenue": 244331.67,
+  "predicted_spend": 103312.36,
   "predicted_roi": 2.36,
   "daily_trend": [
     {
@@ -151,6 +151,14 @@
       "wechat": 29,
       "deposit": 0,
       "open": 41.0
+    },
+    {
+      "date": "2026-05-18",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 21,
+      "deposit": 0,
+      "open": 0
     }
   ],
   "rate_trend": [
@@ -238,12 +246,17 @@
       "date": "2026-05-17",
       "open_to_wechat": 70.7,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-18",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 119,
+      "wechat": 120,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 13,
@@ -258,13 +271,13 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 138,
+      "wechat": 151,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 20,
+      "arrived": 21,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 27,
+      "gap_total": 32,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -288,7 +301,7 @@
     },
     {
       "name": "林俐",
-      "wechat": 99,
+      "wechat": 106,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -350,6 +363,12 @@
       "revenue": 0,
       "cs": "会媛",
       "status": "到店退款"
+    },
+    {
+      "customer": "李女士",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "到店退款"
     }
   ],
   "refund_summary": [
@@ -362,7 +381,7 @@
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 2,
+      "arrived": 3,
       "not_arrived": 0
     },
     {

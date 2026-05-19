@@ -2,19 +2,19 @@
   "city": "哈尔滨",
   "city_key": "harbin",
   "month": "2026-05",
-  "generated_at": "2026-05-18 06:16:20",
-  "days_elapsed": 17,
+  "generated_at": "2026-05-19 06:10:26",
+  "days_elapsed": 18,
   "total_days": 31,
-  "progress_pct": 54.8,
+  "progress_pct": 58.1,
   "revenue_target": 100000,
   "cs_forecasts": [
     {
       "name": "汤娅",
-      "days_elapsed": 17,
+      "days_elapsed": 18,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 125,
+        "wechat": 134,
         "deposit": 0,
         "arrived": 3,
         "salary": 5800,
@@ -24,7 +24,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 228,
+        "wechat": 231,
         "deposit": 0,
         "arrived": 5,
         "salary": 5800,
@@ -57,11 +57,11 @@
     },
     {
       "name": "侯芳",
-      "days_elapsed": 17,
+      "days_elapsed": 18,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 92,
+        "wechat": 96,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -71,7 +71,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 168,
+        "wechat": 165,
         "deposit": 0,
         "arrived": 0,
         "salary": 5600,
@@ -104,7 +104,7 @@
     },
     {
       "name": "杨雪",
-      "days_elapsed": 17,
+      "days_elapsed": 18,
       "total_days": 31,
       "current": {
         "revenue": 0,
@@ -118,7 +118,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 77,
+        "wechat": 72,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -154,21 +154,21 @@
   "pnl_forecast": {
     "current_sales": 0,
     "predicted_sales": 0,
-    "predicted_your_income": -75383,
+    "predicted_your_income": -72566,
     "predicted_your_margin": 0,
     "predicted_partner_income": -6084,
     "predicted_cs_salary": 18600,
-    "predicted_ad_actual": 50699,
+    "predicted_ad_actual": 47882,
     "predicted_manager_fee": 0,
     "predicted_artist_fee": 0,
     "predicted_shared_costs": 6084
   },
   "target_analysis": {
-    "current_revenue": 40002.0,
+    "current_revenue": 43382.0,
     "predicted_revenue": 0,
     "target": 100000,
     "gap": 100000,
-    "daily_needed": 7143,
+    "daily_needed": 7692,
     "on_track": false
   }
 }
