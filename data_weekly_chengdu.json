@@ -103,9 +103,9 @@
   "month_target": 300000,
   "month_total_weeks": 5,
   "month_elapsed_weeks": 3,
-  "month_cum_revenue": 98987.0,
+  "month_cum_revenue": 103987.0,
   "ideal_pace": 60000.0,
-  "actual_pace": 32995.67,
+  "actual_pace": 34662.33,
   "pace_status": "behind",
   "trend_weeks": [
     "第17周",
