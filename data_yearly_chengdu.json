@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 617176.77,
-  "cum_spend": 236434.74,
-  "cum_wechat": 2080,
+  "cum_spend": 243010.16,
+  "cum_wechat": 2108,
   "cum_deposit": 146,
-  "cum_open": 3114.0,
-  "cum_roi": 2.61,
+  "cum_open": 3164.0,
+  "cum_roi": 2.54,
   "monthly_avg_rev": 205725.59,
   "predicted_annual": 2468707.08,
   "revenue_target": 3000000,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 70548.26,
-      "roi": 3.07,
+      "spend": 73835.97,
+      "roi": 2.93,
       "wechat": 676,
       "deposit": 28,
-      "open": 796,
+      "open": 821,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -73,14 +73,14 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 154110.0,
-      "spend": 70548.26,
-      "roi": 2.18,
-      "wechat": 411,
+      "spend": 73835.97,
+      "roi": 2.09,
+      "wechat": 439,
       "deposit": 0,
-      "open": 796,
-      "open_cost": 88.63,
+      "open": 821,
+      "open_cost": 89.93,
       "refund": 10,
-      "days": 20,
+      "days": 21,
       "mom_revenue": -45.2
     }
   ],
@@ -116,8 +116,8 @@
     0,
     0,
     95338.22,
-    70548.26,
-    70548.26,
+    73835.97,
+    73835.97,
     null,
     null,
     null,
@@ -130,8 +130,8 @@
     0,
     0,
     2.59,
-    3.07,
-    2.18,
+    2.93,
+    2.09,
     null,
     null,
     null,
@@ -155,14 +155,14 @@
           "revenue": 26540.0
         },
         "5": {
-          "wechat": 142,
+          "wechat": 150,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 3,
-      "intent_b": 14,
-      "intent_c": 31
+      "intent_a": 4,
+      "intent_b": 18,
+      "intent_c": 50
     },
     {
       "name": "李小叶",
@@ -183,14 +183,14 @@
       "name": "林俐",
       "months": {
         "5": {
-          "wechat": 116,
+          "wechat": 123,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 4,
       "intent_b": 20,
-      "intent_c": 70
+      "intent_c": 74
     },
     {
       "name": "胡娜",
@@ -216,14 +216,14 @@
           "revenue": 7260.0
         },
         "5": {
-          "wechat": 153,
+          "wechat": 166,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 10,
       "intent_b": 28,
-      "intent_c": 112
+      "intent_c": 114
     },
     {
       "name": "陈相",
