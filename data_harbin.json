@@ -1,25 +1,25 @@
 {
-  "date": "2026-05-21",
-  "generated_at": "2026-05-22 06:05:13",
-  "revenue": 2000.0,
-  "wechat_total": 11,
+  "date": "2026-05-22",
+  "generated_at": "2026-05-23 06:00:23",
+  "revenue": 0.0,
+  "wechat_total": 13,
   "deposit_total": 0,
-  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：无退款客户，无责任客服。\n🚨 P0 履约爽约：孙欣欣、高婕，责任客服分别为汤娅和侯芳。挽回话术方向需强化客户到店的紧迫感和价值塑造。\n⚠️ P1 转化率：开口→加微转化率为392.6%，未触发红线，但转化率异常高，需核查数据准确性。\n👀 P2 回访漏打：无漏打回访。\n\n**二、根因诊断**\n汤娅转化率0%，核心问题在于客户意向管理不善，缺乏有效的沟通和转化策略。侯芳和杨雪同样面临转化率低的问题，需分析客户反馈和沟通技巧。\n前端投放数据显示开口成本为94.23元，与目标<80元相比略高，需检查投放素材和定向设置是否需要优化。\n客服接待数据表明，尽管加微人数有所增加，但定金转化和变现金额均为0，表明在私聊转化和逼单环节存在明显问题。\n\n**三、今日行动项**\n1. 店长今天需与汤娅、侯芳、杨雪进行一对一沟通，重点分析客户反馈，制定个性化提升转化的策略。\n2. 运营团队需重新审视前端投放素材和策略，确保符合目标客群，并优化定向设置以降低开口成本。\n3. 汤娅和侯芳需针对爽约客户进行电话回访，使用话术提升客户到店意愿，并调整邀约策略以提高到店率。",
-  "ad_spend": 1978.84,
-  "open_count": 24.0,
-  "open_cost": 21.0,
-  "arrived_count": 1,
+  "ai_summary": "**一、红线审查**\n🚨 P0 资金流失：无退款记录，无责任客服。\n🚨 P0 履约爽约：孙敏、孙欣欣（客服:汤娅），需制定挽回话术方向。\n⚠️ P1 转化率：开口→加微转化率为 0%，已触发红线。\n👀 P2 回访漏打：范晓丽（责任客服:杨雪）。\n\n**二、根因诊断**\n转化率问题的核心在于开口到加微环节的转化率为0%，这可能是因为客服在开口咨询时未能有效引导客户加微信，或者在沟通中缺乏足够的吸引力和信任建立。此外，回访漏打的问题可能是由于客服在术后回访环节的跟进不够及时或系统提醒功能未被正确使用。\n\n**三、今日行动项**\n1. 店长今天需与汤娅和侯芳进行紧急培训，重点讲解如何在开口咨询阶段提高加微信的转化率，包括沟通技巧和信任建立方法。\n2. 店长需检查并优化回访提醒系统，确保所有客户术后回访不被遗漏，特别是对于杨雪负责的客户进行重点检查和提醒。\n3. 汤娅需对孙敏和孙欣欣进行特别跟进，制定个性化的挽回话术，尝试重新安排预约并提高到店率。",
+  "ad_spend": 0,
+  "open_count": 0,
+  "open_cost": 0,
+  "arrived_count": 0,
   "noshow_count": 2,
-  "deal_count": 1,
+  "deal_count": 0,
   "cs_names": [
     "汤娅",
     "侯芳",
     "杨雪"
   ],
   "wechat_list": [
+    5,
     6,
-    0,
-    5
+    2
   ],
   "deposit_list": [
     0,
@@ -52,19 +52,26 @@
   "fulfill_list": [
     1,
     0,
-    0
+    1
   ],
   "gap_list": [
     0,
     0,
-    0
+    1
   ],
   "arrived_list": [
-    1,
+    0,
     0,
     0
   ],
   "blacklist": [
+    {
+      "client": "孙敏",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "汤娅",
+      "level": "normal"
+    },
     {
       "client": "孙欣欣",
       "problem": "爽约",
@@ -73,34 +80,33 @@
       "level": "normal"
     },
     {
-      "client": "高婕",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "侯芳",
-      "level": "normal"
+      "client": "范晓丽",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "杨雪",
+      "level": "warning"
     }
   ],
   "staff_intentions": {
     "汤娅": {
-      "C级(低意向)": 5,
-      "A级(高意向)": 1
+      "C级(低意向)": 2
     },
     "侯芳": {
-      "C级(低意向)": 4,
-      "A级(高意向)": 1
+      "C级(低意向)": 5,
+      "B级(中意向)": 2
     },
     "杨雪": {
-      "C级(低意向)": 5
+      "C级(低意向)": 2
     }
   },
   "y_axis_days": [
-    "5月22日",
     "5月23日",
     "5月24日",
     "5月25日",
     "5月26日",
     "5月27日",
-    "5月28日"
+    "5月28日",
+    "5月29日"
   ],
   "bed_heatmap": [
     [
@@ -218,71 +224,73 @@
   ],
   "data_quality": {
     "tables_ok": {
-      "前端投放": true,
+      "前端投放": false,
       "客服接待": true,
-      "成交台账": true,
+      "成交台账": false,
       "客户回访": true,
       "门店排期": false
     },
     "missing": [
+      "前端投放",
+      "成交台账",
       "门店排期"
     ],
-    "completeness": 0.8
+    "completeness": 0.4
   },
   "health_score": {
     "dimensions": {
       "acquire": {
-        "score": 54,
-        "status": "warning",
-        "detail": "开口成本¥82, 开口→加微46%, ROI 1.0",
+        "score": 20,
+        "status": "danger",
+        "detail": "开口成本¥0, 开口→加微0%, ROI 0.0",
         "label": "引流"
       },
       "convert": {
-        "score": 3,
+        "score": 0,
         "status": "danger",
-        "detail": "加微→定金0%, 到店率9%",
+        "detail": "加微→定金0%, 到店率0%",
         "label": "转化"
       },
       "deliver": {
         "score": 30,
         "status": "danger",
-        "detail": "退款率0%, 爽约率67%",
+        "detail": "退款率0%, 爽约率100%",
         "label": "交付"
       },
       "aftersales": {
-        "score": 100,
-        "status": "healthy",
-        "detail": "回访完成率100% (1/1)",
+        "score": 63,
+        "status": "warning",
+        "detail": "回访完成率67% (2/3)",
         "label": "售后"
       },
       "team": {
         "score": 2,
         "status": "danger",
-        "detail": "人均产出¥1,000, 人均加微6",
+        "detail": "人均产出¥0, 人均加微6",
         "label": "团队"
       }
     },
-    "overall_score": 36,
+    "overall_score": 21,
     "overall_status": "danger",
     "kpis": {
-      "spend": 1978.84,
-      "open_count": 24.0,
-      "wechat": 11.0,
+      "spend": 0.0,
+      "open_count": 0.0,
+      "wechat": 13.0,
       "deposit": 0.0,
-      "revenue": 2000.0,
-      "arrived": 1.0,
+      "revenue": 0.0,
+      "arrived": 0.0,
       "noshow": 2.0,
       "refund_count": 0,
-      "open_cost": 82.5,
-      "open_to_wechat": 0.458,
-      "ad_roi": 1.01,
+      "open_cost": 0,
+      "open_to_wechat": 0,
+      "ad_roi": 0,
       "wechat_to_dep": 0.0,
-      "dep_to_arrival": 0.091,
-      "noshow_rate": 0.667,
+      "dep_to_arrival": 0.0,
+      "noshow_rate": 1.0,
       "refund_rate": 0.0,
-      "followup_rate": 1.0,
-      "revenue_per_cs": 1000.0,
-      "wechat_per_cs": 5.5,
+      "followup_rate": 0.667,
+      "revenue_per_cs": 0.0,
+      "wechat_per_cs": 6.5,
       "cs_count": 2,
       "monthly_target": 150000
     }
@@ -297,8 +305,15 @@
     },
     {
       "level": "P1",
+      "category": "引流",
+      "message": "哈尔滨引流健康度仅20分: 开口成本¥0, 开口→加微0%, ROI 0.0",
+      "city": "哈尔滨",
+      "action": "检查投放素材和出价策略"
+    },
+    {
+      "level": "P1",
       "category": "转化",
-      "message": "哈尔滨转化健康度仅3分: 加微→定金0%, 到店率9%",
+      "message": "哈尔滨转化健康度仅0分: 加微→定金0%, 到店率0%",
       "city": "哈尔滨",
       "action": "抽查客服聊天记录，检查话术和跟进节奏"
     }
