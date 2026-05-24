@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 22,
+  "days_elapsed": 23,
   "total_days": 31,
-  "cum_revenue": 157870.0,
-  "cum_spend": 74147.84,
-  "cum_wechat": 447,
+  "cum_revenue": 162630.0,
+  "cum_spend": 79831.84,
+  "cum_wechat": 459,
   "cum_deposit": 0,
-  "cum_open": 830,
+  "cum_open": 888,
   "cum_refund": 15,
-  "roi": 2.7,
+  "roi": 2.63,
   "revenue_target": 300000,
-  "progress": 35.9,
-  "predicted_revenue": 222453.18,
-  "predicted_spend": 104481.05,
-  "predicted_roi": 2.13,
+  "progress": 37.5,
+  "predicted_revenue": 219196.96,
+  "predicted_spend": 107599.44,
+  "predicted_roi": 2.04,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -191,6 +191,14 @@
       "wechat": 8,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-05-23",
+      "revenue": 4760.0,
+      "spend": 2987.27,
+      "wechat": 12,
+      "deposit": 0,
+      "open": 29.0
     }
   ],
   "rate_trend": [
@@ -303,33 +311,38 @@
       "date": "2026-05-22",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-23",
+      "open_to_wechat": 41.4,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 156,
+      "wechat": 162,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 17,
+      "arrived": 18,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 64,
+      "gap_total": 65,
       "sop_score": 0,
-      "intent_a": 1,
+      "intent_a": 0,
       "intent_b": 1,
-      "intent_c": 3,
-      "intent_total": 5
+      "intent_c": 0,
+      "intent_total": 1
     },
     {
       "name": "阳珂欣",
       "wechat": 166,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 22,
+      "arrived": 23,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 44,
+      "gap_total": 46,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -353,7 +366,7 @@
     },
     {
       "name": "林俐",
-      "wechat": 125,
+      "wechat": 131,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 5,
