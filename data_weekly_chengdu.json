@@ -1,86 +1,86 @@
 {
   "city": "成都",
-  "week_num": 20,
-  "week_label": "第20周 (05.11-05.17)",
-  "week_start": "2026-05-11",
-  "week_end": "2026-05-17",
+  "week_num": 21,
+  "week_label": "第21周 (05.18-05.24)",
+  "week_start": "2026-05-18",
+  "week_end": "2026-05-24",
   "days": 7,
-  "week_revenue": 63605.0,
-  "week_spend": 13419.88,
-  "week_wechat": 114,
+  "week_revenue": 24780.0,
+  "week_spend": 15978.21,
+  "week_wechat": 118,
   "week_deposit": 0,
-  "week_open": 143.0,
-  "week_roi": 4.74,
+  "week_open": 156.0,
+  "week_roi": 1.55,
   "week_complete": true,
   "daily_breakdown": [
     {
-      "date": "05-11",
+      "date": "05-18",
       "weekday": "周一",
-      "revenue": 6980.0,
-      "spend": 11.68,
-      "wechat": 26,
-      "deposit": 0
-    },
-    {
-      "date": "05-12",
-      "weekday": "周二",
-      "revenue": 11165.0,
-      "spend": 3164.75,
-      "wechat": 4,
-      "deposit": 0
-    },
-    {
-      "date": "05-13",
-      "weekday": "周三",
-      "revenue": 4780.0,
+      "revenue": 0.0,
       "spend": 0,
+      "wechat": 21,
+      "deposit": 0
+    },
+    {
+      "date": "05-19",
+      "weekday": "周二",
+      "revenue": 5000.0,
+      "spend": 4137.52,
       "wechat": 18,
       "deposit": 0
     },
     {
-      "date": "05-14",
+      "date": "05-20",
+      "weekday": "周三",
+      "revenue": 0.0,
+      "spend": 2856.82,
+      "wechat": 16,
+      "deposit": 0
+    },
+    {
+      "date": "05-21",
       "weekday": "周四",
       "revenue": 0.0,
-      "spend": 3233.2,
-      "wechat": 14,
+      "spend": 3488.22,
+      "wechat": 28,
       "deposit": 0
     },
     {
-      "date": "05-15",
+      "date": "05-22",
       "weekday": "周五",
-      "revenue": 11820.0,
-      "spend": 3249.86,
-      "wechat": 6,
-      "deposit": 0
-    },
-    {
-      "date": "05-16",
-      "weekday": "周六",
-      "revenue": 16600.0,
+      "revenue": 3760.0,
       "spend": 0,
-      "wechat": 17,
+      "wechat": 8,
       "deposit": 0
     },
     {
-      "date": "05-17",
+      "date": "05-23",
+      "weekday": "周六",
+      "revenue": 4760.0,
+      "spend": 2987.27,
+      "wechat": 12,
+      "deposit": 0
+    },
+    {
+      "date": "05-24",
       "weekday": "周日",
-      "revenue": 12260.0,
-      "spend": 3760.39,
-      "wechat": 29,
+      "revenue": 11260.0,
+      "spend": 2508.38,
+      "wechat": 15,
       "deposit": 0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 39,
+      "wechat": 47,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "阳珂欣",
-      "wechat": 31,
+      "wechat": 32,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
@@ -94,7 +94,7 @@
     },
     {
       "name": "林俐",
-      "wechat": 44,
+      "wechat": 39,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
@@ -102,43 +102,43 @@
   ],
   "month_target": 300000,
   "month_total_weeks": 5,
-  "month_elapsed_weeks": 3,
-  "month_cum_revenue": 112507.0,
+  "month_elapsed_weeks": 4,
+  "month_cum_revenue": 123767.0,
   "ideal_pace": 60000.0,
-  "actual_pace": 37502.33,
+  "actual_pace": 30941.75,
   "pace_status": "behind",
   "trend_weeks": [
-    "第17周",
     "第18周",
     "第19周",
-    "第20周"
+    "第20周",
+    "第21周"
   ],
   "trend_revenue": [
-    65531.0,
     36102.0,
     21622.0,
-    63605.0
+    63605.0,
+    24780.0
   ],
   "trend_spend": [
-    7624.68,
     14005.12,
     15940.56,
-    13419.88
+    13419.88,
+    15978.21
   ],
   "trend_roi": [
-    8.59,
     2.58,
     1.36,
-    4.74
+    4.74,
+    1.55
   ],
   "last_week": {
-    "revenue": 21622.0,
-    "spend": 15940.56,
-    "roi": 1.36
+    "revenue": 63605.0,
+    "spend": 13419.88,
+    "roi": 4.74
   },
   "wow_change": {
-    "revenue_pct": 194.2,
-    "spend_pct": -15.8,
-    "roi_change": 3.38
+    "revenue_pct": -61.0,
+    "spend_pct": 19.1,
+    "roi_change": -3.19
   }
 }

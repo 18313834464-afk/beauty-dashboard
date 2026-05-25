@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 23,
+  "days_elapsed": 24,
   "total_days": 31,
-  "cum_revenue": 162630.0,
-  "cum_spend": 79831.84,
-  "cum_wechat": 459,
+  "cum_revenue": 173890.0,
+  "cum_spend": 82340.22,
+  "cum_wechat": 474,
   "cum_deposit": 0,
-  "cum_open": 888,
+  "cum_open": 914,
   "cum_refund": 15,
-  "roi": 2.63,
+  "roi": 2.73,
   "revenue_target": 300000,
-  "progress": 37.5,
-  "predicted_revenue": 219196.96,
-  "predicted_spend": 107599.44,
-  "predicted_roi": 2.04,
+  "progress": 41.3,
+  "predicted_revenue": 224607.92,
+  "predicted_spend": 106356.12,
+  "predicted_roi": 2.11,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -199,6 +199,14 @@
       "wechat": 12,
       "deposit": 0,
       "open": 29.0
+    },
+    {
+      "date": "2026-05-24",
+      "revenue": 11260.0,
+      "spend": 2508.38,
+      "wechat": 15,
+      "deposit": 0,
+      "open": 26.0
     }
   ],
   "rate_trend": [
@@ -316,38 +324,43 @@
       "date": "2026-05-23",
       "open_to_wechat": 41.4,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-24",
+      "open_to_wechat": 57.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 162,
-      "deposit": 0,
-      "revenue": 0.0,
-      "arrived": 18,
-      "deposit_rate": 0.0,
-      "fulfill_rate": 0,
-      "gap_total": 65,
-      "sop_score": 0,
-      "intent_a": 0,
-      "intent_b": 1,
-      "intent_c": 0,
-      "intent_total": 1
-    },
-    {
-      "name": "阳珂欣",
       "wechat": 166,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 23,
+      "arrived": 19,
+      "deposit_rate": 0.0,
+      "fulfill_rate": 0,
+      "gap_total": 67,
+      "sop_score": 0,
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
+    },
+    {
+      "name": "阳珂欣",
+      "wechat": 170,
+      "deposit": 0,
+      "revenue": 0.0,
+      "arrived": 25,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 46,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_c": 4,
+      "intent_total": 4
     },
     {
       "name": "陈相",
@@ -366,10 +379,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 131,
+      "wechat": 138,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 5,
+      "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 3,
