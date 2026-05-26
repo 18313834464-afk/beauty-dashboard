@@ -5,15 +5,15 @@
       "score": {
         "dimensions": {
           "acquire": {
-            "score": 70,
+            "score": 71,
             "status": "warning",
-            "detail": "开口成本¥96, 开口→加微58%, ROI 4.5",
+            "detail": "开口成本¥106, 开口→加微67%, ROI 3.0",
             "label": "引流"
           },
           "convert": {
-            "score": 8,
+            "score": 5,
             "status": "danger",
-            "detail": "加微→定金0%, 到店率27%",
+            "detail": "加微→定金0%, 到店率17%",
             "label": "转化"
           },
           "deliver": {
@@ -23,39 +23,39 @@
             "label": "交付"
           },
           "aftersales": {
-            "score": 30,
-            "status": "danger",
-            "detail": "回访完成率50% (2/4)",
+            "score": 98,
+            "status": "healthy",
+            "detail": "回访完成率89% (8/9)",
             "label": "售后"
           },
           "team": {
             "score": 5,
             "status": "danger",
-            "detail": "人均产出¥5,630, 人均加微8",
+            "detail": "人均产出¥4,370, 人均加微9",
             "label": "团队"
           }
         },
-        "overall_score": 35,
+        "overall_score": 44,
         "overall_status": "danger",
         "kpis": {
-          "spend": 2508.38,
-          "open_count": 26.0,
-          "wechat": 15.0,
+          "spend": 2871.17,
+          "open_count": 27.0,
+          "wechat": 18.0,
           "deposit": 0.0,
-          "revenue": 11260.0,
-          "arrived": 4.0,
+          "revenue": 8740.0,
+          "arrived": 3.0,
           "noshow": 0.0,
           "refund_count": 0,
-          "open_cost": 96.5,
-          "open_to_wechat": 0.577,
-          "ad_roi": 4.49,
+          "open_cost": 106.3,
+          "open_to_wechat": 0.667,
+          "ad_roi": 3.04,
           "wechat_to_dep": 0.0,
-          "dep_to_arrival": 0.267,
+          "dep_to_arrival": 0.167,
           "noshow_rate": 0.0,
           "refund_rate": 0.0,
-          "followup_rate": 0.5,
-          "revenue_per_cs": 5630.0,
-          "wechat_per_cs": 7.5,
+          "followup_rate": 0.889,
+          "revenue_per_cs": 4370.0,
+          "wechat_per_cs": 9.0,
           "cs_count": 2,
           "monthly_target": 200000
         }
@@ -64,44 +64,12 @@
         {
           "level": "P1",
           "category": "转化",
-          "message": "成都转化健康度仅8分: 加微→定金0%, 到店率27%",
+          "message": "成都转化健康度仅5分: 加微→定金0%, 到店率17%",
           "city": "成都",
           "action": "抽查客服聊天记录，检查话术和跟进节奏"
-        },
-        {
-          "level": "P2",
-          "category": "回访",
-          "message": "成都回访完成率不足: 回访完成率50% (2/4)",
-          "city": "成都",
-          "action": "督促客服今日补齐回访"
         }
       ],
       "history_scores": [
-        {
-          "overall_score": 13,
-          "kpis": {
-            "spend": 0.0,
-            "open_count": 0.0,
-            "wechat": 21.0,
-            "deposit": 0.0,
-            "revenue": 0.0,
-            "arrived": 1.0,
-            "noshow": 3.0,
-            "refund_count": 0,
-            "open_cost": 0,
-            "open_to_wechat": 0,
-            "ad_roi": 0,
-            "wechat_to_dep": 0.0,
-            "dep_to_arrival": 0.048,
-            "noshow_rate": 0.75,
-            "refund_rate": 0.0,
-            "followup_rate": 0.167,
-            "revenue_per_cs": 0.0,
-            "wechat_per_cs": 10.5,
-            "cs_count": 2,
-            "monthly_target": 200000
-          }
-        },
         {
           "overall_score": 26,
           "kpis": {
@@ -251,6 +219,31 @@
             "cs_count": 2,
             "monthly_target": 200000
           }
+        },
+        {
+          "overall_score": 44,
+          "kpis": {
+            "spend": 2871.17,
+            "open_count": 27.0,
+            "wechat": 18.0,
+            "deposit": 0.0,
+            "revenue": 8740.0,
+            "arrived": 3.0,
+            "noshow": 0.0,
+            "refund_count": 0,
+            "open_cost": 106.3,
+            "open_to_wechat": 0.667,
+            "ad_roi": 3.04,
+            "wechat_to_dep": 0.0,
+            "dep_to_arrival": 0.167,
+            "noshow_rate": 0.0,
+            "refund_rate": 0.0,
+            "followup_rate": 0.889,
+            "revenue_per_cs": 4370.0,
+            "wechat_per_cs": 9.0,
+            "cs_count": 2,
+            "monthly_target": 200000
+          }
         }
       ]
     },
@@ -337,9 +330,9 @@
       "score": {
         "dimensions": {
           "acquire": {
-            "score": 61,
-            "status": "warning",
-            "detail": "开口成本¥53, 开口→加微46%, ROI 0.0",
+            "score": 47,
+            "status": "danger",
+            "detail": "开口成本¥103, 开口→加微68%, ROI 0.0",
             "label": "引流"
           },
           "convert": {
@@ -357,7 +350,7 @@
           "aftersales": {
             "score": 100,
             "status": "healthy",
-            "detail": "回访完成率100% (3/3)",
+            "detail": "回访完成率100% (1/1)",
             "label": "售后"
           },
           "team": {
@@ -367,19 +360,19 @@
             "label": "团队"
           }
         },
-        "overall_score": 37,
+        "overall_score": 33,
         "overall_status": "danger",
         "kpis": {
-          "spend": 1381.99,
-          "open_count": 26.0,
-          "wechat": 12.0,
+          "spend": 1952.83,
+          "open_count": 19.0,
+          "wechat": 13.0,
           "deposit": 0.0,
           "revenue": 0.0,
           "arrived": 0.0,
-          "noshow": 1.0,
+          "noshow": 4.0,
           "refund_count": 0,
-          "open_cost": 53.2,
-          "open_to_wechat": 0.462,
+          "open_cost": 102.8,
+          "open_to_wechat": 0.684,
           "ad_roi": 0.0,
           "wechat_to_dep": 0.0,
           "dep_to_arrival": 0.0,
@@ -387,7 +380,7 @@
           "refund_rate": 0.0,
           "followup_rate": 1.0,
           "revenue_per_cs": 0.0,
-          "wechat_per_cs": 6.0,
+          "wechat_per_cs": 6.5,
           "cs_count": 2,
           "monthly_target": 150000
         }
@@ -396,9 +389,16 @@
         {
           "level": "P0",
           "category": "爽约",
-          "message": "哈尔滨站1位客户爽约未到店",
+          "message": "哈尔滨站4位客户爽约未到店",
           "city": "哈尔滨",
           "action": "客服立刻联系挽回，确认下次到店时间"
+        },
+        {
+          "level": "P1",
+          "category": "引流",
+          "message": "哈尔滨引流健康度仅47分: 开口成本¥103, 开口→加微68%, ROI 0.0",
+          "city": "哈尔滨",
+          "action": "检查投放素材和出价策略"
         },
         {
           "level": "P1",
@@ -409,31 +409,6 @@
         }
       ],
       "history_scores": [
-        {
-          "overall_score": 26,
-          "kpis": {
-            "spend": 0.0,
-            "open_count": 0.0,
-            "wechat": 13.0,
-            "deposit": 0.0,
-            "revenue": 0.0,
-            "arrived": 0.0,
-            "noshow": 2.0,
-            "refund_count": 0,
-            "open_cost": 0,
-            "open_to_wechat": 0,
-            "ad_roi": 0,
-            "wechat_to_dep": 0.0,
-            "dep_to_arrival": 0.0,
-            "noshow_rate": 1.0,
-            "refund_rate": 0.0,
-            "followup_rate": 1.0,
-            "revenue_per_cs": 0.0,
-            "wechat_per_cs": 6.5,
-            "cs_count": 2,
-            "monthly_target": 150000
-          }
-        },
         {
           "overall_score": 28,
           "kpis": {
@@ -583,6 +558,31 @@
             "cs_count": 2,
             "monthly_target": 150000
           }
+        },
+        {
+          "overall_score": 33,
+          "kpis": {
+            "spend": 1952.83,
+            "open_count": 19.0,
+            "wechat": 13.0,
+            "deposit": 0.0,
+            "revenue": 0.0,
+            "arrived": 0.0,
+            "noshow": 4.0,
+            "refund_count": 0,
+            "open_cost": 102.8,
+            "open_to_wechat": 0.684,
+            "ad_roi": 0.0,
+            "wechat_to_dep": 0.0,
+            "dep_to_arrival": 0.0,
+            "noshow_rate": 1.0,
+            "refund_rate": 0.0,
+            "followup_rate": 1.0,
+            "revenue_per_cs": 0.0,
+            "wechat_per_cs": 6.5,
+            "cs_count": 2,
+            "monthly_target": 150000
+          }
         }
       ]
     }
@@ -591,14 +591,14 @@
     {
       "level": "P0",
       "category": "爽约",
-      "message": "哈尔滨站1位客户爽约未到店",
+      "message": "哈尔滨站4位客户爽约未到店",
       "city": "哈尔滨",
       "action": "客服立刻联系挽回，确认下次到店时间"
     },
     {
       "level": "P1",
       "category": "转化",
-      "message": "成都转化健康度仅8分: 加微→定金0%, 到店率27%",
+      "message": "成都转化健康度仅5分: 加微→定金0%, 到店率17%",
       "city": "成都",
       "action": "抽查客服聊天记录，检查话术和跟进节奏"
     },
@@ -618,46 +618,46 @@
     },
     {
       "level": "P1",
+      "category": "引流",
+      "message": "哈尔滨引流健康度仅47分: 开口成本¥103, 开口→加微68%, ROI 0.0",
+      "city": "哈尔滨",
+      "action": "检查投放素材和出价策略"
+    },
+    {
+      "level": "P1",
       "category": "转化",
       "message": "哈尔滨转化健康度仅0分: 加微→定金0%, 到店率0%",
       "city": "哈尔滨",
       "action": "抽查客服聊天记录，检查话术和跟进节奏"
-    },
-    {
-      "level": "P2",
-      "category": "回访",
-      "message": "成都回访完成率不足: 回访完成率50% (2/4)",
-      "city": "成都",
-      "action": "督促客服今日补齐回访"
     }
   ],
   "comparison": {
     "rankings": [
       {
+        "city": "成都",
+        "overall_score": 44,
+        "overall_status": "danger",
+        "revenue": 8740.0,
+        "revenue_per_cs": 4370.0,
+        "wechat_per_cs": 9.0,
+        "ad_roi": 3.04,
+        "open_cost": 106.3,
+        "wechat_to_dep": 0.0,
+        "refund_rate": 0.0,
+        "followup_rate": 0.889
+      },
+      {
         "city": "哈尔滨",
-        "overall_score": 37,
+        "overall_score": 33,
         "overall_status": "danger",
         "revenue": 0.0,
         "revenue_per_cs": 0.0,
-        "wechat_per_cs": 6.0,
+        "wechat_per_cs": 6.5,
         "ad_roi": 0.0,
-        "open_cost": 53.2,
+        "open_cost": 102.8,
         "wechat_to_dep": 0.0,
         "refund_rate": 0.0,
         "followup_rate": 1.0
-      },
-      {
-        "city": "成都",
-        "overall_score": 35,
-        "overall_status": "danger",
-        "revenue": 11260.0,
-        "revenue_per_cs": 5630.0,
-        "wechat_per_cs": 7.5,
-        "ad_roi": 4.49,
-        "open_cost": 96.5,
-        "wechat_to_dep": 0.0,
-        "refund_rate": 0.0,
-        "followup_rate": 0.5
       },
       {
         "city": "重庆",
@@ -677,10 +677,10 @@
       {
         "city": "成都",
         "wechat_per_yuan": 0.006,
-        "revenue_per_yuan": 4.49,
+        "revenue_per_yuan": 3.04,
         "deposit_per_wechat": 0.0,
-        "revenue_per_cs": 5630.0,
-        "wechat_per_cs": 7.5
+        "revenue_per_cs": 4370.0,
+        "wechat_per_cs": 9.0
       },
       {
         "city": "重庆",
@@ -692,27 +692,27 @@
       },
       {
         "city": "哈尔滨",
-        "wechat_per_yuan": 0.009,
+        "wechat_per_yuan": 0.007,
         "revenue_per_yuan": 0.0,
         "deposit_per_wechat": 0.0,
         "revenue_per_cs": 0.0,
-        "wechat_per_cs": 6.0
+        "wechat_per_cs": 6.5
       }
     ],
     "per_dimension": {
       "acquire": [
         {
           "city": "成都",
-          "score": 70,
+          "score": 71,
           "status": "warning",
-          "detail": "开口成本¥96, 开口→加微58%, ROI 4.5",
+          "detail": "开口成本¥106, 开口→加微67%, ROI 3.0",
           "label": "引流"
         },
         {
           "city": "哈尔滨",
-          "score": 61,
-          "status": "warning",
-          "detail": "开口成本¥53, 开口→加微46%, ROI 0.0",
+          "score": 47,
+          "status": "danger",
+          "detail": "开口成本¥103, 开口→加微68%, ROI 0.0",
           "label": "引流"
         },
         {
@@ -726,9 +726,9 @@
       "convert": [
         {
           "city": "成都",
-          "score": 8,
+          "score": 5,
           "status": "danger",
-          "detail": "加微→定金0%, 到店率27%",
+          "detail": "加微→定金0%, 到店率17%",
           "label": "转化"
         },
         {
@@ -781,14 +781,14 @@
           "city": "哈尔滨",
           "score": 100,
           "status": "healthy",
-          "detail": "回访完成率100% (3/3)",
+          "detail": "回访完成率100% (1/1)",
           "label": "售后"
         },
         {
           "city": "成都",
-          "score": 30,
-          "status": "danger",
-          "detail": "回访完成率50% (2/4)",
+          "score": 98,
+          "status": "healthy",
+          "detail": "回访完成率89% (8/9)",
           "label": "售后"
         }
       ],
@@ -797,7 +797,7 @@
           "city": "成都",
           "score": 5,
           "status": "danger",
-          "detail": "人均产出¥5,630, 人均加微8",
+          "detail": "人均产出¥4,370, 人均加微9",
           "label": "团队"
         },
         {
@@ -817,5 +817,5 @@
       ]
     }
   },
-  "generated_at": "2026-05-25 06:30:04"
+  "generated_at": "2026-05-26 06:12:32"
 }
