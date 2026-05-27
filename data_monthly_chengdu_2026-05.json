@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 25,
+  "days_elapsed": 26,
   "total_days": 31,
-  "cum_revenue": 182630.0,
-  "cum_spend": 85211.39,
-  "cum_wechat": 492,
+  "cum_revenue": 190190.0,
+  "cum_spend": 87902.48,
+  "cum_wechat": 500,
   "cum_deposit": 0,
-  "cum_open": 941,
+  "cum_open": 971,
   "cum_refund": 15,
   "roi": 2.75,
   "revenue_target": 300000,
-  "progress": 44.2,
-  "predicted_revenue": 226461.2,
-  "predicted_spend": 105662.12,
-  "predicted_roi": 2.14,
+  "progress": 46.7,
+  "predicted_revenue": 226765.0,
+  "predicted_spend": 104806.8,
+  "predicted_roi": 2.16,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -215,6 +215,14 @@
       "wechat": 18,
       "deposit": 0,
       "open": 27.0
+    },
+    {
+      "date": "2026-05-26",
+      "revenue": 7560.0,
+      "spend": 2691.09,
+      "wechat": 8,
+      "deposit": 0,
+      "open": 30.0
     }
   ],
   "rate_trend": [
@@ -342,18 +350,23 @@
       "date": "2026-05-25",
       "open_to_wechat": 66.7,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-26",
+      "open_to_wechat": 26.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 169,
+      "wechat": 176,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 20,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 68,
+      "gap_total": 75,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -365,10 +378,10 @@
       "wechat": 178,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 26,
+      "arrived": 27,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 46,
+      "gap_total": 47,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -392,10 +405,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 145,
+      "wechat": 146,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 7,
+      "arrived": 8,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 3,
