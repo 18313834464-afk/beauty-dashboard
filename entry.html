@@ -4699,13 +4699,16 @@ async function loadDashboard() {
       if(!list||!list.length)return '';
       return `<table style="width:100%;font-size:11px;border-collapse:collapse;margin:4px 0 4px 8px">
         <tr style="color:var(--outline)"><td style="padding:3px 0">姓名</td><td style="text-align:right;padding:3px 0">底薪</td><td style="text-align:right;padding:3px 0">提成</td><td style="text-align:right;padding:3px 0">绩效</td><td style="text-align:right;padding:3px 0;font-weight:600">合计</td></tr>
-        ${list.map(c=>`<tr>
-          <td style="padding:3px 0;color:var(--on-surface-variant)">${c.name}</td>
-          <td style="text-align:right;padding:3px 0">${fmtK(c.base)}</td>
-          <td style="text-align:right;padding:3px 0">${fmtK(c.commission)}</td>
-          <td style="text-align:right;padding:3px 0">${c.performance?fmtK(c.performance):'-'}</td>
-          <td style="text-align:right;padding:3px 0;font-weight:600;color:var(--on-surface)">${fmtK(c.total)}</td>
-        </tr>`).join('')}
+        ${list.map(c=>{
+          const tag = c._merged_from ? `<span style="display:inline-block;padding:1px 5px;background:rgba(155,126,200,.15);color:#9B7EC8;border-radius:3px;font-size:9px;margin-left:4px">⇄ ${c._merged_from}</span>` : '';
+          return `<tr>
+            <td style="padding:3px 0;color:var(--on-surface-variant)">${c.name}${tag}</td>
+            <td style="text-align:right;padding:3px 0">${fmtK(c.base)}</td>
+            <td style="text-align:right;padding:3px 0">${fmtK(c.commission)}</td>
+            <td style="text-align:right;padding:3px 0">${c.performance?fmtK(c.performance):'-'}</td>
+            <td style="text-align:right;padding:3px 0;font-weight:600;color:var(--on-surface)">${fmtK(c.total)}</td>
+          </tr>`;
+        }).join('')}
       </table>`;
     };
     const renderArtTable=(list)=>{
@@ -4857,59 +4860,236 @@ async function loadDashboard() {
         <div style="${section}">各城市经营明细</div>
         <div style="margin-top:8px">${cityCards}</div>`;
     } else {
+      // ━━━━━━━ 单城 P&L 卡片重设计（5/27） ━━━━━━━
+      // 之前是一大段平铺 row+subRow，信息密度低、无视觉层次。
+      // 现在改成：KPI 4 宫格 → 利润率进度条 → 成本结构条形图 → 当前 vs 预测对比 → 分组明细卡片。
+      const incC = v => v>=0 ? 'var(--success)' : 'var(--error)';
+      const apportion = p.mode==='kunming' ? 1 : 0.5;             // 非主城均摊½门店和助理
+      const curStore = Math.round(((p.rent||0)+(p.misc||0))*apportion);
+      const predStore = curStore;
+      const curAsst = Math.round((p.cur_assistant_salary||0)*apportion);
+      const predAsst = Math.round((p.assistant_salary||0)*apportion);
+      const curTotalCost = Math.round((p.cur_ad||0)+(p.cur_cs_salary||0)+(p.cur_manager_fee||0)+(p.cur_artist_fee||0)+(p.cur_partner_cost||0)+curAsst+curStore+(p.cur_cd_profit_share||0));
+      const predTotalCost = Math.round((p.ad_actual||0)+(p.cs_salary||0)+(p.manager_fee||0)+(p.artist_fee||0)+(p.partner_cost||0)+predAsst+predStore+(p.cd_profit_share||0));
+      const curCostRate = p.cur_sales>0 ? Math.round(curTotalCost/p.cur_sales*100) : 0;
 
-    $('dash-pnl').innerHTML=`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-        <div style="text-align:center;background:var(--surface-low);border-radius:var(--radius-sm);padding:14px">
-          <div style="font-size:10px;color:var(--on-surface-variant);margin-bottom:4px">当前利润</div>
-          <div style="font-size:20px;font-weight:800;color:var(--success)">${fmtK(p.cur_income||0)}</div>
+      // 成本结构（横向条形图）
+      const costItems = [
+        { label:'广告', cur:p.cur_ad||0, pred:p.ad_actual||0, color:'#C87878' },
+        { label:'客服', cur:p.cur_cs_salary||0, pred:p.cs_salary||0, color:'#7B8EC8' },
+        { label:'主理人', cur:p.cur_manager_fee||0, pred:p.manager_fee||0, color:'#9B7EC8' },
+        { label:'合伙人', cur:p.cur_partner_cost||0, pred:p.partner_cost||0, color:'#A879C8' },
+        { label:'纹绣师', cur:p.cur_artist_fee||0, pred:p.artist_fee||0, color:'#E8836B' },
+        { label:'助理', cur:curAsst, pred:predAsst, color:'#6B9E6F' },
+        { label:'门店', cur:curStore, pred:predStore, color:'#A89B94' },
+        { label:'成都分红', cur:p.cur_cd_profit_share||0, pred:p.cd_profit_share||0, color:'#D4915A' },
+      ].filter(x=>x.cur>0||x.pred>0);
+      const costTotal = costItems.reduce((s,c)=>s+c.cur, 0) || 1;
+      const costBars = costItems.map(c=>{
+        const pct = Math.round(c.cur/costTotal*100);
+        return `<div style="display:flex;align-items:center;gap:6px;padding:3px 0;font-size:11px">
+          <span style="width:48px;color:var(--on-surface-variant);font-size:10px">${c.label}</span>
+          <div style="flex:1;height:14px;background:rgba(200,180,170,.1);border-radius:4px;overflow:hidden">
+            <div style="height:100%;width:${pct}%;background:${c.color};border-radius:4px;min-width:${c.cur>0?2:0}px"></div>
+          </div>
+          <span style="width:58px;text-align:right;font-weight:600;color:var(--on-surface);font-size:10px">${fmtK(c.cur)}</span>
+          <span style="width:30px;text-align:right;color:var(--outline);font-size:9px">${pct}%</span>
+        </div>`;
+      }).join('');
+
+      // CS 卡片化（每个 CS 一个小卡，跨城用 ⇄ 标签）
+      const renderCsCards = (list, title) => {
+        if(!list||!list.length) return '';
+        return `<div style="margin:6px 0 10px">
+          <div style="font-size:10px;color:var(--outline);margin-bottom:4px">${title}</div>
+          ${list.map(c=>{
+            const tag = c._merged_from ? `<span style="display:inline-block;padding:1px 5px;background:rgba(155,126,200,.18);color:#9B7EC8;border-radius:3px;font-size:9px;margin-left:6px;font-weight:600">⇄ ${c._merged_from}</span>` : '';
+            const rateInfo = (c.dep_rate!=null||c.arr_rate!=null) ? `<span style="font-size:9px;color:var(--outline);margin-left:6px">微→定 ${c.dep_rate||0}% · 定→到 ${c.arr_rate||0}%</span>` : '';
+            const salesInfo = c.revenue ? `<span style="font-size:10px;color:var(--on-surface-variant)">销售 ${fmtK(c.revenue)}</span>` : '';
+            return `<div style="background:var(--surface-low);border-radius:6px;padding:8px 10px;margin-bottom:6px;border-left:3px solid #7B8EC8">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span style="font-weight:700;color:var(--on-surface);font-size:12px">${c.name}${tag}</span>
+                <span style="font-weight:800;color:#7B8EC8;font-size:13px">${fmtK(c.total)}</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span>${salesInfo}${rateInfo}</span>
+                <span style="font-size:9px;color:var(--outline)">底薪 ${fmtK(c.base)} + 提成 ${fmtK(c.commission)}${c.performance>0?' + 绩效 '+fmtK(c.performance):''}</span>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>`;
+      };
+
+      // 纹绣师 / 合伙人 / 主理人 / 助理卡片
+      const renderArtCards = (list, color, title) => {
+        if(!list||!list.length) return '';
+        return `<div style="margin:6px 0 10px">
+          <div style="font-size:10px;color:var(--outline);margin-bottom:4px">${title}</div>
+          ${list.map(a=>{
+            const fee = (a.fee||0)+(a.base||0);
+            const meta = a.rate ? `提成 ${Math.round(a.rate*100)}% × ${fmtK(a.revenue||0)}` : (a.revenue?`变现 ${fmtK(a.revenue)}`:'');
+            const baseInfo = a.base ? `底薪 ${fmtK(a.base)}` : '';
+            return `<div style="background:var(--surface-low);border-radius:6px;padding:8px 10px;margin-bottom:6px;border-left:3px solid ${color}">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+                <span style="font-weight:700;color:var(--on-surface);font-size:12px">${a.name}</span>
+                <span style="font-weight:800;color:${color};font-size:13px">${fmtK(fee)}</span>
+              </div>
+              <div style="font-size:9px;color:var(--outline)">${[meta,baseInfo].filter(Boolean).join(' · ')||'-'}</div>
+            </div>`;
+          }).join('')}
+        </div>`;
+      };
+      const renderPartnerCards = (list, color, title) => {
+        if(!list||!list.length) return '';
+        return `<div style="margin:6px 0 10px">
+          <div style="font-size:10px;color:var(--outline);margin-bottom:4px">${title}</div>
+          ${list.map(a=>{
+            const total = a.op_fee!=null ? (a.base||0)+(a.op_fee||0)+(a.profit_share||0) : (a.fee||0);
+            return `<div style="background:var(--surface-low);border-radius:6px;padding:8px 10px;margin-bottom:6px;border-left:3px solid ${color}">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+                <span style="font-weight:700;color:var(--on-surface);font-size:12px">${a.name}</span>
+                <span style="font-weight:800;color:${color};font-size:13px">${fmtK(total)}</span>
+              </div>
+              ${a.op_fee!=null ? `<div style="font-size:9px;color:var(--outline)">管理底薪 ${fmtK(a.base||0)} · 操作提成 ${a.rate?Math.round(a.rate*100)+'%':''} × ${fmtK(a.revenue||0)} = ${fmtK(a.op_fee||0)}${a.profit_share?' · 纯利分红 25% = '+fmtK(a.profit_share):''}</div>` : `<div style="font-size:9px;color:var(--outline)">${a.rate?Math.round(a.rate*100)+'%':''} × ${fmtK(a.revenue||0)}</div>`}
+            </div>`;
+          }).join('')}
+        </div>`;
+      };
+      const renderAsstCards = (list, color, title) => {
+        if(!list||!list.length) return '';
+        return `<div style="margin:6px 0 10px">
+          <div style="font-size:10px;color:var(--outline);margin-bottom:4px">${title}${p.mode==='kunming'?'':'（均摊½）'}</div>
+          ${list.map(a=>`<div style="background:var(--surface-low);border-radius:6px;padding:8px 10px;margin-bottom:6px;border-left:3px solid ${color}">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+              <span style="font-weight:700;color:var(--on-surface);font-size:12px">${a.name}${a.trial?'<span style="font-size:9px;color:var(--outline);margin-left:4px">(试用)</span>':''}</span>
+              <span style="font-weight:800;color:${color};font-size:13px">${fmtK(p.mode==='kunming'?(a.total||0):Math.round((a.total||0)/2))}</span>
+            </div>
+            <div style="font-size:9px;color:var(--outline)">底薪 ${fmtK(a.base||0)}${a.commission?' + 提成 '+fmtK(a.commission||0):''}${p.mode==='kunming'?'':' · 城市分摊½'}</div>
+          </div>`).join('')}
+        </div>`;
+      };
+
+      $('dash-pnl').innerHTML=`
+        <!-- ━━━ KPI 4 宫格 ━━━ -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+          <div style="text-align:center;background:var(--surface-low);border-radius:var(--radius-sm);padding:12px 8px">
+            <div style="font-size:9px;color:var(--outline);margin-bottom:3px">当前营收</div>
+            <div style="font-size:16px;font-weight:800;color:var(--on-surface)">${fmtK(p.cur_sales||0)}</div>
+          </div>
+          <div style="text-align:center;background:var(--surface-low);border-radius:var(--radius-sm);padding:12px 8px">
+            <div style="font-size:9px;color:var(--outline);margin-bottom:3px">预测月底营收</div>
+            <div style="font-size:16px;font-weight:800;color:var(--on-surface)">${fmtK(p.predicted_sales||0)}</div>
+          </div>
+          <div style="text-align:center;background:var(--surface-low);border-radius:var(--radius-sm);padding:12px 8px">
+            <div style="font-size:9px;color:var(--outline);margin-bottom:3px">当前利润</div>
+            <div style="font-size:18px;font-weight:800;color:${incC(p.cur_income||0)}">${fmtK(p.cur_income||0)}</div>
+          </div>
+          <div style="text-align:center;background:var(--surface-low);border-radius:var(--radius-sm);padding:12px 8px">
+            <div style="font-size:9px;color:var(--outline);margin-bottom:3px">预测月底利润</div>
+            <div style="font-size:18px;font-weight:800;color:${incC(p.your_income||0)}">${fmtK(p.your_income||0)}</div>
+          </div>
         </div>
-        <div style="text-align:center;background:var(--surface-low);border-radius:var(--radius-sm);padding:14px">
-          <div style="font-size:10px;color:var(--on-surface-variant);margin-bottom:4px">预测月底</div>
-          <div style="font-size:20px;font-weight:800;color:var(--primary)">${fmtK(p.your_income||0)}</div>
+
+        <!-- 利润率进度条 -->
+        <div style="background:var(--surface-low);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:4px">
+            <span style="color:var(--on-surface-variant)">${daysLabel} · 利润率</span>
+            <span style="font-weight:800;color:${marginColor};font-size:13px">${p.margin||0}%</span>
+          </div>
+          <div style="height:5px;background:rgba(200,180,170,.15);border-radius:2px;overflow:hidden">
+            <div style="height:100%;width:${Math.min(Math.max(p.margin||0,0),100)}%;background:${marginColor};border-radius:2px"></div>
+          </div>
+          <div style="font-size:9px;color:var(--outline);margin-top:4px">基准：≥15% 优秀 / ≥5% 健康 / &lt;5% 警戒</div>
         </div>
-      </div>
 
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:var(--surface-low);border-radius:var(--radius-sm);margin-bottom:6px;font-size:11px">
-        <span style="color:var(--on-surface-variant)">${daysLabel} · 利润率</span>
-        <span style="font-weight:700;color:${marginColor}">${p.margin||0}%</span>
-      </div>
+        <!-- ━━━ 成本结构条形图 ━━━ -->
+        <div style="${section}">成本结构 · 总成本 ${fmtK(curTotalCost)} · 占营收 ${curCostRate}%</div>
+        <div style="margin:8px 0 14px">${costBars}</div>
 
-      <div style="${section}">当前实际 · 销售额 ${fmtK(p.cur_sales||0)}</div>
-      <div style="${row}"><span>广告成本</span><span style="font-weight:600">${fmtK(p.cur_ad||0)}</span></div>
-      <div style="${row}"><span>客服薪资</span><span style="font-weight:600">${fmtK(p.cur_cs_salary||0)}</span></div>
-      ${renderCsTable(p.cur_cs_detail)}
-      ${p.cur_partner_cost!=null?`<div style="${row}"><span>合伙人成本</span><span style="font-weight:600">${fmtK(p.cur_partner_cost||0)}</span></div>${renderPartnerTable(p.cur_partner_detail)}`:''}
-      ${p.cur_manager_fee?`<div style="${row}"><span>主理人提成</span><span style="font-weight:600">${fmtK(p.cur_manager_fee||0)}</span></div>${renderMgrTable(p.cur_manager_detail)}`:''}
-      ${p.cur_artist_fee!=null?`<div style="${row}"><span>合作纹绣师</span><span style="font-weight:600">${fmtK(p.cur_artist_fee||0)}</span></div>${renderArtTable(p.cur_artist_detail)}`:''}
-      ${p.cur_assistant_salary?`<div style="${row}"><span>助理薪资${p.mode==='kunming'?'':'(均摊½)'}</span><span style="font-weight:600">${fmtK(p.mode==='kunming'?(p.cur_assistant_salary||0):Math.round(p.cur_assistant_salary/2))}</span></div>
-      ${(p.cur_assistant_detail||[]).map(a=>`<div style="${subRow}"><span>${a.name}${a.trial?'(试用)':''} 底薪¥${(a.base||0).toLocaleString()} + 提成¥${(a.commission||0).toLocaleString()}</span><span>${fmtK(a.total||0)}</span></div>`).join('')}`:''}
-      ${p.mode==='kunming'?`
-      <div style="${row}"><span>门店成本</span><span style="font-weight:600">${fmtK((p.rent||0)+(p.misc||0))}</span></div>`:`
-      <div style="${row}"><span>门店固定(均摊½)</span><span style="font-weight:600">${fmtK(Math.round(((p.rent||0)+(p.misc||0))/2))}</span></div>`}
-      <div style="${subRow}"><span>房租</span><span>${fmtK(p.rent||0)}</span></div>
-      ${(p.misc||0)>0?`<div style="${subRow}"><span>杂费</span><span>${fmtK(p.misc||0)}</span></div>`:''}
-      ${p.cur_net_profit!=null?`
-      <div style="${row};border-top:1px dashed var(--surface-high);margin-top:4px;padding-top:8px"><span>纯利</span><span style="font-weight:700;color:${(p.cur_net_profit||0)>=0?'var(--success)':'var(--error)'}">${fmtK(p.cur_net_profit||0)}</span></div>`:''}
-      ${p.cur_cd_profit_share?`<div style="${subRow}"><span>成都主理人分红 5%</span><span>${fmtK(p.cur_cd_profit_share)}</span></div>`:''}
+        <!-- ━━━ 客服薪资明细 ━━━ -->
+        <div style="${section}">客服薪资</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:11px;color:var(--on-surface-variant);margin-bottom:4px">
+          <span>当前累计 <span style="color:var(--on-surface);font-weight:700">${fmtK(p.cur_cs_salary||0)}</span></span>
+          <span>预测月底 <span style="color:var(--primary);font-weight:700">${fmtK(p.cs_salary||0)}</span></span>
+        </div>
+        ${renderCsCards(p.cur_cs_detail, '当前实际')}
+        ${(p.cs_detail&&p.cs_detail.length&&JSON.stringify(p.cs_detail)!==JSON.stringify(p.cur_cs_detail))?`<details style="margin-top:4px"><summary style="font-size:10px;color:var(--outline);cursor:pointer;padding:4px 0">▸ 查看预测月底明细</summary>${renderCsCards(p.cs_detail, '')}</details>`:''}
 
-      <div style="${section}">预测月底 · 销售额 ${fmtK(p.predicted_sales||0)}</div>
-      <div style="${row}"><span>广告成本</span><span style="font-weight:600">${fmtK(p.ad_actual||0)}</span></div>
-      <div style="${row}"><span>客服薪资</span><span style="font-weight:600">${fmtK(p.cs_salary||0)}</span></div>
-      ${renderCsTable(p.cs_detail)}
-      ${p.partner_cost!=null?`<div style="${row}"><span>合伙人成本</span><span style="font-weight:600">${fmtK(p.partner_cost||0)}</span></div>${renderPartnerTable(p.partner_detail)}`:''}
-      ${p.manager_fee?`<div style="${row}"><span>主理人提成</span><span style="font-weight:600">${fmtK(p.manager_fee||0)}</span></div>${renderMgrTable(p.manager_detail)}`:''}
-      ${p.artist_fee!=null?`<div style="${row}"><span>合作纹绣师</span><span style="font-weight:600">${fmtK(p.artist_fee||0)}</span></div>${renderArtTable(p.artist_detail)}`:''}
-      ${p.assistant_salary?`<div style="${row}"><span>助理薪资${p.mode==='kunming'?'':'(均摊½)'}</span><span style="font-weight:600">${fmtK(p.mode==='kunming'?(p.assistant_salary||0):Math.round(p.assistant_salary/2))}</span></div>
-      ${(p.assistant_detail||[]).map(a=>`<div style="${subRow}"><span>${a.name}${a.trial?'(试用)':''} 底薪¥${(a.base||0).toLocaleString()} + 提成¥${(a.commission||0).toLocaleString()}</span><span>${fmtK(a.total||0)}</span></div>`).join('')}`:''}
-      ${p.mode==='kunming'?`
-      <div style="${row}"><span>门店成本</span><span style="font-weight:600">${fmtK((p.rent||0)+(p.misc||0))}</span></div>`:`
-      <div style="${row}"><span>门店固定(均摊½)</span><span style="font-weight:600">${fmtK(Math.round(((p.rent||0)+(p.misc||0))/2))}</span></div>`}
-      <div style="${subRow}"><span>房租</span><span>${fmtK(p.rent||0)}</span></div>
-      ${(p.misc||0)>0?`<div style="${subRow}"><span>杂费</span><span>${fmtK(p.misc||0)}</span></div>`:''}
-      ${p.net_profit!=null?`
-      <div style="${row};border-top:1px dashed var(--surface-high);margin-top:4px;padding-top:8px"><span>纯利</span><span style="font-weight:700;color:${(p.net_profit||0)>=0?'var(--success)':'var(--error)'}">${fmtK(p.net_profit||0)}</span></div>`:''}
-      ${p.cd_profit_share?`<div style="${subRow}"><span>成都主理人分红 5%</span><span>${fmtK(p.cd_profit_share)}</span></div>`:''}`;
+        <!-- ━━━ 合伙人 ━━━ -->
+        ${p.cur_partner_cost!=null&&p.cur_partner_detail&&p.cur_partner_detail.length?`
+          <div style="${section}">合伙人成本</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:11px;color:var(--on-surface-variant);margin-bottom:4px">
+            <span>当前 <span style="color:var(--on-surface);font-weight:700">${fmtK(p.cur_partner_cost||0)}</span></span>
+            <span>预测 <span style="color:var(--primary);font-weight:700">${fmtK(p.partner_cost||0)}</span></span>
+          </div>
+          ${renderPartnerCards(p.cur_partner_detail, '#A879C8', '当前实际')}
+        `:''}
+
+        <!-- ━━━ 主理人 ━━━ -->
+        ${p.cur_manager_fee?`
+          <div style="${section}">主理人提成</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:11px;color:var(--on-surface-variant);margin-bottom:4px">
+            <span>当前 <span style="color:var(--on-surface);font-weight:700">${fmtK(p.cur_manager_fee||0)}</span></span>
+            <span>预测 <span style="color:var(--primary);font-weight:700">${fmtK(p.manager_fee||0)}</span></span>
+          </div>
+          ${renderArtCards(p.cur_manager_detail, '#9B7EC8', '当前实际')}
+        `:''}
+
+        <!-- ━━━ 合作纹绣师 ━━━ -->
+        ${p.cur_artist_fee!=null&&p.cur_artist_detail&&p.cur_artist_detail.length?`
+          <div style="${section}">合作纹绣师</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:11px;color:var(--on-surface-variant);margin-bottom:4px">
+            <span>当前 <span style="color:var(--on-surface);font-weight:700">${fmtK(p.cur_artist_fee||0)}</span></span>
+            <span>预测 <span style="color:var(--primary);font-weight:700">${fmtK(p.artist_fee||0)}</span></span>
+          </div>
+          ${renderArtCards(p.cur_artist_detail, '#E8836B', '当前实际')}
+        `:''}
+
+        <!-- ━━━ 助理 ━━━ -->
+        ${p.cur_assistant_salary&&p.cur_assistant_detail&&p.cur_assistant_detail.length?`
+          <div style="${section}">助理薪资${p.mode==='kunming'?'':'（均摊½）'}</div>
+          ${renderAsstCards(p.cur_assistant_detail, '#6B9E6F', '当前实际')}
+        `:''}
+
+        <!-- ━━━ 门店固定 ━━━ -->
+        <div style="${section}">门店固定成本${p.mode==='kunming'?'':'（均摊½）'}</div>
+        <div style="background:var(--surface-low);border-radius:6px;padding:10px 12px;border-left:3px solid #A89B94">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--on-surface-variant)">房租${p.mode==='kunming'?'':'（÷2）'}</span>
+            <span style="font-weight:700;color:var(--on-surface)">${fmtK(Math.round((p.rent||0)*apportion))}</span>
+          </div>
+          ${(p.misc||0)>0?`<div style="display:flex;justify-content:space-between;align-items:center;font-size:11px">
+            <span style="color:var(--on-surface-variant)">杂费${p.mode==='kunming'?'':'（÷2）'}</span>
+            <span style="font-weight:700;color:var(--on-surface)">${fmtK(Math.round((p.misc||0)*apportion))}</span>
+          </div>`:''}
+        </div>
+
+        <!-- ━━━ 利润测算（当前 vs 预测对比） ━━━ -->
+        <div style="${section}">利润测算</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px">
+          <div style="background:var(--surface-low);border-radius:6px;padding:10px;border-top:2px solid var(--on-surface-variant)">
+            <div style="font-size:10px;color:var(--outline);margin-bottom:6px">当前实际</div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>营收</span><span style="font-weight:700">${fmtK(p.cur_sales||0)}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>总成本</span><span style="font-weight:700;color:#C87878">−${fmtK(curTotalCost)}</span></div>
+            <div style="border-top:1px dashed var(--surface-high);margin-top:4px;padding-top:6px;display:flex;justify-content:space-between;font-size:12px">
+              <span style="font-weight:700">利润</span>
+              <span style="font-weight:800;color:${incC(p.cur_income||0)}">${fmtK(p.cur_income||0)}</span>
+            </div>
+            ${p.cur_net_profit!=null?`<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--outline);margin-top:2px"><span>纯利</span><span style="color:${(p.cur_net_profit||0)>=0?'var(--success)':'var(--error)'}">${fmtK(p.cur_net_profit||0)}</span></div>`:''}
+            ${p.cur_cd_profit_share?`<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--outline);margin-top:2px"><span>成都分红 5%</span><span>${fmtK(p.cur_cd_profit_share)}</span></div>`:''}
+          </div>
+          <div style="background:var(--surface-low);border-radius:6px;padding:10px;border-top:2px solid var(--primary)">
+            <div style="font-size:10px;color:var(--primary);margin-bottom:6px">预测月底</div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>营收</span><span style="font-weight:700">${fmtK(p.predicted_sales||0)}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>总成本</span><span style="font-weight:700;color:#C87878">−${fmtK(predTotalCost)}</span></div>
+            <div style="border-top:1px dashed var(--surface-high);margin-top:4px;padding-top:6px;display:flex;justify-content:space-between;font-size:12px">
+              <span style="font-weight:700">利润</span>
+              <span style="font-weight:800;color:${incC(p.your_income||0)}">${fmtK(p.your_income||0)}</span>
+            </div>
+            ${p.net_profit!=null?`<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--outline);margin-top:2px"><span>纯利</span><span style="color:${(p.net_profit||0)>=0?'var(--success)':'var(--error)'}">${fmtK(p.net_profit||0)}</span></div>`:''}
+            ${p.cd_profit_share?`<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--outline);margin-top:2px"><span>成都分红 5%</span><span>${fmtK(p.cd_profit_share)}</span></div>`:''}
+          </div>
+        </div>`;
     }
   } else {
     $('dash-pnl-card').style.display='none';
