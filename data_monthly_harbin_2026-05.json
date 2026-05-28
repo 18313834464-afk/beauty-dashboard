@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 26,
+  "days_elapsed": 27,
   "total_days": 31,
   "cum_revenue": 65302.0,
-  "cum_spend": 51287.72,
-  "cum_wechat": 374,
+  "cum_spend": 52878.27,
+  "cum_wechat": 387,
   "cum_deposit": 0,
-  "cum_open": 738,
+  "cum_open": 756,
   "cum_refund": 6,
   "roi": 0.14,
   "revenue_target": 100000,
   "progress": 4.2,
-  "predicted_revenue": 77860.08,
-  "predicted_spend": 61150.74,
-  "predicted_roi": 1.27,
+  "predicted_revenue": 74976.37,
+  "predicted_spend": 60712.09,
+  "predicted_roi": 1.23,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -223,6 +223,14 @@
       "wechat": 18,
       "deposit": 0,
       "open": 26.0
+    },
+    {
+      "date": "2026-05-27",
+      "revenue": 0.0,
+      "spend": 1590.55,
+      "wechat": 13,
+      "deposit": 0,
+      "open": 18.0
     }
   ],
   "rate_trend": [
@@ -355,12 +363,17 @@
       "date": "2026-05-26",
       "open_to_wechat": 69.2,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-27",
+      "open_to_wechat": 72.2,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 177,
+      "wechat": 178,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -370,8 +383,8 @@
       "sop_score": 100,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_c": 1,
+      "intent_total": 1
     },
     {
       "name": "侯芳",
@@ -381,16 +394,16 @@
       "arrived": 0,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 1,
-      "sop_score": 92,
+      "gap_total": 2,
+      "sop_score": 84,
       "intent_a": 0,
-      "intent_b": 3,
-      "intent_c": 9,
-      "intent_total": 12
+      "intent_b": 0,
+      "intent_c": 1,
+      "intent_total": 1
     },
     {
       "name": "杨雪",
-      "wechat": 62,
+      "wechat": 74,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -398,10 +411,10 @@
       "fulfill_rate": 0,
       "gap_total": 1,
       "sop_score": 92,
-      "intent_a": 0,
-      "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_a": 1,
+      "intent_b": 1,
+      "intent_c": 10,
+      "intent_total": 12
     }
   ],
   "refund_details": [
