@@ -1,22 +1,22 @@
 {
-  "date": "2026-05-27",
-  "total_revenue": 5840.0,
-  "total_spend": 3901.75,
-  "total_wechat": 26,
+  "date": "2026-05-28",
+  "total_revenue": 1680.0,
+  "total_spend": 4748.51,
+  "total_wechat": 24,
   "total_deposit": 0,
-  "roi": 1.5,
-  "roi_level": "warning",
+  "roi": 0.35,
+  "roi_level": "danger",
   "city_matrix": {
     "成都": {
-      "spend": 2311.2,
-      "open": 27.0,
-      "wechat": 13,
-      "open_to_wechat": 48.1,
+      "spend": 1859.87,
+      "open": 19.0,
+      "wechat": 15,
+      "open_to_wechat": 78.9,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 5840.0,
-      "refund_count": 2,
-      "open_cost": 85.6
+      "revenue": 1680.0,
+      "refund_count": 0,
+      "open_cost": 97.8878947368421
     },
     "重庆": {
       "spend": 0,
@@ -30,57 +30,33 @@
       "open_cost": 0
     },
     "哈尔滨": {
-      "spend": 1590.55,
-      "open": 18.0,
-      "wechat": 13,
-      "open_to_wechat": 72.2,
+      "spend": 2888.64,
+      "open": 37.0,
+      "wechat": 9,
+      "open_to_wechat": 24.3,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
       "revenue": 0.0,
       "refund_count": 0,
-      "open_cost": 15.0
+      "open_cost": 28.0
     }
   },
   "acquire_chain": {
-    "open": 45.0,
-    "wechat": 26,
+    "open": 56.0,
+    "wechat": 24,
     "deposit": 0,
-    "open_to_wechat": 57.8,
+    "open_to_wechat": 42.9,
     "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
-    "expected": 4,
-    "arrived": 4,
-    "revenue": 5840.0,
-    "arrival_rate": 100.0
+    "expected": 2,
+    "arrived": 1,
+    "revenue": 1680.0,
+    "arrival_rate": 50.0
   },
   "national_blacklist": [
     {
-      "client": "张馨月",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger",
-      "city": "成都"
-    },
-    {
-      "client": "夏天",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger",
-      "city": "成都"
-    },
-    {
-      "client": "贾女士",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "马欢",
+      "client": "李瞵杉老公",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
@@ -88,99 +64,27 @@
       "city": "成都"
     },
     {
-      "client": "刘爱林",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "朱殊",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "梁女士",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "雷慧玲",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "李瞵杉",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "高雪丽",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "赖紫玲",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "张曦",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "宗琪",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "林俐",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "杨卓莹",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "张馨月",
+      "client": "王雪娇",
       "problem": "回访",
       "type": "未完成",
       "cs": "侯芳",
       "level": "warning",
       "city": "哈尔滨"
+    },
+    {
+      "client": "刘敏女士",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "汤娅",
+      "level": "normal",
+      "city": "哈尔滨"
     }
   ],
   "city_open_cost": {
-    "成都": 85.6,
+    "成都": 97.8878947368421,
     "重庆": 0,
-    "哈尔滨": 15.0
+    "哈尔滨": 28.0
   },
   "open_cost_redline": 80,
-  "ai_national_summary": "🏆 哈尔滨表现最佳：开口成本¥15.0，开口→加微率72.2%。\n\n🚨 重庆变现为0：建议分析市场，提升开口→加微率。\n\n⚠️ 全国退款/爽约汇总：成都退款2笔，哈尔滨和重庆交付端全绿。"
+  "ai_national_summary": "1. 🏆 成都变现¥1680.0，开口→加微率78.9%表现最佳。\n\n2. 🚨 重庆变现¥0.0，建议加强推广与客户沟通。\n\n3. ⚠️ 全国退款/爽约汇总：交付端全绿。"
 }
