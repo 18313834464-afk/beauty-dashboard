@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-05",
-  "days_elapsed": 28,
+  "days_elapsed": 29,
   "total_days": 31,
-  "cum_revenue": 71502.0,
-  "cum_spend": 55766.91,
-  "cum_wechat": 396,
+  "cum_revenue": 74882.0,
+  "cum_spend": 57407.34,
+  "cum_wechat": 405,
   "cum_deposit": 0,
-  "cum_open": 793,
-  "cum_refund": 6,
+  "cum_open": 815,
+  "cum_refund": 7,
   "roi": 0.12,
   "revenue_target": 100000,
   "progress": 4.2,
-  "predicted_revenue": 79162.93,
-  "predicted_spend": 61741.94,
-  "predicted_roi": 1.28,
+  "predicted_revenue": 80046.28,
+  "predicted_spend": 61366.47,
+  "predicted_roi": 1.3,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -239,6 +239,14 @@
       "wechat": 9,
       "deposit": 0,
       "open": 37.0
+    },
+    {
+      "date": "2026-05-29",
+      "revenue": 0.0,
+      "spend": 1640.43,
+      "wechat": 9,
+      "deposit": 0,
+      "open": 22.0
     }
   ],
   "rate_trend": [
@@ -381,12 +389,17 @@
       "date": "2026-05-28",
       "open_to_wechat": 24.3,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-29",
+      "open_to_wechat": 40.9,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 187,
+      "wechat": 192,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -395,28 +408,28 @@
       "gap_total": 0,
       "sop_score": 100,
       "intent_a": 0,
-      "intent_b": 3,
-      "intent_c": 5,
-      "intent_total": 8
+      "intent_b": 2,
+      "intent_c": 2,
+      "intent_total": 4
     },
     {
       "name": "侯芳",
-      "wechat": 135,
+      "wechat": 136,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 0,
+      "arrived": 1,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 3,
       "sop_score": 76,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 7,
-      "intent_total": 7
+      "intent_c": 1,
+      "intent_total": 1
     },
     {
       "name": "杨雪",
-      "wechat": 74,
+      "wechat": 77,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -425,9 +438,9 @@
       "gap_total": 1,
       "sop_score": 92,
       "intent_a": 0,
-      "intent_b": 1,
-      "intent_c": 8,
-      "intent_total": 9
+      "intent_b": 0,
+      "intent_c": 3,
+      "intent_total": 3
     }
   ],
   "refund_details": [
@@ -436,6 +449,12 @@
       "revenue": 0,
       "cs": "侯芳",
       "status": "未到店退款"
+    },
+    {
+      "customer": "陈女士",
+      "revenue": 0,
+      "cs": "汤娅",
+      "status": "到店退款"
     },
     {
       "customer": "韩韩",
@@ -472,7 +491,7 @@
     {
       "cs": "汤娅",
       "city": "哈尔滨",
-      "arrived": 4,
+      "arrived": 5,
       "not_arrived": 0
     },
     {

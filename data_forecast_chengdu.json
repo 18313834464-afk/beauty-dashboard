@@ -2,19 +2,19 @@
   "city": "成都",
   "city_key": "chengdu",
   "month": "2026-05",
-  "generated_at": "2026-05-29 06:17:07",
-  "days_elapsed": 28,
+  "generated_at": "2026-05-30 06:20:23",
+  "days_elapsed": 29,
   "total_days": 31,
-  "progress_pct": 90.3,
+  "progress_pct": 93.5,
   "revenue_target": 300000,
   "cs_forecasts": [
     {
       "name": "会媛",
-      "days_elapsed": 28,
+      "days_elapsed": 29,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 193,
+        "wechat": 195,
         "deposit": 0,
         "arrived": 23,
         "salary": 5300,
@@ -24,7 +24,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 214,
+        "wechat": 208,
         "deposit": 0,
         "arrived": 25,
         "salary": 5300,
@@ -38,7 +38,7 @@
         "fulfill_rate": null,
         "sop_score": 0,
         "sop_predicted": 0,
-        "gap_total": 76
+        "gap_total": 78
       },
       "bonus_detail": {
         "定金转化率": {
@@ -57,13 +57,13 @@
     },
     {
       "name": "阳珂欣",
-      "days_elapsed": 28,
+      "days_elapsed": 29,
       "total_days": 31,
       "current": {
         "revenue": 0,
         "wechat": 185,
         "deposit": 0,
-        "arrived": 28,
+        "arrived": 29,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -71,7 +71,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 205,
+        "wechat": 198,
         "deposit": 0,
         "arrived": 31,
         "salary": 5300,
@@ -85,7 +85,7 @@
         "fulfill_rate": null,
         "sop_score": 0,
         "sop_predicted": 0,
-        "gap_total": 58
+        "gap_total": 63
       },
       "bonus_detail": {
         "定金转化率": {
@@ -104,7 +104,7 @@
     },
     {
       "name": "陈相",
-      "days_elapsed": 28,
+      "days_elapsed": 29,
       "total_days": 31,
       "current": {
         "revenue": 0,
@@ -151,11 +151,11 @@
     },
     {
       "name": "林俐",
-      "days_elapsed": 28,
+      "days_elapsed": 29,
       "total_days": 31,
       "current": {
         "revenue": 0,
-        "wechat": 150,
+        "wechat": 156,
         "deposit": 0,
         "arrived": 9,
         "salary": 5300,
@@ -165,7 +165,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 166,
+        "wechat": 167,
         "deposit": 0,
         "arrived": 10,
         "salary": 5300,
@@ -201,21 +201,21 @@
   "pnl_forecast": {
     "current_sales": 0,
     "predicted_sales": 0,
-    "predicted_your_income": -116351,
+    "predicted_your_income": -114815,
     "predicted_your_margin": 0,
     "predicted_partner_income": -10000,
     "predicted_cs_salary": 24800,
-    "predicted_ad_actual": 81551,
+    "predicted_ad_actual": 80015,
     "predicted_manager_fee": 0,
     "predicted_artist_fee": 6000,
     "predicted_shared_costs": 7000
   },
   "target_analysis": {
-    "current_revenue": 197710.0,
+    "current_revenue": 208154.0,
     "predicted_revenue": 0,
     "target": 300000,
     "gap": 300000,
-    "daily_needed": 100000,
+    "daily_needed": 150000,
     "on_track": false
   }
 }
