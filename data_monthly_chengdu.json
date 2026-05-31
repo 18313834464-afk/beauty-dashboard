@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-05",
-  "days_elapsed": 29,
+  "days_elapsed": 30,
   "total_days": 31,
-  "cum_revenue": 208154.0,
-  "cum_spend": 93566.57,
-  "cum_wechat": 536,
+  "cum_revenue": 223494.0,
+  "cum_spend": 95512.31,
+  "cum_wechat": 556,
   "cum_deposit": 0,
-  "cum_open": 1033,
+  "cum_open": 1055,
   "cum_refund": 17,
-  "roi": 2.69,
+  "roi": 2.96,
   "revenue_target": 300000,
-  "progress": 50.8,
-  "predicted_revenue": 222509.45,
-  "predicted_spend": 100019.44,
-  "predicted_roi": 2.22,
+  "progress": 57.8,
+  "predicted_revenue": 230943.8,
+  "predicted_spend": 98696.05,
+  "predicted_roi": 2.34,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -247,6 +247,14 @@
       "wechat": 8,
       "deposit": 0,
       "open": 16.0
+    },
+    {
+      "date": "2026-05-30",
+      "revenue": 21000.0,
+      "spend": 1945.74,
+      "wechat": 20,
+      "deposit": 0,
+      "open": 22.0
     }
   ],
   "rate_trend": [
@@ -394,18 +402,23 @@
       "date": "2026-05-29",
       "open_to_wechat": 50.0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-05-30",
+      "open_to_wechat": 90.9,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 195,
+      "wechat": 199,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 23,
+      "arrived": 25,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 78,
+      "gap_total": 80,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -414,13 +427,13 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 185,
+      "wechat": 191,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 29,
+      "arrived": 33,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 63,
+      "gap_total": 67,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -444,10 +457,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 156,
+      "wechat": 166,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 9,
+      "arrived": 10,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 4,

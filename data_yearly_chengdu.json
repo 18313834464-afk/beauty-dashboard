@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 671220.77,
-  "cum_spend": 282471.36,
-  "cum_wechat": 2205,
+  "cum_revenue": 686560.77,
+  "cum_spend": 286536.93,
+  "cum_wechat": 2225,
   "cum_deposit": 146,
-  "cum_open": 3588.0,
-  "cum_roi": 2.38,
-  "monthly_avg_rev": 223740.26,
-  "predicted_annual": 2684883.12,
+  "cum_open": 3632.0,
+  "cum_roi": 2.4,
+  "monthly_avg_rev": 228853.59,
+  "predicted_annual": 2746243.08,
   "revenue_target": 3000000,
-  "progress": 19.5,
+  "progress": 20.2,
   "monthly_kpi": [
     {
       "month": 1,
@@ -45,8 +45,8 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 246811.77,
-      "spend": 95338.22,
-      "roi": 2.59,
+      "spend": 95512.31,
+      "roi": 2.58,
       "wechat": 993,
       "deposit": 118,
       "open": 1522.0,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 93566.57,
-      "roi": 2.31,
+      "spend": 95512.31,
+      "roi": 2.26,
       "wechat": 676,
       "deposit": 28,
-      "open": 1033,
+      "open": 1055,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -72,16 +72,16 @@
     {
       "month": 5,
       "month_label": "5月",
-      "revenue": 208154.0,
-      "spend": 93566.57,
-      "roi": 2.22,
-      "wechat": 536,
+      "revenue": 223494.0,
+      "spend": 95512.31,
+      "roi": 2.34,
+      "wechat": 556,
       "deposit": 0,
-      "open": 1033,
-      "open_cost": 90.58,
+      "open": 1055,
+      "open_cost": 90.53,
       "refund": 17,
-      "days": 29,
-      "mom_revenue": -19.8
+      "days": 30,
+      "mom_revenue": -8.7
     }
   ],
   "trend_months": [
@@ -103,7 +103,7 @@
     0,
     246811.77,
     216255.0,
-    208154.0,
+    223494.0,
     null,
     null,
     null,
@@ -115,9 +115,9 @@
   "trend_spend": [
     0,
     0,
-    95338.22,
-    93566.57,
-    93566.57,
+    95512.31,
+    95512.31,
+    95512.31,
     null,
     null,
     null,
@@ -129,9 +129,9 @@
   "trend_roi": [
     0,
     0,
-    2.59,
-    2.31,
-    2.22,
+    2.58,
+    2.26,
+    2.34,
     null,
     null,
     null,
@@ -155,7 +155,7 @@
           "revenue": 26540.0
         },
         "5": {
-          "wechat": 195,
+          "wechat": 199,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -183,14 +183,14 @@
       "name": "林俐",
       "months": {
         "5": {
-          "wechat": 156,
+          "wechat": 166,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 6,
-      "intent_b": 24,
-      "intent_c": 95
+      "intent_a": 7,
+      "intent_b": 25,
+      "intent_c": 106
     },
     {
       "name": "胡娜",
@@ -216,7 +216,7 @@
           "revenue": 7260.0
         },
         "5": {
-          "wechat": 185,
+          "wechat": 191,
           "deposit": 0,
           "revenue": 0.0
         }
