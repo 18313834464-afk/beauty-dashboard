@@ -82,6 +82,20 @@
       "refund": 0,
       "days": 0,
       "mom_revenue": null
+    },
+    {
+      "month": 6,
+      "month_label": "6月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
     }
   ],
   "trend_months": [
@@ -104,7 +118,7 @@
     11140.0,
     0.0,
     0,
-    null,
+    0,
     null,
     null,
     null,
@@ -118,7 +132,7 @@
     3998.57,
     0,
     0,
-    null,
+    0,
     null,
     null,
     null,
@@ -132,7 +146,7 @@
     2.79,
     0,
     0,
-    null,
+    0,
     null,
     null,
     null,

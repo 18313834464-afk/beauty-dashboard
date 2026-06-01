@@ -1,22 +1,22 @@
 {
-  "date": "2026-05-30",
-  "total_revenue": 21000.0,
-  "total_spend": 4506.87,
-  "total_wechat": 27,
+  "date": "2026-05-31",
+  "total_revenue": 9660.0,
+  "total_spend": 4245.28,
+  "total_wechat": 29,
   "total_deposit": 0,
-  "roi": 4.66,
+  "roi": 2.28,
   "roi_level": "healthy",
   "city_matrix": {
     "成都": {
-      "spend": 1945.74,
-      "open": 22.0,
-      "wechat": 20,
-      "open_to_wechat": 90.9,
+      "spend": 1972.18,
+      "open": 20.0,
+      "wechat": 14,
+      "open_to_wechat": 70.0,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 21000.0,
-      "refund_count": 0,
-      "open_cost": 88.4427272727273
+      "revenue": 9660.0,
+      "refund_count": 1,
+      "open_cost": 98.609
     },
     "重庆": {
       "spend": 0,
@@ -30,81 +30,73 @@
       "open_cost": 0
     },
     "哈尔滨": {
-      "spend": 2561.13,
-      "open": 36.0,
-      "wechat": 7,
-      "open_to_wechat": 19.4,
+      "spend": 2273.1,
+      "open": 33.0,
+      "wechat": 15,
+      "open_to_wechat": 45.5,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
       "revenue": 0.0,
-      "refund_count": 0,
-      "open_cost": 29.0
+      "refund_count": 3,
+      "open_cost": 24.0
     }
   },
   "acquire_chain": {
-    "open": 58.0,
-    "wechat": 27,
+    "open": 53.0,
+    "wechat": 29,
     "deposit": 0,
-    "open_to_wechat": 46.6,
+    "open_to_wechat": 54.7,
     "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
-    "expected": 9,
-    "arrived": 7,
-    "revenue": 21000.0,
-    "arrival_rate": 77.8
+    "expected": 10,
+    "arrived": 5,
+    "revenue": 9660.0,
+    "arrival_rate": 50.0
   },
   "national_blacklist": [
     {
-      "client": "甘女士",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
+      "client": "王鹌鹑",
+      "problem": "退款",
+      "type": "后端交付失败",
+      "cs": "",
+      "level": "danger",
       "city": "成都"
     },
     {
-      "client": "郭婷婷",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
+      "client": "宫女士",
+      "problem": "退款",
+      "type": "后端交付失败",
+      "cs": "1",
+      "level": "danger",
+      "city": "哈尔滨"
     },
     {
-      "client": "王姐",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
+      "client": "杨磊",
+      "problem": "退款",
+      "type": "后端交付失败",
+      "cs": "15013157580",
+      "level": "danger",
+      "city": "哈尔滨"
     },
     {
-      "client": "董昱靖",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
+      "client": "刘敏女士",
+      "problem": "退款",
+      "type": "后端交付失败",
+      "cs": "13936517155",
+      "level": "danger",
+      "city": "哈尔滨"
     },
     {
-      "client": "潘俊菊",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning",
-      "city": "成都"
+      "client": "小白",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "侯芳",
+      "level": "normal",
+      "city": "哈尔滨"
     },
     {
-      "client": "潘维茜",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "高高",
+      "client": "李木子",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
@@ -112,7 +104,23 @@
       "city": "哈尔滨"
     },
     {
-      "client": "陈哲",
+      "client": "刘妍",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "汤娅",
+      "level": "normal",
+      "city": "哈尔滨"
+    },
+    {
+      "client": "康康",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "汤娅",
+      "level": "normal",
+      "city": "哈尔滨"
+    },
+    {
+      "client": "李慕",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
@@ -121,9 +129,9 @@
     }
   ],
   "city_open_cost": {
-    "成都": 88.4427272727273,
+    "成都": 98.609,
     "重庆": 0,
-    "哈尔滨": 29.0
+    "哈尔滨": 24.0
   },
   "open_cost_redline": 80,
   "ai_national_summary": "AI 诊断生成失败"
