@@ -4,17 +4,17 @@
   "days_elapsed": 31,
   "total_days": 31,
   "cum_revenue": 11140.0,
-  "cum_spend": 3998.57,
+  "cum_spend": 7252.66,
   "cum_wechat": 61,
   "cum_deposit": 5,
-  "cum_open": 61.0,
+  "cum_open": 97,
   "cum_refund": 1,
   "roi": 2.79,
   "revenue_target": 100000,
   "progress": 11.1,
-  "predicted_revenue": 20314.12,
-  "predicted_spend": 7291.51,
-  "predicted_roi": 2.79,
+  "predicted_revenue": 19185.56,
+  "predicted_spend": 12490.69,
+  "predicted_roi": 1.54,
   "daily_trend": [
     {
       "date": "2026-03-01",
@@ -107,26 +107,26 @@
     {
       "date": "2026-03-12",
       "revenue": 0,
-      "spend": 0,
+      "spend": 256.28,
       "wechat": 0,
       "deposit": 0,
-      "open": 0
+      "open": 1
     },
     {
       "date": "2026-03-13",
       "revenue": 0,
-      "spend": 0,
+      "spend": 892.48,
       "wechat": 2,
       "deposit": 0,
-      "open": 0
+      "open": 3
     },
     {
       "date": "2026-03-14",
       "revenue": 0,
-      "spend": 0,
+      "spend": 209.99,
       "wechat": 4,
       "deposit": 0,
-      "open": 0
+      "open": 4
     },
     {
       "date": "2026-03-15",
@@ -139,10 +139,10 @@
     {
       "date": "2026-03-16",
       "revenue": 0,
-      "spend": 0,
+      "spend": 359.99,
       "wechat": 4,
       "deposit": 2,
-      "open": 0
+      "open": 9
     },
     {
       "date": "2026-03-17",
@@ -150,15 +150,15 @@
       "spend": 205.41,
       "wechat": 1,
       "deposit": 0,
-      "open": 3.0
+      "open": 3
     },
     {
       "date": "2026-03-18",
       "revenue": 2080.0,
-      "spend": 0,
+      "spend": 409.99,
       "wechat": 4,
       "deposit": 1,
-      "open": 1.0
+      "open": 1
     },
     {
       "date": "2026-03-19",
@@ -166,7 +166,7 @@
       "spend": 209.99,
       "wechat": 8,
       "deposit": 2,
-      "open": 4.0
+      "open": 4
     },
     {
       "date": "2026-03-20",
@@ -174,7 +174,7 @@
       "spend": 409.99,
       "wechat": 1,
       "deposit": 0,
-      "open": 6.0
+      "open": 6
     },
     {
       "date": "2026-03-21",
@@ -182,7 +182,7 @@
       "spend": 469.37,
       "wechat": 7,
       "deposit": 0,
-      "open": 7.0
+      "open": 7
     },
     {
       "date": "2026-03-22",
@@ -198,7 +198,7 @@
       "spend": 470.61,
       "wechat": 4,
       "deposit": 0,
-      "open": 10.0
+      "open": 10
     },
     {
       "date": "2026-03-24",
@@ -206,7 +206,7 @@
       "spend": 409.9,
       "wechat": 3,
       "deposit": 0,
-      "open": 7.0
+      "open": 7
     },
     {
       "date": "2026-03-25",
@@ -214,7 +214,7 @@
       "spend": 600.27,
       "wechat": 3,
       "deposit": 0,
-      "open": 4.0
+      "open": 4
     },
     {
       "date": "2026-03-26",
@@ -222,7 +222,7 @@
       "spend": 411.34,
       "wechat": 2,
       "deposit": 0,
-      "open": 5.0
+      "open": 5
     },
     {
       "date": "2026-03-27",
@@ -230,7 +230,7 @@
       "spend": 403.9,
       "wechat": 4,
       "deposit": 0,
-      "open": 8.0
+      "open": 8
     },
     {
       "date": "2026-03-28",
@@ -238,7 +238,7 @@
       "spend": 407.79,
       "wechat": 3,
       "deposit": 0,
-      "open": 6.0
+      "open": 6
     },
     {
       "date": "2026-03-29",
@@ -251,18 +251,18 @@
     {
       "date": "2026-03-30",
       "revenue": 0,
-      "spend": 0,
+      "spend": 612.16,
       "wechat": 4,
       "deposit": 0,
-      "open": 0
+      "open": 11
     },
     {
       "date": "2026-03-31",
       "revenue": 0,
-      "spend": 0,
+      "spend": 513.2,
       "wechat": 6,
       "deposit": 0,
-      "open": 0
+      "open": 8
     }
   ],
   "rate_trend": [

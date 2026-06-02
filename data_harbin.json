@@ -1,15 +1,15 @@
 {
-  "date": "2026-05-31",
-  "generated_at": "2026-06-01 06:53:44",
+  "date": "2026-06-01",
+  "generated_at": "2026-06-02 06:40:50",
   "revenue": 0.0,
-  "wechat_total": 15,
+  "wechat_total": 20,
   "deposit_total": 0,
   "ai_summary": "[请求异常] 'NoneType' object is not subscriptable",
-  "ad_spend": 2273.1,
-  "open_count": 33.0,
-  "open_cost": 24.0,
+  "ad_spend": 1744.5,
+  "open_count": 23.0,
+  "open_cost": 17.0,
   "arrived_count": 0,
-  "noshow_count": 5,
+  "noshow_count": 0,
   "deal_count": 0,
   "cs_names": [
     "汤娅",
@@ -18,8 +18,8 @@
   ],
   "wechat_list": [
     7,
-    8,
-    0
+    5,
+    8
   ],
   "deposit_list": [
     0,
@@ -50,9 +50,9 @@
     }
   ],
   "fulfill_list": [
-    1,
-    2,
-    0
+    0,
+    0,
+    1
   ],
   "gap_list": [
     0,
@@ -64,81 +64,29 @@
     0,
     0
   ],
-  "blacklist": [
-    {
-      "client": "小白",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "侯芳",
-      "level": "normal"
-    },
-    {
-      "client": "李木子",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal"
-    },
-    {
-      "client": "刘妍",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal"
-    },
-    {
-      "client": "康康",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal"
-    },
-    {
-      "client": "李慕",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal"
-    },
-    {
-      "client": "宫女士",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "1",
-      "level": "danger"
-    },
-    {
-      "client": "杨磊",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "15013157580",
-      "level": "danger"
-    },
-    {
-      "client": "刘敏女士",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "13936517155",
-      "level": "danger"
-    }
-  ],
+  "blacklist": [],
   "staff_intentions": {
     "汤娅": {
-      "C级(低意向)": 4,
-      "A级(高意向)": 3
+      "C级(低意向)": 4
     },
     "侯芳": {
-      "C级(低意向)": 8
+      "C级(低意向)": 2,
+      "A级(高意向)": 2,
+      "B级(中意向)": 1
+    },
+    "杨雪": {
+      "C级(低意向)": 5,
+      "A级(高意向)": 3
     }
   },
   "y_axis_days": [
-    "6月1日",
     "6月2日",
     "6月3日",
     "6月4日",
     "6月5日",
     "6月6日",
-    "6月7日"
+    "6月7日",
+    "6月8日"
   ],
   "bed_heatmap": [
     [
@@ -271,9 +219,9 @@
   "health_score": {
     "dimensions": {
       "acquire": {
-        "score": 55,
+        "score": 65,
         "status": "warning",
-        "detail": "开口成本¥69, 开口→加微45%, ROI 0.0",
+        "detail": "开口成本¥76, 开口→加微87%, ROI 0.0",
         "label": "引流"
       },
       "convert": {
@@ -283,64 +231,50 @@
         "label": "转化"
       },
       "deliver": {
-        "score": 0,
-        "status": "danger",
-        "detail": "退款率300%, 爽约率100%",
+        "score": 50,
+        "status": "warning",
+        "detail": "退款率0%, 爽约率0%",
         "label": "交付"
       },
       "aftersales": {
         "score": 100,
         "status": "healthy",
-        "detail": "回访完成率100% (3/3)",
+        "detail": "回访完成率100% (1/1)",
         "label": "售后"
       },
       "team": {
-        "score": 2,
+        "score": 3,
         "status": "danger",
-        "detail": "人均产出¥0, 人均加微8",
+        "detail": "人均产出¥0, 人均加微10",
         "label": "团队"
       }
     },
-    "overall_score": 29,
+    "overall_score": 42,
     "overall_status": "danger",
     "kpis": {
-      "spend": 2273.1,
-      "open_count": 33.0,
-      "wechat": 15.0,
+      "spend": 1744.5,
+      "open_count": 23.0,
+      "wechat": 20.0,
       "deposit": 0.0,
       "revenue": 0.0,
       "arrived": 0.0,
-      "noshow": 5.0,
-      "refund_count": 3,
-      "open_cost": 68.9,
-      "open_to_wechat": 0.455,
+      "noshow": 0.0,
+      "refund_count": 0,
+      "open_cost": 75.8,
+      "open_to_wechat": 0.87,
       "ad_roi": 0.0,
       "wechat_to_dep": 0.0,
       "dep_to_arrival": 0.0,
-      "noshow_rate": 1.0,
-      "refund_rate": 3.0,
+      "noshow_rate": 0,
+      "refund_rate": 0.0,
       "followup_rate": 1.0,
       "revenue_per_cs": 0.0,
-      "wechat_per_cs": 7.5,
+      "wechat_per_cs": 10.0,
       "cs_count": 2,
       "monthly_target": 150000
     }
   },
   "alerts": [
-    {
-      "level": "P0",
-      "category": "退款",
-      "message": "哈尔滨站今日新增3笔退款",
-      "city": "哈尔滨",
-      "action": "立即查看退款明细，定责到客服"
-    },
-    {
-      "level": "P0",
-      "category": "爽约",
-      "message": "哈尔滨站5位客户爽约未到店",
-      "city": "哈尔滨",
-      "action": "客服立刻联系挽回，确认下次到店时间"
-    },
     {
       "level": "P1",
       "category": "转化",

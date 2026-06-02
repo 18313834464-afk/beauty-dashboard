@@ -1,32 +1,32 @@
 {
   "city": "成都",
   "city_key": "chengdu",
-  "month": "2026-05",
-  "generated_at": "2026-06-01 06:56:58",
-  "days_elapsed": 31,
-  "total_days": 31,
-  "progress_pct": 100.0,
+  "month": "2026-06",
+  "generated_at": "2026-06-02 06:45:35",
+  "days_elapsed": 1,
+  "total_days": 30,
+  "progress_pct": 3.3,
   "revenue_target": 300000,
   "cs_forecasts": [
     {
       "name": "会媛",
-      "days_elapsed": 31,
-      "total_days": 31,
+      "days_elapsed": 1,
+      "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 202,
+        "wechat": 6,
         "deposit": 0,
-        "arrived": 26,
-        "salary": 5300,
+        "arrived": 0,
+        "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
-        "salary_bonus": 300
+        "salary_bonus": 800
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 202,
+        "wechat": 180,
         "deposit": 0,
-        "arrived": 26,
+        "arrived": 0,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -36,9 +36,9 @@
       "kpi": {
         "deposit_rate": 0.0,
         "fulfill_rate": null,
-        "sop_score": 0,
+        "sop_score": 92,
         "sop_predicted": 0,
-        "gap_total": 80
+        "gap_total": 1
       },
       "bonus_detail": {
         "定金转化率": {
@@ -57,23 +57,23 @@
     },
     {
       "name": "阳珂欣",
-      "days_elapsed": 31,
-      "total_days": 31,
+      "days_elapsed": 1,
+      "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 198,
+        "wechat": 7,
         "deposit": 0,
-        "arrived": 37,
-        "salary": 5300,
+        "arrived": 0,
+        "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
-        "salary_bonus": 300
+        "salary_bonus": 800
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 198,
+        "wechat": 210,
         "deposit": 0,
-        "arrived": 37,
+        "arrived": 0,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -83,9 +83,9 @@
       "kpi": {
         "deposit_rate": 0.0,
         "fulfill_rate": null,
-        "sop_score": 0,
+        "sop_score": 92,
         "sop_predicted": 0,
-        "gap_total": 67
+        "gap_total": 1
       },
       "bonus_detail": {
         "定金转化率": {
@@ -104,13 +104,13 @@
     },
     {
       "name": "陈相",
-      "days_elapsed": 31,
-      "total_days": 31,
+      "days_elapsed": 1,
+      "total_days": 30,
       "current": {
         "revenue": 0,
         "wechat": 0,
         "deposit": 0,
-        "arrived": 1,
+        "arrived": 0,
         "salary": 6400,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -120,7 +120,7 @@
         "revenue": 0,
         "wechat": 0,
         "deposit": 0,
-        "arrived": 1,
+        "arrived": 0,
         "salary": 6400,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -130,9 +130,9 @@
       "kpi": {
         "deposit_rate": null,
         "fulfill_rate": null,
-        "sop_score": 92,
-        "sop_predicted": 92,
-        "gap_total": 1
+        "sop_score": 100,
+        "sop_predicted": 100,
+        "gap_total": 0
       },
       "bonus_detail": {
         "定金转化率": {
@@ -151,23 +151,23 @@
     },
     {
       "name": "林俐",
-      "days_elapsed": 31,
-      "total_days": 31,
+      "days_elapsed": 1,
+      "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 170,
+        "wechat": 4,
         "deposit": 0,
-        "arrived": 10,
-        "salary": 5300,
+        "arrived": 0,
+        "salary": 5800,
         "salary_base": 5000,
         "salary_commission": 0,
-        "salary_bonus": 300
+        "salary_bonus": 800
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 170,
+        "wechat": 120,
         "deposit": 0,
-        "arrived": 10,
+        "arrived": 0,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -177,9 +177,9 @@
       "kpi": {
         "deposit_rate": 0.0,
         "fulfill_rate": null,
-        "sop_score": 68,
-        "sop_predicted": 68,
-        "gap_total": 4
+        "sop_score": 92,
+        "sop_predicted": 0,
+        "gap_total": 1
       },
       "bonus_detail": {
         "定金转化率": {
@@ -201,21 +201,21 @@
   "pnl_forecast": {
     "current_sales": 0,
     "predicted_sales": 0,
-    "predicted_your_income": -112787,
+    "predicted_your_income": -96497,
     "predicted_your_margin": 0,
     "predicted_partner_income": -10000,
     "predicted_cs_salary": 24800,
-    "predicted_ad_actual": 77987,
+    "predicted_ad_actual": 61697,
     "predicted_manager_fee": 0,
     "predicted_artist_fee": 6000,
     "predicted_shared_costs": 7000
   },
   "target_analysis": {
-    "current_revenue": 233154.0,
+    "current_revenue": 1500.0,
     "predicted_revenue": 0,
     "target": 300000,
     "gap": 300000,
-    "daily_needed": 0,
+    "daily_needed": 10345,
     "on_track": false
   }
 }
