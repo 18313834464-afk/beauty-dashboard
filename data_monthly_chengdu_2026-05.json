@@ -3,18 +3,18 @@
   "month": "2026-05",
   "days_elapsed": 31,
   "total_days": 31,
-  "cum_revenue": 245002.0,
+  "cum_revenue": 231954.0,
   "cum_spend": 60482.92,
   "cum_wechat": 570,
   "cum_deposit": 0,
   "cum_open": 646.0,
-  "cum_refund": 18,
+  "cum_refund": 5,
   "roi": 3.03,
   "revenue_target": 300000,
   "progress": 61.0,
-  "predicted_revenue": 245002.0,
+  "predicted_revenue": 231954.0,
   "predicted_spend": 60482.92,
-  "predicted_roi": 4.05,
+  "predicted_roi": 3.84,
   "daily_trend": [
     {
       "date": "2026-05-01",
@@ -486,85 +486,13 @@
   ],
   "refund_details": [
     {
-      "customer": "陈亦新",
-      "revenue": 0,
-      "cs": "会媛",
-      "status": "到店退款"
-    },
-    {
-      "customer": "王女士",
-      "revenue": 0,
-      "cs": "阳珂欣",
-      "status": "到店退款"
-    },
-    {
-      "customer": "周燕",
-      "revenue": 0,
-      "cs": "会媛",
-      "status": "到店退款"
-    },
-    {
-      "customer": "芒果",
-      "revenue": 0,
-      "cs": "会媛",
-      "status": "到店退款"
-    },
-    {
-      "customer": "派大星",
-      "revenue": 0,
-      "cs": "会媛",
-      "status": "到店退款"
-    },
-    {
-      "customer": "徐徐",
-      "revenue": 0,
-      "cs": "阳珂欣",
-      "status": "到店退款"
-    },
-    {
-      "customer": "严黄莉",
-      "revenue": 0,
-      "cs": "阳珂欣",
-      "status": "到店退款"
-    },
-    {
-      "customer": "陈女士",
-      "revenue": 0,
-      "cs": "会媛",
-      "status": "到店退款"
-    },
-    {
       "customer": "李女士",
       "revenue": 0,
       "cs": "阳珂欣",
       "status": "到店退款"
     },
     {
-      "customer": "鱼鱼",
-      "revenue": 0,
-      "cs": "林俐",
-      "status": "到店退款"
-    },
-    {
-      "customer": "王鹌鹑",
-      "revenue": 0,
-      "cs": "阳珂欣",
-      "status": "到店退款"
-    },
-    {
-      "customer": "温静",
-      "revenue": 0,
-      "cs": "会媛",
-      "status": "到店退款"
-    },
-    {
       "customer": "李女士",
-      "revenue": 0,
-      "cs": "阳珂欣",
-      "status": "到店退款"
-    },
-    {
-      "customer": "刘双",
       "revenue": 0,
       "cs": "阳珂欣",
       "status": "到店退款"
@@ -573,12 +501,6 @@
       "customer": "陈登英",
       "revenue": 0,
       "cs": "阳珂欣",
-      "status": "到店退款"
-    },
-    {
-      "customer": "王佩",
-      "revenue": 0,
-      "cs": "会媛",
       "status": "到店退款"
     },
     {
@@ -598,19 +520,7 @@
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 10,
-      "not_arrived": 0
-    },
-    {
-      "cs": "会媛",
-      "city": "成都",
-      "arrived": 7,
-      "not_arrived": 0
-    },
-    {
-      "cs": "林俐",
-      "city": "成都",
-      "arrived": 1,
+      "arrived": 5,
       "not_arrived": 0
     }
   ]
