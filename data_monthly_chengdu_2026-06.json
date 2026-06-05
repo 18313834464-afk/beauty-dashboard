@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 3,
+  "days_elapsed": 4,
   "total_days": 30,
   "cum_revenue": 21420.36,
-  "cum_spend": 10828.83,
-  "cum_wechat": 70,
+  "cum_spend": 15830.73,
+  "cum_wechat": 89,
   "cum_deposit": 0,
-  "cum_open": 106.0,
+  "cum_open": 152.0,
   "cum_refund": 1,
-  "roi": 0.77,
+  "roi": 0.53,
   "revenue_target": 300000,
   "progress": 2.8,
-  "predicted_revenue": 214203.6,
-  "predicted_spend": 108288.3,
-  "predicted_roi": 1.98,
+  "predicted_revenue": 160652.7,
+  "predicted_spend": 118730.47,
+  "predicted_roi": 1.35,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -39,6 +39,14 @@
       "wechat": 28,
       "deposit": 0,
       "open": 39.0
+    },
+    {
+      "date": "2026-06-04",
+      "revenue": 0.0,
+      "spend": 5001.9,
+      "wechat": 19,
+      "deposit": 0,
+      "open": 46.0
     }
   ],
   "rate_trend": [
@@ -56,23 +64,28 @@
       "date": "2026-06-03",
       "open_to_wechat": 71.8,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-04",
+      "open_to_wechat": 41.3,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 25,
+      "wechat": 39,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 1,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 3,
-      "sop_score": 76,
+      "gap_total": 6,
+      "sop_score": 52,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_c": 1,
+      "intent_total": 1
     },
     {
       "name": "阳珂欣",
@@ -84,10 +97,10 @@
       "fulfill_rate": 0,
       "gap_total": 4,
       "sop_score": 68,
-      "intent_a": 0,
+      "intent_a": 1,
       "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_c": 1,
+      "intent_total": 2
     },
     {
       "name": "陈相",
@@ -106,7 +119,7 @@
     },
     {
       "name": "林俐",
-      "wechat": 21,
+      "wechat": 26,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 1,

@@ -3,11 +3,11 @@
   "year": 2026,
   "start_month": 3,
   "cum_revenue": 716441.13,
-  "cum_spend": 200580.51,
-  "cum_wechat": 2309,
+  "cum_spend": 205582.41,
+  "cum_wechat": 2328,
   "cum_deposit": 146,
-  "cum_open": 2706.0,
-  "cum_roi": 3.57,
+  "cum_open": 2752.0,
+  "cum_roi": 3.48,
   "monthly_avg_rev": 179110.28,
   "predicted_annual": 2149323.36,
   "revenue_target": 3000000,
@@ -87,14 +87,14 @@
       "month": 6,
       "month_label": "6月",
       "revenue": 21420.36,
-      "spend": 10828.83,
-      "roi": 1.98,
-      "wechat": 70,
+      "spend": 15830.73,
+      "roi": 1.35,
+      "wechat": 89,
       "deposit": 0,
-      "open": 106.0,
-      "open_cost": 102.16,
+      "open": 152.0,
+      "open_cost": 104.15,
       "refund": 1,
-      "days": 3,
+      "days": 4,
       "mom_revenue": -95.4
     }
   ],
@@ -132,7 +132,7 @@
     95338.22,
     33930.54,
     60482.92,
-    10828.83,
+    15830.73,
     null,
     null,
     null,
@@ -146,7 +146,7 @@
     2.59,
     6.37,
     3.84,
-    1.98,
+    1.35,
     null,
     null,
     null,
@@ -174,11 +174,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 25,
+          "wechat": 39,
           "deposit": 0,
           "revenue": 0.0
         }
-      }
+      },
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 1
     },
     {
       "name": "李小叶",
@@ -204,14 +207,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 21,
+          "wechat": 26,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 0,
       "intent_b": 1,
-      "intent_c": 10
+      "intent_c": 19
     },
     {
       "name": "胡娜",
@@ -247,9 +250,9 @@
           "revenue": 0.0
         }
       },
-      "intent_a": 1,
-      "intent_b": 0,
-      "intent_c": 13
+      "intent_a": 2,
+      "intent_b": 1,
+      "intent_c": 19
     },
     {
       "name": "陈相",
