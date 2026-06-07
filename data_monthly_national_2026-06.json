@@ -1,19 +1,19 @@
 {
   "month": "2026-06",
-  "days_elapsed": 5,
+  "days_elapsed": 6,
   "total_days": 30,
-  "cum_revenue": 58785.8,
-  "cum_spend": 32734.18,
-  "cum_wechat": 209,
+  "cum_revenue": 62165.8,
+  "cum_spend": 37758.82,
+  "cum_wechat": 241,
   "cum_deposit": 0,
-  "cum_open": 351.0,
-  "cum_refund": 2,
-  "roi": 1.8,
+  "cum_open": 405.0,
+  "cum_refund": 4,
+  "roi": 1.65,
   "revenue_target": 400000,
-  "progress": 14.7,
-  "predicted_revenue": 352714.8,
-  "predicted_spend": 196405.08,
-  "predicted_roi": 1.8,
+  "progress": 15.5,
+  "predicted_revenue": 310829.0,
+  "predicted_spend": 188794.1,
+  "predicted_roi": 1.65,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -54,6 +54,14 @@
       "wechat": 41,
       "deposit": 0,
       "open": 70.0
+    },
+    {
+      "date": "2026-06-06",
+      "revenue": 0.0,
+      "spend": 5024.64,
+      "wechat": 32,
+      "deposit": 0,
+      "open": 54.0
     }
   ],
   "rate_trend": [
@@ -81,41 +89,46 @@
       "date": "2026-06-05",
       "open_to_wechat": 58.6,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-06",
+      "open_to_wechat": 59.3,
+      "wechat_to_deposit": 0.0
     }
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 19798.34,
-      "cum_wechat": 118,
+      "cum_spend": 23134.76,
+      "cum_wechat": 133,
       "cum_deposit": 0,
       "cum_revenue": 32006.9,
-      "roi": 0.96,
-      "cum_refund": 1
+      "roi": 0.82,
+      "cum_refund": 2
     },
     "哈尔滨": {
-      "cum_spend": 12935.84,
-      "cum_wechat": 91,
+      "cum_spend": 14624.06,
+      "cum_wechat": 108,
       "cum_deposit": 0,
-      "cum_revenue": 26778.9,
-      "roi": 0.44,
-      "cum_refund": 1
+      "cum_revenue": 30158.9,
+      "roi": 0.39,
+      "cum_refund": 2
     }
   },
   "cs_table": [
     {
       "name": "会媛(成都)",
-      "wechat": 51,
+      "wechat": 52,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 2,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 16,
+      "gap_total": 17,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "阳珂欣(成都)",
@@ -125,8 +138,8 @@
       "arrived": 5,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 7,
-      "sop_score": 44,
+      "gap_total": 8,
+      "sop_score": 36,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -149,7 +162,7 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 39,
+      "wechat": 53,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 1,
@@ -164,7 +177,7 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 38,
+      "wechat": 40,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 2,
@@ -174,12 +187,12 @@
       "sop_score": 100,
       "intent_a": 1,
       "intent_b": 0,
-      "intent_c": 2,
-      "intent_total": 3
+      "intent_c": 1,
+      "intent_total": 2
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 29,
+      "wechat": 38,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 2,
@@ -187,14 +200,14 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 0,
-      "intent_b": 0,
-      "intent_c": 4,
-      "intent_total": 4
+      "intent_a": 1,
+      "intent_b": 2,
+      "intent_c": 3,
+      "intent_total": 6
     },
     {
       "name": "杨雪(哈尔滨)",
-      "wechat": 24,
+      "wechat": 30,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -204,15 +217,15 @@
       "sop_score": 100,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_c": 3,
+      "intent_total": 3
     }
   ],
   "refund_summary": [
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 1,
+      "arrived": 2,
       "not_arrived": 0
     },
     {
@@ -220,6 +233,12 @@
       "city": "哈尔滨",
       "arrived": 0,
       "not_arrived": 1
+    },
+    {
+      "cs": "侯芳",
+      "city": "哈尔滨",
+      "arrived": 1,
+      "not_arrived": 0
     }
   ]
 }
