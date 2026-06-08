@@ -1,54 +1,54 @@
 {
-  "week_num": 22,
-  "week_label": "第22周 (05.25-05.31)",
-  "week_start": "2026-05-25",
-  "week_end": "2026-05-31",
+  "week_num": 23,
+  "week_label": "第23周 (06.01-06.07)",
+  "week_start": "2026-06-01",
+  "week_end": "2026-06-07",
   "city_count": 2,
-  "week_revenue": 59264.0,
-  "week_spend": 30212.35,
-  "week_wechat": 180,
+  "week_revenue": 31388.08,
+  "week_spend": 43235.78,
+  "week_wechat": 277,
   "week_deposit": 0,
-  "week_roi": 1.96,
+  "week_roi": 0.73,
   "month_target": 400000,
   "month_total_weeks": 5,
-  "month_elapsed_weeks": 5,
-  "month_cum_revenue": 187211.0,
+  "month_elapsed_weeks": 1,
+  "month_cum_revenue": 31388.08,
   "ideal_pace": 80000.0,
-  "actual_pace": 37442.2,
+  "actual_pace": 31388.08,
   "pace_status": "behind",
   "city_matrix": [
     {
       "city": "成都",
-      "revenue": 59264.0,
-      "spend": 15144.27,
-      "roi": 3.91,
-      "wechat": 96,
+      "revenue": 22341.9,
+      "spend": 26711.96,
+      "roi": 0.84,
+      "wechat": 157,
       "deposit": 0,
-      "wow_revenue_pct": 139.2,
+      "wow_revenue_pct": -62.3,
       "pace_status": "behind"
     },
     {
       "city": "哈尔滨",
-      "revenue": 0.0,
-      "spend": 15068.08,
-      "roi": 0.0,
-      "wechat": 84,
+      "revenue": 9046.18,
+      "spend": 16523.82,
+      "roi": 0.55,
+      "wechat": 120,
       "deposit": 0,
-      "wow_revenue_pct": -100.0,
+      "wow_revenue_pct": 0,
       "pace_status": "behind"
     }
   ],
   "cs_table": [
     {
       "name": "会媛(成都)",
-      "wechat": 36,
+      "wechat": 60,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 28,
+      "wechat": 36,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
@@ -62,79 +62,87 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 32,
+      "wechat": 61,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 34,
+      "wechat": 45,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 34,
+      "wechat": 38,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "杨雪(哈尔滨)",
-      "wechat": 16,
+      "wechat": 37,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     }
   ],
   "trend_weeks": [
-    "第19周",
     "第20周",
     "第21周",
-    "第22周"
+    "第22周",
+    "第23周"
   ],
   "trend_revenue": [
-    23702.0,
     63705.0,
     26780.0,
-    59264.0
+    59264.0,
+    31388.08
   ],
   "trend_spend": [
-    25127.84,
     20911.17,
     24428.92,
-    30212.35
+    30212.35,
+    43235.78
   ],
   "trend_roi": [
-    0.94,
     3.05,
     1.1,
-    1.96
+    1.96,
+    0.73
   ],
   "last_week": {
-    "revenue": 26780.0,
-    "spend": 24428.92,
-    "roi": 1.1
+    "revenue": 59264.0,
+    "spend": 30212.35,
+    "roi": 1.96
   },
   "wow_change": {
-    "revenue_pct": 121.3,
-    "spend_pct": 23.7,
-    "roi_change": 0.86
+    "revenue_pct": -47.0,
+    "spend_pct": 43.1,
+    "roi_change": -1.23
   },
   "alerts": [
     {
       "level": "warning",
-      "msg": "成都第22周步速落后月目标，需加速"
-    },
-    {
-      "level": "warning",
-      "msg": "哈尔滨第22周步速落后月目标，需加速"
+      "msg": "成都第23周步速落后月目标，需加速"
     },
     {
       "level": "danger",
-      "msg": "哈尔滨第22周变现环比下滑100.0%"
+      "msg": "成都第23周ROI仅0.84，亏损运营"
+    },
+    {
+      "level": "danger",
+      "msg": "成都第23周变现环比下滑62.3%"
+    },
+    {
+      "level": "warning",
+      "msg": "哈尔滨第23周步速落后月目标，需加速"
+    },
+    {
+      "level": "danger",
+      "msg": "哈尔滨第23周ROI仅0.55，亏损运营"
     }
   ]
 }
