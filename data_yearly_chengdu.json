@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 749359.39,
-  "cum_spend": 216463.64,
-  "cum_wechat": 2396,
+  "cum_revenue": 756719.75,
+  "cum_spend": 220478.02,
+  "cum_wechat": 2414,
   "cum_deposit": 146,
-  "cum_open": 2848.0,
-  "cum_roi": 3.46,
-  "monthly_avg_rev": 187339.85,
-  "predicted_annual": 2248078.2,
+  "cum_open": 2878.0,
+  "cum_roi": 3.43,
+  "monthly_avg_rev": 189179.94,
+  "predicted_annual": 2270159.28,
   "revenue_target": 3000000,
-  "progress": 21.3,
+  "progress": 21.4,
   "monthly_kpi": [
     {
       "month": 1,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 54338.62,
-      "spend": 26711.96,
-      "roi": 2.03,
-      "wechat": 157,
+      "revenue": 61698.98,
+      "spend": 30726.34,
+      "roi": 2.01,
+      "wechat": 175,
       "deposit": 0,
-      "open": 248.0,
-      "open_cost": 107.71,
-      "refund": 3,
-      "days": 7,
-      "mom_revenue": -87.8
+      "open": 278.0,
+      "open_cost": 110.53,
+      "refund": 4,
+      "days": 8,
+      "mom_revenue": -86.2
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    54338.62,
+    61698.98,
     null,
     null,
     null,
@@ -132,7 +132,7 @@
     95338.22,
     33930.54,
     60482.92,
-    26711.96,
+    30726.34,
     null,
     null,
     null,
@@ -146,7 +146,7 @@
     2.59,
     6.37,
     3.84,
-    2.03,
+    2.01,
     null,
     null,
     null,
@@ -174,14 +174,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 60,
+          "wechat": 62,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 2
+      "intent_c": 6
     },
     {
       "name": "李小叶",
@@ -207,7 +207,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 61,
+          "wechat": 69,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -245,7 +245,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 36,
+          "wechat": 44,
           "deposit": 0,
           "revenue": 0.0
         }

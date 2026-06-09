@@ -3,17 +3,17 @@
   "days_elapsed": 28,
   "total_days": 30,
   "cum_revenue": 283575.0,
-  "cum_spend": 57297.03,
+  "cum_spend": 60734.13,
   "cum_wechat": 1174,
   "cum_deposit": 43,
-  "cum_open": 775.0,
+  "cum_open": 790.0,
   "cum_refund": 36,
-  "roi": 4.95,
+  "roi": 4.67,
   "revenue_target": 500000,
   "progress": 56.7,
   "predicted_revenue": 303830.36,
-  "predicted_spend": 61389.68,
-  "predicted_roi": 4.95,
+  "predicted_spend": 65072.28,
+  "predicted_roi": 4.67,
   "daily_trend": [
     {
       "date": "2026-04-01",
@@ -400,7 +400,7 @@
       "cum_refund": 1
     },
     "哈尔滨": {
-      "cum_spend": 16523.82,
+      "cum_spend": 19960.92,
       "cum_wechat": 437,
       "cum_deposit": 10,
       "cum_revenue": 67320.0,

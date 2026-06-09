@@ -1,22 +1,22 @@
 {
-  "date": "2026-06-07",
-  "total_revenue": 6763.0,
-  "total_spend": 5476.96,
-  "total_wechat": 36,
+  "date": "2026-06-08",
+  "total_revenue": 2986.18,
+  "total_spend": 7451.48,
+  "total_wechat": 45,
   "total_deposit": 0,
-  "roi": 1.23,
-  "roi_level": "warning",
+  "roi": 0.4,
+  "roi_level": "danger",
   "city_matrix": {
     "成都": {
-      "spend": 3577.2,
-      "open": 32.0,
-      "wechat": 24,
-      "open_to_wechat": 75.0,
+      "spend": 4014.38,
+      "open": 30.0,
+      "wechat": 18,
+      "open_to_wechat": 60.0,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 3383.0,
+      "revenue": 2986.18,
       "refund_count": 1,
-      "open_cost": 111.7875
+      "open_cost": 133.812666666667
     },
     "重庆": {
       "spend": 0,
@@ -30,33 +30,33 @@
       "open_cost": 0
     },
     "哈尔滨": {
-      "spend": 1899.76,
-      "open": 23.0,
-      "wechat": 12,
-      "open_to_wechat": 52.2,
+      "spend": 3437.1,
+      "open": 49.0,
+      "wechat": 27,
+      "open_to_wechat": 55.1,
       "deposit": 0,
       "wechat_to_deposit": 0.0,
-      "revenue": 3380.0,
+      "revenue": 0.0,
       "refund_count": 1,
-      "open_cost": 20.0
+      "open_cost": 37.0
     }
   },
   "acquire_chain": {
-    "open": 55.0,
-    "wechat": 36,
+    "open": 79.0,
+    "wechat": 45,
     "deposit": 0,
-    "open_to_wechat": 65.5,
+    "open_to_wechat": 57.0,
     "wechat_to_deposit": 0.0
   },
   "deliver_chain": {
-    "expected": 8,
-    "arrived": 4,
-    "revenue": 6763.0,
-    "arrival_rate": 50.0
+    "expected": 3,
+    "arrived": 2,
+    "revenue": 2986.18,
+    "arrival_rate": 66.7
   },
   "national_blacklist": [
     {
-      "client": "杨丽娟",
+      "client": "高女士",
       "problem": "退款",
       "type": "后端交付失败",
       "cs": "",
@@ -64,15 +64,15 @@
       "city": "成都"
     },
     {
-      "client": "许女士",
+      "client": "01",
       "problem": "退款",
       "type": "后端交付失败",
-      "cs": "18645594100",
+      "cs": "18145613726",
       "level": "danger",
       "city": "哈尔滨"
     },
     {
-      "client": "周学梅",
+      "client": "郑佩佩",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -80,7 +80,7 @@
       "city": "成都"
     },
     {
-      "client": "李银银",
+      "client": "吴小凤",
       "problem": "回访",
       "type": "未完成",
       "cs": "会媛",
@@ -88,55 +88,23 @@
       "city": "成都"
     },
     {
-      "client": "向琪琪",
+      "client": "孟庭伟",
       "problem": "回访",
       "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "刘印",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "方馨玉",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning",
-      "city": "成都"
-    },
-    {
-      "client": "杨杨",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal",
-      "city": "哈尔滨"
-    },
-    {
-      "client": "贾女士",
-      "problem": "爽约",
-      "type": "未到店",
       "cs": "侯芳",
-      "level": "normal",
+      "level": "warning",
       "city": "哈尔滨"
     },
     {
-      "client": "张佳宇",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal",
+      "client": "张晓晨",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "侯芳",
+      "level": "warning",
       "city": "哈尔滨"
     },
     {
-      "client": "彭东雪",
+      "client": "冯越鹏",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
@@ -145,9 +113,9 @@
     }
   ],
   "city_open_cost": {
-    "成都": 111.7875,
+    "成都": 133.812666666667,
     "重庆": 0,
-    "哈尔滨": 20.0
+    "哈尔滨": 37.0
   },
   "open_cost_redline": 80,
   "ai_national_summary": "AI 诊断生成失败"
