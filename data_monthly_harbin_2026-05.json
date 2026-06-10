@@ -8,7 +8,7 @@
   "cum_wechat": 427,
   "cum_deposit": 0,
   "cum_open": 540.0,
-  "cum_refund": 1,
+  "cum_refund": 3,
   "roi": 0.1,
   "revenue_target": 100000,
   "progress": 4.2,
@@ -475,13 +475,25 @@
       "revenue": 0,
       "cs": "侯芳",
       "status": "未到店退款"
+    },
+    {
+      "customer": "高婕",
+      "revenue": 0,
+      "cs": "侯芳",
+      "status": "到店退款"
+    },
+    {
+      "customer": "杨磊",
+      "revenue": 0,
+      "cs": "侯芳",
+      "status": "到店退款"
     }
   ],
   "refund_summary": [
     {
       "cs": "侯芳",
       "city": "哈尔滨",
-      "arrived": 0,
+      "arrived": 2,
       "not_arrived": 1
     }
   ]

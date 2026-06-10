@@ -7,7 +7,7 @@
   "cum_wechat": 997,
   "cum_deposit": 0,
   "cum_open": 1186.0,
-  "cum_refund": 6,
+  "cum_refund": 8,
   "roi": 3.09,
   "revenue_target": 400000,
   "progress": 77.9,
@@ -436,7 +436,7 @@
       "cum_deposit": 0,
       "cum_revenue": 79622.0,
       "roi": 0.1,
-      "cum_refund": 1
+      "cum_refund": 3
     }
   },
   "cs_table": [
@@ -556,7 +556,7 @@
     {
       "cs": "侯芳",
       "city": "哈尔滨",
-      "arrived": 0,
+      "arrived": 2,
       "not_arrived": 1
     }
   ]

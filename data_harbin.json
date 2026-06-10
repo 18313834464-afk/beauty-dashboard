@@ -1,15 +1,15 @@
 {
-  "date": "2026-06-08",
-  "generated_at": "2026-06-09 06:07:46",
+  "date": "2026-06-09",
+  "generated_at": "2026-06-10 06:22:27",
   "revenue": 0.0,
-  "wechat_total": 27,
+  "wechat_total": 24,
   "deposit_total": 0,
   "ai_summary": "[请求异常] 'NoneType' object is not subscriptable",
-  "ad_spend": 3437.1,
-  "open_count": 49.0,
-  "open_cost": 37.0,
+  "ad_spend": 2899.04,
+  "open_count": 41.0,
+  "open_cost": 25.0,
   "arrived_count": 0,
-  "noshow_count": 1,
+  "noshow_count": 0,
   "deal_count": 0,
   "cs_names": [
     "汤娅",
@@ -17,9 +17,9 @@
     "杨雪"
   ],
   "wechat_list": [
-    13,
-    7,
-    7
+    5,
+    9,
+    10
   ],
   "deposit_list": [
     0,
@@ -50,14 +50,14 @@
     }
   ],
   "fulfill_list": [
-    7,
-    3,
+    0,
+    1,
     0
   ],
   "gap_list": [
     0,
-    2,
-    0
+    0,
+    1
   ],
   "arrived_list": [
     0,
@@ -66,55 +66,36 @@
   ],
   "blacklist": [
     {
-      "client": "冯越鹏",
-      "problem": "爽约",
-      "type": "未到店",
-      "cs": "汤娅",
-      "level": "normal"
-    },
-    {
-      "client": "孟庭伟",
+      "client": "宋巍",
       "problem": "回访",
       "type": "未完成",
-      "cs": "侯芳",
+      "cs": "杨雪",
       "level": "warning"
-    },
-    {
-      "client": "张晓晨",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "侯芳",
-      "level": "warning"
-    },
-    {
-      "client": "01",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "18145613726",
-      "level": "danger"
     }
   ],
   "staff_intentions": {
     "汤娅": {
-      "C级(低意向)": 9,
-      "D级(无效)": 1
+      "C级(低意向)": 1,
+      "B级(中意向)": 1
     },
     "侯芳": {
-      "C级(低意向)": 8
+      "C级(低意向)": 7,
+      "A级(高意向)": 1,
+      "B级(中意向)": 1
     },
     "杨雪": {
-      "C级(低意向)": 4,
-      "B级(中意向)": 2
+      "C级(低意向)": 9,
+      "B级(中意向)": 1
     }
   },
   "y_axis_days": [
-    "6月9日",
     "6月10日",
     "6月11日",
     "6月12日",
     "6月13日",
     "6月14日",
-    "6月15日"
+    "6月15日",
+    "6月16日"
   ],
   "bed_heatmap": [
     [
@@ -247,9 +228,9 @@
   "health_score": {
     "dimensions": {
       "acquire": {
-        "score": 62,
+        "score": 64,
         "status": "warning",
-        "detail": "开口成本¥70, 开口→加微55%, ROI 0.0",
+        "detail": "开口成本¥71, 开口→加微59%, ROI 0.0",
         "label": "引流"
       },
       "convert": {
@@ -259,70 +240,63 @@
         "label": "转化"
       },
       "deliver": {
-        "score": 0,
-        "status": "danger",
-        "detail": "退款率100%, 爽约率100%",
+        "score": 50,
+        "status": "warning",
+        "detail": "退款率0%, 爽约率0%",
         "label": "交付"
       },
       "aftersales": {
-        "score": 90,
-        "status": "healthy",
-        "detail": "回访完成率83% (10/12)",
+        "score": 30,
+        "status": "danger",
+        "detail": "回访完成率50% (1/2)",
         "label": "售后"
       },
       "team": {
         "score": 4,
         "status": "danger",
-        "detail": "人均产出¥0, 人均加微14",
+        "detail": "人均产出¥0, 人均加微12",
         "label": "团队"
       }
     },
-    "overall_score": 30,
+    "overall_score": 31,
     "overall_status": "danger",
     "kpis": {
-      "spend": 3437.1,
-      "open_count": 49.0,
-      "wechat": 27.0,
+      "spend": 2899.04,
+      "open_count": 41.0,
+      "wechat": 24.0,
       "deposit": 0.0,
       "revenue": 0.0,
       "arrived": 0.0,
-      "noshow": 1.0,
-      "refund_count": 1,
-      "open_cost": 70.1,
-      "open_to_wechat": 0.551,
+      "noshow": 0.0,
+      "refund_count": 0,
+      "open_cost": 70.7,
+      "open_to_wechat": 0.585,
       "ad_roi": 0.0,
       "wechat_to_dep": 0.0,
       "dep_to_arrival": 0.0,
-      "noshow_rate": 1.0,
-      "refund_rate": 1.0,
-      "followup_rate": 0.833,
+      "noshow_rate": 0,
+      "refund_rate": 0.0,
+      "followup_rate": 0.5,
       "revenue_per_cs": 0.0,
-      "wechat_per_cs": 13.5,
+      "wechat_per_cs": 12.0,
       "cs_count": 2,
       "monthly_target": 150000
     }
   },
   "alerts": [
     {
-      "level": "P0",
-      "category": "退款",
-      "message": "哈尔滨站今日新增1笔退款",
-      "city": "哈尔滨",
-      "action": "立即查看退款明细，定责到客服"
-    },
-    {
-      "level": "P0",
-      "category": "爽约",
-      "message": "哈尔滨站1位客户爽约未到店",
-      "city": "哈尔滨",
-      "action": "客服立刻联系挽回，确认下次到店时间"
-    },
-    {
       "level": "P1",
       "category": "转化",
       "message": "哈尔滨转化健康度仅0分: 加微→定金0%, 到店率0%",
       "city": "哈尔滨",
       "action": "抽查客服聊天记录，检查话术和跟进节奏"
+    },
+    {
+      "level": "P2",
+      "category": "回访",
+      "message": "哈尔滨回访完成率不足: 回访完成率50% (1/2)",
+      "city": "哈尔滨",
+      "action": "督促客服今日补齐回访"
     }
   ]
 }
