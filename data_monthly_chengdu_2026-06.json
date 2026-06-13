@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 11,
+  "days_elapsed": 12,
   "total_days": 30,
-  "cum_revenue": 78131.7,
-  "cum_spend": 44662.85,
-  "cum_wechat": 235,
+  "cum_revenue": 80931.7,
+  "cum_spend": 48781.97,
+  "cum_wechat": 241,
   "cum_deposit": 0,
-  "cum_open": 400,
+  "cum_open": 433,
   "cum_refund": 5,
-  "roi": 1.1,
+  "roi": 1.06,
   "revenue_target": 300000,
-  "progress": 15.4,
-  "predicted_revenue": 213086.45,
-  "predicted_spend": 121807.77,
-  "predicted_roi": 1.75,
+  "progress": 16.3,
+  "predicted_revenue": 202329.25,
+  "predicted_spend": 121954.93,
+  "predicted_roi": 1.66,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -103,6 +103,14 @@
       "wechat": 31,
       "deposit": 0,
       "open": 42.0
+    },
+    {
+      "date": "2026-06-12",
+      "revenue": 2800.0,
+      "spend": 4119.12,
+      "wechat": 6,
+      "deposit": 0,
+      "open": 33.0
     }
   ],
   "rate_trend": [
@@ -160,6 +168,11 @@
       "date": "2026-06-11",
       "open_to_wechat": 73.8,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-12",
+      "open_to_wechat": 18.2,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -171,7 +184,7 @@
       "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 31,
+      "gap_total": 33,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -183,11 +196,11 @@
       "wechat": 49,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 9,
+      "arrived": 10,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 8,
-      "sop_score": 36,
+      "gap_total": 12,
+      "sop_score": 4,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -210,18 +223,18 @@
     },
     {
       "name": "林俐",
-      "wechat": 84,
+      "wechat": 90,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 4,
+      "arrived": 5,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 2,
       "sop_score": 84,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 4,
-      "intent_total": 4
+      "intent_c": 0,
+      "intent_total": 0
     }
   ],
   "refund_details": [
