@@ -12,9 +12,9 @@
   "month_target": 400000,
   "month_total_weeks": 5,
   "month_elapsed_weeks": 1,
-  "month_cum_revenue": 60761.16,
+  "month_cum_revenue": 65847.34,
   "ideal_pace": 80000.0,
-  "actual_pace": 60761.16,
+  "actual_pace": 65847.34,
   "pace_status": "behind",
   "city_matrix": [
     {
@@ -25,7 +25,7 @@
       "wechat": 157,
       "deposit": 0,
       "wow_revenue_pct": -62.3,
-      "pace_status": "behind"
+      "pace_status": "on_track"
     },
     {
       "city": "哈尔滨",
@@ -124,10 +124,6 @@
     "roi_change": -1.23
   },
   "alerts": [
-    {
-      "level": "warning",
-      "msg": "成都第23周步速落后月目标，需加速"
-    },
     {
       "level": "danger",
       "msg": "成都第23周ROI仅0.84，亏损运营"

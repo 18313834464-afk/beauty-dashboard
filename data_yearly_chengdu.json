@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 775952.47,
-  "cum_spend": 253385.08,
-  "cum_wechat": 2480,
+  "cum_revenue": 784518.65,
+  "cum_spend": 261158.4,
+  "cum_wechat": 2497,
   "cum_deposit": 146,
-  "cum_open": 3034.0,
-  "cum_roi": 3.06,
-  "monthly_avg_rev": 193988.12,
-  "predicted_annual": 2327857.44,
+  "cum_open": 3098.0,
+  "cum_roi": 3.0,
+  "monthly_avg_rev": 196129.66,
+  "predicted_annual": 2353555.92,
   "revenue_target": 3000000,
-  "progress": 22.2,
+  "progress": 22.4,
   "monthly_kpi": [
     {
       "month": 1,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 48781.97,
-      "roi": 4.43,
+      "spend": 52668.63,
+      "roi": 4.11,
       "wechat": 676,
       "deposit": 28,
-      "open": 433,
+      "open": 465,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 80931.7,
-      "spend": 48781.97,
-      "roi": 1.66,
-      "wechat": 241,
+      "revenue": 89497.88,
+      "spend": 52668.63,
+      "roi": 1.7,
+      "wechat": 258,
       "deposit": 0,
-      "open": 433,
-      "open_cost": 112.66,
+      "open": 465,
+      "open_cost": 113.27,
       "refund": 5,
-      "days": 12,
-      "mom_revenue": -73.3
+      "days": 13,
+      "mom_revenue": -70.5
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    80931.7,
+    89497.88,
     null,
     null,
     null,
@@ -130,9 +130,9 @@
     0,
     0,
     95338.22,
-    48781.97,
+    52668.63,
     60482.92,
-    48781.97,
+    52668.63,
     null,
     null,
     null,
@@ -144,9 +144,9 @@
     0,
     0,
     2.59,
-    4.43,
+    4.11,
     3.84,
-    1.66,
+    1.7,
     null,
     null,
     null,
@@ -207,14 +207,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 90,
+          "wechat": 98,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 2,
-      "intent_b": 2,
-      "intent_c": 57
+      "intent_a": 7,
+      "intent_b": 1,
+      "intent_c": 72
     },
     {
       "name": "胡娜",
@@ -245,14 +245,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 49,
+          "wechat": 58,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 2,
-      "intent_b": 2,
-      "intent_c": 32
+      "intent_a": 3,
+      "intent_b": 5,
+      "intent_c": 38
     },
     {
       "name": "陈相",

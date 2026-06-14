@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-12",
-  "generated_at": "2026-06-13 06:50:23",
-  "revenue": 2280.0,
-  "wechat_total": 13,
+  "date": "2026-06-13",
+  "generated_at": "2026-06-14 07:17:06",
+  "revenue": 0.0,
+  "wechat_total": 5,
   "deposit_total": 0,
   "ai_summary": "[请求异常] 'NoneType' object is not subscriptable",
-  "ad_spend": 2373.84,
-  "open_count": 26.0,
-  "open_cost": 20.0,
-  "arrived_count": 1,
-  "noshow_count": 2,
-  "deal_count": 1,
+  "ad_spend": 1523.35,
+  "open_count": 22.0,
+  "open_cost": 13.0,
+  "arrived_count": 0,
+  "noshow_count": 5,
+  "deal_count": 0,
   "cs_names": [
     "汤娅",
     "侯芳",
@@ -18,8 +18,8 @@
     "会媛"
   ],
   "wechat_list": [
-    12,
-    1,
+    0,
+    5,
     0,
     0
   ],
@@ -60,7 +60,7 @@
     }
   ],
   "fulfill_list": [
-    1,
+    0,
     0,
     0,
     0
@@ -72,47 +72,65 @@
     0
   ],
   "arrived_list": [
-    1,
+    0,
     0,
     0,
     0
   ],
   "blacklist": [
     {
-      "client": "老坛杉菜（艾女士）",
+      "client": "夏莹",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
       "level": "normal"
     },
     {
-      "client": "王聆舟",
+      "client": "王佳彤",
       "problem": "爽约",
       "type": "未到店",
       "cs": "汤娅",
+      "level": "normal"
+    },
+    {
+      "client": "周俏",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "侯芳",
+      "level": "normal"
+    },
+    {
+      "client": "李茜",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "汤娅",
+      "level": "normal"
+    },
+    {
+      "client": "孟女士",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "侯芳",
       "level": "normal"
     }
   ],
   "staff_intentions": {
     "汤娅": {
-      "C级(低意向)": 6,
-      "A级(高意向)": 4
+      "A级(高意向)": 2
     },
     "侯芳": {
-      "C级(低意向)": 1
-    },
-    "杨雪": {
-      "C级(低意向)": 2
+      "C级(低意向)": 4,
+      "A级(高意向)": 1
     }
   },
   "y_axis_days": [
-    "6月13日",
     "6月14日",
     "6月15日",
     "6月16日",
     "6月17日",
     "6月18日",
-    "6月19日"
+    "6月19日",
+    "6月20日"
   ],
   "bed_heatmap": [
     [
@@ -232,69 +250,71 @@
     "tables_ok": {
       "前端投放": true,
       "客服接待": true,
-      "成交台账": true,
-      "客户回访": true,
+      "成交台账": false,
+      "客户回访": false,
       "门店排期": false
     },
     "missing": [
+      "成交台账",
+      "客户回访",
       "门店排期"
     ],
-    "completeness": 0.8
+    "completeness": 0.4
   },
   "health_score": {
     "dimensions": {
       "acquire": {
-        "score": 51,
-        "status": "warning",
-        "detail": "开口成本¥91, 开口→加微50%, ROI 1.0",
+        "score": 41,
+        "status": "danger",
+        "detail": "开口成本¥69, 开口→加微23%, ROI 0.0",
         "label": "引流"
       },
       "convert": {
-        "score": 2,
+        "score": 0,
         "status": "danger",
-        "detail": "加微→定金0%, 到店率8%",
+        "detail": "加微→定金0%, 到店率0%",
         "label": "转化"
       },
       "deliver": {
         "score": 30,
         "status": "danger",
-        "detail": "退款率0%, 爽约率67%",
+        "detail": "退款率0%, 爽约率100%",
         "label": "交付"
       },
       "aftersales": {
         "score": 100,
         "status": "healthy",
-        "detail": "回访完成率100% (1/1)",
+        "detail": "回访完成率100% (0/0)",
         "label": "售后"
       },
       "team": {
-        "score": 2,
+        "score": 1,
         "status": "danger",
-        "detail": "人均产出¥1,140, 人均加微6",
+        "detail": "人均产出¥0, 人均加微2",
         "label": "团队"
       }
     },
-    "overall_score": 35,
+    "overall_score": 31,
     "overall_status": "danger",
     "kpis": {
-      "spend": 2373.84,
-      "open_count": 26.0,
-      "wechat": 13.0,
+      "spend": 1523.35,
+      "open_count": 22.0,
+      "wechat": 5.0,
       "deposit": 0.0,
-      "revenue": 2280.0,
-      "arrived": 1.0,
-      "noshow": 2.0,
+      "revenue": 0.0,
+      "arrived": 0.0,
+      "noshow": 5.0,
       "refund_count": 0,
-      "open_cost": 91.3,
-      "open_to_wechat": 0.5,
-      "ad_roi": 0.96,
+      "open_cost": 69.2,
+      "open_to_wechat": 0.227,
+      "ad_roi": 0.0,
       "wechat_to_dep": 0.0,
-      "dep_to_arrival": 0.077,
-      "noshow_rate": 0.667,
+      "dep_to_arrival": 0.0,
+      "noshow_rate": 1.0,
       "refund_rate": 0.0,
       "followup_rate": 1.0,
-      "revenue_per_cs": 1140.0,
-      "wechat_per_cs": 6.5,
+      "revenue_per_cs": 0.0,
+      "wechat_per_cs": 2.5,
       "cs_count": 2,
       "monthly_target": 150000
     }
@@ -303,23 +323,23 @@
     {
       "level": "P0",
       "category": "爽约",
-      "message": "哈尔滨站2位客户爽约未到店",
+      "message": "哈尔滨站5位客户爽约未到店",
       "city": "哈尔滨",
       "action": "客服立刻联系挽回，确认下次到店时间"
     },
     {
       "level": "P1",
-      "category": "转化",
-      "message": "哈尔滨转化健康度仅2分: 加微→定金0%, 到店率8%",
+      "category": "引流",
+      "message": "哈尔滨引流健康度仅41分: 开口成本¥69, 开口→加微23%, ROI 0.0",
       "city": "哈尔滨",
-      "action": "抽查客服聊天记录，检查话术和跟进节奏"
+      "action": "检查投放素材和出价策略"
     },
     {
       "level": "P1",
-      "category": "ROI",
-      "message": "哈尔滨投放ROI仅1.0, 处于亏损状态",
+      "category": "转化",
+      "message": "哈尔滨转化健康度仅0分: 加微→定金0%, 到店率0%",
       "city": "哈尔滨",
-      "action": "暂停低效计划，集中预算到高转化时段"
+      "action": "抽查客服聊天记录，检查话术和跟进节奏"
     }
   ]
 }

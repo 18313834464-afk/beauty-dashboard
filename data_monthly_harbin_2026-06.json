@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-06",
-  "days_elapsed": 12,
+  "days_elapsed": 13,
   "total_days": 30,
-  "cum_revenue": 59469.8,
-  "cum_spend": 30486.65,
-  "cum_wechat": 219,
+  "cum_revenue": 61455.98,
+  "cum_spend": 32010.0,
+  "cum_wechat": 224,
   "cum_deposit": 0,
-  "cum_open": 387,
+  "cum_open": 409,
   "cum_refund": 5,
-  "roi": 0.39,
+  "roi": 0.37,
   "revenue_target": 100000,
   "progress": 11.8,
-  "predicted_revenue": 148674.5,
-  "predicted_spend": 76216.62,
-  "predicted_roi": 1.95,
+  "predicted_revenue": 141821.49,
+  "predicted_spend": 73869.23,
+  "predicted_roi": 1.92,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -111,6 +111,14 @@
       "wechat": 13,
       "deposit": 0,
       "open": 26.0
+    },
+    {
+      "date": "2026-06-13",
+      "revenue": 0.0,
+      "spend": 1523.35,
+      "wechat": 5,
+      "deposit": 0,
+      "open": 22.0
     }
   ],
   "rate_trend": [
@@ -173,6 +181,11 @@
       "date": "2026-06-12",
       "open_to_wechat": 50.0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-13",
+      "open_to_wechat": 22.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -186,14 +199,14 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 4,
+      "intent_a": 2,
       "intent_b": 0,
-      "intent_c": 6,
-      "intent_total": 10
+      "intent_c": 0,
+      "intent_total": 2
     },
     {
       "name": "侯芳",
-      "wechat": 71,
+      "wechat": 76,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -201,10 +214,10 @@
       "fulfill_rate": 0,
       "gap_total": 2,
       "sop_score": 84,
-      "intent_a": 0,
+      "intent_a": 1,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_c": 4,
+      "intent_total": 5
     },
     {
       "name": "杨雪",
@@ -218,8 +231,8 @@
       "sop_score": 84,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 2,
-      "intent_total": 2
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "会媛",
