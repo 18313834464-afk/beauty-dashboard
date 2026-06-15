@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 784518.65,
-  "cum_spend": 261158.4,
-  "cum_wechat": 2497,
+  "cum_revenue": 791017.19,
+  "cum_spend": 267998.86,
+  "cum_wechat": 2507,
   "cum_deposit": 146,
-  "cum_open": 3098.0,
-  "cum_roi": 3.0,
-  "monthly_avg_rev": 196129.66,
-  "predicted_annual": 2353555.92,
+  "cum_open": 3166.0,
+  "cum_roi": 2.95,
+  "monthly_avg_rev": 197754.3,
+  "predicted_annual": 2373051.6,
   "revenue_target": 3000000,
-  "progress": 22.4,
+  "progress": 22.5,
   "monthly_kpi": [
     {
       "month": 1,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 52668.63,
-      "roi": 4.11,
+      "spend": 56088.86,
+      "roi": 3.86,
       "wechat": 676,
       "deposit": 28,
-      "open": 465,
+      "open": 499,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 89497.88,
-      "spend": 52668.63,
-      "roi": 1.7,
-      "wechat": 258,
+      "revenue": 95996.42,
+      "spend": 56088.86,
+      "roi": 1.71,
+      "wechat": 268,
       "deposit": 0,
-      "open": 465,
-      "open_cost": 113.27,
+      "open": 499,
+      "open_cost": 112.4,
       "refund": 5,
-      "days": 13,
-      "mom_revenue": -70.5
+      "days": 14,
+      "mom_revenue": -67.3
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    89497.88,
+    95996.42,
     null,
     null,
     null,
@@ -130,9 +130,9 @@
     0,
     0,
     95338.22,
-    52668.63,
+    56088.86,
     60482.92,
-    52668.63,
+    56088.86,
     null,
     null,
     null,
@@ -144,9 +144,9 @@
     0,
     0,
     2.59,
-    4.11,
+    3.86,
     3.84,
-    1.7,
+    1.71,
     null,
     null,
     null,
@@ -207,7 +207,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 98,
+          "wechat": 108,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -251,8 +251,8 @@
         }
       },
       "intent_a": 3,
-      "intent_b": 5,
-      "intent_c": 38
+      "intent_b": 9,
+      "intent_c": 54
     },
     {
       "name": "陈相",

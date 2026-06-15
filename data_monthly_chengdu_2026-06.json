@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 13,
+  "days_elapsed": 14,
   "total_days": 30,
-  "cum_revenue": 89497.88,
-  "cum_spend": 52668.63,
-  "cum_wechat": 258,
+  "cum_revenue": 95996.42,
+  "cum_spend": 56088.86,
+  "cum_wechat": 268,
   "cum_deposit": 0,
-  "cum_open": 465,
+  "cum_open": 499,
   "cum_refund": 5,
-  "roi": 1.08,
+  "roi": 1.12,
   "revenue_target": 300000,
-  "progress": 18.0,
-  "predicted_revenue": 206533.57,
-  "predicted_spend": 121542.99,
-  "predicted_roi": 1.7,
+  "progress": 19.9,
+  "predicted_revenue": 205706.61,
+  "predicted_spend": 120190.41,
+  "predicted_roi": 1.71,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -119,6 +119,14 @@
       "wechat": 17,
       "deposit": 0,
       "open": 32.0
+    },
+    {
+      "date": "2026-06-14",
+      "revenue": 5772.36,
+      "spend": 3420.23,
+      "wechat": 10,
+      "deposit": 0,
+      "open": 34.0
     }
   ],
   "rate_trend": [
@@ -186,6 +194,11 @@
       "date": "2026-06-13",
       "open_to_wechat": 53.1,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-14",
+      "open_to_wechat": 29.4,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
@@ -197,7 +210,7 @@
       "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 34,
+      "gap_total": 38,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -209,15 +222,15 @@
       "wechat": 58,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 12,
+      "arrived": 13,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 21,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 0,
-      "intent_total": 0
+      "intent_c": 3,
+      "intent_total": 3
     },
     {
       "name": "陈相",
@@ -236,10 +249,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 98,
+      "wechat": 108,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 5,
+      "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 2,
