@@ -3,17 +3,17 @@
   "days_elapsed": 31,
   "total_days": 31,
   "cum_revenue": 263511.77,
-  "cum_spend": 133614.44,
-  "cum_wechat": 1157,
+  "cum_spend": 135857.94,
+  "cum_wechat": 1153,
   "cum_deposit": 131,
-  "cum_open": 2019.0,
+  "cum_open": 2043.0,
   "cum_refund": 31,
-  "roi": 1.97,
+  "roi": 1.94,
   "revenue_target": 500000,
   "progress": 52.7,
   "predicted_revenue": 263511.77,
-  "predicted_spend": 133614.44,
-  "predicted_roi": 1.97,
+  "predicted_spend": 135857.94,
+  "predicted_roi": 1.94,
   "daily_trend": [
     {
       "date": "2026-03-01",
@@ -209,7 +209,7 @@
     },
     {
       "date": "2026-03-25",
-      "revenue": 6400.0,
+      "revenue": 6300.0,
       "spend": 5088.180000000001,
       "wechat": 53,
       "deposit": 9,
@@ -251,7 +251,7 @@
       "date": "2026-03-30",
       "revenue": 4680.0,
       "spend": 3837.95,
-      "wechat": 46,
+      "wechat": 42,
       "deposit": 1,
       "open": 63.0
     },
@@ -412,8 +412,8 @@
     },
     {
       "date": "2026-03-30",
-      "open_to_wechat": 73.0,
-      "wechat_to_deposit": 2.2
+      "open_to_wechat": 66.7,
+      "wechat_to_deposit": 2.4
     },
     {
       "date": "2026-03-31",
@@ -432,14 +432,14 @@
     },
     "重庆": {
       "cum_spend": 3998.57,
-      "cum_wechat": 61,
+      "cum_wechat": 57,
       "cum_deposit": 5,
       "cum_revenue": 11140.0,
       "roi": 2.79,
       "cum_refund": 1
     },
     "哈尔滨": {
-      "cum_spend": 34277.65,
+      "cum_spend": 36521.15,
       "cum_wechat": 103,
       "cum_deposit": 8,
       "cum_revenue": 5560.0,
@@ -495,18 +495,18 @@
     },
     {
       "name": "侯芳(重庆)",
-      "wechat": 61,
+      "wechat": 57,
       "deposit": 5,
       "revenue": 11240.0,
       "arrived": 0,
-      "deposit_rate": 8.2,
+      "deposit_rate": 8.8,
       "fulfill_rate": 0.0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 4,
-      "intent_b": 4,
-      "intent_c": 53,
-      "intent_total": 61
+      "intent_a": 0,
+      "intent_b": 0,
+      "intent_c": 6,
+      "intent_total": 6
     },
     {
       "name": "汤娅(哈尔滨)",

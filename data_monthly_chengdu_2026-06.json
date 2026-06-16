@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 14,
+  "days_elapsed": 15,
   "total_days": 30,
-  "cum_revenue": 95996.42,
-  "cum_spend": 56088.86,
-  "cum_wechat": 268,
+  "cum_revenue": 106262.6,
+  "cum_spend": 60002.45,
+  "cum_wechat": 294,
   "cum_deposit": 0,
-  "cum_open": 499,
-  "cum_refund": 5,
-  "roi": 1.12,
+  "cum_open": 532,
+  "cum_refund": 6,
+  "roi": 1.24,
   "revenue_target": 300000,
-  "progress": 19.9,
-  "predicted_revenue": 205706.61,
-  "predicted_spend": 120190.41,
-  "predicted_roi": 1.71,
+  "progress": 23.7,
+  "predicted_revenue": 212525.2,
+  "predicted_spend": 120004.9,
+  "predicted_roi": 1.77,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -127,6 +127,14 @@
       "wechat": 10,
       "deposit": 0,
       "open": 34.0
+    },
+    {
+      "date": "2026-06-15",
+      "revenue": 11286.18,
+      "spend": 3913.59,
+      "wechat": 26,
+      "deposit": 0,
+      "open": 33.0
     }
   ],
   "rate_trend": [
@@ -199,18 +207,23 @@
       "date": "2026-06-14",
       "open_to_wechat": 29.4,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-15",
+      "open_to_wechat": 78.8,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 102,
+      "wechat": 109,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 38,
+      "gap_total": 41,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -219,18 +232,18 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 58,
+      "wechat": 67,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 13,
+      "arrived": 15,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 21,
+      "gap_total": 32,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 3,
-      "intent_total": 3
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "陈相",
@@ -249,14 +262,14 @@
     },
     {
       "name": "林俐",
-      "wechat": 108,
+      "wechat": 118,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 6,
+      "arrived": 8,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 2,
-      "sop_score": 84,
+      "gap_total": 3,
+      "sop_score": 76,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -293,6 +306,12 @@
       "revenue": 0,
       "cs": "阳珂欣",
       "status": "到店退款"
+    },
+    {
+      "customer": "刘茂瑶",
+      "revenue": 0,
+      "cs": "林俐",
+      "status": "到店退款"
     }
   ],
   "refund_summary": [
@@ -311,7 +330,7 @@
     {
       "cs": "林俐",
       "city": "成都",
-      "arrived": 1,
+      "arrived": 2,
       "not_arrived": 0
     }
   ]

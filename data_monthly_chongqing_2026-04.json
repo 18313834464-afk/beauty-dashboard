@@ -5,8 +5,8 @@
   "total_days": 30,
   "cum_revenue": 0.0,
   "cum_spend": 0,
-  "cum_wechat": 61,
-  "cum_deposit": 5,
+  "cum_wechat": 0,
+  "cum_deposit": 0,
   "cum_open": 0,
   "cum_refund": 1,
   "roi": 0,
@@ -58,23 +58,7 @@
       "wechat_to_deposit": 0
     }
   ],
-  "cs_table": [
-    {
-      "name": "侯芳",
-      "wechat": 61,
-      "deposit": 5,
-      "revenue": 11240.0,
-      "arrived": 0,
-      "deposit_rate": 8.2,
-      "fulfill_rate": 0.0,
-      "gap_total": 0,
-      "sop_score": 100,
-      "intent_a": 0,
-      "intent_b": 1,
-      "intent_c": 7,
-      "intent_total": 8
-    }
-  ],
+  "cs_table": [],
   "refund_details": [
     {
       "customer": "泡泡王",
