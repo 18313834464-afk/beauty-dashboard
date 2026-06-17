@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 801283.37,
-  "cum_spend": 275826.04,
-  "cum_wechat": 2533,
+  "cum_revenue": 818205.91,
+  "cum_spend": 284102.06,
+  "cum_wechat": 2553,
   "cum_deposit": 146,
-  "cum_open": 3232.0,
-  "cum_roi": 2.91,
-  "monthly_avg_rev": 200320.84,
-  "predicted_annual": 2403850.08,
+  "cum_open": 3286.0,
+  "cum_roi": 2.88,
+  "monthly_avg_rev": 204551.48,
+  "predicted_annual": 2454617.76,
   "revenue_target": 3000000,
-  "progress": 22.9,
+  "progress": 23.5,
   "monthly_kpi": [
     {
       "month": 1,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 60002.45,
-      "roi": 3.6,
+      "spend": 62921.28,
+      "roi": 3.44,
       "wechat": 676,
       "deposit": 28,
-      "open": 532,
+      "open": 559,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -73,8 +73,8 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 231954.0,
-      "spend": 60482.92,
-      "roi": 3.84,
+      "spend": 62921.28,
+      "roi": 3.69,
       "wechat": 570,
       "deposit": 0,
       "open": 646.0,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 106262.6,
-      "spend": 60002.45,
-      "roi": 1.77,
-      "wechat": 294,
+      "revenue": 123185.14,
+      "spend": 62921.28,
+      "roi": 1.96,
+      "wechat": 314,
       "deposit": 0,
-      "open": 532,
-      "open_cost": 112.79,
-      "refund": 6,
-      "days": 15,
-      "mom_revenue": -61.2
+      "open": 559,
+      "open_cost": 112.56,
+      "refund": 8,
+      "days": 16,
+      "mom_revenue": -52.4
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    106262.6,
+    123185.14,
     null,
     null,
     null,
@@ -130,9 +130,9 @@
     0,
     0,
     95338.22,
-    60002.45,
-    60482.92,
-    60002.45,
+    62921.28,
+    62921.28,
+    62921.28,
     null,
     null,
     null,
@@ -144,9 +144,9 @@
     0,
     0,
     2.59,
-    3.6,
-    3.84,
-    1.77,
+    3.44,
+    3.69,
+    1.96,
     null,
     null,
     null,
@@ -174,7 +174,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 109,
+          "wechat": 118,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -207,14 +207,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 118,
+          "wechat": 129,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 8,
+      "intent_a": 9,
       "intent_b": 2,
-      "intent_c": 84
+      "intent_c": 86
     },
     {
       "name": "胡娜",
