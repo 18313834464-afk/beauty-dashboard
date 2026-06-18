@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-16",
-  "generated_at": "2026-06-17 07:07:31",
-  "revenue": 16128.720000000001,
-  "wechat_total": 20,
+  "date": "2026-06-17",
+  "generated_at": "2026-06-18 06:50:27",
+  "revenue": 7666.18,
+  "wechat_total": 22,
   "deposit_total": 0,
   "ai_summary": "[请求异常] 'NoneType' object is not subscriptable",
-  "ad_spend": 2918.83,
-  "open_count": 27.0,
-  "open_cost": 108.104814814815,
-  "arrived_count": 5,
-  "noshow_count": 0,
-  "deal_count": 5,
+  "ad_spend": 5423.13,
+  "open_count": 44.0,
+  "open_cost": 123.252954545455,
+  "arrived_count": 2,
+  "noshow_count": 1,
+  "deal_count": 2,
   "cs_names": [
     "会媛",
     "阳珂欣",
@@ -19,9 +19,9 @@
   ],
   "wechat_list": [
     9,
+    1,
     0,
-    0,
-    11
+    12
   ],
   "deposit_list": [
     0,
@@ -60,139 +60,181 @@
     }
   ],
   "fulfill_list": [
-    4,
-    2,
+    5,
+    0,
     0,
     2
   ],
   "gap_list": [
-    4,
-    9,
     0,
-    0
+    19,
+    0,
+    1
   ],
   "arrived_list": [
-    1,
     0,
     0,
-    4
+    0,
+    2
   ],
   "blacklist": [
     {
-      "client": "关关",
+      "client": "张颖",
+      "problem": "爽约",
+      "type": "未到店",
+      "cs": "林俐",
+      "level": "normal"
+    },
+    {
+      "client": "魏女士",
       "problem": "回访",
       "type": "未完成",
       "cs": "珂欣",
       "level": "warning"
     },
     {
-      "client": "罗剑",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "阳珂欣",
-      "level": "warning"
-    },
-    {
-      "client": "徐菁",
+      "client": "刘利萨",
       "problem": "回访",
       "type": "未完成",
       "cs": "珂欣",
       "level": "warning"
     },
     {
-      "client": "亚亚",
+      "client": "张新茂",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "许斐然",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "黄茜",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "刘娅",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
       "level": "warning"
     },
     {
-      "client": "李亚玲",
+      "client": "陶红",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
       "level": "warning"
     },
     {
-      "client": "李瞵杉妈妈",
+      "client": "杨西溪",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
       "level": "warning"
     },
     {
-      "client": "龙倪竹",
+      "client": "何玉玲",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "王小希",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
       "level": "warning"
     },
     {
-      "client": "杜亚梅",
+      "client": "王玲",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
       "level": "warning"
     },
     {
-      "client": "王姐",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning"
-    },
-    {
-      "client": "唐蓉",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning"
-    },
-    {
-      "client": "肖利",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning"
-    },
-    {
-      "client": "韦恋秋",
-      "problem": "回访",
-      "type": "未完成",
-      "cs": "会媛",
-      "level": "warning"
-    },
-    {
-      "client": "徐燕燕",
+      "client": "钰瑞妈妈",
       "problem": "回访",
       "type": "未完成",
       "cs": "阳珂欣",
       "level": "warning"
     },
     {
-      "client": "陈思宇",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger"
+      "client": "董昱靖",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
     },
     {
-      "client": "小宇",
-      "problem": "退款",
-      "type": "后端交付失败",
-      "cs": "",
-      "level": "danger"
+      "client": "张诗若",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "程雪晴",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "刑晶晶",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "邓钰琪",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "郭健妈妈",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "毛毛",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "阳珂欣",
+      "level": "warning"
+    },
+    {
+      "client": "luna",
+      "problem": "回访",
+      "type": "未完成",
+      "cs": "林俐",
+      "level": "warning"
     }
   ],
   "staff_intentions": {},
   "y_axis_days": [
-    "6月17日",
     "6月18日",
     "6月19日",
     "6月20日",
     "6月21日",
     "6月22日",
-    "6月23日"
+    "6月23日",
+    "6月24日"
   ],
   "bed_heatmap": [
     [
@@ -324,57 +366,57 @@
   "health_score": {
     "dimensions": {
       "acquire": {
-        "score": 71,
-        "status": "warning",
-        "detail": "开口成本¥108, 开口→加微74%, ROI 5.5",
+        "score": 49,
+        "status": "danger",
+        "detail": "开口成本¥123, 开口→加微50%, ROI 1.4",
         "label": "引流"
       },
       "convert": {
-        "score": 8,
+        "score": 3,
         "status": "danger",
-        "detail": "加微→定金0%, 到店率25%",
+        "detail": "加微→定金0%, 到店率9%",
         "label": "转化"
       },
       "deliver": {
-        "score": 20,
+        "score": 41,
         "status": "danger",
-        "detail": "退款率40%, 爽约率0%",
+        "detail": "退款率0%, 爽约率33%",
         "label": "交付"
       },
       "aftersales": {
-        "score": 23,
+        "score": 16,
         "status": "danger",
-        "detail": "回访完成率38% (8/21)",
+        "detail": "回访完成率26% (7/27)",
         "label": "售后"
       },
       "team": {
-        "score": 7,
+        "score": 5,
         "status": "danger",
-        "detail": "人均产出¥8,064, 人均加微10",
+        "detail": "人均产出¥3,833, 人均加微11",
         "label": "团队"
       }
     },
-    "overall_score": 28,
+    "overall_score": 24,
     "overall_status": "danger",
     "kpis": {
-      "spend": 2918.83,
-      "open_count": 27.0,
-      "wechat": 20.0,
+      "spend": 5423.13,
+      "open_count": 44.0,
+      "wechat": 22.0,
       "deposit": 0.0,
-      "revenue": 16128.720000000001,
-      "arrived": 5.0,
-      "noshow": 0.0,
-      "refund_count": 2,
-      "open_cost": 108.1,
-      "open_to_wechat": 0.741,
-      "ad_roi": 5.53,
+      "revenue": 7666.18,
+      "arrived": 2.0,
+      "noshow": 1.0,
+      "refund_count": 0,
+      "open_cost": 123.3,
+      "open_to_wechat": 0.5,
+      "ad_roi": 1.41,
       "wechat_to_dep": 0.0,
-      "dep_to_arrival": 0.25,
-      "noshow_rate": 0.0,
-      "refund_rate": 0.4,
-      "followup_rate": 0.381,
-      "revenue_per_cs": 8064.0,
-      "wechat_per_cs": 10.0,
+      "dep_to_arrival": 0.091,
+      "noshow_rate": 0.333,
+      "refund_rate": 0.0,
+      "followup_rate": 0.259,
+      "revenue_per_cs": 3833.0,
+      "wechat_per_cs": 11.0,
       "cs_count": 2,
       "monthly_target": 200000
     }
@@ -382,22 +424,29 @@
   "alerts": [
     {
       "level": "P0",
-      "category": "退款",
-      "message": "成都站今日新增2笔退款",
+      "category": "爽约",
+      "message": "成都站1位客户爽约未到店",
       "city": "成都",
-      "action": "立即查看退款明细，定责到客服"
+      "action": "客服立刻联系挽回，确认下次到店时间"
+    },
+    {
+      "level": "P1",
+      "category": "引流",
+      "message": "成都引流健康度仅49分: 开口成本¥123, 开口→加微50%, ROI 1.4",
+      "city": "成都",
+      "action": "检查投放素材和出价策略"
     },
     {
       "level": "P1",
       "category": "转化",
-      "message": "成都转化健康度仅8分: 加微→定金0%, 到店率25%",
+      "message": "成都转化健康度仅3分: 加微→定金0%, 到店率9%",
       "city": "成都",
       "action": "抽查客服聊天记录，检查话术和跟进节奏"
     },
     {
       "level": "P2",
       "category": "回访",
-      "message": "成都回访完成率不足: 回访完成率38% (8/21)",
+      "message": "成都回访完成率不足: 回访完成率26% (7/27)",
       "city": "成都",
       "action": "督促客服今日补齐回访"
     }

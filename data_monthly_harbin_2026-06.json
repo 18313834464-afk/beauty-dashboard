@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-06",
-  "days_elapsed": 16,
+  "days_elapsed": 17,
   "total_days": 30,
-  "cum_revenue": 72874.52,
-  "cum_spend": 38942.12,
-  "cum_wechat": 274,
+  "cum_revenue": 76746.88,
+  "cum_spend": 42252.02,
+  "cum_wechat": 297,
   "cum_deposit": 0,
-  "cum_open": 483,
+  "cum_open": 520,
   "cum_refund": 5,
-  "roi": 0.41,
+  "roi": 0.37,
   "revenue_target": 100000,
   "progress": 15.7,
-  "predicted_revenue": 136639.73,
-  "predicted_spend": 73016.48,
-  "predicted_roi": 1.87,
+  "predicted_revenue": 135435.67,
+  "predicted_spend": 74562.39,
+  "predicted_roi": 1.82,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -143,6 +143,14 @@
       "wechat": 18,
       "deposit": 0,
       "open": 23.0
+    },
+    {
+      "date": "2026-06-17",
+      "revenue": 0.0,
+      "spend": 3309.9,
+      "wechat": 23,
+      "deposit": 0,
+      "open": 37.0
     }
   ],
   "rate_trend": [
@@ -225,12 +233,17 @@
       "date": "2026-06-16",
       "open_to_wechat": 78.3,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-17",
+      "open_to_wechat": 62.2,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 106,
+      "wechat": 112,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 6,
@@ -238,14 +251,14 @@
       "fulfill_rate": 0,
       "gap_total": 0,
       "sop_score": 100,
-      "intent_a": 1,
-      "intent_b": 0,
+      "intent_a": 0,
+      "intent_b": 1,
       "intent_c": 1,
       "intent_total": 2
     },
     {
       "name": "侯芳",
-      "wechat": 100,
+      "wechat": 105,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -253,10 +266,10 @@
       "fulfill_rate": 0,
       "gap_total": 2,
       "sop_score": 84,
-      "intent_a": 1,
-      "intent_b": 0,
-      "intent_c": 8,
-      "intent_total": 9
+      "intent_a": 0,
+      "intent_b": 1,
+      "intent_c": 2,
+      "intent_total": 3
     },
     {
       "name": "杨雪",
@@ -275,7 +288,7 @@
     },
     {
       "name": "会媛",
-      "wechat": 8,
+      "wechat": 20,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,

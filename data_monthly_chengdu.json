@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 16,
+  "days_elapsed": 17,
   "total_days": 30,
-  "cum_revenue": 123185.14,
-  "cum_spend": 62921.28,
-  "cum_wechat": 314,
+  "cum_revenue": 126871.32,
+  "cum_spend": 68344.41,
+  "cum_wechat": 336,
   "cum_deposit": 0,
-  "cum_open": 559,
+  "cum_open": 603,
   "cum_refund": 8,
-  "roi": 1.45,
+  "roi": 1.44,
   "revenue_target": 300000,
-  "progress": 29.1,
-  "predicted_revenue": 230972.14,
-  "predicted_spend": 117977.4,
-  "predicted_roi": 1.96,
+  "progress": 31.6,
+  "predicted_revenue": 223890.56,
+  "predicted_spend": 120607.78,
+  "predicted_roi": 1.86,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -143,6 +143,14 @@
       "wechat": 20,
       "deposit": 0,
       "open": 27.0
+    },
+    {
+      "date": "2026-06-17",
+      "revenue": 7666.18,
+      "spend": 5423.13,
+      "wechat": 22,
+      "deposit": 0,
+      "open": 44.0
     }
   ],
   "rate_trend": [
@@ -225,12 +233,17 @@
       "date": "2026-06-16",
       "open_to_wechat": 74.1,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-17",
+      "open_to_wechat": 50.0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 118,
+      "wechat": 127,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 7,
@@ -245,13 +258,13 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 67,
+      "wechat": 68,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 15,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 41,
+      "gap_total": 60,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -275,14 +288,14 @@
     },
     {
       "name": "林俐",
-      "wechat": 129,
+      "wechat": 141,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 12,
+      "arrived": 14,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 3,
-      "sop_score": 76,
+      "gap_total": 4,
+      "sop_score": 68,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
