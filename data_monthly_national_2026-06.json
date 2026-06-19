@@ -1,19 +1,19 @@
 {
   "month": "2026-06",
-  "days_elapsed": 17,
+  "days_elapsed": 18,
   "total_days": 30,
-  "cum_revenue": 203618.2,
-  "cum_spend": 110596.43,
-  "cum_wechat": 633,
+  "cum_revenue": 214390.56,
+  "cum_spend": 116843.53,
+  "cum_wechat": 658,
   "cum_deposit": 0,
-  "cum_open": 1123,
-  "cum_refund": 13,
-  "roi": 1.84,
+  "cum_open": 1177,
+  "cum_refund": 16,
+  "roi": 1.83,
   "revenue_target": 400000,
-  "progress": 50.9,
-  "predicted_revenue": 359326.24,
-  "predicted_spend": 195170.17,
-  "predicted_roi": 1.84,
+  "progress": 53.6,
+  "predicted_revenue": 357317.6,
+  "predicted_spend": 194739.22,
+  "predicted_roi": 1.83,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -150,6 +150,14 @@
       "wechat": 45,
       "deposit": 0,
       "open": 81.0
+    },
+    {
+      "date": "2026-06-18",
+      "revenue": 8032.360000000001,
+      "spend": 6247.1,
+      "wechat": 25,
+      "deposit": 0,
+      "open": 54.0
     }
   ],
   "rate_trend": [
@@ -237,36 +245,41 @@
       "date": "2026-06-17",
       "open_to_wechat": 55.6,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-18",
+      "open_to_wechat": 46.3,
+      "wechat_to_deposit": 0.0
     }
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 68344.41,
-      "cum_wechat": 336,
+      "cum_spend": 72368.73,
+      "cum_wechat": 350,
       "cum_deposit": 0,
-      "cum_revenue": 126871.32,
-      "roi": 1.44,
-      "cum_refund": 8
+      "cum_revenue": 134903.68,
+      "roi": 1.48,
+      "cum_refund": 9
     },
     "哈尔滨": {
-      "cum_spend": 42252.02,
-      "cum_wechat": 297,
+      "cum_spend": 44474.8,
+      "cum_wechat": 308,
       "cum_deposit": 0,
-      "cum_revenue": 76746.88,
-      "roi": 0.37,
-      "cum_refund": 5
+      "cum_revenue": 79486.88,
+      "roi": 0.36,
+      "cum_refund": 7
     }
   },
   "cs_table": [
     {
       "name": "会媛(成都)",
-      "wechat": 127,
+      "wechat": 131,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 7,
+      "arrived": 10,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 45,
+      "gap_total": 46,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -275,7 +288,7 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 68,
+      "wechat": 75,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 15,
@@ -305,7 +318,7 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 141,
+      "wechat": 144,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 14,
@@ -320,22 +333,22 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 112,
+      "wechat": 119,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 6,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 0,
-      "sop_score": 100,
-      "intent_a": 0,
-      "intent_b": 1,
-      "intent_c": 1,
-      "intent_total": 2
+      "gap_total": 1,
+      "sop_score": 92,
+      "intent_a": 3,
+      "intent_b": 0,
+      "intent_c": 3,
+      "intent_total": 6
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 105,
+      "wechat": 107,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -344,9 +357,9 @@
       "gap_total": 2,
       "sop_score": 84,
       "intent_a": 0,
-      "intent_b": 1,
-      "intent_c": 2,
-      "intent_total": 3
+      "intent_b": 0,
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "杨雪(哈尔滨)",
@@ -365,7 +378,7 @@
     },
     {
       "name": "会媛(哈尔滨)",
-      "wechat": 20,
+      "wechat": 22,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -384,7 +397,13 @@
       "cs": "会媛",
       "city": "成都",
       "arrived": 4,
-      "not_arrived": 0
+      "not_arrived": 1
+    },
+    {
+      "cs": "汤娅",
+      "city": "哈尔滨",
+      "arrived": 3,
+      "not_arrived": 1
     },
     {
       "cs": "侯芳",
@@ -403,12 +422,6 @@
       "city": "成都",
       "arrived": 2,
       "not_arrived": 0
-    },
-    {
-      "cs": "汤娅",
-      "city": "哈尔滨",
-      "arrived": 1,
-      "not_arrived": 1
     }
   ]
 }

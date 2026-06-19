@@ -1,19 +1,19 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 17,
+  "days_elapsed": 18,
   "total_days": 30,
-  "cum_revenue": 126871.32,
-  "cum_spend": 68344.41,
-  "cum_wechat": 336,
+  "cum_revenue": 134903.68,
+  "cum_spend": 72368.73,
+  "cum_wechat": 350,
   "cum_deposit": 0,
-  "cum_open": 603,
-  "cum_refund": 8,
-  "roi": 1.44,
+  "cum_open": 637,
+  "cum_refund": 9,
+  "roi": 1.48,
   "revenue_target": 300000,
-  "progress": 31.6,
-  "predicted_revenue": 223890.56,
-  "predicted_spend": 120607.78,
+  "progress": 34.3,
+  "predicted_revenue": 224839.47,
+  "predicted_spend": 120614.55,
   "predicted_roi": 1.86,
   "daily_trend": [
     {
@@ -151,6 +151,14 @@
       "wechat": 22,
       "deposit": 0,
       "open": 44.0
+    },
+    {
+      "date": "2026-06-18",
+      "revenue": 8032.360000000001,
+      "spend": 4024.32,
+      "wechat": 14,
+      "deposit": 0,
+      "open": 34.0
     }
   ],
   "rate_trend": [
@@ -238,18 +246,23 @@
       "date": "2026-06-17",
       "open_to_wechat": 50.0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-18",
+      "open_to_wechat": 41.2,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 127,
+      "wechat": 131,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 7,
+      "arrived": 10,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 45,
+      "gap_total": 46,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -258,7 +271,7 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 68,
+      "wechat": 75,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 15,
@@ -288,7 +301,7 @@
     },
     {
       "name": "林俐",
-      "wechat": 141,
+      "wechat": 144,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 14,
@@ -350,6 +363,12 @@
       "revenue": 0,
       "cs": "林俐",
       "status": "到店退款"
+    },
+    {
+      "customer": "梅梅5",
+      "revenue": 0,
+      "cs": "会媛",
+      "status": "未到店退款"
     }
   ],
   "refund_summary": [
@@ -357,7 +376,7 @@
       "cs": "会媛",
       "city": "成都",
       "arrived": 4,
-      "not_arrived": 0
+      "not_arrived": 1
     },
     {
       "cs": "阳珂欣",
