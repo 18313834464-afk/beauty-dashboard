@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-06",
-  "days_elapsed": 18,
+  "days_elapsed": 19,
   "total_days": 30,
-  "cum_revenue": 79486.88,
-  "cum_spend": 44474.8,
-  "cum_wechat": 308,
+  "cum_revenue": 81766.88,
+  "cum_spend": 48193.03,
+  "cum_wechat": 323,
   "cum_deposit": 0,
-  "cum_open": 540,
-  "cum_refund": 7,
-  "roi": 0.36,
+  "cum_open": 576,
+  "cum_refund": 9,
+  "roi": 0.33,
   "revenue_target": 100000,
   "progress": 15.7,
-  "predicted_revenue": 132478.13,
-  "predicted_spend": 74124.67,
-  "predicted_roi": 1.79,
+  "predicted_revenue": 129105.6,
+  "predicted_spend": 76094.26,
+  "predicted_roi": 1.7,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -159,6 +159,14 @@
       "wechat": 11,
       "deposit": 0,
       "open": 20.0
+    },
+    {
+      "date": "2026-06-19",
+      "revenue": 0.0,
+      "spend": 3718.23,
+      "wechat": 15,
+      "deposit": 0,
+      "open": 36.0
     }
   ],
   "rate_trend": [
@@ -251,12 +259,17 @@
       "date": "2026-06-18",
       "open_to_wechat": 55.0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-19",
+      "open_to_wechat": 41.7,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 119,
+      "wechat": 127,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 6,
@@ -264,14 +277,14 @@
       "fulfill_rate": 0,
       "gap_total": 1,
       "sop_score": 92,
-      "intent_a": 3,
-      "intent_b": 0,
-      "intent_c": 3,
+      "intent_a": 1,
+      "intent_b": 1,
+      "intent_c": 4,
       "intent_total": 6
     },
     {
       "name": "侯芳",
-      "wechat": 107,
+      "wechat": 111,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -301,7 +314,7 @@
     },
     {
       "name": "会媛",
-      "wechat": 22,
+      "wechat": 25,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -341,6 +354,12 @@
       "status": "到店退款"
     },
     {
+      "customer": "艾婧",
+      "revenue": 0,
+      "cs": "侯芳",
+      "status": "未到店退款"
+    },
+    {
       "customer": "侯月",
       "revenue": 0,
       "cs": "侯芳",
@@ -351,6 +370,12 @@
       "revenue": 0,
       "cs": "侯芳",
       "status": "到店退款"
+    },
+    {
+      "customer": "顾娉",
+      "revenue": 0,
+      "cs": "杨雪",
+      "status": "未到店退款"
     },
     {
       "customer": "老坛杉菜（艾女士）",
@@ -370,7 +395,13 @@
       "cs": "侯芳",
       "city": "哈尔滨",
       "arrived": 3,
-      "not_arrived": 0
+      "not_arrived": 1
+    },
+    {
+      "cs": "杨雪",
+      "city": "哈尔滨",
+      "arrived": 0,
+      "not_arrived": 1
     }
   ]
 }

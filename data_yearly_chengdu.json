@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 829924.45,
-  "cum_spend": 312444.41,
-  "cum_wechat": 2589,
+  "cum_revenue": 851735.35,
+  "cum_spend": 328934.21,
+  "cum_wechat": 2616,
   "cum_deposit": 146,
-  "cum_open": 3442.0,
-  "cum_roi": 2.66,
-  "monthly_avg_rev": 207481.11,
-  "predicted_annual": 2489773.32,
+  "cum_open": 3574.0,
+  "cum_roi": 2.59,
+  "monthly_avg_rev": 212933.84,
+  "predicted_annual": 2555206.08,
   "revenue_target": 3000000,
-  "progress": 24.0,
+  "progress": 24.6,
   "monthly_kpi": [
     {
       "month": 1,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 72368.73,
-      "roi": 2.99,
+      "spend": 77865.33,
+      "roi": 2.78,
       "wechat": 676,
       "deposit": 28,
-      "open": 637,
+      "open": 684,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -73,11 +73,11 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 231954.0,
-      "spend": 72368.73,
-      "roi": 3.21,
+      "spend": 77865.33,
+      "roi": 2.98,
       "wechat": 570,
       "deposit": 0,
-      "open": 646.0,
+      "open": 684,
       "open_cost": 93.63,
       "refund": 0,
       "days": 31,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 134903.68,
-      "spend": 72368.73,
-      "roi": 1.86,
-      "wechat": 350,
+      "revenue": 156714.58,
+      "spend": 77865.33,
+      "roi": 2.01,
+      "wechat": 377,
       "deposit": 0,
-      "open": 637,
-      "open_cost": 113.61,
+      "open": 684,
+      "open_cost": 113.84,
       "refund": 9,
-      "days": 18,
-      "mom_revenue": -43.8
+      "days": 19,
+      "mom_revenue": -33.0
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    134903.68,
+    156714.58,
     null,
     null,
     null,
@@ -130,9 +130,9 @@
     0,
     0,
     95338.22,
-    72368.73,
-    72368.73,
-    72368.73,
+    77865.33,
+    77865.33,
+    77865.33,
     null,
     null,
     null,
@@ -144,9 +144,9 @@
     0,
     0,
     2.59,
-    2.99,
-    3.21,
-    1.86,
+    2.78,
+    2.98,
+    2.01,
     null,
     null,
     null,
@@ -174,7 +174,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 131,
+          "wechat": 140,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -207,7 +207,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 144,
+          "wechat": 155,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -245,7 +245,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 75,
+          "wechat": 82,
           "deposit": 0,
           "revenue": 0.0
         }

@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 18,
+  "days_elapsed": 19,
   "total_days": 30,
-  "cum_revenue": 134903.68,
-  "cum_spend": 72368.73,
-  "cum_wechat": 350,
+  "cum_revenue": 156714.58,
+  "cum_spend": 77865.33,
+  "cum_wechat": 377,
   "cum_deposit": 0,
-  "cum_open": 637,
+  "cum_open": 684,
   "cum_refund": 9,
-  "roi": 1.48,
+  "roi": 1.63,
   "revenue_target": 300000,
-  "progress": 34.3,
-  "predicted_revenue": 224839.47,
-  "predicted_spend": 120614.55,
-  "predicted_roi": 1.86,
+  "progress": 40.9,
+  "predicted_revenue": 247444.07,
+  "predicted_spend": 122945.26,
+  "predicted_roi": 2.01,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -159,6 +159,14 @@
       "wechat": 14,
       "deposit": 0,
       "open": 34.0
+    },
+    {
+      "date": "2026-06-19",
+      "revenue": 19810.9,
+      "spend": 5496.6,
+      "wechat": 27,
+      "deposit": 0,
+      "open": 47.0
     }
   ],
   "rate_trend": [
@@ -251,18 +259,23 @@
       "date": "2026-06-18",
       "open_to_wechat": 41.2,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-19",
+      "open_to_wechat": 57.4,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 131,
+      "wechat": 140,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 10,
+      "arrived": 15,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 46,
+      "gap_total": 52,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -271,10 +284,10 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 75,
+      "wechat": 82,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 15,
+      "arrived": 16,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 60,
@@ -301,14 +314,14 @@
     },
     {
       "name": "林俐",
-      "wechat": 144,
+      "wechat": 155,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 14,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 4,
-      "sop_score": 68,
+      "gap_total": 5,
+      "sop_score": 60,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
