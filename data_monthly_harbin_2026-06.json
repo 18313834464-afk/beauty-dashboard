@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-06",
-  "days_elapsed": 19,
+  "days_elapsed": 20,
   "total_days": 30,
-  "cum_revenue": 81766.88,
-  "cum_spend": 48193.03,
-  "cum_wechat": 323,
+  "cum_revenue": 87239.24,
+  "cum_spend": 50909.92,
+  "cum_wechat": 343,
   "cum_deposit": 0,
-  "cum_open": 576,
+  "cum_open": 611,
   "cum_refund": 9,
-  "roi": 0.33,
+  "roi": 0.32,
   "revenue_target": 100000,
-  "progress": 15.7,
-  "predicted_revenue": 129105.6,
-  "predicted_spend": 76094.26,
-  "predicted_roi": 1.7,
+  "progress": 16.2,
+  "predicted_revenue": 130858.86,
+  "predicted_spend": 76364.88,
+  "predicted_roi": 1.71,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -167,6 +167,14 @@
       "wechat": 15,
       "deposit": 0,
       "open": 36.0
+    },
+    {
+      "date": "2026-06-20",
+      "revenue": 500.0,
+      "spend": 2716.89,
+      "wechat": 20,
+      "deposit": 0,
+      "open": 35.0
     }
   ],
   "rate_trend": [
@@ -264,27 +272,32 @@
       "date": "2026-06-19",
       "open_to_wechat": 41.7,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-20",
+      "open_to_wechat": 57.1,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 127,
+      "wechat": 139,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 6,
+      "arrived": 7,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 1,
       "sop_score": 92,
-      "intent_a": 1,
-      "intent_b": 1,
-      "intent_c": 4,
-      "intent_total": 6
+      "intent_a": 2,
+      "intent_b": 0,
+      "intent_c": 6,
+      "intent_total": 8
     },
     {
       "name": "侯芳",
-      "wechat": 111,
+      "wechat": 114,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -314,7 +327,7 @@
     },
     {
       "name": "会媛",
-      "wechat": 25,
+      "wechat": 30,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
