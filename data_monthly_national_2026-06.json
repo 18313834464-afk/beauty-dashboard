@@ -1,19 +1,19 @@
 {
   "month": "2026-06",
-  "days_elapsed": 21,
+  "days_elapsed": 22,
   "total_days": 30,
-  "cum_revenue": 252654.18,
-  "cum_spend": 137186.98,
-  "cum_wechat": 773,
+  "cum_revenue": 259428.72,
+  "cum_spend": 147612.02,
+  "cum_wechat": 824,
   "cum_deposit": 0,
-  "cum_open": 1369,
-  "cum_refund": 18,
-  "roi": 1.84,
+  "cum_open": 1469,
+  "cum_refund": 20,
+  "roi": 1.76,
   "revenue_target": 400000,
-  "progress": 63.2,
-  "predicted_revenue": 360934.54,
-  "predicted_spend": 195981.4,
-  "predicted_roi": 1.84,
+  "progress": 64.9,
+  "predicted_revenue": 353766.44,
+  "predicted_spend": 201289.12,
+  "predicted_roi": 1.76,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -182,6 +182,14 @@
       "wechat": 21,
       "deposit": 0,
       "open": 29.0
+    },
+    {
+      "date": "2026-06-22",
+      "revenue": 3686.18,
+      "spend": 10425.04,
+      "wechat": 51,
+      "deposit": 0,
+      "open": 100.0
     }
   ],
   "rate_trend": [
@@ -289,36 +297,41 @@
       "date": "2026-06-21",
       "open_to_wechat": 72.4,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-22",
+      "open_to_wechat": 51.0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 85315.64,
-      "cum_wechat": 419,
+      "cum_spend": 92583.03,
+      "cum_wechat": 454,
       "cum_deposit": 0,
-      "cum_revenue": 160704.76,
-      "roi": 1.56,
-      "cum_refund": 9
+      "cum_revenue": 165093.12,
+      "roi": 1.47,
+      "cum_refund": 10
     },
     "哈尔滨": {
-      "cum_spend": 51871.34,
-      "cum_wechat": 354,
+      "cum_spend": 55028.99,
+      "cum_wechat": 370,
       "cum_deposit": 0,
-      "cum_revenue": 91949.42,
-      "roi": 0.31,
-      "cum_refund": 9
+      "cum_revenue": 94335.6,
+      "roi": 0.3,
+      "cum_refund": 10
     }
   },
   "cs_table": [
     {
       "name": "会媛(成都)",
-      "wechat": 156,
+      "wechat": 167,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 17,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 55,
+      "gap_total": 58,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -327,13 +340,13 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 96,
+      "wechat": 108,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 18,
+      "arrived": 20,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 71,
+      "gap_total": 72,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -357,7 +370,7 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 167,
+      "wechat": 179,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 14,
@@ -367,12 +380,12 @@
       "sop_score": 60,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 2,
-      "intent_total": 2
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 144,
+      "wechat": 145,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 7,
@@ -382,12 +395,12 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 118,
+      "wechat": 122,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -417,7 +430,7 @@
     },
     {
       "name": "会媛(哈尔滨)",
-      "wechat": 32,
+      "wechat": 43,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -441,7 +454,7 @@
     {
       "cs": "汤娅",
       "city": "哈尔滨",
-      "arrived": 3,
+      "arrived": 4,
       "not_arrived": 1
     },
     {
@@ -451,16 +464,16 @@
       "not_arrived": 2
     },
     {
+      "cs": "林俐",
+      "city": "成都",
+      "arrived": 2,
+      "not_arrived": 1
+    },
+    {
       "cs": "阳珂欣",
       "city": "成都",
       "arrived": 1,
       "not_arrived": 1
-    },
-    {
-      "cs": "林俐",
-      "city": "成都",
-      "arrived": 2,
-      "not_arrived": 0
     },
     {
       "cs": "杨雪",

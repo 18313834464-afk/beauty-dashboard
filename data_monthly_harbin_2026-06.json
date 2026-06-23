@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-06",
-  "days_elapsed": 21,
+  "days_elapsed": 22,
   "total_days": 30,
-  "cum_revenue": 91949.42,
-  "cum_spend": 51871.34,
-  "cum_wechat": 354,
+  "cum_revenue": 94335.6,
+  "cum_spend": 55028.99,
+  "cum_wechat": 370,
   "cum_deposit": 0,
-  "cum_open": 621,
-  "cum_refund": 9,
-  "roi": 0.31,
+  "cum_open": 653,
+  "cum_refund": 10,
+  "roi": 0.3,
   "revenue_target": 100000,
   "progress": 16.2,
-  "predicted_revenue": 131356.31,
-  "predicted_spend": 74101.91,
-  "predicted_roi": 1.77,
+  "predicted_revenue": 128639.45,
+  "predicted_spend": 75039.53,
+  "predicted_roi": 1.71,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -183,6 +183,14 @@
       "wechat": 11,
       "deposit": 0,
       "open": 10.0
+    },
+    {
+      "date": "2026-06-22",
+      "revenue": 0.0,
+      "spend": 3157.65,
+      "wechat": 16,
+      "deposit": 0,
+      "open": 32.0
     }
   ],
   "rate_trend": [
@@ -290,12 +298,17 @@
       "date": "2026-06-21",
       "open_to_wechat": 110.0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-22",
+      "open_to_wechat": 50.0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 144,
+      "wechat": 145,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 7,
@@ -305,12 +318,12 @@
       "sop_score": 92,
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 1
+      "intent_c": 0,
+      "intent_total": 0
     },
     {
       "name": "侯芳",
-      "wechat": 118,
+      "wechat": 122,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 4,
@@ -340,7 +353,7 @@
     },
     {
       "name": "会媛",
-      "wechat": 32,
+      "wechat": 43,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 0,
@@ -365,6 +378,12 @@
       "customer": "许女士",
       "revenue": 0,
       "cs": "侯芳",
+      "status": "到店退款"
+    },
+    {
+      "customer": "郑蕾",
+      "revenue": 0,
+      "cs": "汤娅",
       "status": "到店退款"
     },
     {
@@ -414,7 +433,7 @@
     {
       "cs": "汤娅",
       "city": "哈尔滨",
-      "arrived": 3,
+      "arrived": 4,
       "not_arrived": 1
     },
     {

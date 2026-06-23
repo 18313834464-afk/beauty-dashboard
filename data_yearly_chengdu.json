@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 855725.53,
-  "cum_spend": 351285.14,
-  "cum_wechat": 2658,
+  "cum_revenue": 860113.89,
+  "cum_spend": 373087.31,
+  "cum_wechat": 2693,
   "cum_deposit": 146,
-  "cum_open": 3766.0,
-  "cum_roi": 2.44,
-  "monthly_avg_rev": 213931.38,
-  "predicted_annual": 2567176.56,
+  "cum_open": 3970.0,
+  "cum_roi": 2.31,
+  "monthly_avg_rev": 215028.47,
+  "predicted_annual": 2580341.64,
   "revenue_target": 3000000,
-  "progress": 24.8,
+  "progress": 25.0,
   "monthly_kpi": [
     {
       "month": 1,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 85315.64,
-      "roi": 2.53,
+      "spend": 92583.03,
+      "roi": 2.34,
       "wechat": 676,
       "deposit": 28,
-      "open": 748,
+      "open": 816,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -73,11 +73,11 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 231954.0,
-      "spend": 85315.64,
-      "roi": 2.72,
+      "spend": 92583.03,
+      "roi": 2.51,
       "wechat": 570,
       "deposit": 0,
-      "open": 748,
+      "open": 816,
       "open_cost": 93.63,
       "refund": 0,
       "days": 31,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 160704.76,
-      "spend": 85315.64,
-      "roi": 1.88,
-      "wechat": 419,
+      "revenue": 165093.12,
+      "spend": 92583.03,
+      "roi": 1.78,
+      "wechat": 454,
       "deposit": 0,
-      "open": 748,
-      "open_cost": 114.06,
-      "refund": 9,
-      "days": 21,
-      "mom_revenue": -29.7
+      "open": 816,
+      "open_cost": 113.46,
+      "refund": 10,
+      "days": 22,
+      "mom_revenue": -27.7
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    160704.76,
+    165093.12,
     null,
     null,
     null,
@@ -130,9 +130,9 @@
     0,
     0,
     95338.22,
-    85315.64,
-    85315.64,
-    85315.64,
+    92583.03,
+    92583.03,
+    92583.03,
     null,
     null,
     null,
@@ -144,9 +144,9 @@
     0,
     0,
     2.59,
-    2.53,
-    2.72,
-    1.88,
+    2.34,
+    2.51,
+    1.78,
     null,
     null,
     null,
@@ -174,14 +174,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 156,
+          "wechat": 167,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 0,
       "intent_b": 0,
-      "intent_c": 6
+      "intent_c": 7
     },
     {
       "name": "李小叶",
@@ -207,7 +207,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 167,
+          "wechat": 179,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -245,14 +245,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 96,
+          "wechat": 108,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 3,
+      "intent_a": 4,
       "intent_b": 9,
-      "intent_c": 65
+      "intent_c": 73
     },
     {
       "name": "陈相",
