@@ -2,16 +2,16 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 860113.89,
-  "cum_spend": 373087.31,
-  "cum_wechat": 2693,
+  "cum_revenue": 865086.25,
+  "cum_spend": 396546.68,
+  "cum_wechat": 2732,
   "cum_deposit": 146,
-  "cum_open": 3970.0,
-  "cum_roi": 2.31,
-  "monthly_avg_rev": 215028.47,
-  "predicted_annual": 2580341.64,
+  "cum_open": 4156.0,
+  "cum_roi": 2.18,
+  "monthly_avg_rev": 216271.56,
+  "predicted_annual": 2595258.72,
   "revenue_target": 3000000,
-  "progress": 25.0,
+  "progress": 25.2,
   "monthly_kpi": [
     {
       "month": 1,
@@ -45,8 +45,8 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 246811.77,
-      "spend": 95338.22,
-      "roi": 2.59,
+      "spend": 99136.67,
+      "roi": 2.49,
       "wechat": 993,
       "deposit": 118,
       "open": 1522.0,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 216255.0,
-      "spend": 92583.03,
-      "roi": 2.34,
+      "spend": 99136.67,
+      "roi": 2.18,
       "wechat": 676,
       "deposit": 28,
-      "open": 816,
+      "open": 878,
       "open_cost": 78.54,
       "refund": 0,
       "days": 28,
@@ -73,11 +73,11 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 231954.0,
-      "spend": 92583.03,
-      "roi": 2.51,
+      "spend": 99136.67,
+      "roi": 2.34,
       "wechat": 570,
       "deposit": 0,
-      "open": 816,
+      "open": 878,
       "open_cost": 93.63,
       "refund": 0,
       "days": 31,
@@ -86,16 +86,16 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 165093.12,
-      "spend": 92583.03,
-      "roi": 1.78,
-      "wechat": 454,
+      "revenue": 170065.48,
+      "spend": 99136.67,
+      "roi": 1.72,
+      "wechat": 493,
       "deposit": 0,
-      "open": 816,
-      "open_cost": 113.46,
-      "refund": 10,
-      "days": 22,
-      "mom_revenue": -27.7
+      "open": 878,
+      "open_cost": 112.91,
+      "refund": 14,
+      "days": 23,
+      "mom_revenue": -24.6
     }
   ],
   "trend_months": [
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    165093.12,
+    170065.48,
     null,
     null,
     null,
@@ -129,10 +129,10 @@
   "trend_spend": [
     0,
     0,
-    95338.22,
-    92583.03,
-    92583.03,
-    92583.03,
+    99136.67,
+    99136.67,
+    99136.67,
+    99136.67,
     null,
     null,
     null,
@@ -143,10 +143,10 @@
   "trend_roi": [
     0,
     0,
-    2.59,
+    2.49,
+    2.18,
     2.34,
-    2.51,
-    1.78,
+    1.72,
     null,
     null,
     null,
@@ -174,7 +174,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 167,
+          "wechat": 181,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -207,14 +207,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 179,
+          "wechat": 190,
           "deposit": 0,
           "revenue": 0.0
         }
       },
       "intent_a": 10,
       "intent_b": 4,
-      "intent_c": 124
+      "intent_c": 130
     },
     {
       "name": "胡娜",
@@ -245,14 +245,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 108,
+          "wechat": 122,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 4,
-      "intent_b": 9,
-      "intent_c": 73
+      "intent_a": 8,
+      "intent_b": 12,
+      "intent_c": 91
     },
     {
       "name": "陈相",

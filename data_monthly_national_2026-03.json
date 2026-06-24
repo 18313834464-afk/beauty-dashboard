@@ -3,17 +3,17 @@
   "days_elapsed": 31,
   "total_days": 31,
   "cum_revenue": 263511.77,
-  "cum_spend": 154365.78,
+  "cum_spend": 162212.46,
   "cum_wechat": 1153,
   "cum_deposit": 131,
-  "cum_open": 2236.0,
+  "cum_open": 2276.0,
   "cum_refund": 31,
-  "roi": 1.71,
+  "roi": 1.62,
   "revenue_target": 500000,
   "progress": 52.7,
   "predicted_revenue": 263511.77,
-  "predicted_spend": 154365.78,
-  "predicted_roi": 1.71,
+  "predicted_spend": 162212.46,
+  "predicted_roi": 1.62,
   "daily_trend": [
     {
       "date": "2026-03-01",
@@ -423,7 +423,7 @@
   ],
   "city_matrix": {
     "成都": {
-      "cum_spend": 95338.22,
+      "cum_spend": 99136.67,
       "cum_wechat": 993,
       "cum_deposit": 118,
       "cum_revenue": 246811.77,
@@ -439,7 +439,7 @@
       "cum_refund": 1
     },
     "哈尔滨": {
-      "cum_spend": 55028.99,
+      "cum_spend": 59077.22,
       "cum_wechat": 103,
       "cum_deposit": 8,
       "cum_revenue": 5560.0,
