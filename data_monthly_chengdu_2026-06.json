@@ -1,20 +1,20 @@
 {
   "city": "成都",
   "month": "2026-06",
-  "days_elapsed": 25,
+  "days_elapsed": 26,
   "total_days": 30,
-  "cum_revenue": 185310.2,
+  "cum_revenue": 205616.56,
   "cum_spend": 110629.9,
-  "cum_wechat": 557,
+  "cum_wechat": 593,
   "cum_deposit": 0,
   "cum_open": 981,
-  "cum_refund": 17,
-  "roi": 1.51,
+  "cum_refund": 18,
+  "roi": 1.6,
   "revenue_target": 300000,
-  "progress": 51.6,
-  "predicted_revenue": 222372.24,
-  "predicted_spend": 132755.88,
-  "predicted_roi": 1.68,
+  "progress": 54.9,
+  "predicted_revenue": 237249.88,
+  "predicted_spend": 127649.88,
+  "predicted_roi": 1.86,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -215,6 +215,14 @@
       "wechat": 34,
       "deposit": 0,
       "open": 49.0
+    },
+    {
+      "date": "2026-06-26",
+      "revenue": 9866.18,
+      "spend": 0,
+      "wechat": 36,
+      "deposit": 0,
+      "open": 0
     }
   ],
   "rate_trend": [
@@ -342,12 +350,17 @@
       "date": "2026-06-25",
       "open_to_wechat": 69.4,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-26",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "会媛",
-      "wechat": 205,
+      "wechat": 215,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 23,
@@ -362,10 +375,10 @@
     },
     {
       "name": "阳珂欣",
-      "wechat": 139,
+      "wechat": 152,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 22,
+      "arrived": 23,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 82,
@@ -392,10 +405,10 @@
     },
     {
       "name": "林俐",
-      "wechat": 213,
+      "wechat": 226,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 17,
+      "arrived": 20,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
       "gap_total": 8,
@@ -504,6 +517,12 @@
       "status": "未到店退款"
     },
     {
+      "customer": "小水",
+      "revenue": 0,
+      "cs": "阳珂欣",
+      "status": "到店退款"
+    },
+    {
       "customer": "马小越",
       "revenue": 0,
       "cs": "会媛",
@@ -526,7 +545,7 @@
     {
       "cs": "阳珂欣",
       "city": "成都",
-      "arrived": 2,
+      "arrived": 3,
       "not_arrived": 1
     },
     {
