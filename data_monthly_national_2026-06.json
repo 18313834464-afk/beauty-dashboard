@@ -1,19 +1,19 @@
 {
   "month": "2026-06",
-  "days_elapsed": 26,
+  "days_elapsed": 27,
   "total_days": 30,
-  "cum_revenue": 323905.24,
+  "cum_revenue": 298306.88,
   "cum_spend": 174865.24,
-  "cum_wechat": 1031,
+  "cum_wechat": 1073,
   "cum_deposit": 0,
   "cum_open": 1729,
-  "cum_refund": 29,
-  "roi": 1.85,
+  "cum_refund": 30,
+  "roi": 1.71,
   "revenue_target": 400000,
-  "progress": 81.0,
-  "predicted_revenue": 373736.82,
-  "predicted_spend": 201767.58,
-  "predicted_roi": 1.85,
+  "progress": 74.6,
+  "predicted_revenue": 331452.09,
+  "predicted_spend": 194294.71,
+  "predicted_roi": 1.71,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -222,6 +222,14 @@
       "wechat": 45,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-06-27",
+      "revenue": 0.0,
+      "spend": 0,
+      "wechat": 42,
+      "deposit": 0,
+      "open": 0
     }
   ],
   "rate_trend": [
@@ -354,24 +362,29 @@
       "date": "2026-06-26",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-27",
+      "open_to_wechat": 0,
+      "wechat_to_deposit": 0.0
     }
   ],
   "city_matrix": {
     "成都": {
       "cum_spend": 110629.9,
-      "cum_wechat": 593,
+      "cum_wechat": 621,
       "cum_deposit": 0,
-      "cum_revenue": 205616.56,
+      "cum_revenue": 164757.48,
       "roi": 1.6,
       "cum_refund": 18
     },
     "哈尔滨": {
       "cum_spend": 64235.34,
-      "cum_wechat": 438,
+      "cum_wechat": 452,
       "cum_deposit": 0,
-      "cum_revenue": 118288.68,
+      "cum_revenue": 133549.4,
       "roi": 0.27,
-      "cum_refund": 11
+      "cum_refund": 12
     }
   },
   "cs_table": [
@@ -380,10 +393,10 @@
       "wechat": 215,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 23,
+      "arrived": 27,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 65,
+      "gap_total": 75,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -392,13 +405,13 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 152,
+      "wechat": 168,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 23,
+      "arrived": 27,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 82,
+      "gap_total": 83,
       "sop_score": 0,
       "intent_a": 0,
       "intent_b": 0,
@@ -422,14 +435,14 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 226,
+      "wechat": 238,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 20,
+      "arrived": 23,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 8,
-      "sop_score": 36,
+      "gap_total": 11,
+      "sop_score": 12,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -437,22 +450,22 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 162,
+      "wechat": 166,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 7,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 2,
-      "sop_score": 84,
-      "intent_a": 0,
+      "gap_total": 3,
+      "sop_score": 76,
+      "intent_a": 1,
       "intent_b": 0,
       "intent_c": 1,
-      "intent_total": 1
+      "intent_total": 2
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 156,
+      "wechat": 166,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 6,
@@ -460,10 +473,10 @@
       "fulfill_rate": 0,
       "gap_total": 4,
       "sop_score": 68,
-      "intent_a": 1,
+      "intent_a": 2,
       "intent_b": 0,
-      "intent_c": 7,
-      "intent_total": 8
+      "intent_c": 9,
+      "intent_total": 11
     },
     {
       "name": "杨雪(哈尔滨)",
@@ -504,6 +517,12 @@
       "not_arrived": 7
     },
     {
+      "cs": "侯芳",
+      "city": "哈尔滨",
+      "arrived": 2,
+      "not_arrived": 4
+    },
+    {
       "cs": "林俐",
       "city": "成都",
       "arrived": 2,
@@ -514,12 +533,6 @@
       "city": "哈尔滨",
       "arrived": 3,
       "not_arrived": 2
-    },
-    {
-      "cs": "侯芳",
-      "city": "哈尔滨",
-      "arrived": 2,
-      "not_arrived": 3
     },
     {
       "cs": "阳珂欣",

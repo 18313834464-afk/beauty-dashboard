@@ -2,14 +2,14 @@
   "city": "成都",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 900637.33,
+  "cum_revenue": 859778.25,
   "cum_spend": 442519.6,
-  "cum_wechat": 2832,
+  "cum_wechat": 2860,
   "cum_deposit": 146,
   "cum_open": 4465.0,
-  "cum_roi": 2.04,
-  "monthly_avg_rev": 225159.33,
-  "predicted_annual": 2701911.96,
+  "cum_roi": 1.94,
+  "monthly_avg_rev": 214944.56,
+  "predicted_annual": 2579334.72,
   "revenue_target": 3000000,
   "progress": 26.0,
   "monthly_kpi": [
@@ -86,15 +86,15 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 205616.56,
+      "revenue": 164757.48,
       "spend": 110629.9,
-      "roi": 1.86,
-      "wechat": 593,
+      "roi": 1.49,
+      "wechat": 621,
       "deposit": 0,
       "open": 981,
       "open_cost": 112.77,
       "refund": 18,
-      "days": 26,
+      "days": 27,
       "mom_revenue": -10.0
     }
   ],
@@ -118,7 +118,7 @@
     246811.77,
     216255.0,
     231954.0,
-    205616.56,
+    164757.48,
     null,
     null,
     null,
@@ -146,7 +146,7 @@
     2.23,
     1.95,
     2.1,
-    1.86,
+    1.49,
     null,
     null,
     null,
@@ -207,7 +207,7 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 226,
+          "wechat": 238,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -245,14 +245,14 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 152,
+          "wechat": 168,
           "deposit": 0,
           "revenue": 0.0
         }
       },
-      "intent_a": 10,
-      "intent_b": 15,
-      "intent_c": 104
+      "intent_a": 12,
+      "intent_b": 21,
+      "intent_c": 116
     },
     {
       "name": "陈相",
