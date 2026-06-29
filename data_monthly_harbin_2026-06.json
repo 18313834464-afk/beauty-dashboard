@@ -1,20 +1,20 @@
 {
   "city": "哈尔滨",
   "month": "2026-06",
-  "days_elapsed": 27,
+  "days_elapsed": 28,
   "total_days": 30,
-  "cum_revenue": 133549.4,
-  "cum_spend": 64235.34,
-  "cum_wechat": 452,
+  "cum_revenue": 132941.76,
+  "cum_spend": 71648.38,
+  "cum_wechat": 470,
   "cum_deposit": 0,
-  "cum_open": 748,
+  "cum_open": 836,
   "cum_refund": 12,
-  "roi": 0.27,
+  "roi": 0.26,
   "revenue_target": 100000,
   "progress": 16.7,
-  "predicted_revenue": 148388.22,
-  "predicted_spend": 71372.6,
-  "predicted_roi": 2.08,
+  "predicted_revenue": 142437.6,
+  "predicted_spend": 76766.12,
+  "predicted_roi": 1.86,
   "daily_trend": [
     {
       "date": "2026-06-01",
@@ -231,6 +231,14 @@
       "wechat": 14,
       "deposit": 0,
       "open": 0
+    },
+    {
+      "date": "2026-06-28",
+      "revenue": 0.0,
+      "spend": 3022.77,
+      "wechat": 18,
+      "deposit": 0,
+      "open": 42.0
     }
   ],
   "rate_trend": [
@@ -368,12 +376,17 @@
       "date": "2026-06-27",
       "open_to_wechat": 0,
       "wechat_to_deposit": 0.0
+    },
+    {
+      "date": "2026-06-28",
+      "open_to_wechat": 42.9,
+      "wechat_to_deposit": 0.0
     }
   ],
   "cs_table": [
     {
       "name": "汤娅",
-      "wechat": 166,
+      "wechat": 176,
       "deposit": 0,
       "revenue": 0.0,
       "arrived": 7,
@@ -381,25 +394,25 @@
       "fulfill_rate": 0,
       "gap_total": 3,
       "sop_score": 76,
-      "intent_a": 1,
+      "intent_a": 2,
       "intent_b": 0,
-      "intent_c": 1,
-      "intent_total": 2
+      "intent_c": 7,
+      "intent_total": 9
     },
     {
       "name": "侯芳",
-      "wechat": 166,
+      "wechat": 174,
       "deposit": 0,
       "revenue": 0.0,
-      "arrived": 6,
+      "arrived": 7,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 4,
-      "sop_score": 68,
+      "gap_total": 6,
+      "sop_score": 52,
       "intent_a": 2,
       "intent_b": 0,
-      "intent_c": 9,
-      "intent_total": 11
+      "intent_c": 6,
+      "intent_total": 8
     },
     {
       "name": "杨雪",
@@ -409,8 +422,8 @@
       "arrived": 0,
       "deposit_rate": 0.0,
       "fulfill_rate": 0,
-      "gap_total": 3,
-      "sop_score": 76,
+      "gap_total": 4,
+      "sop_score": 68,
       "intent_a": 0,
       "intent_b": 0,
       "intent_c": 0,
@@ -482,12 +495,6 @@
       "status": "未到店退款"
     },
     {
-      "customer": "老坛杉菜（艾女士）",
-      "revenue": 0,
-      "cs": "汤娅",
-      "status": "未到店退款"
-    },
-    {
       "customer": "孟女士",
       "revenue": 0,
       "cs": "侯芳",
@@ -504,6 +511,12 @@
       "revenue": 0,
       "cs": "侯芳",
       "status": "未到店退款"
+    },
+    {
+      "customer": "路路",
+      "revenue": 0,
+      "cs": "侯芳",
+      "status": "未到店退款"
     }
   ],
   "refund_summary": [
@@ -511,13 +524,13 @@
       "cs": "侯芳",
       "city": "哈尔滨",
       "arrived": 2,
-      "not_arrived": 4
+      "not_arrived": 5
     },
     {
       "cs": "汤娅",
       "city": "哈尔滨",
       "arrived": 3,
-      "not_arrived": 2
+      "not_arrived": 1
     },
     {
       "cs": "杨雪",

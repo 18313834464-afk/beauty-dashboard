@@ -2,19 +2,19 @@
   "city": "哈尔滨",
   "city_key": "harbin",
   "month": "2026-06",
-  "generated_at": "2026-06-28 07:00:13",
-  "days_elapsed": 27,
+  "generated_at": "2026-06-29 06:49:27",
+  "days_elapsed": 28,
   "total_days": 30,
-  "progress_pct": 90.0,
+  "progress_pct": 93.3,
   "revenue_target": 100000,
   "cs_forecasts": [
     {
       "name": "汤娅",
-      "days_elapsed": 27,
+      "days_elapsed": 28,
       "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 166,
+        "wechat": 176,
         "deposit": 0,
         "arrived": 7,
         "salary": 5300,
@@ -24,7 +24,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 184,
+        "wechat": 189,
         "deposit": 0,
         "arrived": 8,
         "salary": 5300,
@@ -57,13 +57,13 @@
     },
     {
       "name": "侯芳",
-      "days_elapsed": 27,
+      "days_elapsed": 28,
       "total_days": 30,
       "current": {
         "revenue": 0,
-        "wechat": 166,
+        "wechat": 174,
         "deposit": 0,
-        "arrived": 6,
+        "arrived": 7,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -71,9 +71,56 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 184,
+        "wechat": 186,
         "deposit": 0,
-        "arrived": 7,
+        "arrived": 8,
+        "salary": 5300,
+        "salary_base": 5000,
+        "salary_commission": 0,
+        "salary_bonus": 300
+      },
+      "daily_avg_revenue": 0,
+      "kpi": {
+        "deposit_rate": 0.0,
+        "fulfill_rate": null,
+        "sop_score": 52,
+        "sop_predicted": 52,
+        "gap_total": 6
+      },
+      "bonus_detail": {
+        "定金转化率": {
+          "金额": 0,
+          "说明": "<15%→0"
+        },
+        "到店履约率": {
+          "金额": 300,
+          "说明": "中档估算→300"
+        },
+        "跟进SOP": {
+          "金额": 0,
+          "说明": "<80分→0"
+        }
+      }
+    },
+    {
+      "name": "杨雪",
+      "days_elapsed": 28,
+      "total_days": 30,
+      "current": {
+        "revenue": 0,
+        "wechat": 60,
+        "deposit": 0,
+        "arrived": 0,
+        "salary": 5300,
+        "salary_base": 5000,
+        "salary_commission": 0,
+        "salary_bonus": 300
+      },
+      "predicted": {
+        "revenue": 0,
+        "wechat": 64,
+        "deposit": 0,
+        "arrived": 0,
         "salary": 5300,
         "salary_base": 5000,
         "salary_commission": 0,
@@ -103,55 +150,8 @@
       }
     },
     {
-      "name": "杨雪",
-      "days_elapsed": 27,
-      "total_days": 30,
-      "current": {
-        "revenue": 0,
-        "wechat": 60,
-        "deposit": 0,
-        "arrived": 0,
-        "salary": 5300,
-        "salary_base": 5000,
-        "salary_commission": 0,
-        "salary_bonus": 300
-      },
-      "predicted": {
-        "revenue": 0,
-        "wechat": 67,
-        "deposit": 0,
-        "arrived": 0,
-        "salary": 5300,
-        "salary_base": 5000,
-        "salary_commission": 0,
-        "salary_bonus": 300
-      },
-      "daily_avg_revenue": 0,
-      "kpi": {
-        "deposit_rate": 0.0,
-        "fulfill_rate": null,
-        "sop_score": 76,
-        "sop_predicted": 76,
-        "gap_total": 3
-      },
-      "bonus_detail": {
-        "定金转化率": {
-          "金额": 0,
-          "说明": "<15%→0"
-        },
-        "到店履约率": {
-          "金额": 300,
-          "说明": "中档估算→300"
-        },
-        "跟进SOP": {
-          "金额": 0,
-          "说明": "<80分→0"
-        }
-      }
-    },
-    {
       "name": "会媛",
-      "days_elapsed": 27,
+      "days_elapsed": 28,
       "total_days": 30,
       "current": {
         "revenue": 0,
@@ -165,7 +165,7 @@
       },
       "predicted": {
         "revenue": 0,
-        "wechat": 67,
+        "wechat": 64,
         "deposit": 0,
         "arrived": 0,
         "salary": 5800,
@@ -201,21 +201,21 @@
   "pnl_forecast": {
     "current_sales": 0,
     "predicted_sales": 0,
-    "predicted_your_income": -87982,
+    "predicted_your_income": -92296,
     "predicted_your_margin": 0,
     "predicted_partner_income": -6084,
     "predicted_cs_salary": 24800,
-    "predicted_ad_actual": 57098,
+    "predicted_ad_actual": 61413,
     "predicted_manager_fee": 0,
     "predicted_artist_fee": 0,
     "predicted_shared_costs": 6084
   },
   "target_analysis": {
-    "current_revenue": 133549.4,
+    "current_revenue": 132941.76,
     "predicted_revenue": 0,
     "target": 100000,
     "gap": 100000,
-    "daily_needed": 33333,
+    "daily_needed": 50000,
     "on_track": false
   }
 }
