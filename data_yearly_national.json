@@ -1,15 +1,15 @@
 {
   "year": 2026,
   "city_count": 3,
-  "cum_revenue": 1219705.81,
-  "cum_spend": 803127.13,
-  "cum_wechat": 4394,
+  "cum_revenue": 1231408.35,
+  "cum_spend": 805146.25,
+  "cum_wechat": 4452,
   "cum_deposit": 169,
-  "cum_roi": 1.52,
-  "monthly_avg_rev": 304926.45,
-  "predicted_annual": 3659117.4,
+  "cum_roi": 1.53,
+  "monthly_avg_rev": 307852.09,
+  "predicted_annual": 3694225.08,
   "revenue_target": 3000000,
-  "progress": 40.7,
+  "progress": 41.0,
   "trend_months": [
     "1月",
     "2月",
@@ -30,7 +30,7 @@
     263511.77,
     283575.0,
     311576.0,
-    361043.04,
+    372745.58,
     null,
     null,
     null,
@@ -41,10 +41,10 @@
   "trend_spend": [
     0.0,
     0.0,
-    203780.71,
-    199782.14,
-    199782.14,
-    199782.14,
+    204285.49,
+    200286.92,
+    200286.92,
+    200286.92,
     null,
     null,
     null,
@@ -58,7 +58,7 @@
     1.29,
     1.42,
     1.56,
-    1.81,
+    1.86,
     null,
     null,
     null,
@@ -70,21 +70,21 @@
     {
       "city": "成都",
       "start_month": 3,
-      "cum_revenue": 923122.05,
-      "cum_spend": 512535.04,
-      "roi": 1.8,
-      "monthly_avg_wechat": 725,
+      "cum_revenue": 930494.41,
+      "cum_spend": 514554.4,
+      "roi": 1.81,
+      "monthly_avg_wechat": 735,
       "wechat_to_deposit": 5.0,
       "health_score": 65
     },
     {
       "city": "哈尔滨",
       "start_month": 3,
-      "cum_revenue": 285443.76,
-      "cum_spend": 286593.52,
-      "roi": 1.0,
-      "monthly_avg_wechat": 359,
-      "wechat_to_deposit": 1.3,
+      "cum_revenue": 289773.94,
+      "cum_spend": 286593.28,
+      "roi": 1.01,
+      "monthly_avg_wechat": 364,
+      "wechat_to_deposit": 1.2,
       "health_score": 65
     },
     {
@@ -108,10 +108,10 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 1016,
+      "wechat": 1042,
       "deposit": 45,
       "revenue": 88198.8,
-      "w2d_rate": 4.4
+      "w2d_rate": 4.3
     },
     {
       "name": "会媛(成都)",
@@ -122,7 +122,7 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 731,
+      "wechat": 738,
       "deposit": 17,
       "revenue": 34880.0,
       "w2d_rate": 2.3
@@ -137,6 +137,13 @@
     {
       "name": "林俐(成都)",
       "wechat": 428,
+      "deposit": 0,
+      "revenue": 0.0,
+      "w2d_rate": 0.0
+    },
+    {
+      "name": "王晓雨(成都)",
+      "wechat": 13,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
@@ -164,7 +171,7 @@
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 509,
+      "wechat": 521,
       "deposit": 1,
       "revenue": 0.0,
       "w2d_rate": 0.2
@@ -180,7 +187,7 @@
   "cost_pie": [
     {
       "name": "成都",
-      "value": 512535.04
+      "value": 514554.4
     },
     {
       "name": "重庆",
@@ -188,13 +195,13 @@
     },
     {
       "name": "哈尔滨",
-      "value": 286593.52
+      "value": 286593.28
     }
   ],
   "alerts": [
     {
       "level": "warning",
-      "msg": "哈尔滨ROI=1.0，接近预警线"
+      "msg": "哈尔滨ROI=1.01，接近预警线"
     }
   ],
   "ai_diagnosis": "AI 诊断生成失败"
