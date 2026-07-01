@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 289773.94,
-  "cum_spend": 286593.28,
-  "cum_wechat": 1456,
+  "cum_revenue": 293866.3,
+  "cum_spend": 313031.52,
+  "cum_wechat": 1470,
   "cum_deposit": 18,
   "cum_open": 3348.0,
-  "cum_roi": 1.01,
-  "monthly_avg_rev": 72443.49,
-  "predicted_annual": 869321.88,
+  "cum_roi": 0.94,
+  "monthly_avg_rev": 73466.57,
+  "predicted_annual": 881598.84,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -45,8 +45,8 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 5560.0,
-      "spend": 71648.32,
-      "roi": 0.08,
+      "spend": 78257.88,
+      "roi": 0.07,
       "wechat": 103,
       "deposit": 8,
       "open": 837,
@@ -59,8 +59,8 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 67320.0,
-      "spend": 71648.32,
-      "roi": 0.94,
+      "spend": 78257.88,
+      "roi": 0.86,
       "wechat": 437,
       "deposit": 10,
       "open": 837,
@@ -73,8 +73,8 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 79622.0,
-      "spend": 71648.32,
-      "roi": 1.11,
+      "spend": 78257.88,
+      "roi": 1.02,
       "wechat": 427,
       "deposit": 0,
       "open": 837,
@@ -86,16 +86,30 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 137271.94,
-      "spend": 71648.32,
-      "roi": 1.92,
-      "wechat": 489,
+      "revenue": 141364.3,
+      "spend": 78257.88,
+      "roi": 1.81,
+      "wechat": 503,
       "deposit": 0,
       "open": 837,
-      "open_cost": 85.6,
-      "refund": 14,
-      "days": 29,
-      "mom_revenue": 364.0
+      "open_cost": 89.35,
+      "refund": 0,
+      "days": 30,
+      "mom_revenue": 366.4
+    },
+    {
+      "month": 7,
+      "month_label": "7月",
+      "revenue": 0,
+      "spend": 0,
+      "roi": 0,
+      "wechat": 0,
+      "deposit": 0,
+      "open": 0,
+      "open_cost": 0,
+      "refund": 0,
+      "days": 0,
+      "mom_revenue": null
     }
   ],
   "trend_months": [
@@ -118,8 +132,8 @@
     5560.0,
     67320.0,
     79622.0,
-    137271.94,
-    null,
+    141364.3,
+    0,
     null,
     null,
     null,
@@ -129,11 +143,11 @@
   "trend_spend": [
     0,
     0,
-    71648.32,
-    71648.32,
-    71648.32,
-    71648.32,
-    null,
+    78257.88,
+    78257.88,
+    78257.88,
+    78257.88,
+    0,
     null,
     null,
     null,
@@ -143,11 +157,11 @@
   "trend_roi": [
     0,
     0,
-    0.08,
-    0.94,
-    1.11,
-    1.92,
-    null,
+    0.07,
+    0.86,
+    1.02,
+    1.81,
+    0,
     null,
     null,
     null,
@@ -183,10 +197,7 @@
           "deposit": 0,
           "revenue": 0.0
         }
-      },
-      "intent_a": 25,
-      "intent_b": 6,
-      "intent_c": 149
+      }
     },
     {
       "name": "杨雪",
@@ -201,10 +212,7 @@
           "deposit": 0,
           "revenue": 0.0
         }
-      },
-      "intent_a": 4,
-      "intent_b": 5,
-      "intent_c": 49
+      }
     },
     {
       "name": "汤娅",
@@ -225,14 +233,11 @@
           "revenue": 0.0
         },
         "6": {
-          "wechat": 183,
+          "wechat": 197,
           "deposit": 0,
           "revenue": 0.0
         }
-      },
-      "intent_a": 31,
-      "intent_b": 15,
-      "intent_c": 99
+      }
     }
   ],
   "health_score": 65,
