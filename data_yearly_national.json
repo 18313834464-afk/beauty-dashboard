@@ -1,15 +1,15 @@
 {
   "year": 2026,
   "city_count": 3,
-  "cum_revenue": 1247169.25,
-  "cum_spend": 800662.37,
-  "cum_wechat": 4495,
+  "cum_revenue": 1259489.25,
+  "cum_spend": 438976.95,
+  "cum_wechat": 4552,
   "cum_deposit": 169,
-  "cum_roi": 1.56,
-  "monthly_avg_rev": 311792.31,
-  "predicted_annual": 3741507.72,
+  "cum_roi": 2.87,
+  "monthly_avg_rev": 251897.85,
+  "predicted_annual": 3022774.2,
   "revenue_target": 3000000,
-  "progress": 41.6,
+  "progress": 42.0,
   "trend_months": [
     "1月",
     "2月",
@@ -30,8 +30,8 @@
     263511.77,
     283575.0,
     311576.0,
-    388506.48,
-    0.0,
+    400026.48,
+    800.0,
     null,
     null,
     null,
@@ -41,11 +41,11 @@
   "trend_spend": [
     0.0,
     0.0,
-    203164.52,
-    199165.95,
-    199165.95,
-    199165.95,
-    0.0,
+    104372.9,
+    49176.7,
+    100680.28,
+    179169.81,
+    5577.26,
     null,
     null,
     null,
@@ -55,11 +55,11 @@
   "trend_roi": [
     null,
     null,
-    1.3,
-    1.42,
-    1.56,
-    1.95,
-    null,
+    2.52,
+    5.77,
+    3.09,
+    2.23,
+    0.14,
     null,
     null,
     null,
@@ -70,20 +70,20 @@
     {
       "city": "成都",
       "start_month": 3,
-      "cum_revenue": 942162.95,
-      "cum_spend": 483632.28,
-      "roi": 1.95,
-      "monthly_avg_wechat": 742,
+      "cum_revenue": 949122.95,
+      "cum_spend": 304677.57,
+      "roi": 3.12,
+      "monthly_avg_wechat": 601,
       "wechat_to_deposit": 4.9,
       "health_score": 65
     },
     {
       "city": "哈尔滨",
       "start_month": 3,
-      "cum_revenue": 293866.3,
-      "cum_spend": 313031.52,
-      "roi": 0.94,
-      "monthly_avg_wechat": 368,
+      "cum_revenue": 299226.3,
+      "cum_spend": 130300.81,
+      "roi": 2.3,
+      "monthly_avg_wechat": 298,
       "wechat_to_deposit": 1.2,
       "health_score": 65
     },
@@ -93,7 +93,7 @@
       "cum_revenue": 11140.0,
       "cum_spend": 3998.57,
       "roi": 2.79,
-      "monthly_avg_wechat": 14,
+      "monthly_avg_wechat": 11,
       "wechat_to_deposit": 8.8,
       "health_score": 60
     }
@@ -108,10 +108,10 @@
     },
     {
       "name": "阳珂欣(成都)",
-      "wechat": 1057,
+      "wechat": 1075,
       "deposit": 45,
       "revenue": 88198.8,
-      "w2d_rate": 4.3
+      "w2d_rate": 4.2
     },
     {
       "name": "会媛(成都)",
@@ -122,7 +122,7 @@
     },
     {
       "name": "汤娅(哈尔滨)",
-      "wechat": 752,
+      "wechat": 754,
       "deposit": 17,
       "revenue": 34880.0,
       "w2d_rate": 2.3
@@ -136,14 +136,14 @@
     },
     {
       "name": "林俐(成都)",
-      "wechat": 429,
+      "wechat": 437,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
     },
     {
       "name": "王晓雨(成都)",
-      "wechat": 26,
+      "wechat": 36,
       "deposit": 0,
       "revenue": 0.0,
       "w2d_rate": 0.0
@@ -171,7 +171,7 @@
     },
     {
       "name": "侯芳(哈尔滨)",
-      "wechat": 521,
+      "wechat": 540,
       "deposit": 1,
       "revenue": 0.0,
       "w2d_rate": 0.2
@@ -187,7 +187,7 @@
   "cost_pie": [
     {
       "name": "成都",
-      "value": 483632.28
+      "value": 304677.57
     },
     {
       "name": "重庆",
@@ -195,13 +195,13 @@
     },
     {
       "name": "哈尔滨",
-      "value": 313031.52
+      "value": 130300.81
     }
   ],
   "alerts": [
     {
-      "level": "danger",
-      "msg": "哈尔滨累计ROI仅0.94，持续亏损需收缩"
+      "level": "warning",
+      "msg": "成都最新月变现环比下降99.7%"
     }
   ],
   "ai_diagnosis": "AI 诊断生成失败"

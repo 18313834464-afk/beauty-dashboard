@@ -2,14 +2,14 @@
   "city": "哈尔滨",
   "year": 2026,
   "start_month": 3,
-  "cum_revenue": 293866.3,
-  "cum_spend": 313031.52,
-  "cum_wechat": 1470,
+  "cum_revenue": 299226.3,
+  "cum_spend": 130300.81,
+  "cum_wechat": 1491,
   "cum_deposit": 18,
-  "cum_open": 3348.0,
-  "cum_roi": 0.94,
-  "monthly_avg_rev": 73466.57,
-  "predicted_annual": 881598.84,
+  "cum_open": 1667.0,
+  "cum_roi": 2.3,
+  "monthly_avg_rev": 74806.57,
+  "predicted_annual": 897678.84,
   "revenue_target": 0,
   "progress": 0,
   "monthly_kpi": [
@@ -45,11 +45,11 @@
       "month": 3,
       "month_label": "3月",
       "revenue": 5560.0,
-      "spend": 78257.88,
-      "roi": 0.07,
+      "spend": 5036.11,
+      "roi": 1.1,
       "wechat": 103,
       "deposit": 8,
-      "open": 837,
+      "open": 99.0,
       "open_cost": 50.87,
       "refund": 0,
       "days": 31,
@@ -59,11 +59,11 @@
       "month": 4,
       "month_label": "4月",
       "revenue": 67320.0,
-      "spend": 78257.88,
-      "roi": 0.86,
+      "spend": 15246.16,
+      "roi": 4.42,
       "wechat": 437,
       "deposit": 10,
-      "open": 837,
+      "open": 246.0,
       "open_cost": 61.98,
       "refund": 0,
       "days": 28,
@@ -73,11 +73,11 @@
       "month": 5,
       "month_label": "5月",
       "revenue": 79622.0,
-      "spend": 78257.88,
-      "roi": 1.02,
+      "spend": 40197.36,
+      "roi": 1.98,
       "wechat": 427,
       "deposit": 0,
-      "open": 837,
+      "open": 540.0,
       "open_cost": 74.44,
       "refund": 0,
       "days": 31,
@@ -86,12 +86,12 @@
     {
       "month": 6,
       "month_label": "6月",
-      "revenue": 141364.3,
-      "spend": 78257.88,
-      "roi": 1.81,
+      "revenue": 146724.3,
+      "spend": 67548.72,
+      "roi": 2.17,
       "wechat": 503,
       "deposit": 0,
-      "open": 837,
+      "open": 756.0,
       "open_cost": 89.35,
       "refund": 0,
       "days": 30,
@@ -100,16 +100,16 @@
     {
       "month": 7,
       "month_label": "7月",
-      "revenue": 0,
-      "spend": 0,
-      "roi": 0,
-      "wechat": 0,
+      "revenue": 0.0,
+      "spend": 2272.46,
+      "roi": 0.0,
+      "wechat": 21,
       "deposit": 0,
-      "open": 0,
-      "open_cost": 0,
+      "open": 26.0,
+      "open_cost": 87.4,
       "refund": 0,
-      "days": 0,
-      "mom_revenue": null
+      "days": 1,
+      "mom_revenue": -100.0
     }
   ],
   "trend_months": [
@@ -132,8 +132,8 @@
     5560.0,
     67320.0,
     79622.0,
-    141364.3,
-    0,
+    146724.3,
+    0.0,
     null,
     null,
     null,
@@ -143,11 +143,11 @@
   "trend_spend": [
     0,
     0,
-    78257.88,
-    78257.88,
-    78257.88,
-    78257.88,
-    0,
+    5036.11,
+    15246.16,
+    40197.36,
+    67548.72,
+    2272.46,
     null,
     null,
     null,
@@ -157,11 +157,11 @@
   "trend_roi": [
     0,
     0,
-    0.07,
-    0.86,
-    1.02,
-    1.81,
-    0,
+    1.1,
+    4.42,
+    1.98,
+    2.17,
+    0.0,
     null,
     null,
     null,
@@ -174,6 +174,11 @@
       "months": {
         "6": {
           "wechat": 60,
+          "deposit": 0,
+          "revenue": 0.0
+        },
+        "7": {
+          "wechat": 0,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -196,8 +201,16 @@
           "wechat": 186,
           "deposit": 0,
           "revenue": 0.0
+        },
+        "7": {
+          "wechat": 19,
+          "deposit": 0,
+          "revenue": 0.0
         }
-      }
+      },
+      "intent_a": 1,
+      "intent_b": 0,
+      "intent_c": 11
     },
     {
       "name": "杨雪",
@@ -209,6 +222,11 @@
         },
         "6": {
           "wechat": 60,
+          "deposit": 0,
+          "revenue": 0.0
+        },
+        "7": {
+          "wechat": 0,
           "deposit": 0,
           "revenue": 0.0
         }
@@ -236,8 +254,16 @@
           "wechat": 197,
           "deposit": 0,
           "revenue": 0.0
+        },
+        "7": {
+          "wechat": 2,
+          "deposit": 0,
+          "revenue": 0.0
         }
-      }
+      },
+      "intent_a": 1,
+      "intent_b": 1,
+      "intent_c": 0
     }
   ],
   "health_score": 65,

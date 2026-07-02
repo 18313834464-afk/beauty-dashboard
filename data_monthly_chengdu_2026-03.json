@@ -4,7 +4,7 @@
   "days_elapsed": 31,
   "total_days": 31,
   "cum_revenue": 246811.77,
-  "cum_spend": 120908.07,
+  "cum_spend": 95338.22,
   "cum_wechat": 993,
   "cum_deposit": 118,
   "cum_open": 1522.0,
@@ -13,8 +13,8 @@
   "revenue_target": 300000,
   "progress": 81.2,
   "predicted_revenue": 246811.77,
-  "predicted_spend": 120908.07,
-  "predicted_roi": 2.04,
+  "predicted_spend": 95338.22,
+  "predicted_roi": 2.59,
   "daily_trend": [
     {
       "date": "2026-03-01",
